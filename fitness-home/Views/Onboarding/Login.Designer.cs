@@ -37,12 +37,12 @@
             this.panel_password = new System.Windows.Forms.Panel();
             this.textbox_password = new System.Windows.Forms.TextBox();
             this.panel_logo = new System.Windows.Forms.Panel();
+            this.pictureBox_logo = new System.Windows.Forms.PictureBox();
             this.panel_email = new System.Windows.Forms.Panel();
             this.textbox_email = new System.Windows.Forms.TextBox();
             this.panel_sign_up = new System.Windows.Forms.Panel();
             this.label_sign_up = new System.Windows.Forms.Label();
             this.link_sign_up = new System.Windows.Forms.LinkLabel();
-            this.pictureBox_logo = new System.Windows.Forms.PictureBox();
             icon_password = new System.Windows.Forms.PictureBox();
             label_title = new System.Windows.Forms.Label();
             icon_email = new System.Windows.Forms.PictureBox();
@@ -51,9 +51,9 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_password.SuspendLayout();
             this.panel_logo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
             this.panel_email.SuspendLayout();
             this.panel_sign_up.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).BeginInit();
             this.SuspendLayout();
             // 
             // icon_password
@@ -188,6 +188,19 @@
             this.panel_logo.Size = new System.Drawing.Size(353, 450);
             this.panel_logo.TabIndex = 4;
             // 
+            // pictureBox_logo
+            // 
+            this.pictureBox_logo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox_logo.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_logo.BackgroundImage = global::fitness_home.Properties.Resources.logo;
+            this.pictureBox_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox_logo.Location = new System.Drawing.Point(73, 135);
+            this.pictureBox_logo.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox_logo.Name = "pictureBox_logo";
+            this.pictureBox_logo.Size = new System.Drawing.Size(205, 244);
+            this.pictureBox_logo.TabIndex = 1;
+            this.pictureBox_logo.TabStop = false;
+            // 
             // panel_email
             // 
             this.panel_email.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -264,18 +277,6 @@
             this.link_sign_up.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.link_sign_up.VisitedLinkColor = System.Drawing.Color.White;
             // 
-            // pictureBox_logo
-            // 
-            this.pictureBox_logo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox_logo.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_logo.BackgroundImage = global::fitness_home.Properties.Resources.logo;
-            this.pictureBox_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_logo.Location = new System.Drawing.Point(73, 135);
-            this.pictureBox_logo.Name = "pictureBox_logo";
-            this.pictureBox_logo.Size = new System.Drawing.Size(205, 244);
-            this.pictureBox_logo.TabIndex = 1;
-            this.pictureBox_logo.TabStop = false;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,11 +294,11 @@
             this.panel_password.ResumeLayout(false);
             this.panel_password.PerformLayout();
             this.panel_logo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
             this.panel_email.ResumeLayout(false);
             this.panel_email.PerformLayout();
             this.panel_sign_up.ResumeLayout(false);
             this.panel_sign_up.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
             this.ResumeLayout(false);
 
         }

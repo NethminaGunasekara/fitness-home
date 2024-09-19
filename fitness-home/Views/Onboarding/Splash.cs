@@ -119,17 +119,7 @@ namespace fitness_home.Views.Onboarding
                     await Task.Delay(2000);
 
                     // Redirect logged user to a dashboard based on the user type
-                    if(Authentication.LoggedUser is Member)
-                    {
-                        // Show the Member Dashboard
-                        MemberDashboard MemberDashboard = FormProvider.MemberDashboard ?? (FormProvider.MemberDashboard = new MemberDashboard());
-                        
-                        Helpers.ShowForm(
-                            targetForm: MemberDashboard, 
-                            currentForm: this, 
-                            setSize: false, 
-                            setPosition: false);
-                    }
+                    Authentication.Instance.ShowDashboard(this);
                 }
 
                 // If stored email or password is incorrect (let's assume that the user has edited the config)

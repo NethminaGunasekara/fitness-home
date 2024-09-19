@@ -1,7 +1,7 @@
 ﻿using fitness_home.Services;
 using fitness_home.Services.Types;
 using fitness_home.Utils;
-using fitness_home.Views.Messages;
+ using fitness_home.Views.Messages;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -45,7 +45,23 @@ namespace fitness_home
             // Display login status
             if (loginStatus == LoginStatus.Success)
             {
-                MessageBox.Show("Login Successful!");
+                // Redirect logged user to a dashboard based on the user type
+                Authentication.Instance.ShowDashboard(this);
+            }
+
+            // If there's a database connection error
+            else if (loginStatus == LoginStatus.DatabaseError)
+            {
+                DatabaseError databaseError = new DatabaseError();
+                databaseError.StartPosition = FormStartPosition.Manual;
+
+                Point messageLocation = new Point(
+                    x: this.Location.X + (this.Width / 2) - databaseError.Width / 2,
+                    y: this.Location.Y + (this.Height / 2) - databaseError.Height / 2); 
+
+                databaseError.Location = messageLocation;
+
+                databaseError.ShowDialog();
             }
 
             else

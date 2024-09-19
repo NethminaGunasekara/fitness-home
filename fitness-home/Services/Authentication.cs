@@ -6,6 +6,9 @@ using System.Security.Cryptography;
 using fitness_home.Services.Types;
 using fitness_home.Utils.Types;
 using fitness_home.Utils.Types.User;
+using fitness_home.Utils;
+using fitness_home.Views.Dashboard;
+using System.Windows.Forms;
 
 namespace fitness_home.Services
 {
@@ -129,6 +132,25 @@ namespace fitness_home.Services
             }
         }
 
+        /// <summary>
+        /// Redirects user to their dashboard after a successful login
+        /// </summary>
+        /// <param name="currentForm">Where the user is redirected from</param>
+        public void ShowDashboard(Form currentForm)
+        {
+            // Show the Member Dashboard
+            if (Authentication.LoggedUser is Member)
+            {
+                // Show the Member Dashboard
+                MemberDashboard MemberDashboard = FormProvider.MemberDashboard ?? (FormProvider.MemberDashboard = new MemberDashboard());
+
+                Helpers.ShowForm(
+                    targetForm: MemberDashboard,
+                    currentForm: currentForm,
+                    setSize: false,
+                    setPosition: false);
+            }
+        }
 
         /// <summary>
         /// Hash the password using SHA-256
