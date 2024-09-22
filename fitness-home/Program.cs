@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using fitness_home.Views.Onboarding;
+using System;
 using System.Windows.Forms;
-using fitness_home.Views.Onboarding;
 
 
 namespace fitness_home
 {
     internal static class Program
     {
-        public static Register EntryPoint;
+        public static Splash EntryPoint;
 
         /// <summary>
         /// The main entry point for the application.
@@ -20,7 +17,7 @@ namespace fitness_home
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            EntryPoint = new Register();
+            EntryPoint = new Splash();
             Application.Run(EntryPoint);
         }
     }

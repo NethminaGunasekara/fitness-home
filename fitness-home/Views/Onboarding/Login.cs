@@ -1,7 +1,9 @@
-﻿using fitness_home.Services;
+﻿using AnimateDemo;
+using fitness_home.Services;
 using fitness_home.Services.Types;
 using fitness_home.Utils;
- using fitness_home.Views.Messages;
+using fitness_home.Utils.Validate;
+using fitness_home.Views.Messages;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -53,6 +55,8 @@ namespace fitness_home
             else if (loginStatus == LoginStatus.DatabaseError)
             {
                 DatabaseError databaseError = new DatabaseError();
+                
+                // Set error message position
                 databaseError.StartPosition = FormStartPosition.Manual;
 
                 Point messageLocation = new Point(
@@ -61,9 +65,11 @@ namespace fitness_home
 
                 databaseError.Location = messageLocation;
 
+                // Display the error message
                 databaseError.ShowDialog();
             }
 
+            // If either email isn't found or password is incorrect
             else
             {
                 loginError.title =
@@ -71,7 +77,7 @@ namespace fitness_home
                         "The email you entered is not found" : "The password you entered is incorrect";
 
                 loginError.message =
-                    loginStatus == LoginStatus.InvalidPassword ?
+                    loginStatus == LoginStatus.InvalidEmail ?
                         "Please check your email and try again" : "Please check your password and try again";
 
                 loginError.ShowDialog();
@@ -80,20 +86,31 @@ namespace fitness_home
 
         private void Email_TextChanged(object sender, EventArgs e)
         {
-            ValidateInput.Email(
+            LoginForm.ValidateEmail(
                 sender: ref sender,
-                loginButton: ref btn_get_started,
-                inputPanel: ref panel_email,
-                inputTextBox: ref textbox_email);
+                loginButton: ref btn_get_started);
         }
 
         private void Password_TextChanged(object sender, EventArgs e)
         {
-            ValidateInput.Password(
+            LoginForm.ValidatePassword(
                 sender: ref sender,
-                loginButton: ref btn_get_started,
-                inputPanel: ref panel_password,
-                inputTextBox: ref textbox_password);
+                loginButton: ref btn_get_started);
+        }
+
+        private void link_sign_up_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Helpers.ShowForm(
+                targetForm: FormProvider.Register ?? (FormProvider.Register = new Register()),
+                currentForm: this, 
+                setSize: false, 
+                setPosition: false);
+        }
+
+        private void OnLoad(object sender, EventArgs e)
+        {
+            // Form transition
+            WinAPI.AnimateWindow(this.Handle, 400, WinAPI.BLEND);
         }
     }
 }

@@ -1,25 +1,39 @@
-﻿using System;
+﻿using AnimateDemo;
+using fitness_home.Utils;
+using fitness_home.Utils.Validate;
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace fitness_home
 {
     public partial class Register : Form
     {
+        public static Dictionary<string, bool> HasEntered = new Dictionary<string, bool>();
+
         public Register()
         {
             InitializeComponent();
+
+            // Initialize fields to check
+            HasEntered.Add("first-name", false);
+            HasEntered.Add("last-name", false);
+            HasEntered.Add("dob", false);
+            HasEntered.Add("nic", false);
+            HasEntered.Add("gender", false);
+            HasEntered.Add("email", false);
+            HasEntered.Add("phone", false);
+            HasEntered.Add("address", false);
+            HasEntered.Add("password", false);
+            HasEntered.Add("ecname", false);
+            HasEntered.Add("ecphone", false);
         }
 
         private void OnLoad(object sender, EventArgs e)
         {
+            // Form transition
+            WinAPI.AnimateWindow(this.Handle, 400, WinAPI.BLEND);
+
             // Update the margin right value of heading
             label_page_heading.Margin = new System.Windows.Forms.Padding(0, 0, panel_previous.Width, 0);
         }
@@ -30,189 +44,44 @@ namespace fitness_home
             label_page_heading.Margin = new System.Windows.Forms.Padding(0, 0, panel_previous.Width, 0);
         }
 
-        private void button_sign_up_Click(object sender, EventArgs e)
-        {
+        // Add placeholder text when the focus leaves
+        private void AddPlaceholder(object sender, EventArgs e) => Placeholder.Add(ref sender);
 
+        // Remove placeholder text when the focus enters
+        private void RemovePlaceholder(object sender, EventArgs e) => Placeholder.Remove(ref sender);
+
+        // Only allow digits and control keys
+        private void NumericOnly_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar));
         }
 
-        private void textbox_email_TextChanged(object sender, EventArgs e)
+        // ** Event: Validate first name
+        private void textBox_fname_TextChanged(object sender, EventArgs e)
         {
-
+            RegisterForm.ValidateFirstName(sender, e);
+            RegisterForm.UpdateSignUpButtonState(button_sign_up);
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        // ** Event: Validate last name
+        private void textBox_lname_TextChanged(object sender, EventArgs e)
         {
-
+            RegisterForm.ValidateLastName(sender, e);
+            RegisterForm.UpdateSignUpButtonState(button_sign_up);
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        // ** Event: Validate date of birth
+        private void textBox_dob_TextChanged(object sender, EventArgs e)
         {
-
+            RegisterForm.ValidateDOB(sender, e);
+            RegisterForm.UpdateSignUpButtonState(button_sign_up);
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox_email_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel_previous_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button_previous_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void radioButton_female_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void radioButton_male_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel_gender_heading_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel_dob_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel_name_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
+        // ** Event: Validate NIC number
         private void textBox_nic_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void panel_nic_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label_nic_heading_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox_confirm_password_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel_contact_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel_phone_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox_phone_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel_email_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel_contact_info_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label_contact_info_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel_address_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel_password_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel_confirm_password_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel_nic_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel_password_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox_password_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel_gender_select_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label_page_heading_Click(object sender, EventArgs e)
-        {
-
+            RegisterForm.ValidateNIC(sender, e);
+            RegisterForm.UpdateSignUpButtonState(button_sign_up);
         }
     }
 }

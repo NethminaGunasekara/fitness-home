@@ -2,8 +2,6 @@
 using fitness_home.Services;
 using fitness_home.Services.Types;
 using fitness_home.Utils;
-using fitness_home.Utils.Types.User;
-using fitness_home.Views.Dashboard;
 using fitness_home.Views.Messages;
 using System;
 using System.Configuration;
@@ -135,6 +133,8 @@ namespace fitness_home.Views.Onboarding
                 // If there's a database connection error
                 else if (loginStatus == LoginStatus.DatabaseError) {
                     DatabaseError databaseError = new DatabaseError();
+
+                    // Set error message position
                     databaseError.StartPosition = FormStartPosition.Manual;
 
                     int x = this.Location.X + (this.Width / 2) - databaseError.Width / 2;
@@ -144,6 +144,7 @@ namespace fitness_home.Views.Onboarding
 
                     databaseError.Location = location;
 
+                    // Display the error message
                     databaseError.ShowDialog();
                 }
             }

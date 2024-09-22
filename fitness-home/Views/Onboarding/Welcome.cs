@@ -23,6 +23,7 @@ namespace fitness_home
 
         private void OnLoad(object sender, EventArgs e)
         {
+            // Form transition
             WinAPI.AnimateWindow(this.Handle, 400, WinAPI.BLEND);
         }
     }

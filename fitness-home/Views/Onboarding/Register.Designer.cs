@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.TextBox textBox_nic;
             System.Windows.Forms.TextBox textBox_fname;
             System.Windows.Forms.TextBox textBox_lname;
@@ -42,10 +41,10 @@
             System.Windows.Forms.TextBox textBox_password;
             System.Windows.Forms.TextBox textBox_ec_phone;
             System.Windows.Forms.TextBox textBox_ec_name;
+            this.panel_page_heading = new System.Windows.Forms.Panel();
             this.label_page_heading = new System.Windows.Forms.Label();
             this.panel_previous = new System.Windows.Forms.Panel();
             this.button_previous = new System.Windows.Forms.Button();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tableLayoutPanel_first = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel_gender = new System.Windows.Forms.TableLayoutPanel();
             this.panel_gender_select = new System.Windows.Forms.Panel();
@@ -82,14 +81,13 @@
             this.panel_email = new System.Windows.Forms.Panel();
             this.panel_contact_info = new System.Windows.Forms.Panel();
             this.label_contact_info = new System.Windows.Forms.Label();
-            this.panel_sign_up_btn = new System.Windows.Forms.Panel();
             this.panel_ec_info = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel_ec_phone = new System.Windows.Forms.Panel();
             this.panel_ec_name = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel_page_heading = new System.Windows.Forms.Panel();
+            this.panel_ec_details = new System.Windows.Forms.Panel();
+            this.label_ec_details = new System.Windows.Forms.Label();
+            this.panel_sign_up_btn = new System.Windows.Forms.Panel();
             textBox_nic = new System.Windows.Forms.TextBox();
             textBox_fname = new System.Windows.Forms.TextBox();
             textBox_lname = new System.Windows.Forms.TextBox();
@@ -103,6 +101,7 @@
             textBox_ec_phone = new System.Windows.Forms.TextBox();
             textBox_ec_name = new System.Windows.Forms.TextBox();
             table_header.SuspendLayout();
+            this.panel_page_heading.SuspendLayout();
             this.panel_previous.SuspendLayout();
             this.tableLayoutPanel_first.SuspendLayout();
             this.tableLayoutPanel_gender.SuspendLayout();
@@ -131,13 +130,12 @@
             this.panel_phone.SuspendLayout();
             this.panel_email.SuspendLayout();
             this.panel_contact_info.SuspendLayout();
-            this.panel_sign_up_btn.SuspendLayout();
             this.panel_ec_info.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel_ec_phone.SuspendLayout();
             this.panel_ec_name.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel_page_heading.SuspendLayout();
+            this.panel_ec_details.SuspendLayout();
+            this.panel_sign_up_btn.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox_nic
@@ -150,12 +148,13 @@
             textBox_nic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             textBox_nic.Location = new System.Drawing.Point(10, 8);
             textBox_nic.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_nic.MaxLength = 100;
+            textBox_nic.MaxLength = 12;
             textBox_nic.Name = "textBox_nic";
             textBox_nic.Size = new System.Drawing.Size(340, 22);
             textBox_nic.TabIndex = 5;
             textBox_nic.Text = "XXXXXXXXXXXX";
             textBox_nic.TextChanged += new System.EventHandler(this.textBox_nic_TextChanged);
+            textBox_nic.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericOnly_KeyPress);
             // 
             // textBox_fname
             // 
@@ -167,11 +166,14 @@
             textBox_fname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             textBox_fname.Location = new System.Drawing.Point(10, 8);
             textBox_fname.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_fname.MaxLength = 100;
+            textBox_fname.MaxLength = 50;
             textBox_fname.Name = "textBox_fname";
             textBox_fname.Size = new System.Drawing.Size(340, 22);
             textBox_fname.TabIndex = 5;
             textBox_fname.Text = "First name";
+            textBox_fname.TextChanged += new System.EventHandler(this.textBox_fname_TextChanged);
+            textBox_fname.Enter += new System.EventHandler(this.RemovePlaceholder);
+            textBox_fname.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // textBox_lname
             // 
@@ -183,11 +185,14 @@
             textBox_lname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             textBox_lname.Location = new System.Drawing.Point(10, 8);
             textBox_lname.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_lname.MaxLength = 100;
+            textBox_lname.MaxLength = 50;
             textBox_lname.Name = "textBox_lname";
             textBox_lname.Size = new System.Drawing.Size(340, 22);
             textBox_lname.TabIndex = 5;
             textBox_lname.Text = "Last name";
+            textBox_lname.TextChanged += new System.EventHandler(this.textBox_lname_TextChanged);
+            textBox_lname.Enter += new System.EventHandler(this.RemovePlaceholder);
+            textBox_lname.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // textBox_dob
             // 
@@ -199,12 +204,12 @@
             textBox_dob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             textBox_dob.Location = new System.Drawing.Point(10, 8);
             textBox_dob.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_dob.MaxLength = 100;
+            textBox_dob.MaxLength = 10;
             textBox_dob.Name = "textBox_dob";
             textBox_dob.Size = new System.Drawing.Size(340, 22);
             textBox_dob.TabIndex = 5;
             textBox_dob.Text = "YYYY/MM/DD";
-            textBox_dob.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            textBox_dob.TextChanged += new System.EventHandler(this.textBox_dob_TextChanged);
             // 
             // table_header
             // 
@@ -222,6 +227,15 @@
             table_header.Size = new System.Drawing.Size(1264, 120);
             table_header.TabIndex = 0;
             // 
+            // panel_page_heading
+            // 
+            this.panel_page_heading.Controls.Add(this.label_page_heading);
+            this.panel_page_heading.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_page_heading.Location = new System.Drawing.Point(129, 3);
+            this.panel_page_heading.Name = "panel_page_heading";
+            this.panel_page_heading.Size = new System.Drawing.Size(1132, 114);
+            this.panel_page_heading.TabIndex = 2;
+            // 
             // label_page_heading
             // 
             this.label_page_heading.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -236,7 +250,6 @@
             this.label_page_heading.TabIndex = 1;
             this.label_page_heading.Text = "BECOME A MEMBER";
             this.label_page_heading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_page_heading.Click += new System.EventHandler(this.label_page_heading_Click);
             // 
             // panel_previous
             // 
@@ -247,7 +260,6 @@
             this.panel_previous.Name = "panel_previous";
             this.panel_previous.Size = new System.Drawing.Size(126, 120);
             this.panel_previous.TabIndex = 1;
-            this.panel_previous.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_previous_Paint);
             // 
             // button_previous
             // 
@@ -265,7 +277,6 @@
             this.button_previous.Size = new System.Drawing.Size(34, 74);
             this.button_previous.TabIndex = 0;
             this.button_previous.UseVisualStyleBackColor = false;
-            this.button_previous.Click += new System.EventHandler(this.button_previous_Click);
             // 
             // textBox_phone
             // 
@@ -282,7 +293,7 @@
             textBox_phone.Size = new System.Drawing.Size(346, 22);
             textBox_phone.TabIndex = 5;
             textBox_phone.Text = "Phone";
-            textBox_phone.TextChanged += new System.EventHandler(this.textBox_phone_TextChanged);
+            textBox_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericOnly_KeyPress);
             // 
             // textBox_email
             // 
@@ -299,7 +310,6 @@
             textBox_email.Size = new System.Drawing.Size(346, 22);
             textBox_email.TabIndex = 5;
             textBox_email.Text = "E-mail";
-            textBox_email.TextChanged += new System.EventHandler(this.textBox_email_TextChanged_1);
             // 
             // textBox_address
             // 
@@ -316,7 +326,6 @@
             textBox_address.Size = new System.Drawing.Size(346, 22);
             textBox_address.TabIndex = 5;
             textBox_address.Text = "Address";
-            textBox_address.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox_confirm_password
             // 
@@ -333,7 +342,6 @@
             textBox_confirm_password.Size = new System.Drawing.Size(346, 22);
             textBox_confirm_password.TabIndex = 5;
             textBox_confirm_password.Text = "Confirm password";
-            textBox_confirm_password.TextChanged += new System.EventHandler(this.textBox_confirm_password_TextChanged);
             // 
             // textBox_password
             // 
@@ -350,13 +358,39 @@
             textBox_password.Size = new System.Drawing.Size(346, 22);
             textBox_password.TabIndex = 5;
             textBox_password.Text = "New password";
-            textBox_password.TextChanged += new System.EventHandler(this.textBox_password_TextChanged);
             // 
-            // contextMenuStrip1
+            // textBox_ec_phone
             // 
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            textBox_ec_phone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            textBox_ec_phone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            textBox_ec_phone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            textBox_ec_phone.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            textBox_ec_phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            textBox_ec_phone.Location = new System.Drawing.Point(7, 8);
+            textBox_ec_phone.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            textBox_ec_phone.MaxLength = 100;
+            textBox_ec_phone.Name = "textBox_ec_phone";
+            textBox_ec_phone.Size = new System.Drawing.Size(353, 22);
+            textBox_ec_phone.TabIndex = 5;
+            textBox_ec_phone.Text = "Emergency contact phone";
+            textBox_ec_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericOnly_KeyPress);
+            // 
+            // textBox_ec_name
+            // 
+            textBox_ec_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            textBox_ec_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            textBox_ec_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            textBox_ec_name.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            textBox_ec_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            textBox_ec_name.Location = new System.Drawing.Point(7, 8);
+            textBox_ec_name.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            textBox_ec_name.MaxLength = 100;
+            textBox_ec_name.Name = "textBox_ec_name";
+            textBox_ec_name.Size = new System.Drawing.Size(353, 22);
+            textBox_ec_name.TabIndex = 5;
+            textBox_ec_name.Text = "Emergency contact name";
             // 
             // tableLayoutPanel_first
             // 
@@ -408,7 +442,6 @@
             this.panel_gender_select.Name = "panel_gender_select";
             this.panel_gender_select.Size = new System.Drawing.Size(415, 38);
             this.panel_gender_select.TabIndex = 8;
-            this.panel_gender_select.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_gender_select_Paint);
             // 
             // tableLayoutPanel5
             // 
@@ -424,7 +457,6 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(415, 38);
             this.tableLayoutPanel5.TabIndex = 0;
-            this.tableLayoutPanel5.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel5_Paint);
             // 
             // radioButton_female
             // 
@@ -439,7 +471,6 @@
             this.radioButton_female.TabStop = true;
             this.radioButton_female.Text = "Female";
             this.radioButton_female.UseVisualStyleBackColor = true;
-            this.radioButton_female.CheckedChanged += new System.EventHandler(this.radioButton_female_CheckedChanged);
             // 
             // radioButton_male
             // 
@@ -454,7 +485,6 @@
             this.radioButton_male.TabStop = true;
             this.radioButton_male.Text = "Male";
             this.radioButton_male.UseVisualStyleBackColor = true;
-            this.radioButton_male.CheckedChanged += new System.EventHandler(this.radioButton_male_CheckedChanged);
             // 
             // panel_gender_heading
             // 
@@ -465,7 +495,6 @@
             this.panel_gender_heading.Name = "panel_gender_heading";
             this.panel_gender_heading.Size = new System.Drawing.Size(409, 32);
             this.panel_gender_heading.TabIndex = 10;
-            this.panel_gender_heading.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_gender_heading_Paint);
             // 
             // label_gender_heading
             // 
@@ -477,7 +506,6 @@
             this.label_gender_heading.Size = new System.Drawing.Size(67, 24);
             this.label_gender_heading.TabIndex = 0;
             this.label_gender_heading.Text = "Gender";
-            this.label_gender_heading.Click += new System.EventHandler(this.label3_Click);
             // 
             // tableLayoutPanel_dob
             // 
@@ -496,7 +524,6 @@
             this.tableLayoutPanel_dob.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel_dob.Size = new System.Drawing.Size(415, 97);
             this.tableLayoutPanel_dob.TabIndex = 12;
-            this.tableLayoutPanel_dob.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_dob_Paint);
             // 
             // panel_dob
             // 
@@ -551,7 +578,6 @@
             this.tableLayoutPanel_name.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel_name.Size = new System.Drawing.Size(415, 154);
             this.tableLayoutPanel_name.TabIndex = 11;
-            this.tableLayoutPanel_name.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_name_Paint);
             // 
             // panel_lname
             // 
@@ -617,7 +643,6 @@
             this.tableLayoutPanel_nic.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel_nic.Size = new System.Drawing.Size(415, 114);
             this.tableLayoutPanel_nic.TabIndex = 12;
-            this.tableLayoutPanel_nic.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_nic_Paint);
             // 
             // panel_nic
             // 
@@ -631,7 +656,6 @@
             this.panel_nic.Name = "panel_nic";
             this.panel_nic.Size = new System.Drawing.Size(361, 40);
             this.panel_nic.TabIndex = 8;
-            this.panel_nic.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_nic_Paint);
             // 
             // panel_nic_heading
             // 
@@ -653,7 +677,6 @@
             this.label_nic_heading.Size = new System.Drawing.Size(244, 24);
             this.label_nic_heading.TabIndex = 0;
             this.label_nic_heading.Text = "National Identity Card Number";
-            this.label_nic_heading.Click += new System.EventHandler(this.label_nic_heading_Click);
             // 
             // button_sign_up
             // 
@@ -670,7 +693,6 @@
             this.button_sign_up.TabIndex = 1;
             this.button_sign_up.Text = "SIGN UP";
             this.button_sign_up.UseVisualStyleBackColor = false;
-            this.button_sign_up.Click += new System.EventHandler(this.button_sign_up_Click);
             // 
             // panel_header
             // 
@@ -723,7 +745,6 @@
             this.tableLayoutPanel_second.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_second.Size = new System.Drawing.Size(415, 442);
             this.tableLayoutPanel_second.TabIndex = 5;
-            this.tableLayoutPanel_second.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel6_Paint);
             // 
             // tableLayoutPanel_password
             // 
@@ -742,7 +763,6 @@
             this.tableLayoutPanel_password.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_password.Size = new System.Drawing.Size(409, 163);
             this.tableLayoutPanel_password.TabIndex = 13;
-            this.tableLayoutPanel_password.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_password_Paint);
             // 
             // panel_confirm_password
             // 
@@ -756,7 +776,6 @@
             this.panel_confirm_password.Name = "panel_confirm_password";
             this.panel_confirm_password.Size = new System.Drawing.Size(361, 40);
             this.panel_confirm_password.TabIndex = 9;
-            this.panel_confirm_password.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_confirm_password_Paint);
             // 
             // panel_password
             // 
@@ -770,7 +789,6 @@
             this.panel_password.Name = "panel_password";
             this.panel_password.Size = new System.Drawing.Size(361, 40);
             this.panel_password.TabIndex = 8;
-            this.panel_password.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_password_Paint);
             // 
             // panel_new_password
             // 
@@ -781,7 +799,6 @@
             this.panel_new_password.Name = "panel_new_password";
             this.panel_new_password.Size = new System.Drawing.Size(403, 34);
             this.panel_new_password.TabIndex = 10;
-            this.panel_new_password.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label_new_password
             // 
@@ -793,7 +810,6 @@
             this.label_new_password.Size = new System.Drawing.Size(85, 24);
             this.label_new_password.TabIndex = 0;
             this.label_new_password.Text = "Password";
-            this.label_new_password.Click += new System.EventHandler(this.label1_Click);
             // 
             // tableLayoutPanel_contact
             // 
@@ -813,7 +829,6 @@
             this.tableLayoutPanel_contact.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_contact.Size = new System.Drawing.Size(409, 215);
             this.tableLayoutPanel_contact.TabIndex = 12;
-            this.tableLayoutPanel_contact.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_contact_Paint);
             // 
             // panel_address
             // 
@@ -827,7 +842,6 @@
             this.panel_address.Name = "panel_address";
             this.panel_address.Size = new System.Drawing.Size(361, 40);
             this.panel_address.TabIndex = 11;
-            this.panel_address.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_address_Paint);
             // 
             // panel_phone
             // 
@@ -841,7 +855,6 @@
             this.panel_phone.Name = "panel_phone";
             this.panel_phone.Size = new System.Drawing.Size(361, 40);
             this.panel_phone.TabIndex = 9;
-            this.panel_phone.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_phone_Paint);
             // 
             // panel_email
             // 
@@ -855,7 +868,6 @@
             this.panel_email.Name = "panel_email";
             this.panel_email.Size = new System.Drawing.Size(361, 40);
             this.panel_email.TabIndex = 8;
-            this.panel_email.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_email_Paint);
             // 
             // panel_contact_info
             // 
@@ -866,7 +878,6 @@
             this.panel_contact_info.Name = "panel_contact_info";
             this.panel_contact_info.Size = new System.Drawing.Size(403, 45);
             this.panel_contact_info.TabIndex = 10;
-            this.panel_contact_info.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_contact_info_Paint);
             // 
             // label_contact_info
             // 
@@ -878,17 +889,6 @@
             this.label_contact_info.Size = new System.Drawing.Size(164, 24);
             this.label_contact_info.TabIndex = 0;
             this.label_contact_info.Text = "Contact information";
-            this.label_contact_info.Click += new System.EventHandler(this.label_contact_info_Click);
-            // 
-            // panel_sign_up_btn
-            // 
-            this.table_registration_page.SetColumnSpan(this.panel_sign_up_btn, 3);
-            this.panel_sign_up_btn.Controls.Add(this.button_sign_up);
-            this.panel_sign_up_btn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_sign_up_btn.Location = new System.Drawing.Point(3, 571);
-            this.panel_sign_up_btn.Name = "panel_sign_up_btn";
-            this.panel_sign_up_btn.Size = new System.Drawing.Size(1258, 107);
-            this.panel_sign_up_btn.TabIndex = 4;
             // 
             // panel_ec_info
             // 
@@ -905,7 +905,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panel_ec_phone, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel_ec_name, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panel5, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel_ec_details, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -930,22 +930,6 @@
             this.panel_ec_phone.Size = new System.Drawing.Size(368, 40);
             this.panel_ec_phone.TabIndex = 9;
             // 
-            // textBox_ec_phone
-            // 
-            textBox_ec_phone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            textBox_ec_phone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            textBox_ec_phone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            textBox_ec_phone.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            textBox_ec_phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            textBox_ec_phone.Location = new System.Drawing.Point(7, 8);
-            textBox_ec_phone.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_ec_phone.MaxLength = 100;
-            textBox_ec_phone.Name = "textBox_ec_phone";
-            textBox_ec_phone.Size = new System.Drawing.Size(353, 22);
-            textBox_ec_phone.TabIndex = 5;
-            textBox_ec_phone.Text = "Emergency contact phone";
-            // 
             // panel_ec_name
             // 
             this.panel_ec_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -959,51 +943,36 @@
             this.panel_ec_name.Size = new System.Drawing.Size(368, 40);
             this.panel_ec_name.TabIndex = 8;
             // 
-            // textBox_ec_name
+            // panel_ec_details
             // 
-            textBox_ec_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            textBox_ec_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            textBox_ec_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            textBox_ec_name.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            textBox_ec_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            textBox_ec_name.Location = new System.Drawing.Point(7, 8);
-            textBox_ec_name.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_ec_name.MaxLength = 100;
-            textBox_ec_name.Name = "textBox_ec_name";
-            textBox_ec_name.Size = new System.Drawing.Size(353, 22);
-            textBox_ec_name.TabIndex = 5;
-            textBox_ec_name.Text = "Emergency contact name";
+            this.panel_ec_details.Controls.Add(this.label_ec_details);
+            this.panel_ec_details.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_ec_details.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.panel_ec_details.Location = new System.Drawing.Point(3, 3);
+            this.panel_ec_details.Name = "panel_ec_details";
+            this.panel_ec_details.Size = new System.Drawing.Size(410, 45);
+            this.panel_ec_details.TabIndex = 10;
             // 
-            // panel5
+            // label_ec_details
             // 
-            this.panel5.Controls.Add(this.label2);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.panel5.Location = new System.Drawing.Point(3, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(410, 45);
-            this.panel5.TabIndex = 10;
+            this.label_ec_details.AutoSize = true;
+            this.label_ec_details.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_ec_details.Location = new System.Drawing.Point(18, 11);
+            this.label_ec_details.Margin = new System.Windows.Forms.Padding(0);
+            this.label_ec_details.Name = "label_ec_details";
+            this.label_ec_details.Size = new System.Drawing.Size(210, 24);
+            this.label_ec_details.TabIndex = 0;
+            this.label_ec_details.Text = "Emergency contact details";
             // 
-            // label2
+            // panel_sign_up_btn
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(18, 11);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(210, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Emergency contact details";
-            // 
-            // panel_page_heading
-            // 
-            this.panel_page_heading.Controls.Add(this.label_page_heading);
-            this.panel_page_heading.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_page_heading.Location = new System.Drawing.Point(129, 3);
-            this.panel_page_heading.Name = "panel_page_heading";
-            this.panel_page_heading.Size = new System.Drawing.Size(1132, 114);
-            this.panel_page_heading.TabIndex = 2;
+            this.table_registration_page.SetColumnSpan(this.panel_sign_up_btn, 3);
+            this.panel_sign_up_btn.Controls.Add(this.button_sign_up);
+            this.panel_sign_up_btn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_sign_up_btn.Location = new System.Drawing.Point(3, 571);
+            this.panel_sign_up_btn.Name = "panel_sign_up_btn";
+            this.panel_sign_up_btn.Size = new System.Drawing.Size(1258, 107);
+            this.panel_sign_up_btn.TabIndex = 4;
             // 
             // Register
             // 
@@ -1022,6 +991,8 @@
             this.Load += new System.EventHandler(this.OnLoad);
             this.SizeChanged += new System.EventHandler(this.OnResize);
             table_header.ResumeLayout(false);
+            this.panel_page_heading.ResumeLayout(false);
+            this.panel_page_heading.PerformLayout();
             this.panel_previous.ResumeLayout(false);
             this.tableLayoutPanel_first.ResumeLayout(false);
             this.tableLayoutPanel_gender.ResumeLayout(false);
@@ -1066,24 +1037,20 @@
             this.panel_email.PerformLayout();
             this.panel_contact_info.ResumeLayout(false);
             this.panel_contact_info.PerformLayout();
-            this.panel_sign_up_btn.ResumeLayout(false);
             this.panel_ec_info.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel_ec_phone.ResumeLayout(false);
             this.panel_ec_phone.PerformLayout();
             this.panel_ec_name.ResumeLayout(false);
             this.panel_ec_name.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel_page_heading.ResumeLayout(false);
-            this.panel_page_heading.PerformLayout();
+            this.panel_ec_details.ResumeLayout(false);
+            this.panel_ec_details.PerformLayout();
+            this.panel_sign_up_btn.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_first;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_dob;
         private System.Windows.Forms.Panel panel_dob;
@@ -1128,8 +1095,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel_ec_phone;
         private System.Windows.Forms.Panel panel_ec_name;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel_ec_details;
+        private System.Windows.Forms.Label label_ec_details;
         private System.Windows.Forms.Panel panel_page_heading;
     }
 }

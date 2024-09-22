@@ -127,6 +127,7 @@ namespace fitness_home.Services
                 // Log the error (for debugging purposes)
                 Console.WriteLine($"DB Connection Error: {err.Data}");
 
+
                 // Return login status indicating a database error
                 return LoginStatus.DatabaseError;
             }

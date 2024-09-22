@@ -1,9 +1,4 @@
 ﻿using fitness_home.Views.Dashboard;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace fitness_home.Services
 {
@@ -12,6 +7,7 @@ namespace fitness_home.Services
         // Onboarding Views
         public static Welcome Welcome;
         public static Login Login;
+        public static Register Register;
 
         // User Dashboards
         public static MemberDashboard MemberDashboard;

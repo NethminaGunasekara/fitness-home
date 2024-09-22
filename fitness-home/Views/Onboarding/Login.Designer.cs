@@ -276,6 +276,7 @@
             this.link_sign_up.Text = "Sign Up";
             this.link_sign_up.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.link_sign_up.VisitedLinkColor = System.Drawing.Color.White;
+            this.link_sign_up.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_sign_up_LinkClicked);
             // 
             // Login
             // 
@@ -287,6 +288,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "Login - Fitness Home";
+            this.Load += new System.EventHandler(this.OnLoad);
             ((System.ComponentModel.ISupportInitialize)(icon_password)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(icon_email)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
