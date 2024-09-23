@@ -37,14 +37,14 @@
             System.Windows.Forms.TextBox textBox_phone;
             System.Windows.Forms.TextBox textBox_email;
             System.Windows.Forms.TextBox textBox_address;
-            System.Windows.Forms.TextBox textBox_confirm_password;
-            System.Windows.Forms.TextBox textBox_password;
             System.Windows.Forms.TextBox textBox_ec_phone;
             System.Windows.Forms.TextBox textBox_ec_name;
             this.panel_page_heading = new System.Windows.Forms.Panel();
             this.label_page_heading = new System.Windows.Forms.Label();
             this.panel_previous = new System.Windows.Forms.Panel();
             this.button_previous = new System.Windows.Forms.Button();
+            this.textBox_confirm_password = new System.Windows.Forms.TextBox();
+            this.textBox_new_password = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel_first = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel_gender = new System.Windows.Forms.TableLayoutPanel();
             this.panel_gender_select = new System.Windows.Forms.Panel();
@@ -87,7 +87,16 @@
             this.panel_ec_name = new System.Windows.Forms.Panel();
             this.panel_ec_details = new System.Windows.Forms.Panel();
             this.label_ec_details = new System.Windows.Forms.Label();
+            this.panel_pw_policy_container = new System.Windows.Forms.Panel();
+            this.panel_pw_policy = new System.Windows.Forms.Panel();
+            this.icon_char_rqmt = new System.Windows.Forms.PictureBox();
+            this.icon_passwords_match = new System.Windows.Forms.PictureBox();
+            this.icon_length_rqmt = new System.Windows.Forms.PictureBox();
+            this.label_char_rqmt = new System.Windows.Forms.Label();
+            this.label_passwords_match = new System.Windows.Forms.Label();
+            this.label_length_rqmt = new System.Windows.Forms.Label();
             this.panel_sign_up_btn = new System.Windows.Forms.Panel();
+            this.panel_registration_page = new System.Windows.Forms.Panel();
             textBox_nic = new System.Windows.Forms.TextBox();
             textBox_fname = new System.Windows.Forms.TextBox();
             textBox_lname = new System.Windows.Forms.TextBox();
@@ -96,8 +105,6 @@
             textBox_phone = new System.Windows.Forms.TextBox();
             textBox_email = new System.Windows.Forms.TextBox();
             textBox_address = new System.Windows.Forms.TextBox();
-            textBox_confirm_password = new System.Windows.Forms.TextBox();
-            textBox_password = new System.Windows.Forms.TextBox();
             textBox_ec_phone = new System.Windows.Forms.TextBox();
             textBox_ec_name = new System.Windows.Forms.TextBox();
             table_header.SuspendLayout();
@@ -135,7 +142,13 @@
             this.panel_ec_phone.SuspendLayout();
             this.panel_ec_name.SuspendLayout();
             this.panel_ec_details.SuspendLayout();
+            this.panel_pw_policy_container.SuspendLayout();
+            this.panel_pw_policy.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_char_rqmt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_passwords_match)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_length_rqmt)).BeginInit();
             this.panel_sign_up_btn.SuspendLayout();
+            this.panel_registration_page.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox_nic
@@ -154,7 +167,9 @@
             textBox_nic.TabIndex = 5;
             textBox_nic.Text = "XXXXXXXXXXXX";
             textBox_nic.TextChanged += new System.EventHandler(this.textBox_nic_TextChanged);
+            textBox_nic.Enter += new System.EventHandler(this.RemovePlaceholder);
             textBox_nic.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericOnly_KeyPress);
+            textBox_nic.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // textBox_fname
             // 
@@ -210,6 +225,8 @@
             textBox_dob.TabIndex = 5;
             textBox_dob.Text = "YYYY/MM/DD";
             textBox_dob.TextChanged += new System.EventHandler(this.textBox_dob_TextChanged);
+            textBox_dob.Enter += new System.EventHandler(this.RemovePlaceholder);
+            textBox_dob.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // table_header
             // 
@@ -288,12 +305,15 @@
             textBox_phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             textBox_phone.Location = new System.Drawing.Point(7, 8);
             textBox_phone.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_phone.MaxLength = 100;
+            textBox_phone.MaxLength = 10;
             textBox_phone.Name = "textBox_phone";
             textBox_phone.Size = new System.Drawing.Size(346, 22);
             textBox_phone.TabIndex = 5;
             textBox_phone.Text = "Phone";
+            textBox_phone.TextChanged += new System.EventHandler(this.textBox_phone_TextChanged);
+            textBox_phone.Enter += new System.EventHandler(this.RemovePlaceholder);
             textBox_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericOnly_KeyPress);
+            textBox_phone.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // textBox_email
             // 
@@ -310,6 +330,9 @@
             textBox_email.Size = new System.Drawing.Size(346, 22);
             textBox_email.TabIndex = 5;
             textBox_email.Text = "E-mail";
+            textBox_email.TextChanged += new System.EventHandler(this.textBox_email_TextChanged);
+            textBox_email.Enter += new System.EventHandler(this.RemovePlaceholder);
+            textBox_email.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // textBox_address
             // 
@@ -321,43 +344,52 @@
             textBox_address.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             textBox_address.Location = new System.Drawing.Point(7, 8);
             textBox_address.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_address.MaxLength = 100;
+            textBox_address.MaxLength = 255;
             textBox_address.Name = "textBox_address";
             textBox_address.Size = new System.Drawing.Size(346, 22);
             textBox_address.TabIndex = 5;
             textBox_address.Text = "Address";
+            textBox_address.TextChanged += new System.EventHandler(this.textBox_address_TextChanged);
+            textBox_address.Enter += new System.EventHandler(this.RemovePlaceholder);
+            textBox_address.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // textBox_confirm_password
             // 
-            textBox_confirm_password.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBox_confirm_password.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            textBox_confirm_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            textBox_confirm_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            textBox_confirm_password.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            textBox_confirm_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            textBox_confirm_password.Location = new System.Drawing.Point(7, 8);
-            textBox_confirm_password.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_confirm_password.MaxLength = 100;
-            textBox_confirm_password.Name = "textBox_confirm_password";
-            textBox_confirm_password.Size = new System.Drawing.Size(346, 22);
-            textBox_confirm_password.TabIndex = 5;
-            textBox_confirm_password.Text = "Confirm password";
+            this.textBox_confirm_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.textBox_confirm_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_confirm_password.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_confirm_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox_confirm_password.Location = new System.Drawing.Point(7, 8);
+            this.textBox_confirm_password.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.textBox_confirm_password.MaxLength = 100;
+            this.textBox_confirm_password.Name = "textBox_confirm_password";
+            this.textBox_confirm_password.Size = new System.Drawing.Size(346, 22);
+            this.textBox_confirm_password.TabIndex = 5;
+            this.textBox_confirm_password.Text = "Confirm password";
+            this.textBox_confirm_password.TextChanged += new System.EventHandler(this.textBox_confirm_password_TextChanged);
+            this.textBox_confirm_password.Enter += new System.EventHandler(this.RemovePlaceholder);
+            this.textBox_confirm_password.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
-            // textBox_password
+            // textBox_new_password
             // 
-            textBox_password.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBox_new_password.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            textBox_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            textBox_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            textBox_password.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            textBox_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            textBox_password.Location = new System.Drawing.Point(7, 8);
-            textBox_password.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_password.MaxLength = 100;
-            textBox_password.Name = "textBox_password";
-            textBox_password.Size = new System.Drawing.Size(346, 22);
-            textBox_password.TabIndex = 5;
-            textBox_password.Text = "New password";
+            this.textBox_new_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.textBox_new_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_new_password.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_new_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox_new_password.Location = new System.Drawing.Point(7, 8);
+            this.textBox_new_password.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.textBox_new_password.MaxLength = 100;
+            this.textBox_new_password.Name = "textBox_new_password";
+            this.textBox_new_password.Size = new System.Drawing.Size(346, 22);
+            this.textBox_new_password.TabIndex = 5;
+            this.textBox_new_password.Text = "New password";
+            this.textBox_new_password.TextChanged += new System.EventHandler(this.textBox_password_TextChanged);
+            this.textBox_new_password.Enter += new System.EventHandler(this.RemovePlaceholder);
+            this.textBox_new_password.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // textBox_ec_phone
             // 
@@ -374,7 +406,10 @@
             textBox_ec_phone.Size = new System.Drawing.Size(353, 22);
             textBox_ec_phone.TabIndex = 5;
             textBox_ec_phone.Text = "Emergency contact phone";
+            textBox_ec_phone.TextChanged += new System.EventHandler(this.textBox_ec_phone_TextChanged);
+            textBox_ec_phone.Enter += new System.EventHandler(this.RemovePlaceholder);
             textBox_ec_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericOnly_KeyPress);
+            textBox_ec_phone.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // textBox_ec_name
             // 
@@ -391,6 +426,9 @@
             textBox_ec_name.Size = new System.Drawing.Size(353, 22);
             textBox_ec_name.TabIndex = 5;
             textBox_ec_name.Text = "Emergency contact name";
+            textBox_ec_name.TextChanged += new System.EventHandler(this.textBox_ec_name_TextChanged);
+            textBox_ec_name.Enter += new System.EventHandler(this.RemovePlaceholder);
+            textBox_ec_name.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // tableLayoutPanel_first
             // 
@@ -471,6 +509,7 @@
             this.radioButton_female.TabStop = true;
             this.radioButton_female.Text = "Female";
             this.radioButton_female.UseVisualStyleBackColor = true;
+            this.radioButton_female.CheckedChanged += new System.EventHandler(this.radioButton_gender_CheckedChanged);
             // 
             // radioButton_male
             // 
@@ -485,6 +524,7 @@
             this.radioButton_male.TabStop = true;
             this.radioButton_male.Text = "Male";
             this.radioButton_male.UseVisualStyleBackColor = true;
+            this.radioButton_male.CheckedChanged += new System.EventHandler(this.radioButton_gender_CheckedChanged);
             // 
             // panel_gender_heading
             // 
@@ -682,7 +722,8 @@
             // 
             this.button_sign_up.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button_sign_up.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
-            this.button_sign_up.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_sign_up.Enabled = false;
+            this.button_sign_up.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_sign_up.Font = new System.Drawing.Font("Rajdhani SemiBold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_sign_up.ForeColor = System.Drawing.Color.Black;
             this.button_sign_up.Location = new System.Drawing.Point(547, 7);
@@ -708,8 +749,8 @@
             // 
             // table_registration_page
             // 
+            this.table_registration_page.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.table_registration_page.BackColor = System.Drawing.Color.Transparent;
-            this.table_registration_page.BackgroundImage = global::fitness_home.Properties.Resources.Background;
             this.table_registration_page.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.table_registration_page.ColumnCount = 3;
             this.table_registration_page.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
@@ -720,7 +761,6 @@
             this.table_registration_page.Controls.Add(this.tableLayoutPanel_second, 1, 1);
             this.table_registration_page.Controls.Add(this.panel_ec_info, 2, 1);
             this.table_registration_page.Controls.Add(this.panel_sign_up_btn, 0, 2);
-            this.table_registration_page.Dock = System.Windows.Forms.DockStyle.Fill;
             this.table_registration_page.Location = new System.Drawing.Point(0, 0);
             this.table_registration_page.Name = "table_registration_page";
             this.table_registration_page.RowCount = 2;
@@ -748,20 +788,20 @@
             // 
             // tableLayoutPanel_password
             // 
-            this.tableLayoutPanel_password.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel_password.ColumnCount = 1;
             this.tableLayoutPanel_password.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_password.Controls.Add(this.panel_confirm_password, 0, 2);
             this.tableLayoutPanel_password.Controls.Add(this.panel_password, 0, 1);
             this.tableLayoutPanel_password.Controls.Add(this.panel_new_password, 0, 0);
+            this.tableLayoutPanel_password.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_password.Location = new System.Drawing.Point(3, 224);
             this.tableLayoutPanel_password.Name = "tableLayoutPanel_password";
-            this.tableLayoutPanel_password.RowCount = 3;
+            this.tableLayoutPanel_password.RowCount = 4;
             this.tableLayoutPanel_password.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_password.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_password.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel_password.Size = new System.Drawing.Size(409, 163);
+            this.tableLayoutPanel_password.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_password.Size = new System.Drawing.Size(409, 215);
             this.tableLayoutPanel_password.TabIndex = 13;
             // 
             // panel_confirm_password
@@ -770,7 +810,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_confirm_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.panel_confirm_password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_confirm_password.Controls.Add(textBox_confirm_password);
+            this.panel_confirm_password.Controls.Add(this.textBox_confirm_password);
             this.panel_confirm_password.Location = new System.Drawing.Point(24, 92);
             this.panel_confirm_password.Margin = new System.Windows.Forms.Padding(24, 4, 24, 4);
             this.panel_confirm_password.Name = "panel_confirm_password";
@@ -783,7 +823,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.panel_password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_password.Controls.Add(textBox_password);
+            this.panel_password.Controls.Add(this.textBox_new_password);
             this.panel_password.Location = new System.Drawing.Point(24, 44);
             this.panel_password.Margin = new System.Windows.Forms.Padding(24, 4, 24, 4);
             this.panel_password.Name = "panel_password";
@@ -906,6 +946,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel_ec_phone, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.panel_ec_name, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel_ec_details, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.panel_pw_policy_container, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -913,7 +954,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(416, 442);
             this.tableLayoutPanel1.TabIndex = 13;
             // 
@@ -964,6 +1005,102 @@
             this.label_ec_details.TabIndex = 0;
             this.label_ec_details.Text = "Emergency contact details";
             // 
+            // panel_pw_policy_container
+            // 
+            this.panel_pw_policy_container.Controls.Add(this.panel_pw_policy);
+            this.panel_pw_policy_container.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_pw_policy_container.Location = new System.Drawing.Point(3, 150);
+            this.panel_pw_policy_container.Name = "panel_pw_policy_container";
+            this.panel_pw_policy_container.Size = new System.Drawing.Size(410, 289);
+            this.panel_pw_policy_container.TabIndex = 11;
+            // 
+            // panel_pw_policy
+            // 
+            this.panel_pw_policy.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel_pw_policy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.panel_pw_policy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_pw_policy.Controls.Add(this.icon_char_rqmt);
+            this.panel_pw_policy.Controls.Add(this.icon_passwords_match);
+            this.panel_pw_policy.Controls.Add(this.icon_length_rqmt);
+            this.panel_pw_policy.Controls.Add(this.label_char_rqmt);
+            this.panel_pw_policy.Controls.Add(this.label_passwords_match);
+            this.panel_pw_policy.Controls.Add(this.label_length_rqmt);
+            this.panel_pw_policy.Location = new System.Drawing.Point(3, 102);
+            this.panel_pw_policy.Name = "panel_pw_policy";
+            this.panel_pw_policy.Size = new System.Drawing.Size(386, 139);
+            this.panel_pw_policy.TabIndex = 0;
+            this.panel_pw_policy.Visible = false;
+            // 
+            // icon_char_rqmt
+            // 
+            this.icon_char_rqmt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("icon_char_rqmt.BackgroundImage")));
+            this.icon_char_rqmt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.icon_char_rqmt.Location = new System.Drawing.Point(20, 79);
+            this.icon_char_rqmt.Margin = new System.Windows.Forms.Padding(0);
+            this.icon_char_rqmt.Name = "icon_char_rqmt";
+            this.icon_char_rqmt.Size = new System.Drawing.Size(16, 16);
+            this.icon_char_rqmt.TabIndex = 5;
+            this.icon_char_rqmt.TabStop = false;
+            // 
+            // icon_passwords_match
+            // 
+            this.icon_passwords_match.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("icon_passwords_match.BackgroundImage")));
+            this.icon_passwords_match.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.icon_passwords_match.Location = new System.Drawing.Point(20, 49);
+            this.icon_passwords_match.Margin = new System.Windows.Forms.Padding(0);
+            this.icon_passwords_match.Name = "icon_passwords_match";
+            this.icon_passwords_match.Size = new System.Drawing.Size(16, 16);
+            this.icon_passwords_match.TabIndex = 4;
+            this.icon_passwords_match.TabStop = false;
+            // 
+            // icon_length_rqmt
+            // 
+            this.icon_length_rqmt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("icon_length_rqmt.BackgroundImage")));
+            this.icon_length_rqmt.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.icon_length_rqmt.Location = new System.Drawing.Point(20, 18);
+            this.icon_length_rqmt.Margin = new System.Windows.Forms.Padding(0);
+            this.icon_length_rqmt.Name = "icon_length_rqmt";
+            this.icon_length_rqmt.Size = new System.Drawing.Size(16, 16);
+            this.icon_length_rqmt.TabIndex = 3;
+            this.icon_length_rqmt.TabStop = false;
+            // 
+            // label_char_rqmt
+            // 
+            this.label_char_rqmt.AutoSize = true;
+            this.label_char_rqmt.BackColor = System.Drawing.Color.Transparent;
+            this.label_char_rqmt.Font = new System.Drawing.Font("Noto Sans Medium", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_char_rqmt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(34)))), ((int)(((byte)(0)))));
+            this.label_char_rqmt.Location = new System.Drawing.Point(43, 76);
+            this.label_char_rqmt.Name = "label_char_rqmt";
+            this.label_char_rqmt.Size = new System.Drawing.Size(328, 46);
+            this.label_char_rqmt.TabIndex = 2;
+            this.label_char_rqmt.Text = "Password must have at least one uppercase \r\nletter, lowercase letter, and one num" +
+    "ber";
+            // 
+            // label_passwords_match
+            // 
+            this.label_passwords_match.AutoSize = true;
+            this.label_passwords_match.BackColor = System.Drawing.Color.Transparent;
+            this.label_passwords_match.Font = new System.Drawing.Font("Noto Sans Medium", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_passwords_match.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(34)))), ((int)(((byte)(0)))));
+            this.label_passwords_match.Location = new System.Drawing.Point(43, 46);
+            this.label_passwords_match.Name = "label_passwords_match";
+            this.label_passwords_match.Size = new System.Drawing.Size(174, 23);
+            this.label_passwords_match.TabIndex = 1;
+            this.label_passwords_match.Text = "Passwords must match";
+            // 
+            // label_length_rqmt
+            // 
+            this.label_length_rqmt.AutoSize = true;
+            this.label_length_rqmt.BackColor = System.Drawing.Color.Transparent;
+            this.label_length_rqmt.Font = new System.Drawing.Font("Noto Sans Medium", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_length_rqmt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(34)))), ((int)(((byte)(0)))));
+            this.label_length_rqmt.Location = new System.Drawing.Point(40, 14);
+            this.label_length_rqmt.Name = "label_length_rqmt";
+            this.label_length_rqmt.Size = new System.Drawing.Size(195, 23);
+            this.label_length_rqmt.TabIndex = 0;
+            this.label_length_rqmt.Text = "Contains 8 - 24 characters";
+            // 
             // panel_sign_up_btn
             // 
             this.table_registration_page.SetColumnSpan(this.panel_sign_up_btn, 3);
@@ -974,13 +1111,28 @@
             this.panel_sign_up_btn.Size = new System.Drawing.Size(1258, 107);
             this.panel_sign_up_btn.TabIndex = 4;
             // 
+            // panel_registration_page
+            // 
+            this.panel_registration_page.BackColor = System.Drawing.Color.Black;
+            this.panel_registration_page.BackgroundImage = global::fitness_home.Properties.Resources.Background;
+            this.panel_registration_page.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel_registration_page.Controls.Add(this.table_registration_page);
+            this.panel_registration_page.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_registration_page.Location = new System.Drawing.Point(0, 0);
+            this.panel_registration_page.Margin = new System.Windows.Forms.Padding(0);
+            this.panel_registration_page.Name = "panel_registration_page";
+            this.panel_registration_page.Size = new System.Drawing.Size(1264, 681);
+            this.panel_registration_page.TabIndex = 0;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImage = global::fitness_home.Properties.Resources.Background;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.table_registration_page);
+            this.Controls.Add(this.panel_registration_page);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -1045,7 +1197,14 @@
             this.panel_ec_name.PerformLayout();
             this.panel_ec_details.ResumeLayout(false);
             this.panel_ec_details.PerformLayout();
+            this.panel_pw_policy_container.ResumeLayout(false);
+            this.panel_pw_policy.ResumeLayout(false);
+            this.panel_pw_policy.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_char_rqmt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_passwords_match)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon_length_rqmt)).EndInit();
             this.panel_sign_up_btn.ResumeLayout(false);
+            this.panel_registration_page.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1098,5 +1257,16 @@
         private System.Windows.Forms.Panel panel_ec_details;
         private System.Windows.Forms.Label label_ec_details;
         private System.Windows.Forms.Panel panel_page_heading;
+        private System.Windows.Forms.Panel panel_pw_policy_container;
+        private System.Windows.Forms.Panel panel_pw_policy;
+        private System.Windows.Forms.Panel panel_registration_page;
+        private System.Windows.Forms.Label label_length_rqmt;
+        private System.Windows.Forms.Label label_char_rqmt;
+        private System.Windows.Forms.Label label_passwords_match;
+        private System.Windows.Forms.PictureBox icon_length_rqmt;
+        private System.Windows.Forms.PictureBox icon_char_rqmt;
+        private System.Windows.Forms.PictureBox icon_passwords_match;
+        private System.Windows.Forms.TextBox textBox_confirm_password;
+        private System.Windows.Forms.TextBox textBox_new_password;
     }
 }

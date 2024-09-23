@@ -176,5 +176,11 @@
   <ItemGroup>
     <None Include="Resources\images\dashboard\logo.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\pw_policy_cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\pw_policy_tick.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

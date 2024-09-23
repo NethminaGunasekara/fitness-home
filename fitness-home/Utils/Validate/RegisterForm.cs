@@ -19,41 +19,30 @@ namespace fitness_home.Utils.Validate
         {
             textBox.BackColor = Color.FromArgb(70, 41, 41);
             textBox.Parent.BackColor = Color.FromArgb(70, 41, 41);
-
         }
 
-        public static void ValidateFirstName(object sender, EventArgs e)
+        public static void PresenceCheck(object sender, EventArgs e, int minimumLength = 1)
         {
             TextBox textBox = sender as TextBox;
 
             // If textbox still contains the initial value (placeholder)
-            if (textBox.Text == "First name")
+            if(textBox.Text == Placeholder.placeholders[textBox.Name])
+            {
+                Register.HasEntered[textBox.Name] = false;
                 SetBackColorDefault(textBox);
+            }
 
-            else if (textBox.Text.Length >= 1)
+            else if(textBox.Text.Length >= minimumLength)
+            {
+                Register.HasEntered[textBox.Name] = true;
                 SetBackColorDefault(textBox);
+            }
 
             else
+            {
+                Register.HasEntered[textBox.Name] = false;
                 SetBackColorRed(textBox);
-
-            Register.HasEntered["first-name"] = textBox.Text.Length >= 1 && textBox.Text != "First name";
-        }
-
-        public static void ValidateLastName(object sender, EventArgs e)
-        {
-            TextBox textBox = sender as TextBox;
-
-            // If textbox still contains the initial value (placeholder)
-            if (textBox.Text == "Last name")
-                SetBackColorDefault(textBox);
-
-            else if (textBox.Text.Length >= 1)
-                SetBackColorDefault(textBox);
-
-            else
-                SetBackColorRed(textBox);
-
-            Register.HasEntered["last-name"] = textBox.Text.Length >= 1 && textBox.Text != "Last name";
+            }
         }
 
         public static void ValidateDOB(object sender, EventArgs e)
@@ -65,7 +54,7 @@ namespace fitness_home.Utils.Validate
             if (dob == "YYYY/MM/DD")
             {
                 SetBackColorDefault(textBox);
-                Register.HasEntered["dob"] = false;
+                Register.HasEntered["textBox_dob"] = false;
                 return;
             }
 
@@ -98,7 +87,7 @@ namespace fitness_home.Utils.Validate
                         if (day >= 1 && day <= DateTime.DaysInMonth(year, month))
                         {
                             SetBackColorDefault(textBox);
-                            Register.HasEntered["dob"] = true;
+                            Register.HasEntered["textBox_dob"] = true;
                             return;
                         }
                     }
@@ -107,7 +96,7 @@ namespace fitness_home.Utils.Validate
 
             // If validation fails
             SetBackColorRed(textBox);
-            Register.HasEntered["dob"] = false;
+            Register.HasEntered["textBox_dob"] = false;
         }
 
         public static void ValidateNIC(object sender, EventArgs e)
@@ -119,7 +108,7 @@ namespace fitness_home.Utils.Validate
             if (nic == "XXXXXXXXXXXX")
             {
                 SetBackColorDefault(textBox);
-                Register.HasEntered["dob"] = false;
+                Register.HasEntered["textBox_nic"] = false;
                 return;
             }
 
@@ -133,14 +122,49 @@ namespace fitness_home.Utils.Validate
             if (Regex.IsMatch(nic, pattern))
             {
                 SetBackColorDefault(textBox);
-                Register.HasEntered["dob"] = true;
+                Register.HasEntered["textBox_nic"] = true;
             }
 
             // If validation fails
             else
             {
                 SetBackColorRed(textBox);
-                Register.HasEntered["dob"] = false;
+                Register.HasEntered["textBox_nic"] = false;
+            }
+        }
+
+        public static void ValidateEmail(object sender, EventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            string email = textBox.Text;
+
+            // Regex pattern for validating email
+            // ^        - Start of the string
+            // [^@\s]+  - One or more characters that are not "@" or whitespace
+            // @        - Exactly one "@" symbol
+            // [^@\s]+  - One or more characters that are not "@" or whitespace
+            // \.       - Exactly one "." symbol
+            // [^@\s]+  - One or more characters that are not "@" or whitespace
+            // $        - End of the strin
+            string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+
+            // If textbox still contains the initial value (placeholder)
+            if (email == "E-mail")
+            {
+                Register.HasEntered["textBox_email"] = false;
+                SetBackColorDefault(textBox);
+            }
+
+            // Determine input state based on regex match
+            else if (Regex.IsMatch(email, emailPattern))
+            {
+                Register.HasEntered["textBox_email"] = true;
+                SetBackColorDefault(textBox);
+            }
+            else
+            {
+                Register.HasEntered["textBox_email"] = false;
+                SetBackColorRed(textBox);
             }
         }
 

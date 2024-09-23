@@ -27,12 +27,15 @@ namespace fitness_home.Utils.Validate
             // $        - End of the strin
             string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
 
-            // Determine input state based on regex match
-            InputState state = email == "Email" ? InputState.Initial :
-                Regex.IsMatch(email, emailPattern) ? InputState.Valid : InputState.Invalid;
+            // If textbox still contains the initial value (placeholder)
+            if (email == "Email")
+            {
+                Login.hasEmailEntered = false;
+                RegisterForm.SetBackColorDefault(textBox);
+            }
 
-            // Update UI and login state
-            if (state == InputState.Valid)
+            // Determine input state based on regex match
+            else if (Regex.IsMatch(email, emailPattern))
             {
                 Login.hasEmailEntered = true;
                 RegisterForm.SetBackColorDefault(textBox);
@@ -52,41 +55,31 @@ namespace fitness_home.Utils.Validate
         /// </summary>
         /// <param name="sender">TextBox containing the password</param>
         /// <param name="loginButton">Get Started button which is enabled only when both email and password are valid</param>
-        /// <param name="inputPanel">Panel containing the password TextBox and icon</param>
-        /// <param name="inputTextBox">TextBox for entering the user's password</param>
         public static void ValidatePassword(ref object sender, ref Button loginButton)
         {
             TextBox textBox = sender as TextBox;
             string password = textBox.Text;
 
-            // If TextBox contains the placeholder ("Password")
-            InputState state = textBox.Text == "Password" ? InputState.Initial :
-                // If password has been entered (length > 0)
-                password.Length > 0 ? InputState.Valid :
-                    // If password is empty
-                    InputState.Invalid;
-
-            // Update UI based on state
-            if (state == InputState.Valid)
+            // If textbox still contains the initial value (placeholder)
+            if (password == "Password")
             {
-                // Enable login button and set panel background to normal
+                Login.hasPasswordEntered = false;
+                RegisterForm.SetBackColorDefault(textBox);
+            }
+            // If a valid password has been entered
+            else if (!string.IsNullOrEmpty(password))
+            {
                 Login.hasPasswordEntered = true;
                 RegisterForm.SetBackColorDefault(textBox);
-
             }
-            else if (state == InputState.Invalid)
+            // If the password field is empty
+            else
             {
-                // Disable login button and set panel background to error
                 Login.hasPasswordEntered = false;
                 RegisterForm.SetBackColorRed(textBox);
             }
-            else
-            {
-                // Reset to default background and disable login button
-                Login.hasPasswordEntered = false;
-                RegisterForm.SetBackColorDefault(textBox);
-            }
 
+            // Update the state of the login button
             SetLoginButtonState(ref loginButton);
         }
 
