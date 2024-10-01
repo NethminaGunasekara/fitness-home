@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\MembershipInfo.cs" />
+    <Compile Include="Utils\Types\MembershipPlan.cs" />
     <Compile Include="Services\Authentication.cs" />
     <Compile Include="Services\FormProvider.cs" />
     <Compile Include="Utils\Types\InputState.cs" />
@@ -81,6 +83,30 @@
       <DependentUpon>Login.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Include="Views\Onboarding\Register\Components\Benefit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Onboarding\Register\Components\Benefit.Designer.cs">
+      <DependentUpon>Benefit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Onboarding\Register\Components\Bullet.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Onboarding\Register\Components\Bullet.Designer.cs">
+      <DependentUpon>Bullet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Onboarding\Register\Components\MembershipCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Onboarding\Register\Components\MembershipCard.Designer.cs">
+      <DependentUpon>MembershipCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Onboarding\Register\Membership.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Onboarding\Register\Membership.Designer.cs">
+      <DependentUpon>Membership.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Onboarding\Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,10 +121,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Onboarding\Register.cs">
+    <Compile Include="Views\Onboarding\Register\Register.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Onboarding\Register.Designer.cs">
+    <Compile Include="Views\Onboarding\Register\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Messages\LoginFailed.cs">
@@ -119,6 +145,18 @@
     <EmbeddedResource Include="Views\Onboarding\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Onboarding\Register\Components\Benefit.resx">
+      <DependentUpon>Benefit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Onboarding\Register\Components\Bullet.resx">
+      <DependentUpon>Bullet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Onboarding\Register\Components\MembershipCard.resx">
+      <DependentUpon>MembershipCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Onboarding\Register\Membership.resx">
+      <DependentUpon>Membership.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Onboarding\Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
@@ -159,7 +197,7 @@
     <None Include="Resources\images\background.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\Onboarding\Register.resx">
+    <EmbeddedResource Include="Views\Onboarding\Register\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\images\logo.png" />
@@ -181,6 +219,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons\pw_policy_tick.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\list-item.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

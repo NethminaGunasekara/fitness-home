@@ -17,9 +17,20 @@ namespace fitness_home.Services
         public static IUser LoggedUser;
         private static Authentication instance;
         private static readonly object _lock = new object();
-        private readonly string ConnectionString;
+        public readonly string ConnectionString;
 
         private Authentication()
+        {
+            ConnectionString = GetConnectionString();
+
+            // Check connection during initialization
+            if (!CheckConnection(ConnectionString))
+            {
+                throw new Exception("Failed to connect to database. Please check your connection settings.");
+            }
+        }
+
+        private static string GetConnectionString()
         {
             string dbHost = ConfigurationManager.AppSettings["DB_HOST"];
             string dbUser = ConfigurationManager.AppSettings["DB_USER"];
@@ -27,15 +38,31 @@ namespace fitness_home.Services
             string dbName = ConfigurationManager.AppSettings["DB_NAME"];
 
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-
             builder.DataSource = dbHost;
             builder.UserID = dbUser;
             builder.Password = dbPass;
             builder.InitialCatalog = dbName;
 
-
-            this.ConnectionString = builder.ConnectionString;
+            return builder.ConnectionString;
         }
+
+        private static bool CheckConnection(string connectionString)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    return true;
+                }
+                catch (SqlException)
+
+                {
+                    return false;
+                }
+            }
+        }
+
         public static Authentication Instance
         {
             get

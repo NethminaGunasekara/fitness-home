@@ -288,10 +288,10 @@
             this.button_previous.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.button_previous.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
             this.button_previous.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_previous.Location = new System.Drawing.Point(46, 24);
+            this.button_previous.Location = new System.Drawing.Point(46, 43);
             this.button_previous.Margin = new System.Windows.Forms.Padding(0);
             this.button_previous.Name = "button_previous";
-            this.button_previous.Size = new System.Drawing.Size(34, 74);
+            this.button_previous.Size = new System.Drawing.Size(34, 34);
             this.button_previous.TabIndex = 0;
             this.button_previous.UseVisualStyleBackColor = false;
             // 
@@ -353,44 +353,6 @@
             textBox_address.Enter += new System.EventHandler(this.RemovePlaceholder);
             textBox_address.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
-            // textBox_confirm_password
-            // 
-            this.textBox_confirm_password.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_confirm_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.textBox_confirm_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_confirm_password.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_confirm_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.textBox_confirm_password.Location = new System.Drawing.Point(7, 8);
-            this.textBox_confirm_password.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.textBox_confirm_password.MaxLength = 100;
-            this.textBox_confirm_password.Name = "textBox_confirm_password";
-            this.textBox_confirm_password.Size = new System.Drawing.Size(346, 22);
-            this.textBox_confirm_password.TabIndex = 5;
-            this.textBox_confirm_password.Text = "Confirm password";
-            this.textBox_confirm_password.TextChanged += new System.EventHandler(this.textBox_confirm_password_TextChanged);
-            this.textBox_confirm_password.Enter += new System.EventHandler(this.RemovePlaceholder);
-            this.textBox_confirm_password.Leave += new System.EventHandler(this.AddPlaceholder);
-            // 
-            // textBox_new_password
-            // 
-            this.textBox_new_password.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_new_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.textBox_new_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_new_password.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_new_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.textBox_new_password.Location = new System.Drawing.Point(7, 8);
-            this.textBox_new_password.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.textBox_new_password.MaxLength = 100;
-            this.textBox_new_password.Name = "textBox_new_password";
-            this.textBox_new_password.Size = new System.Drawing.Size(346, 22);
-            this.textBox_new_password.TabIndex = 5;
-            this.textBox_new_password.Text = "New password";
-            this.textBox_new_password.TextChanged += new System.EventHandler(this.textBox_password_TextChanged);
-            this.textBox_new_password.Enter += new System.EventHandler(this.RemovePlaceholder);
-            this.textBox_new_password.Leave += new System.EventHandler(this.AddPlaceholder);
-            // 
             // textBox_ec_phone
             // 
             textBox_ec_phone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -429,6 +391,44 @@
             textBox_ec_name.TextChanged += new System.EventHandler(this.textBox_ec_name_TextChanged);
             textBox_ec_name.Enter += new System.EventHandler(this.RemovePlaceholder);
             textBox_ec_name.Leave += new System.EventHandler(this.AddPlaceholder);
+            // 
+            // textBox_confirm_password
+            // 
+            this.textBox_confirm_password.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_confirm_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.textBox_confirm_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_confirm_password.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_confirm_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox_confirm_password.Location = new System.Drawing.Point(7, 8);
+            this.textBox_confirm_password.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.textBox_confirm_password.MaxLength = 100;
+            this.textBox_confirm_password.Name = "textBox_confirm_password";
+            this.textBox_confirm_password.Size = new System.Drawing.Size(346, 22);
+            this.textBox_confirm_password.TabIndex = 5;
+            this.textBox_confirm_password.Text = "Confirm password";
+            this.textBox_confirm_password.TextChanged += new System.EventHandler(this.textBox_confirm_password_TextChanged);
+            this.textBox_confirm_password.Enter += new System.EventHandler(this.RemovePlaceholder);
+            this.textBox_confirm_password.Leave += new System.EventHandler(this.AddPlaceholder);
+            // 
+            // textBox_new_password
+            // 
+            this.textBox_new_password.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_new_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.textBox_new_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_new_password.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_new_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox_new_password.Location = new System.Drawing.Point(7, 8);
+            this.textBox_new_password.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.textBox_new_password.MaxLength = 100;
+            this.textBox_new_password.Name = "textBox_new_password";
+            this.textBox_new_password.Size = new System.Drawing.Size(346, 22);
+            this.textBox_new_password.TabIndex = 5;
+            this.textBox_new_password.Text = "New password";
+            this.textBox_new_password.TextChanged += new System.EventHandler(this.textBox_password_TextChanged);
+            this.textBox_new_password.Enter += new System.EventHandler(this.RemovePlaceholder);
+            this.textBox_new_password.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // tableLayoutPanel_first
             // 
