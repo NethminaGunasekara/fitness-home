@@ -67,22 +67,22 @@ namespace fitness_home.Views.Onboarding.Register
             SuspendLayout();
 
             // First card (on left)
-            card_1 = new MembershipCard(PlansToDisplay[0], OnClick);
+            card_1 = new MembershipCard(PlansToDisplay[0]);
             card_1.Dock = DockStyle.Fill;
-            card_1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            tableLayoutPanel_content.Controls.Add(card_1, 0, 1);
-
+            card_1.Anchor = AnchorStyles.Left;
+            panel_plan_1.Controls.Add(card_1);
+            
             // Second card (on middle)
             card_2 = new MembershipCard(PlansToDisplay[1]);
             card_2.Dock = DockStyle.Fill;
-            card_2.Anchor = AnchorStyles.Top;
-            tableLayoutPanel_content.Controls.Add(card_2, 1, 1);
+            card_2.Anchor = AnchorStyles.Left;
+            panel_plan_2.Controls.Add(card_2);
 
             // Third card (on right)
-            card_3 = new MembershipCard(PlansToDisplay[2], OnClick);
+            card_3 = new MembershipCard(PlansToDisplay[2]);
             card_3.Dock = DockStyle.Fill;
-            card_3.Anchor = AnchorStyles.Top | AnchorStyles.Left;
-            tableLayoutPanel_content.Controls.Add(card_3, 2, 1);
+            card_3.Anchor = AnchorStyles.Left;
+            panel_plan_3.Controls.Add(card_3);
 
             // Set border color of the selected plan
             card_2.BorderColor = Color.FromArgb(204, 255, 255, 255);
@@ -101,37 +101,45 @@ namespace fitness_home.Views.Onboarding.Register
             SelectedPlanId = card_2.MembershipPlan.PlanId;
         }
 
-        // Passed as the "onClickAction" action of clickable cards
-        public void OnClick(string cardName)
+        private void button_previous_Click(object sender, EventArgs e)
         {
-            // If the user has clicked "card_1"
-            if (cardName == "card_1")
-            {
-                // If StartIndex is 0, keep the plans as they're
-                if (StartIndex == 0) return;
 
-                StartIndex--;
+        }
 
-                // Update "PlansToDisplay" with the previous three plans
-                PlansToDisplay = MembershipPlans.GetRange(StartIndex, 3);
+        private void button_continue_Click(object sender, EventArgs e)
+        {
 
-                return; // Exit the method
-            }
+        }
 
-            // The rest of this method will run only if user has clicked "card_2"
+        private void Membership_ResizeBegin(object sender, EventArgs e)
+        {
+            tableLayoutPanel_content.Visible = false;
+        }
 
-            // If less than three plans left from "StartIndex", keep the plans as they're
+        private void Membership_ResizeEnd(object sender, EventArgs e)
+        {
+            tableLayoutPanel_content.Visible = false;
+        }
+
+        private void pictureBox_previous_Click(object sender, EventArgs e)
+        {
+            // If StartIndex is 0, keep the plans as they're
+            if (StartIndex == 0) return;
+
+            StartIndex--;
+
+            // Update "PlansToDisplay" with the previous three plans
+            PlansToDisplay = MembershipPlans.GetRange(StartIndex, 3);
+        }
+
+        private void pictureBox_next_Click(object sender, EventArgs e)
+        {
             if (MembershipPlans.Count - (StartIndex + 1) < 3) return;
 
             StartIndex++;
 
             // Update "PlansToDisplay" with the previous three plans
             PlansToDisplay = MembershipPlans.GetRange(StartIndex, 3);
-        }
-
-        private void button_previous_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

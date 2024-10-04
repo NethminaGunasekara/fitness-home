@@ -10,7 +10,6 @@ namespace fitness_home.Views.Onboarding.Register.Components
     {
         private Color _borderColor = Color.FromArgb(70, 70, 70);
         private MembershipPlan _MembershipPlan;
-        public Action<string> OnClickAction;
 
         // Holds all bullets and labels for displaying the list of plan benefits
         private readonly List<List<Control>> Benefits = new List<List<Control>>();
@@ -20,7 +19,6 @@ namespace fitness_home.Views.Onboarding.Register.Components
             InitializeComponent();
 
             _MembershipPlan = membershipPlan;
-            OnClickAction = onClickAction;
 
             // Add all benefits and bullets to "Benefits"
             Benefits.Add(new List<Control> { pictureBox_bullet_1, label_benefit_1 });
@@ -128,18 +126,6 @@ namespace fitness_home.Views.Onboarding.Register.Components
             {
                 e.Graphics.DrawRectangle(pen, 0, 0, Width - 1, Height - 1);
             }
-        }
-
-        // Invoked when the user has clicked this card
-        private void OnClick(object sender, EventArgs e)
-        {
-            // The following statement will invoke "OnClickAction" if it has been provided
-            OnClickAction?.Invoke(this.Name);
-        }
-
-        private void panel_benefits_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
