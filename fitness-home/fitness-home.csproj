@@ -107,6 +107,12 @@
     <Compile Include="Views\Onboarding\Register\Membership.Designer.cs">
       <DependentUpon>Membership.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Onboarding\Register\Payment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Onboarding\Register\Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Onboarding\Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Onboarding\Register\Membership.resx">
       <DependentUpon>Membership.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Onboarding\Register\Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Onboarding\Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>

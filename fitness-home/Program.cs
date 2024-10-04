@@ -7,7 +7,7 @@ namespace fitness_home
 {
     internal static class Program
     {
-        public static Membership EntryPoint;
+        public static Payment EntryPoint;
 
         /// <summary>
         /// The main entry point for the application.
@@ -17,7 +17,7 @@ namespace fitness_home
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            EntryPoint = new Membership();
+            EntryPoint = new Payment();
             Application.Run(EntryPoint);
         }
     }
