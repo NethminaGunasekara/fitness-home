@@ -11,6 +11,12 @@ namespace fitness_home
         public Welcome()
         {
             InitializeComponent();
+
+            // Set the background image
+            this.BackgroundImage = Properties.Resources.Background;
+
+            // Set the background image layout to zoom
+            this.BackgroundImageLayout = ImageLayout.Zoom;
         }
 
         // Navigate user to the Login view once they click "Get Started" button
@@ -19,12 +25,6 @@ namespace fitness_home
             // Create a new instance of Login form, or pass the existing one
             Login LoginForm = FormProvider.Login ?? (FormProvider.Login = new Login());
             Helpers.ShowForm(LoginForm, this);
-        }
-
-        private void OnLoad(object sender, EventArgs e)
-        {
-            // Form transition
-            WinAPI.AnimateWindow(this.Handle, 400, WinAPI.BLEND);
         }
     }
 }

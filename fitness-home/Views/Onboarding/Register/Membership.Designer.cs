@@ -32,33 +32,33 @@
             this.panel_content = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_content = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel_plans = new System.Windows.Forms.TableLayoutPanel();
+            this.panel_next_plans = new System.Windows.Forms.Panel();
+            this.pictureBox_next = new System.Windows.Forms.PictureBox();
+            this.panel_previous_plans = new System.Windows.Forms.Panel();
+            this.pictureBox_previous = new System.Windows.Forms.PictureBox();
+            this.panel_plan_1 = new System.Windows.Forms.Panel();
+            this.panel_plan_2 = new System.Windows.Forms.Panel();
+            this.panel_plan_3 = new System.Windows.Forms.Panel();
             this.panel_continue_btn = new System.Windows.Forms.Panel();
-            this.button_continue = new System.Windows.Forms.Button();
+            this.button_continue_to_pay = new System.Windows.Forms.Button();
             this.panel_header = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_header = new System.Windows.Forms.TableLayoutPanel();
             this.panel_previous = new System.Windows.Forms.Panel();
             this.button_previous = new System.Windows.Forms.Button();
             this.panel_heading = new System.Windows.Forms.Panel();
             this.label_heading = new System.Windows.Forms.Label();
-            this.panel_plan_1 = new System.Windows.Forms.Panel();
-            this.panel_plan_2 = new System.Windows.Forms.Panel();
-            this.panel_plan_3 = new System.Windows.Forms.Panel();
-            this.panel_previous_plans = new System.Windows.Forms.Panel();
-            this.panel_next_plans = new System.Windows.Forms.Panel();
-            this.pictureBox_previous = new System.Windows.Forms.PictureBox();
-            this.pictureBox_next = new System.Windows.Forms.PictureBox();
             this.panel_content.SuspendLayout();
             this.tableLayoutPanel_content.SuspendLayout();
             this.tableLayoutPanel_plans.SuspendLayout();
+            this.panel_next_plans.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_next)).BeginInit();
+            this.panel_previous_plans.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_previous)).BeginInit();
             this.panel_continue_btn.SuspendLayout();
             this.panel_header.SuspendLayout();
             this.tableLayoutPanel_header.SuspendLayout();
             this.panel_previous.SuspendLayout();
             this.panel_heading.SuspendLayout();
-            this.panel_previous_plans.SuspendLayout();
-            this.panel_next_plans.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_previous)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_next)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_content
@@ -100,7 +100,7 @@
             this.tableLayoutPanel_plans.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel_plans.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel_plans.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel_plans.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 71F));
+            this.tableLayoutPanel_plans.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 74F));
             this.tableLayoutPanel_plans.Controls.Add(this.panel_next_plans, 4, 0);
             this.tableLayoutPanel_plans.Controls.Add(this.panel_previous_plans, 0, 0);
             this.tableLayoutPanel_plans.Controls.Add(this.panel_plan_1, 1, 0);
@@ -115,10 +115,89 @@
             this.tableLayoutPanel_plans.Size = new System.Drawing.Size(1350, 461);
             this.tableLayoutPanel_plans.TabIndex = 2;
             // 
+            // panel_next_plans
+            // 
+            this.panel_next_plans.Controls.Add(this.pictureBox_next);
+            this.panel_next_plans.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_next_plans.Location = new System.Drawing.Point(1277, 3);
+            this.panel_next_plans.Name = "panel_next_plans";
+            this.panel_next_plans.Size = new System.Drawing.Size(70, 455);
+            this.panel_next_plans.TabIndex = 3;
+            // 
+            // pictureBox_next
+            // 
+            this.pictureBox_next.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox_next.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_next.BackgroundImage")));
+            this.pictureBox_next.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox_next.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_next.Location = new System.Drawing.Point(17, 197);
+            this.pictureBox_next.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox_next.Name = "pictureBox_next";
+            this.pictureBox_next.Size = new System.Drawing.Size(31, 40);
+            this.pictureBox_next.TabIndex = 1;
+            this.pictureBox_next.TabStop = false;
+            this.pictureBox_next.Click += new System.EventHandler(this.pictureBox_next_Click);
+            // 
+            // panel_previous_plans
+            // 
+            this.panel_previous_plans.Controls.Add(this.pictureBox_previous);
+            this.panel_previous_plans.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_previous_plans.Location = new System.Drawing.Point(3, 3);
+            this.panel_previous_plans.Name = "panel_previous_plans";
+            this.panel_previous_plans.Size = new System.Drawing.Size(64, 455);
+            this.panel_previous_plans.TabIndex = 0;
+            // 
+            // pictureBox_previous
+            // 
+            this.pictureBox_previous.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox_previous.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_previous.BackgroundImage")));
+            this.pictureBox_previous.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox_previous.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_previous.Location = new System.Drawing.Point(21, 197);
+            this.pictureBox_previous.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox_previous.Name = "pictureBox_previous";
+            this.pictureBox_previous.Size = new System.Drawing.Size(31, 40);
+            this.pictureBox_previous.TabIndex = 0;
+            this.pictureBox_previous.TabStop = false;
+            this.pictureBox_previous.Click += new System.EventHandler(this.pictureBox_previous_Click);
+            // 
+            // panel_plan_1
+            // 
+            this.panel_plan_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel_plan_1.BackColor = System.Drawing.Color.Transparent;
+            this.panel_plan_1.Location = new System.Drawing.Point(82, 0);
+            this.panel_plan_1.Margin = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.panel_plan_1.MaximumSize = new System.Drawing.Size(380, 461);
+            this.panel_plan_1.Name = "panel_plan_1";
+            this.panel_plan_1.Size = new System.Drawing.Size(380, 461);
+            this.panel_plan_1.TabIndex = 0;
+            // 
+            // panel_plan_2
+            // 
+            this.panel_plan_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel_plan_2.BackColor = System.Drawing.Color.Transparent;
+            this.panel_plan_2.Location = new System.Drawing.Point(483, 0);
+            this.panel_plan_2.Margin = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.panel_plan_2.MaximumSize = new System.Drawing.Size(380, 461);
+            this.panel_plan_2.Name = "panel_plan_2";
+            this.panel_plan_2.Size = new System.Drawing.Size(380, 461);
+            this.panel_plan_2.TabIndex = 1;
+            // 
+            // panel_plan_3
+            // 
+            this.panel_plan_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.panel_plan_3.BackColor = System.Drawing.Color.Transparent;
+            this.panel_plan_3.Location = new System.Drawing.Point(885, 0);
+            this.panel_plan_3.Margin = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.panel_plan_3.MaximumSize = new System.Drawing.Size(380, 461);
+            this.panel_plan_3.Name = "panel_plan_3";
+            this.panel_plan_3.Size = new System.Drawing.Size(380, 461);
+            this.panel_plan_3.TabIndex = 2;
+            // 
             // panel_continue_btn
             // 
             this.tableLayoutPanel_content.SetColumnSpan(this.panel_continue_btn, 3);
-            this.panel_continue_btn.Controls.Add(this.button_continue);
+            this.panel_continue_btn.Controls.Add(this.button_continue_to_pay);
             this.panel_continue_btn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_continue_btn.Location = new System.Drawing.Point(0, 581);
             this.panel_continue_btn.Margin = new System.Windows.Forms.Padding(0);
@@ -126,22 +205,22 @@
             this.panel_continue_btn.Size = new System.Drawing.Size(1350, 100);
             this.panel_continue_btn.TabIndex = 0;
             // 
-            // button_continue
+            // button_continue_to_pay
             // 
-            this.button_continue.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button_continue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
-            this.button_continue.FlatAppearance.BorderSize = 0;
-            this.button_continue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_continue.Font = new System.Drawing.Font("Rajdhani SemiBold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_continue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(5)))), ((int)(((byte)(5)))));
-            this.button_continue.Location = new System.Drawing.Point(563, 31);
-            this.button_continue.Margin = new System.Windows.Forms.Padding(0);
-            this.button_continue.Name = "button_continue";
-            this.button_continue.Size = new System.Drawing.Size(213, 43);
-            this.button_continue.TabIndex = 0;
-            this.button_continue.Text = "CONTINUE TO PAY";
-            this.button_continue.UseVisualStyleBackColor = false;
-            this.button_continue.Click += new System.EventHandler(this.button_continue_Click);
+            this.button_continue_to_pay.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button_continue_to_pay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
+            this.button_continue_to_pay.FlatAppearance.BorderSize = 0;
+            this.button_continue_to_pay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_continue_to_pay.Font = new System.Drawing.Font("Rajdhani SemiBold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_continue_to_pay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(5)))), ((int)(((byte)(5)))));
+            this.button_continue_to_pay.Location = new System.Drawing.Point(563, 31);
+            this.button_continue_to_pay.Margin = new System.Windows.Forms.Padding(0);
+            this.button_continue_to_pay.Name = "button_continue_to_pay";
+            this.button_continue_to_pay.Size = new System.Drawing.Size(213, 43);
+            this.button_continue_to_pay.TabIndex = 0;
+            this.button_continue_to_pay.Text = "CONTINUE TO PAY";
+            this.button_continue_to_pay.UseVisualStyleBackColor = false;
+            this.button_continue_to_pay.Click += new System.EventHandler(this.ContinueToPay);
             // 
             // panel_header
             // 
@@ -221,91 +300,11 @@
             this.label_heading.Text = "CHOOSE A MEMBERSHIP PLAN";
             this.label_heading.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel_plan_1
-            // 
-            this.panel_plan_1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel_plan_1.BackColor = System.Drawing.Color.Transparent;
-            this.panel_plan_1.Location = new System.Drawing.Point(82, 0);
-            this.panel_plan_1.Margin = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.panel_plan_1.MaximumSize = new System.Drawing.Size(380, 461);
-            this.panel_plan_1.Name = "panel_plan_1";
-            this.panel_plan_1.Size = new System.Drawing.Size(380, 461);
-            this.panel_plan_1.TabIndex = 0;
-            // 
-            // panel_plan_2
-            // 
-            this.panel_plan_2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel_plan_2.BackColor = System.Drawing.Color.Transparent;
-            this.panel_plan_2.Location = new System.Drawing.Point(484, 0);
-            this.panel_plan_2.Margin = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.panel_plan_2.MaximumSize = new System.Drawing.Size(380, 461);
-            this.panel_plan_2.Name = "panel_plan_2";
-            this.panel_plan_2.Size = new System.Drawing.Size(380, 461);
-            this.panel_plan_2.TabIndex = 1;
-            // 
-            // panel_plan_3
-            // 
-            this.panel_plan_3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.panel_plan_3.BackColor = System.Drawing.Color.Transparent;
-            this.panel_plan_3.Location = new System.Drawing.Point(887, 0);
-            this.panel_plan_3.Margin = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.panel_plan_3.MaximumSize = new System.Drawing.Size(380, 461);
-            this.panel_plan_3.Name = "panel_plan_3";
-            this.panel_plan_3.Size = new System.Drawing.Size(380, 461);
-            this.panel_plan_3.TabIndex = 2;
-            // 
-            // panel_previous_plans
-            // 
-            this.panel_previous_plans.Controls.Add(this.pictureBox_previous);
-            this.panel_previous_plans.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_previous_plans.Location = new System.Drawing.Point(3, 3);
-            this.panel_previous_plans.Name = "panel_previous_plans";
-            this.panel_previous_plans.Size = new System.Drawing.Size(64, 455);
-            this.panel_previous_plans.TabIndex = 0;
-            // 
-            // panel_next_plans
-            // 
-            this.panel_next_plans.Controls.Add(this.pictureBox_next);
-            this.panel_next_plans.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_next_plans.Location = new System.Drawing.Point(1280, 3);
-            this.panel_next_plans.Name = "panel_next_plans";
-            this.panel_next_plans.Size = new System.Drawing.Size(67, 455);
-            this.panel_next_plans.TabIndex = 3;
-            // 
-            // pictureBox_previous
-            // 
-            this.pictureBox_previous.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox_previous.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_previous.BackgroundImage")));
-            this.pictureBox_previous.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_previous.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_previous.Location = new System.Drawing.Point(21, 197);
-            this.pictureBox_previous.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox_previous.Name = "pictureBox_previous";
-            this.pictureBox_previous.Size = new System.Drawing.Size(31, 40);
-            this.pictureBox_previous.TabIndex = 0;
-            this.pictureBox_previous.TabStop = false;
-            this.pictureBox_previous.Click += new System.EventHandler(this.pictureBox_previous_Click);
-            // 
-            // pictureBox_next
-            // 
-            this.pictureBox_next.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pictureBox_next.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_next.BackgroundImage")));
-            this.pictureBox_next.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_next.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_next.Location = new System.Drawing.Point(14, 197);
-            this.pictureBox_next.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox_next.Name = "pictureBox_next";
-            this.pictureBox_next.Size = new System.Drawing.Size(31, 40);
-            this.pictureBox_next.TabIndex = 1;
-            this.pictureBox_next.TabStop = false;
-            this.pictureBox_next.Click += new System.EventHandler(this.pictureBox_next_Click);
-            // 
             // Membership
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = global::fitness_home.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1350, 681);
             this.Controls.Add(this.panel_content);
@@ -320,16 +319,16 @@
             this.panel_content.ResumeLayout(false);
             this.tableLayoutPanel_content.ResumeLayout(false);
             this.tableLayoutPanel_plans.ResumeLayout(false);
+            this.panel_next_plans.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_next)).EndInit();
+            this.panel_previous_plans.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_previous)).EndInit();
             this.panel_continue_btn.ResumeLayout(false);
             this.panel_header.ResumeLayout(false);
             this.tableLayoutPanel_header.ResumeLayout(false);
             this.panel_previous.ResumeLayout(false);
             this.panel_heading.ResumeLayout(false);
             this.panel_heading.PerformLayout();
-            this.panel_previous_plans.ResumeLayout(false);
-            this.panel_next_plans.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_previous)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_next)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,7 +338,7 @@
         private System.Windows.Forms.Panel panel_content;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_content;
         private System.Windows.Forms.Panel panel_continue_btn;
-        private System.Windows.Forms.Button button_continue;
+        private System.Windows.Forms.Button button_continue_to_pay;
         private System.Windows.Forms.Panel panel_header;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_header;
         private System.Windows.Forms.Label label_heading;

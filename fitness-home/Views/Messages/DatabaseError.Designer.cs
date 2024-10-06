@@ -139,11 +139,11 @@
             this.label_error.Cursor = System.Windows.Forms.Cursors.Default;
             this.label_error.Font = new System.Drawing.Font("Noto Sans", 16F, System.Drawing.FontStyle.Bold);
             this.label_error.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.label_error.Location = new System.Drawing.Point(138, 46);
+            this.label_error.Location = new System.Drawing.Point(113, 46);
             this.label_error.Name = "label_error";
-            this.label_error.Size = new System.Drawing.Size(154, 34);
+            this.label_error.Size = new System.Drawing.Size(209, 34);
             this.label_error.TabIndex = 1;
-            this.label_error.Text = "Login Failed!";
+            this.label_error.Text = "Application Error!";
             this.label_error.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -151,7 +151,7 @@
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox1.Location = new System.Drawing.Point(101, 46);
+            this.pictureBox1.Location = new System.Drawing.Point(74, 46);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(37, 32);
             this.pictureBox1.TabIndex = 0;

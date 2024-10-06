@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Welcome));
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel_content = new System.Windows.Forms.TableLayoutPanel();
             this.label_description = new System.Windows.Forms.Label();
             this.label_title = new System.Windows.Forms.Label();
             this.btn_get_started = new System.Windows.Forms.Button();
             this.panel_logo = new System.Windows.Forms.Panel();
             this.img_logo = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel_content.SuspendLayout();
             this.panel_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_logo)).BeginInit();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // tableLayoutPanel_content
             // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.label_description, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label_title, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btn_get_started, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel_logo, 0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel_content.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.tableLayoutPanel_content, "tableLayoutPanel_content");
+            this.tableLayoutPanel_content.Controls.Add(this.label_description, 1, 1);
+            this.tableLayoutPanel_content.Controls.Add(this.label_title, 1, 0);
+            this.tableLayoutPanel_content.Controls.Add(this.btn_get_started, 1, 2);
+            this.tableLayoutPanel_content.Controls.Add(this.panel_logo, 0, 0);
+            this.tableLayoutPanel_content.Name = "tableLayoutPanel_content";
             // 
             // label_description
             // 
@@ -80,7 +80,7 @@
             this.panel_logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.panel_logo.Controls.Add(this.img_logo);
             this.panel_logo.Name = "panel_logo";
-            this.tableLayoutPanel1.SetRowSpan(this.panel_logo, 3);
+            this.tableLayoutPanel_content.SetRowSpan(this.panel_logo, 3);
             // 
             // img_logo
             // 
@@ -94,12 +94,11 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this.tableLayoutPanel_content);
             this.DoubleBuffered = true;
             this.Name = "Welcome";
-            this.Load += new System.EventHandler(this.OnLoad);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel_content.ResumeLayout(false);
+            this.tableLayoutPanel_content.PerformLayout();
             this.panel_logo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.img_logo)).EndInit();
             this.ResumeLayout(false);
@@ -111,7 +110,7 @@
         private System.Windows.Forms.Label label_description;
         private System.Windows.Forms.Button btn_get_started;
         private System.Windows.Forms.Label label_title;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_content;
         private System.Windows.Forms.Panel panel_logo;
         private System.Windows.Forms.PictureBox img_logo;
     }

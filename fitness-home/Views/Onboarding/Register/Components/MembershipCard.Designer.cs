@@ -118,6 +118,7 @@
             this.tableLayoutPanel_content.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_content.Size = new System.Drawing.Size(380, 461);
             this.tableLayoutPanel_content.TabIndex = 0;
+            this.tableLayoutPanel_content.Click += new System.EventHandler(this.OnClick);
             // 
             // panel_plan_name
             // 
@@ -129,6 +130,7 @@
             this.panel_plan_name.Name = "panel_plan_name";
             this.panel_plan_name.Size = new System.Drawing.Size(380, 70);
             this.panel_plan_name.TabIndex = 0;
+            this.panel_plan_name.Click += new System.EventHandler(this.OnClick);
             // 
             // label_plan_name
             // 
@@ -140,6 +142,7 @@
             this.label_plan_name.Size = new System.Drawing.Size(154, 41);
             this.label_plan_name.TabIndex = 0;
             this.label_plan_name.Text = "Individual";
+            this.label_plan_name.Click += new System.EventHandler(this.OnClick);
             // 
             // panel_plan_fee
             // 
@@ -151,6 +154,7 @@
             this.panel_plan_fee.Name = "panel_plan_fee";
             this.panel_plan_fee.Size = new System.Drawing.Size(380, 70);
             this.panel_plan_fee.TabIndex = 1;
+            this.panel_plan_fee.Click += new System.EventHandler(this.OnClick);
             // 
             // flowLayoutPanel_fee
             // 
@@ -163,6 +167,7 @@
             this.flowLayoutPanel_fee.Size = new System.Drawing.Size(320, 43);
             this.flowLayoutPanel_fee.TabIndex = 4;
             this.flowLayoutPanel_fee.WrapContents = false;
+            this.flowLayoutPanel_fee.Click += new System.EventHandler(this.OnClick);
             // 
             // panel_plan_fee_currency
             // 
@@ -171,6 +176,7 @@
             this.panel_plan_fee_currency.Name = "panel_plan_fee_currency";
             this.panel_plan_fee_currency.Size = new System.Drawing.Size(20, 43);
             this.panel_plan_fee_currency.TabIndex = 1;
+            this.panel_plan_fee_currency.Click += new System.EventHandler(this.OnClick);
             // 
             // label_plan_fee_currency
             // 
@@ -184,6 +190,7 @@
             this.label_plan_fee_currency.TabIndex = 2;
             this.label_plan_fee_currency.Text = "Rs";
             this.label_plan_fee_currency.UseCompatibleTextRendering = true;
+            this.label_plan_fee_currency.Click += new System.EventHandler(this.OnClick);
             // 
             // label_plan_fee
             // 
@@ -197,6 +204,7 @@
             this.label_plan_fee.TabIndex = 1;
             this.label_plan_fee.Text = "3990";
             this.label_plan_fee.UseCompatibleTextRendering = true;
+            this.label_plan_fee.Click += new System.EventHandler(this.OnClick);
             // 
             // panel_plan_fee_per
             // 
@@ -205,6 +213,7 @@
             this.panel_plan_fee_per.Name = "panel_plan_fee_per";
             this.panel_plan_fee_per.Size = new System.Drawing.Size(35, 43);
             this.panel_plan_fee_per.TabIndex = 0;
+            this.panel_plan_fee_per.Click += new System.EventHandler(this.OnClick);
             // 
             // label_plan_fee_per
             // 
@@ -218,6 +227,7 @@
             this.label_plan_fee_per.TabIndex = 3;
             this.label_plan_fee_per.Text = "/m";
             this.label_plan_fee_per.UseCompatibleTextRendering = true;
+            this.label_plan_fee_per.Click += new System.EventHandler(this.OnClick);
             // 
             // panel_benefits_title
             // 
@@ -229,6 +239,7 @@
             this.panel_benefits_title.Name = "panel_benefits_title";
             this.panel_benefits_title.Size = new System.Drawing.Size(380, 60);
             this.panel_benefits_title.TabIndex = 2;
+            this.panel_benefits_title.Click += new System.EventHandler(this.OnClick);
             // 
             // label_plan_benefits_title
             // 
@@ -242,6 +253,7 @@
             this.label_plan_benefits_title.TabIndex = 2;
             this.label_plan_benefits_title.Text = "This plan includes:";
             this.label_plan_benefits_title.UseCompatibleTextRendering = true;
+            this.label_plan_benefits_title.Click += new System.EventHandler(this.OnClick);
             // 
             // panel_benefits
             // 
@@ -284,6 +296,7 @@
             this.panel_benefits.Name = "panel_benefits";
             this.panel_benefits.Size = new System.Drawing.Size(380, 261);
             this.panel_benefits.TabIndex = 3;
+            this.panel_benefits.Click += new System.EventHandler(this.OnClick);
             // 
             // pictureBox8
             // 
@@ -297,6 +310,7 @@
             this.pictureBox8.TabIndex = 18;
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Visible = false;
+            this.pictureBox8.Click += new System.EventHandler(this.OnClick);
             // 
             // pictureBox_bullet_8
             // 
@@ -310,6 +324,7 @@
             this.pictureBox_bullet_8.TabIndex = 18;
             this.pictureBox_bullet_8.TabStop = false;
             this.pictureBox_bullet_8.Visible = false;
+            this.pictureBox_bullet_8.Click += new System.EventHandler(this.OnClick);
             // 
             // pictureBox7
             // 
@@ -323,6 +338,7 @@
             this.pictureBox7.TabIndex = 17;
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Visible = false;
+            this.pictureBox7.Click += new System.EventHandler(this.OnClick);
             // 
             // pictureBox_bullet_7
             // 
@@ -336,6 +352,7 @@
             this.pictureBox_bullet_7.TabIndex = 17;
             this.pictureBox_bullet_7.TabStop = false;
             this.pictureBox_bullet_7.Visible = false;
+            this.pictureBox_bullet_7.Click += new System.EventHandler(this.OnClick);
             // 
             // label8
             // 
@@ -350,6 +367,7 @@
             this.label8.Text = "Benefit";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label8.Visible = false;
+            this.label8.Click += new System.EventHandler(this.OnClick);
             // 
             // pictureBox6
             // 
@@ -363,6 +381,7 @@
             this.pictureBox6.TabIndex = 16;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Visible = false;
+            this.pictureBox6.Click += new System.EventHandler(this.OnClick);
             // 
             // label_benefit_1
             // 
@@ -377,6 +396,7 @@
             this.label_benefit_1.Text = "Benefit";
             this.label_benefit_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label_benefit_1.Visible = false;
+            this.label_benefit_1.Click += new System.EventHandler(this.OnClick);
             // 
             // label7
             // 
@@ -391,6 +411,7 @@
             this.label7.Text = "Benefit";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label7.Visible = false;
+            this.label7.Click += new System.EventHandler(this.OnClick);
             // 
             // pictureBox_bullet_6
             // 
@@ -404,6 +425,7 @@
             this.pictureBox_bullet_6.TabIndex = 16;
             this.pictureBox_bullet_6.TabStop = false;
             this.pictureBox_bullet_6.Visible = false;
+            this.pictureBox_bullet_6.Click += new System.EventHandler(this.OnClick);
             // 
             // pictureBox5
             // 
@@ -417,6 +439,7 @@
             this.pictureBox5.TabIndex = 15;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Visible = false;
+            this.pictureBox5.Click += new System.EventHandler(this.OnClick);
             // 
             // label_benefit_8
             // 
@@ -431,6 +454,7 @@
             this.label_benefit_8.Text = "Benefit";
             this.label_benefit_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label_benefit_8.Visible = false;
+            this.label_benefit_8.Click += new System.EventHandler(this.OnClick);
             // 
             // label6
             // 
@@ -445,6 +469,7 @@
             this.label6.Text = "Benefit";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label6.Visible = false;
+            this.label6.Click += new System.EventHandler(this.OnClick);
             // 
             // pictureBox_bullet_5
             // 
@@ -458,6 +483,7 @@
             this.pictureBox_bullet_5.TabIndex = 15;
             this.pictureBox_bullet_5.TabStop = false;
             this.pictureBox_bullet_5.Visible = false;
+            this.pictureBox_bullet_5.Click += new System.EventHandler(this.OnClick);
             // 
             // pictureBox4
             // 
@@ -471,6 +497,7 @@
             this.pictureBox4.TabIndex = 14;
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Visible = false;
+            this.pictureBox4.Click += new System.EventHandler(this.OnClick);
             // 
             // label_benefit_7
             // 
@@ -485,6 +512,7 @@
             this.label_benefit_7.Text = "Benefit";
             this.label_benefit_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label_benefit_7.Visible = false;
+            this.label_benefit_7.Click += new System.EventHandler(this.OnClick);
             // 
             // label5
             // 
@@ -499,6 +527,7 @@
             this.label5.Text = "Benefit";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label5.Visible = false;
+            this.label5.Click += new System.EventHandler(this.OnClick);
             // 
             // pictureBox_bullet_4
             // 
@@ -512,6 +541,7 @@
             this.pictureBox_bullet_4.TabIndex = 14;
             this.pictureBox_bullet_4.TabStop = false;
             this.pictureBox_bullet_4.Visible = false;
+            this.pictureBox_bullet_4.Click += new System.EventHandler(this.OnClick);
             // 
             // pictureBox3
             // 
@@ -525,6 +555,7 @@
             this.pictureBox3.TabIndex = 13;
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Visible = false;
+            this.pictureBox3.Click += new System.EventHandler(this.OnClick);
             // 
             // label_benefit_6
             // 
@@ -539,6 +570,7 @@
             this.label_benefit_6.Text = "Benefit";
             this.label_benefit_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label_benefit_6.Visible = false;
+            this.label_benefit_6.Click += new System.EventHandler(this.OnClick);
             // 
             // pictureBox2
             // 
@@ -552,6 +584,7 @@
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Visible = false;
+            this.pictureBox2.Click += new System.EventHandler(this.OnClick);
             // 
             // pictureBox_bullet_3
             // 
@@ -565,6 +598,7 @@
             this.pictureBox_bullet_3.TabIndex = 13;
             this.pictureBox_bullet_3.TabStop = false;
             this.pictureBox_bullet_3.Visible = false;
+            this.pictureBox_bullet_3.Click += new System.EventHandler(this.OnClick);
             // 
             // pictureBox1
             // 
@@ -578,6 +612,7 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Visible = false;
+            this.pictureBox1.Click += new System.EventHandler(this.OnClick);
             // 
             // pictureBox_bullet_1
             // 
@@ -591,6 +626,7 @@
             this.pictureBox_bullet_1.TabIndex = 1;
             this.pictureBox_bullet_1.TabStop = false;
             this.pictureBox_bullet_1.Visible = false;
+            this.pictureBox_bullet_1.Click += new System.EventHandler(this.OnClick);
             // 
             // label4
             // 
@@ -605,6 +641,7 @@
             this.label4.Text = "Benefit";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label4.Visible = false;
+            this.label4.Click += new System.EventHandler(this.OnClick);
             // 
             // pictureBox_bullet_2
             // 
@@ -618,6 +655,7 @@
             this.pictureBox_bullet_2.TabIndex = 12;
             this.pictureBox_bullet_2.TabStop = false;
             this.pictureBox_bullet_2.Visible = false;
+            this.pictureBox_bullet_2.Click += new System.EventHandler(this.OnClick);
             // 
             // label3
             // 
@@ -632,6 +670,7 @@
             this.label3.Text = "Benefit";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label3.Visible = false;
+            this.label3.Click += new System.EventHandler(this.OnClick);
             // 
             // label_benefit_2
             // 
@@ -646,6 +685,7 @@
             this.label_benefit_2.Text = "Benefit";
             this.label_benefit_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label_benefit_2.Visible = false;
+            this.label_benefit_2.Click += new System.EventHandler(this.OnClick);
             // 
             // label2
             // 
@@ -660,6 +700,7 @@
             this.label2.Text = "Benefit";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label2.Visible = false;
+            this.label2.Click += new System.EventHandler(this.OnClick);
             // 
             // label_benefit_5
             // 
@@ -674,6 +715,7 @@
             this.label_benefit_5.Text = "Benefit";
             this.label_benefit_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label_benefit_5.Visible = false;
+            this.label_benefit_5.Click += new System.EventHandler(this.OnClick);
             // 
             // label1
             // 
@@ -688,6 +730,7 @@
             this.label1.Text = "Benefit";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label1.Visible = false;
+            this.label1.Click += new System.EventHandler(this.OnClick);
             // 
             // label_benefit_3
             // 
@@ -702,6 +745,7 @@
             this.label_benefit_3.Text = "Benefit";
             this.label_benefit_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label_benefit_3.Visible = false;
+            this.label_benefit_3.Click += new System.EventHandler(this.OnClick);
             // 
             // label_benefit_4
             // 
@@ -716,6 +760,7 @@
             this.label_benefit_4.Text = "Benefit";
             this.label_benefit_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label_benefit_4.Visible = false;
+            this.label_benefit_4.Click += new System.EventHandler(this.OnClick);
             // 
             // MembershipCard
             // 

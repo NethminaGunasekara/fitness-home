@@ -1,7 +1,7 @@
 ﻿using AnimateDemo;
 using fitness_home.Services;
-using fitness_home.Services.Types;
 using fitness_home.Utils;
+using fitness_home.Utils.Types;
 using fitness_home.Utils.Validate;
 using fitness_home.Views.Messages;
 using System;
@@ -21,6 +21,15 @@ namespace fitness_home
 
             // Prevent focusing on email textbox on form load
             this.ActiveControl = label_sign_up;
+        }
+
+        private void OnLoad(object sender, System.EventArgs e)
+        {
+            // Set the background image
+            this.BackgroundImage = Properties.Resources.Background;
+
+            // Set the background image layout to zoom
+            this.BackgroundImageLayout = ImageLayout.Zoom;
         }
 
         // Add placeholder text when the focus leaves
@@ -107,10 +116,21 @@ namespace fitness_home
                 setPosition: false);
         }
 
-        private void OnLoad(object sender, EventArgs e)
+        private void panel_previous_Paint(object sender, PaintEventArgs e)
         {
-            // Form transition
-            WinAPI.AnimateWindow(this.Handle, 400, WinAPI.BLEND);
+
+        }
+
+        private void panel_logo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        // ** Event: Return to previous form
+        private void button_previous_form_Click(object sender, EventArgs e)
+        {
+            Welcome WelcomeForm = FormProvider.Welcome ?? (FormProvider.Welcome = new Welcome());
+            Helpers.ShowForm(WelcomeForm, this, setSize: false, setPosition: false);
         }
     }
 }

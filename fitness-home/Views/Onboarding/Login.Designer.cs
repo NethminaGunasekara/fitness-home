@@ -37,6 +37,7 @@
             this.panel_password = new System.Windows.Forms.Panel();
             this.textbox_password = new System.Windows.Forms.TextBox();
             this.panel_logo = new System.Windows.Forms.Panel();
+            this.button_previous_form = new System.Windows.Forms.Button();
             this.pictureBox_logo = new System.Windows.Forms.PictureBox();
             this.panel_email = new System.Windows.Forms.Panel();
             this.textbox_email = new System.Windows.Forms.TextBox();
@@ -116,7 +117,6 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tableLayoutPanel1.BackgroundImage")));
             this.tableLayoutPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
@@ -144,7 +144,6 @@
             // 
             this.panel_password.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.panel_password.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_password.Controls.Add(icon_password);
             this.panel_password.Controls.Add(this.textbox_password);
             this.panel_password.Location = new System.Drawing.Point(393, 225);
@@ -166,7 +165,7 @@
             this.textbox_password.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.textbox_password.MaxLength = 72;
             this.textbox_password.Name = "textbox_password";
-            this.textbox_password.Size = new System.Drawing.Size(377, 20);
+            this.textbox_password.Size = new System.Drawing.Size(379, 20);
             this.textbox_password.TabIndex = 5;
             this.textbox_password.Text = "Password";
             this.textbox_password.TextChanged += new System.EventHandler(this.Password_TextChanged);
@@ -180,6 +179,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
             this.panel_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel_logo.Controls.Add(this.button_previous_form);
             this.panel_logo.Controls.Add(this.pictureBox_logo);
             this.panel_logo.Location = new System.Drawing.Point(0, 0);
             this.panel_logo.Margin = new System.Windows.Forms.Padding(0);
@@ -187,6 +187,25 @@
             this.tableLayoutPanel1.SetRowSpan(this.panel_logo, 5);
             this.panel_logo.Size = new System.Drawing.Size(353, 450);
             this.panel_logo.TabIndex = 4;
+            this.panel_logo.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_logo_Paint);
+            // 
+            // button_previous_form
+            // 
+            this.button_previous_form.BackColor = System.Drawing.Color.Transparent;
+            this.button_previous_form.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_previous_form.BackgroundImage")));
+            this.button_previous_form.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_previous_form.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_previous_form.FlatAppearance.BorderSize = 0;
+            this.button_previous_form.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button_previous_form.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button_previous_form.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_previous_form.Location = new System.Drawing.Point(31, 25);
+            this.button_previous_form.Margin = new System.Windows.Forms.Padding(0);
+            this.button_previous_form.Name = "button_previous_form";
+            this.button_previous_form.Size = new System.Drawing.Size(34, 34);
+            this.button_previous_form.TabIndex = 2;
+            this.button_previous_form.UseVisualStyleBackColor = false;
+            this.button_previous_form.Click += new System.EventHandler(this.button_previous_form_Click);
             // 
             // pictureBox_logo
             // 
@@ -205,7 +224,6 @@
             // 
             this.panel_email.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.panel_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel_email.Controls.Add(icon_email);
             this.panel_email.Controls.Add(this.textbox_email);
             this.panel_email.Location = new System.Drawing.Point(393, 161);
@@ -227,7 +245,7 @@
             this.textbox_email.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.textbox_email.MaxLength = 100;
             this.textbox_email.Name = "textbox_email";
-            this.textbox_email.Size = new System.Drawing.Size(377, 20);
+            this.textbox_email.Size = new System.Drawing.Size(379, 20);
             this.textbox_email.TabIndex = 5;
             this.textbox_email.Text = "Email";
             this.textbox_email.TextChanged += new System.EventHandler(this.Email_TextChanged);
@@ -318,5 +336,6 @@
         private System.Windows.Forms.LinkLabel link_sign_up;
         private System.Windows.Forms.Button btn_get_started;
         private System.Windows.Forms.PictureBox pictureBox_logo;
+        private System.Windows.Forms.Button button_previous_form;
     }
 }

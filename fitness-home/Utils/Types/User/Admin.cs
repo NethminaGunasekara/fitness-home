@@ -1,6 +1,4 @@
-﻿using fitness_home.Services.Types;
-
-namespace fitness_home.Utils.Types.User
+﻿namespace fitness_home.Utils.Types.User
 {
     internal class Admin: IUser
     {

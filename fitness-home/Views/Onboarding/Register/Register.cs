@@ -1,17 +1,24 @@
 ﻿using AnimateDemo;
+using fitness_home.Services;
 using fitness_home.Utils;
+using fitness_home.Utils.Types;
 using fitness_home.Utils.Validate;
+using fitness_home.Views.Onboarding.Register;
+using fitness_home.Views.Onboarding.Register.Types;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.Remoting.Channels;
 using System.Windows.Forms;
 
 namespace fitness_home
 {
     public partial class Register : Form
     {
+        // Store the information provided by the user untill registration process completes
+        public static RegistrationInfo RegistrationInfo;
+
+        // Validate inputs provided by the user
         public static Dictionary<string, bool> HasEntered = new Dictionary<string, bool>();
         private static bool HasRequiredChars;
         private static bool HasRequiredLength;
@@ -25,7 +32,7 @@ namespace fitness_home
             HasEntered.Add("textBox_fname", false);
             HasEntered.Add("textBox_lname", false);
             HasEntered.Add("textBox_dob", false);
-            HasEntered.Add("textBox_nic", false);
+            HasEntered.Add("textBox_nic", true); // NIC is optional
             HasEntered.Add("gender", false);
             HasEntered.Add("textBox_email", false);
             HasEntered.Add("textBox_phone", false);
@@ -35,15 +42,22 @@ namespace fitness_home
             HasEntered.Add("textBox_ec_phone", false);
         }
 
-        private void OnLoad(object sender, EventArgs e)
+        private void OnLoad(object sender, System.EventArgs e)
         {
             // Form transition
             WinAPI.AnimateWindow(this.Handle, 700, WinAPI.BLEND);
 
-            Refresh();
+            Refresh(); // Redraw textbox borders after being hidden by the transition
+
+            // Set the background image
+            this.BackgroundImage = Properties.Resources.Background;
+
+            // Set the background image layout to zoom
+            this.BackgroundImageLayout = ImageLayout.Zoom;
 
             // Update the margin right value of heading
             label_page_heading.Margin = new Padding(0, 0, panel_previous.Width, 0);
+
         }
 
         private void OnResize(object sender, EventArgs e)
@@ -189,6 +203,57 @@ namespace fitness_home
         {
             RegisterForm.PresenceCheck(sender, e, 10);
             RegisterForm.UpdateSignUpButtonState(button_sign_up);
+        }
+
+        // ** Event: Return to previous form
+        private void button_previous_form_Click(object sender, EventArgs e)
+        {
+            Login LoginForm = FormProvider.Login ?? (FormProvider.Login = new Login());
+            Helpers.ShowForm(LoginForm, this, setSize: false, setPosition: false);
+        }
+
+        private void button_sign_up_Click(object sender, EventArgs e)
+        {
+            // Parse the input and get a "DateTime" object
+            DateTime dob = DateTime.ParseExact(textBox_dob.Text, "yyyy/MM/dd", System.Globalization.CultureInfo.InvariantCulture);
+            // Determine the gender based on which radio button ic checked
+            Gender gender = radioButton_male.Checked ? Gender.Male : Gender.Female;
+
+            // Retrieve all inputs and store them as an instance of "RegistrationInfo"
+            RegistrationInfo = new RegistrationInfo(
+                firstName: textBox_fname.Text,
+                lastName: textBox_lname.Text,
+                dob, // Parsed date of birth
+                nic: textBox_nic.Text,
+                gender,
+                email: textBox_email.Text,
+                phone: textBox_phone.Text,
+                address: textBox_address.Text,
+                password: textBox_new_password.Text,
+                ecName: textBox_ec_name.Text,
+                ecPhone: textBox_ec_phone.Text
+            );
+
+            // Proceed to the membership selection page
+            Membership Membership = FormProvider.Membership ?? (FormProvider.Membership = new Membership());
+            Helpers.ShowForm(Membership, this, false, false);
+        }
+
+        private void button_fill_data_Click(object sender, EventArgs e)
+        {
+            textBox_fname.Text = "Nethmina";
+            textBox_lname.Text = "Gunasekara";
+            textBox_dob.Text = "2003/09/15";
+            textBox_nic.Text = "200325911491";
+            textBox_email.Text = "gunasekaraditn@gmail.com";
+            textBox_phone.Text = "0778168232";
+            textBox_address.Text = "158, Doranagoda, Udugampola";
+            textBox_new_password.PasswordChar = '*';
+            textBox_confirm_password.PasswordChar = '*';
+            textBox_new_password.Text = "Nethmina2003530";
+            textBox_confirm_password.Text = "Nethmina2003530";
+            textBox_ec_name.Text = "Ruwanthika Gunasekara";
+            textBox_ec_phone.Text = "0763241947";
         }
     }
 }

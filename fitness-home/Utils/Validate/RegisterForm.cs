@@ -1,5 +1,4 @@
-﻿using fitness_home.Utils.Types;
-using System;
+﻿using System;
 using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
@@ -108,7 +107,8 @@ namespace fitness_home.Utils.Validate
             if (nic == "XXXXXXXXXXXX")
             {
                 SetBackColorDefault(textBox);
-                Register.HasEntered["textBox_nic"] = false;
+                // Users can submit the registration form even when the NIC is empty
+                Register.HasEntered["textBox_nic"] = true; 
                 return;
             }
 
@@ -125,7 +125,7 @@ namespace fitness_home.Utils.Validate
                 Register.HasEntered["textBox_nic"] = true;
             }
 
-            // If validation fails
+            // Although NIC is optional, users can't proceed with an invalid NIC number format
             else
             {
                 SetBackColorRed(textBox);

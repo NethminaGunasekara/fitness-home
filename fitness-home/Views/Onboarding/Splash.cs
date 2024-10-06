@@ -1,7 +1,7 @@
 ﻿using AnimateDemo;
 using fitness_home.Services;
-using fitness_home.Services.Types;
 using fitness_home.Utils;
+using fitness_home.Utils.Types;
 using fitness_home.Views.Messages;
 using System;
 using System.Configuration;
@@ -81,13 +81,38 @@ namespace fitness_home.Views.Onboarding
             }
         }
 
+        private void OnDatabaseError()
+        {
+            DatabaseError databaseError = new DatabaseError();
+
+            // Set error message position
+            databaseError.StartPosition = FormStartPosition.Manual;
+
+            int x = this.Location.X + (this.Width / 2) - databaseError.Width / 2;
+            int y = this.Location.Y + (this.Height / 2) - databaseError.Height / 2;
+
+            Point location = new Point(x, y);
+
+            databaseError.Location = location;
+
+            // Display the error message
+            databaseError.ShowDialog();
+        }
+
         private async void Splash_Shown(object sender, EventArgs e)
         {
             // If user credentials are stored in the config
             string userEmail = ConfigurationManager.AppSettings["USER_EMAIL"] ?? "";
             string userPass = ConfigurationManager.AppSettings["USER_PASSWORD"] ?? "";
 
-            if (userEmail.Length == 0 || userPass.Length == 0)
+            // Check database connection before trying to login
+            if (!Authentication.Instance.CheckConnection())
+            {
+                OnDatabaseError();
+            }
+
+            // If no email or password is stored in the config
+            else if (userEmail.Length == 0 || userPass.Length == 0)
             {
                 // Display Welcome form after 2s if no email or password is stored in the config
                 await Task.Delay(2000);
@@ -132,26 +157,13 @@ namespace fitness_home.Views.Onboarding
 
                 // If there's a database connection error
                 else if (loginStatus == LoginStatus.DatabaseError) {
-                    DatabaseError databaseError = new DatabaseError();
-
-                    // Set error message position
-                    databaseError.StartPosition = FormStartPosition.Manual;
-
-                    int x = this.Location.X + (this.Width / 2) - databaseError.Width / 2;
-                    int y = this.Location.Y + (this.Height / 2) - databaseError.Height / 2;
-
-                    Point location = new Point(x, y);
-
-                    databaseError.Location = location;
-
-                    // Display the error message
-                    databaseError.ShowDialog();
+                    OnDatabaseError();
                 }
             }
 
         }
 
-        // Used to draw a custom border around the progress bar squares
+        // Draws a custom border around the progress bar squares
         private void DrawBorder(PaintEventArgs e)
         {
             Color borderColor = Color.FromArgb(161, 210, 0);

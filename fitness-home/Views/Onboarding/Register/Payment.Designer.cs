@@ -33,9 +33,16 @@
             this.tableLayoutPanel_content = new System.Windows.Forms.TableLayoutPanel();
             this.panel_security_info = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_security_info = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel_exp_date = new System.Windows.Forms.Panel();
+            this.textBox_exp_month = new System.Windows.Forms.TextBox();
+            this.label_cvc_title = new System.Windows.Forms.Label();
             this.panel_cvc = new System.Windows.Forms.Panel();
             this.textBox_cvc = new System.Windows.Forms.TextBox();
-            this.label_cvc_title = new System.Windows.Forms.Label();
+            this.label_exp_date_title = new System.Windows.Forms.Label();
+            this.label_total_amount_title = new System.Windows.Forms.Label();
             this.panel_total_amount = new System.Windows.Forms.Panel();
             this.panel_admission_fee = new System.Windows.Forms.Panel();
             this.label_admission_fee_title = new System.Windows.Forms.Label();
@@ -46,10 +53,6 @@
             this.panel_membership_total = new System.Windows.Forms.Panel();
             this.label_membership_total_title = new System.Windows.Forms.Label();
             this.label_membership_total_amount = new System.Windows.Forms.Label();
-            this.panel_exp_date = new System.Windows.Forms.Panel();
-            this.textBox_exp_date = new System.Windows.Forms.TextBox();
-            this.label_exp_date_title = new System.Windows.Forms.Label();
-            this.label_total_amount_title = new System.Windows.Forms.Label();
             this.panel_pay_btn = new System.Windows.Forms.Panel();
             this.button_pay = new System.Windows.Forms.Button();
             this.panel_header = new System.Windows.Forms.Panel();
@@ -80,12 +83,14 @@
             this.tableLayoutPanel_content.SuspendLayout();
             this.panel_security_info.SuspendLayout();
             this.tableLayoutPanel_security_info.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel_exp_date.SuspendLayout();
             this.panel_cvc.SuspendLayout();
             this.panel_total_amount.SuspendLayout();
             this.panel_admission_fee.SuspendLayout();
             this.panel_membership_fee.SuspendLayout();
             this.panel_membership_total.SuspendLayout();
-            this.panel_exp_date.SuspendLayout();
             this.panel_pay_btn.SuspendLayout();
             this.panel_header.SuspendLayout();
             this.tableLayoutPanel_header.SuspendLayout();
@@ -133,7 +138,6 @@
             this.tableLayoutPanel_content.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel_content.Size = new System.Drawing.Size(1264, 681);
             this.tableLayoutPanel_content.TabIndex = 0;
-            this.tableLayoutPanel_content.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_content_Paint);
             // 
             // panel_security_info
             // 
@@ -144,7 +148,6 @@
             this.panel_security_info.Name = "panel_security_info";
             this.panel_security_info.Size = new System.Drawing.Size(632, 461);
             this.panel_security_info.TabIndex = 3;
-            this.panel_security_info.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_security_info_Paint);
             // 
             // tableLayoutPanel_security_info
             // 
@@ -152,10 +155,10 @@
             this.tableLayoutPanel_security_info.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
             this.tableLayoutPanel_security_info.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel_security_info.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
+            this.tableLayoutPanel_security_info.Controls.Add(this.panel1, 0, 3);
             this.tableLayoutPanel_security_info.Controls.Add(this.label_cvc_title, 0, 0);
             this.tableLayoutPanel_security_info.Controls.Add(this.panel_cvc, 0, 1);
             this.tableLayoutPanel_security_info.Controls.Add(this.label_exp_date_title, 0, 2);
-            this.tableLayoutPanel_security_info.Controls.Add(this.panel_exp_date, 0, 3);
             this.tableLayoutPanel_security_info.Controls.Add(this.label_total_amount_title, 0, 4);
             this.tableLayoutPanel_security_info.Controls.Add(this.panel_total_amount, 0, 5);
             this.tableLayoutPanel_security_info.Location = new System.Drawing.Point(94, 81);
@@ -170,7 +173,79 @@
             this.tableLayoutPanel_security_info.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_security_info.Size = new System.Drawing.Size(445, 364);
             this.tableLayoutPanel_security_info.TabIndex = 1;
-            this.tableLayoutPanel_security_info.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_security_info_Paint);
+            // 
+            // panel1
+            // 
+            this.tableLayoutPanel_security_info.SetColumnSpan(this.panel1, 3);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panel_exp_date);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 139);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(445, 37);
+            this.panel1.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Location = new System.Drawing.Point(121, -2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(106, 40);
+            this.panel2.TabIndex = 12;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox1.Location = new System.Drawing.Point(25, 6);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(51, 22);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "Month";
+            // 
+            // panel_exp_date
+            // 
+            this.panel_exp_date.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.panel_exp_date.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_exp_date.Controls.Add(this.textBox_exp_month);
+            this.panel_exp_date.Location = new System.Drawing.Point(4, 0);
+            this.panel_exp_date.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.panel_exp_date.Name = "panel_exp_date";
+            this.panel_exp_date.Size = new System.Drawing.Size(106, 40);
+            this.panel_exp_date.TabIndex = 11;
+            // 
+            // textBox_exp_month
+            // 
+            this.textBox_exp_month.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.textBox_exp_month.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_exp_month.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold);
+            this.textBox_exp_month.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox_exp_month.Location = new System.Drawing.Point(25, 6);
+            this.textBox_exp_month.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox_exp_month.Name = "textBox_exp_month";
+            this.textBox_exp_month.Size = new System.Drawing.Size(51, 22);
+            this.textBox_exp_month.TabIndex = 0;
+            this.textBox_exp_month.Text = "Month";
+            // 
+            // label_cvc_title
+            // 
+            this.label_cvc_title.AutoSize = true;
+            this.tableLayoutPanel_security_info.SetColumnSpan(this.label_cvc_title, 3);
+            this.label_cvc_title.Font = new System.Drawing.Font("Rajdhani SemiBold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_cvc_title.ForeColor = System.Drawing.Color.White;
+            this.label_cvc_title.Location = new System.Drawing.Point(0, 0);
+            this.label_cvc_title.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
+            this.label_cvc_title.Name = "label_cvc_title";
+            this.label_cvc_title.Size = new System.Drawing.Size(151, 21);
+            this.label_cvc_title.TabIndex = 0;
+            this.label_cvc_title.Text = "Card Verificaton Code";
             // 
             // panel_cvc
             // 
@@ -196,20 +271,35 @@
             this.textBox_cvc.Size = new System.Drawing.Size(278, 22);
             this.textBox_cvc.TabIndex = 0;
             this.textBox_cvc.Text = "CVC";
-            this.textBox_cvc.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox_cvc.TextChanged += new System.EventHandler(this.textBox_cvc_TextChanged);
             // 
-            // label_cvc_title
+            // label_exp_date_title
             // 
-            this.label_cvc_title.AutoSize = true;
-            this.tableLayoutPanel_security_info.SetColumnSpan(this.label_cvc_title, 3);
-            this.label_cvc_title.Font = new System.Drawing.Font("Rajdhani SemiBold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_cvc_title.ForeColor = System.Drawing.Color.White;
-            this.label_cvc_title.Location = new System.Drawing.Point(0, 0);
-            this.label_cvc_title.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
-            this.label_cvc_title.Name = "label_cvc_title";
-            this.label_cvc_title.Size = new System.Drawing.Size(151, 21);
-            this.label_cvc_title.TabIndex = 0;
-            this.label_cvc_title.Text = "Card Verificaton Code";
+            this.label_exp_date_title.AutoSize = true;
+            this.tableLayoutPanel_security_info.SetColumnSpan(this.label_exp_date_title, 3);
+            this.label_exp_date_title.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label_exp_date_title.Font = new System.Drawing.Font("Rajdhani SemiBold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_exp_date_title.ForeColor = System.Drawing.Color.White;
+            this.label_exp_date_title.Location = new System.Drawing.Point(0, 106);
+            this.label_exp_date_title.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
+            this.label_exp_date_title.Name = "label_exp_date_title";
+            this.label_exp_date_title.Size = new System.Drawing.Size(445, 21);
+            this.label_exp_date_title.TabIndex = 12;
+            this.label_exp_date_title.Text = "Expiration date";
+            // 
+            // label_total_amount_title
+            // 
+            this.label_total_amount_title.AutoSize = true;
+            this.tableLayoutPanel_security_info.SetColumnSpan(this.label_total_amount_title, 3);
+            this.label_total_amount_title.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label_total_amount_title.Font = new System.Drawing.Font("Rajdhani SemiBold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_total_amount_title.ForeColor = System.Drawing.Color.White;
+            this.label_total_amount_title.Location = new System.Drawing.Point(0, 209);
+            this.label_total_amount_title.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
+            this.label_total_amount_title.Name = "label_total_amount_title";
+            this.label_total_amount_title.Size = new System.Drawing.Size(445, 21);
+            this.label_total_amount_title.TabIndex = 13;
+            this.label_total_amount_title.Text = "Amount";
             // 
             // panel_total_amount
             // 
@@ -219,7 +309,7 @@
             this.panel_total_amount.Controls.Add(this.panel_admission_fee);
             this.panel_total_amount.Controls.Add(this.panel_membership_fee);
             this.panel_total_amount.Controls.Add(this.panel_membership_total);
-            this.panel_total_amount.Location = new System.Drawing.Point(4, 243);
+            this.panel_total_amount.Location = new System.Drawing.Point(4, 242);
             this.panel_total_amount.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.panel_total_amount.Name = "panel_total_amount";
             this.panel_total_amount.Size = new System.Drawing.Size(307, 121);
@@ -246,7 +336,6 @@
             this.label_admission_fee_title.Size = new System.Drawing.Size(125, 24);
             this.label_admission_fee_title.TabIndex = 16;
             this.label_admission_fee_title.Text = "Admission fee :";
-            this.label_admission_fee_title.Click += new System.EventHandler(this.label6_Click);
             // 
             // label_admission_fee_amount
             // 
@@ -259,7 +348,6 @@
             this.label_admission_fee_amount.Size = new System.Drawing.Size(69, 24);
             this.label_admission_fee_amount.TabIndex = 16;
             this.label_admission_fee_amount.Text = "2, 300/=";
-            this.label_admission_fee_amount.Click += new System.EventHandler(this.label5_Click);
             // 
             // panel_membership_fee
             // 
@@ -316,7 +404,6 @@
             this.label_membership_total_title.Size = new System.Drawing.Size(119, 24);
             this.label_membership_total_title.TabIndex = 16;
             this.label_membership_total_title.Text = "Total amount :";
-            this.label_membership_total_title.Click += new System.EventHandler(this.label8_Click);
             // 
             // label_membership_total_amount
             // 
@@ -329,62 +416,6 @@
             this.label_membership_total_amount.Size = new System.Drawing.Size(69, 24);
             this.label_membership_total_amount.TabIndex = 16;
             this.label_membership_total_amount.Text = "5, 750/=";
-            // 
-            // panel_exp_date
-            // 
-            this.panel_exp_date.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.panel_exp_date.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tableLayoutPanel_security_info.SetColumnSpan(this.panel_exp_date, 3);
-            this.panel_exp_date.Controls.Add(this.textBox_exp_date);
-            this.panel_exp_date.Location = new System.Drawing.Point(4, 138);
-            this.panel_exp_date.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.panel_exp_date.Name = "panel_exp_date";
-            this.panel_exp_date.Size = new System.Drawing.Size(307, 40);
-            this.panel_exp_date.TabIndex = 11;
-            this.panel_exp_date.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
-            // 
-            // textBox_exp_date
-            // 
-            this.textBox_exp_date.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.textBox_exp_date.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_exp_date.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold);
-            this.textBox_exp_date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.textBox_exp_date.Location = new System.Drawing.Point(13, 7);
-            this.textBox_exp_date.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox_exp_date.Name = "textBox_exp_date";
-            this.textBox_exp_date.Size = new System.Drawing.Size(278, 22);
-            this.textBox_exp_date.TabIndex = 0;
-            this.textBox_exp_date.Text = "Expiration date";
-            this.textBox_exp_date.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
-            // 
-            // label_exp_date_title
-            // 
-            this.label_exp_date_title.AutoSize = true;
-            this.tableLayoutPanel_security_info.SetColumnSpan(this.label_exp_date_title, 3);
-            this.label_exp_date_title.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label_exp_date_title.Font = new System.Drawing.Font("Rajdhani SemiBold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_exp_date_title.ForeColor = System.Drawing.Color.White;
-            this.label_exp_date_title.Location = new System.Drawing.Point(0, 105);
-            this.label_exp_date_title.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
-            this.label_exp_date_title.Name = "label_exp_date_title";
-            this.label_exp_date_title.Size = new System.Drawing.Size(445, 21);
-            this.label_exp_date_title.TabIndex = 12;
-            this.label_exp_date_title.Text = "Expiration date";
-            this.label_exp_date_title.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label_total_amount_title
-            // 
-            this.label_total_amount_title.AutoSize = true;
-            this.tableLayoutPanel_security_info.SetColumnSpan(this.label_total_amount_title, 3);
-            this.label_total_amount_title.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label_total_amount_title.Font = new System.Drawing.Font("Rajdhani SemiBold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_total_amount_title.ForeColor = System.Drawing.Color.White;
-            this.label_total_amount_title.Location = new System.Drawing.Point(0, 210);
-            this.label_total_amount_title.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
-            this.label_total_amount_title.Name = "label_total_amount_title";
-            this.label_total_amount_title.Size = new System.Drawing.Size(445, 21);
-            this.label_total_amount_title.TabIndex = 13;
-            this.label_total_amount_title.Text = "Amount";
             // 
             // panel_pay_btn
             // 
@@ -415,7 +446,6 @@
             this.button_pay.TabIndex = 0;
             this.button_pay.Text = "PAY NOW";
             this.button_pay.UseVisualStyleBackColor = false;
-            this.button_pay.Click += new System.EventHandler(this.button_pay_Click);
             // 
             // panel_header
             // 
@@ -561,6 +591,7 @@
             this.textBox_card_number.Size = new System.Drawing.Size(334, 22);
             this.textBox_card_number.TabIndex = 0;
             this.textBox_card_number.Text = "XXXX-XXXX-XXXX-XXXX";
+            this.textBox_card_number.TextChanged += new System.EventHandler(this.textBox_card_number_TextChanged);
             // 
             // label_card_number
             // 
@@ -589,7 +620,6 @@
             this.label_card_holder.Size = new System.Drawing.Size(445, 21);
             this.label_card_holder.TabIndex = 8;
             this.label_card_holder.Text = "Card holder’s name";
-            this.label_card_holder.Click += new System.EventHandler(this.label_card_holder_Click);
             // 
             // panel_cash_icon
             // 
@@ -654,13 +684,13 @@
             this.radioButton_mc.Name = "radioButton_mc";
             this.radioButton_mc.Size = new System.Drawing.Size(103, 25);
             this.radioButton_mc.TabIndex = 2;
-            this.radioButton_mc.TabStop = true;
             this.radioButton_mc.Text = "MasterCard";
             this.radioButton_mc.UseVisualStyleBackColor = true;
             // 
             // radioButton_visa
             // 
             this.radioButton_visa.AutoSize = true;
+            this.radioButton_visa.Checked = true;
             this.radioButton_visa.Font = new System.Drawing.Font("Rajdhani SemiBold", 12F);
             this.radioButton_visa.ForeColor = System.Drawing.Color.White;
             this.radioButton_visa.Location = new System.Drawing.Point(4, 27);
@@ -702,7 +732,6 @@
             this.radioButton_cash.Name = "radioButton_cash";
             this.radioButton_cash.Size = new System.Drawing.Size(60, 25);
             this.radioButton_cash.TabIndex = 3;
-            this.radioButton_cash.TabStop = true;
             this.radioButton_cash.Text = "Cash";
             this.radioButton_cash.UseVisualStyleBackColor = true;
             // 
@@ -717,7 +746,6 @@
             this.panel_card_holder.Name = "panel_card_holder";
             this.panel_card_holder.Size = new System.Drawing.Size(356, 40);
             this.panel_card_holder.TabIndex = 10;
-            this.panel_card_holder.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // textBox_card_holder
             // 
@@ -731,14 +759,13 @@
             this.textBox_card_holder.Size = new System.Drawing.Size(334, 22);
             this.textBox_card_holder.TabIndex = 0;
             this.textBox_card_holder.Text = "Card holder’s name";
-            this.textBox_card_holder.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox_card_holder.TextChanged += new System.EventHandler(this.textBox_card_holder_TextChanged);
             // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = global::fitness_home.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel_content);
@@ -747,11 +774,17 @@
             this.Name = "Payment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payment";
+            this.Load += new System.EventHandler(this.OnLoad);
             this.panel_content.ResumeLayout(false);
             this.tableLayoutPanel_content.ResumeLayout(false);
             this.panel_security_info.ResumeLayout(false);
             this.tableLayoutPanel_security_info.ResumeLayout(false);
             this.tableLayoutPanel_security_info.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel_exp_date.ResumeLayout(false);
+            this.panel_exp_date.PerformLayout();
             this.panel_cvc.ResumeLayout(false);
             this.panel_cvc.PerformLayout();
             this.panel_total_amount.ResumeLayout(false);
@@ -761,8 +794,6 @@
             this.panel_membership_fee.PerformLayout();
             this.panel_membership_total.ResumeLayout(false);
             this.panel_membership_total.PerformLayout();
-            this.panel_exp_date.ResumeLayout(false);
-            this.panel_exp_date.PerformLayout();
             this.panel_pay_btn.ResumeLayout(false);
             this.panel_header.ResumeLayout(false);
             this.tableLayoutPanel_header.ResumeLayout(false);
@@ -822,7 +853,7 @@
         private System.Windows.Forms.Panel panel_cvc;
         private System.Windows.Forms.TextBox textBox_cvc;
         private System.Windows.Forms.Panel panel_exp_date;
-        private System.Windows.Forms.TextBox textBox_exp_date;
+        private System.Windows.Forms.TextBox textBox_exp_month;
         private System.Windows.Forms.Label label_exp_date_title;
         private System.Windows.Forms.Label label_total_amount_title;
         private System.Windows.Forms.Panel panel_total_amount;
@@ -835,5 +866,8 @@
         private System.Windows.Forms.Panel panel_membership_total;
         private System.Windows.Forms.Label label_membership_total_title;
         private System.Windows.Forms.Label label_membership_total_amount;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

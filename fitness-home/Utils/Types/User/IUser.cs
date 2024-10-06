@@ -1,6 +1,4 @@
-﻿using fitness_home.Services.Types;
-
-namespace fitness_home.Utils.Types
+﻿namespace fitness_home.Utils.Types
 {
     internal interface IUser
     {

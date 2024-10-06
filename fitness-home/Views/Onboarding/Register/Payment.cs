@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using AnimateDemo;
 using System.Windows.Forms;
 
 namespace fitness_home.Views.Onboarding.Register
@@ -17,84 +10,33 @@ namespace fitness_home.Views.Onboarding.Register
             InitializeComponent();
         }
 
-        private void button_pay_Click(object sender, EventArgs e)
+        private void textBox_card_holder_TextChanged(object sender, System.EventArgs e)
         {
 
         }
 
-        private void tableLayoutPanel_content_Paint(object sender, PaintEventArgs e)
+        private void textBox_card_number_TextChanged(object sender, System.EventArgs e)
         {
 
         }
 
-        private void panel_security_info_Paint(object sender, PaintEventArgs e)
+        private void textBox_cvc_TextChanged(object sender, System.EventArgs e)
         {
 
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void OnLoad(object sender, System.EventArgs e)
         {
+            // Form transition
+            WinAPI.AnimateWindow(this.Handle, 700, WinAPI.BLEND);
 
-        }
+            Refresh(); // Redraw textbox borders after being hidden by the transition
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
+            // Set the background image
+            this.BackgroundImage = Properties.Resources.Background;
 
-        }
-
-        private void label_card_holder_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel_security_info_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
+            // Set the background image layout to zoom
+            this.BackgroundImageLayout = ImageLayout.Zoom;
         }
     }
 }

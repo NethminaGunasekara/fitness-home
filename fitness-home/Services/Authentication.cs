@@ -3,7 +3,6 @@ using System.Text;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
-using fitness_home.Services.Types;
 using fitness_home.Utils.Types;
 using fitness_home.Utils.Types.User;
 using fitness_home.Utils;
@@ -12,31 +11,45 @@ using System.Windows.Forms;
 
 namespace fitness_home.Services
 {
+    /// <summary>
+    /// Singleton class for managing authentication operations, including login and redirecting users to their dashboard.
+    /// </summary>
     internal class Authentication
     {
+        // Stores logged user info
         public static IUser LoggedUser;
+
+        // Singleton instance of the class
         private static Authentication instance;
+
+        // Lock object used to ensure thread safety
         private static readonly object _lock = new object();
+
+        // Connection string to the database
         public readonly string ConnectionString;
 
+        /// <summary>
+        /// Private constructor to prevent direct instantiation.
+        /// </summary>
         private Authentication()
         {
+            // Build the connection string when an instance of the class is being created
             ConnectionString = GetConnectionString();
-
-            // Check connection during initialization
-            if (!CheckConnection(ConnectionString))
-            {
-                throw new Exception("Failed to connect to database. Please check your connection settings.");
-            }
         }
 
-        private static string GetConnectionString()
+        /// <summary>
+        /// Builds and returns the SQL connection string from the configuration settings.
+        /// </summary>
+        /// <returns>SQL connection string</returns>
+        private string GetConnectionString()
         {
+            // Fetch database connection details from configuration
             string dbHost = ConfigurationManager.AppSettings["DB_HOST"];
             string dbUser = ConfigurationManager.AppSettings["DB_USER"];
             string dbPass = ConfigurationManager.AppSettings["DB_PASS"];
             string dbName = ConfigurationManager.AppSettings["DB_NAME"];
 
+            // Build the SQL connection string
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = dbHost;
             builder.UserID = dbUser;
@@ -46,9 +59,14 @@ namespace fitness_home.Services
             return builder.ConnectionString;
         }
 
-        private static bool CheckConnection(string connectionString)
+        /// <summary>
+        /// Checks if a connection to the database can be established.
+        /// </summary>
+        /// <returns>True if the connection is successful, otherwise false</returns>
+        public bool CheckConnection()
         {
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            // Open a new SQL connection
+            using (SqlConnection conn = new SqlConnection(ConnectionString))
             {
                 try
                 {
@@ -56,17 +74,22 @@ namespace fitness_home.Services
                     return true;
                 }
                 catch (SqlException)
-
                 {
+                    // Return false if the connection fails
                     return false;
                 }
             }
         }
 
+        /// <summary>
+        /// Gets the singleton instance of the Authentication class.
+        /// Ensures thread safety with double-check locking.
+        /// </summary>
         public static Authentication Instance
         {
             get
             {
+                // Ensure thread-safe singleton initialization
                 if (instance == null)
                 {
                     lock (_lock)
@@ -82,7 +105,7 @@ namespace fitness_home.Services
         }
 
         /// <summary>
-        /// Provides login functionality
+        /// Provides login functionality.
         /// </summary>
         /// <param name="email">Email entered by the user</param>
         /// <param name="password">Password entered by the user</param>
@@ -93,13 +116,14 @@ namespace fitness_home.Services
             {
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
+                    // SQL query to fetch the user details
                     string query = "SELECT id, role, password FROM account WHERE email = @Email";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@Email", email);
 
                     conn.Open();
 
-                    // Execute the query and read the results
+                    // Execute query and read the results
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
                         // If no record is found, return InvalidEmail
@@ -111,12 +135,12 @@ namespace fitness_home.Services
                         // Move to the first row
                         reader.Read();
 
-                        // Get the id, role and password from the result
+                        // Get the id, role, and password from the result
                         int id = Convert.ToInt32(reader["id"]);
                         int role = Convert.ToInt32(reader["role"]);
                         string storedHash = reader["password"].ToString();
 
-                        // Verify the entered password with the stored hash
+                        // Verify the hased version of entered password against the stored hash
                         bool isPasswordValid = VerifyPassword(password, storedHash);
 
                         // If login is successful
@@ -125,10 +149,8 @@ namespace fitness_home.Services
                             // Assign the user with role based on the database result
                             if (role == 0)
                                 LoggedUser = new Admin(id);
-
                             else if (role == 1)
                                 LoggedUser = new Trainer(id);
-
                             else
                                 LoggedUser = new Member(id);
 
@@ -136,8 +158,8 @@ namespace fitness_home.Services
                             string storedEmail = ConfigurationManager.AppSettings["USER_EMAIL"];
                             string storedPassword = ConfigurationManager.AppSettings["USER_PASSWORD"];
 
+                            // Update configuration if necessary
                             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-
                             if (!storedEmail.Equals(email)) config.AppSettings.Settings["USER_EMAIL"].Value = email;
                             if (!storedPassword.Equals(password)) config.AppSettings.Settings["USER_PASSWORD"].Value = password;
 
@@ -147,13 +169,11 @@ namespace fitness_home.Services
                         return isPasswordValid ? LoginStatus.Success : LoginStatus.InvalidPassword;
                     }
                 }
-
             }
             catch (SqlException err)
             {
-                // Log the error (for debugging purposes)
+                // Log the error for debugging purposes
                 Console.WriteLine($"DB Connection Error: {err.Data}");
-
 
                 // Return login status indicating a database error
                 return LoginStatus.DatabaseError;
@@ -161,13 +181,13 @@ namespace fitness_home.Services
         }
 
         /// <summary>
-        /// Redirects user to their dashboard after a successful login
+        /// Redirects the user to their dashboard after a successful login.
         /// </summary>
-        /// <param name="currentForm">Where the user is redirected from</param>
+        /// <param name="currentForm">Form from which the user is redirected</param>
         public void ShowDashboard(Form currentForm)
         {
-            // Show the Member Dashboard
-            if (Authentication.LoggedUser is Member)
+            // Redirect to the Member Dashboard if the logged-in user is a member
+            if (LoggedUser is Member)
             {
                 // Show the Member Dashboard
                 MemberDashboard MemberDashboard = FormProvider.MemberDashboard ?? (FormProvider.MemberDashboard = new MemberDashboard());
@@ -181,19 +201,20 @@ namespace fitness_home.Services
         }
 
         /// <summary>
-        /// Hash the password using SHA-256
+        /// Hashes the given password using the SHA-256 algorithm.
         /// </summary>
-        /// <param name="password">Password as a plain string</param>
-        /// <returns></returns>
+        /// <param name="password">Plain-text password</param>
+        /// <returns>SHA-256 hash of the password as a string</returns>
         public string HashPassword(string password)
         {
+            // Create a SHA-256 hash object
             using (SHA256 sha256Hash = SHA256.Create())
             {
-                // password -> byte array -> string
+                // Convert password to a byte array and compute its hash
                 byte[] bytes = sha256Hash.ComputeHash(Encoding.UTF8.GetBytes(password));
 
+                // Convert byte array to a hex string
                 StringBuilder builder = new StringBuilder();
-
                 foreach (byte b in bytes)
                 {
                     builder.Append(b.ToString("x2"));
@@ -203,13 +224,14 @@ namespace fitness_home.Services
         }
 
         /// <summary>
-        /// Verify if the entered password matches the stored hash
+        /// Verifies if the entered password matches the stored hash.
         /// </summary>
         /// <param name="enteredPassword">Password entered by the user</param>
-        /// <param name="storedHash">Password hashed using SHA-256 from the database</param>
-        /// <returns>`True` if the entered password matches the stored hash</returns>
+        /// <param name="storedHash">SHA-256 hashed password from the database</param>
+        /// <returns>True if the entered password matches the stored hash</returns>
         public bool VerifyPassword(string enteredPassword, string storedHash)
         {
+            // Hash the entered password and compare it to the stored hash
             string enteredPasswordHash = HashPassword(enteredPassword);
 
             return enteredPasswordHash == storedHash;

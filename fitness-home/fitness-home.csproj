@@ -51,16 +51,15 @@
     <Compile Include="Utils\Types\MembershipPlan.cs" />
     <Compile Include="Services\Authentication.cs" />
     <Compile Include="Services\FormProvider.cs" />
-    <Compile Include="Utils\Types\InputState.cs" />
+    <Compile Include="Utils\Types\SharedTypes.cs" />
     <Compile Include="Utils\Types\User\Admin.cs" />
     <Compile Include="Utils\Types\User\IUser.cs" />
-    <Compile Include="Utils\Types\LoginStatus.cs" />
-    <Compile Include="Utils\Types\Role.cs" />
     <Compile Include="Utils\Helpers.cs" />
     <Compile Include="Utils\Placeholder.cs" />
     <Compile Include="Utils\Types\User\Member.cs" />
     <Compile Include="Utils\Types\User\Trainer.cs" />
     <Compile Include="Utils\Validate\LoginForm.cs" />
+    <Compile Include="Utils\Validate\PaymentForm.cs" />
     <Compile Include="Utils\Validate\RegisterForm.cs" />
     <Compile Include="Utils\WinAPI.cs" />
     <Compile Include="Views\Dashboard\MemberDashboard.cs">
@@ -113,6 +112,7 @@
     <Compile Include="Views\Onboarding\Register\Payment.Designer.cs">
       <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Onboarding\Register\Types\RegistrationInfo.cs" />
     <Compile Include="Views\Onboarding\Splash.cs">
       <SubType>Form</SubType>
     </Compile>

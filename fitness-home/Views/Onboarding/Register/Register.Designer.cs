@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TextBox textBox_nic;
-            System.Windows.Forms.TextBox textBox_fname;
-            System.Windows.Forms.TextBox textBox_lname;
-            System.Windows.Forms.TextBox textBox_dob;
             System.Windows.Forms.TableLayoutPanel table_header;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
-            System.Windows.Forms.TextBox textBox_phone;
-            System.Windows.Forms.TextBox textBox_email;
-            System.Windows.Forms.TextBox textBox_address;
-            System.Windows.Forms.TextBox textBox_ec_phone;
-            System.Windows.Forms.TextBox textBox_ec_name;
             this.panel_page_heading = new System.Windows.Forms.Panel();
+            this.button_fill_data = new System.Windows.Forms.Button();
             this.label_page_heading = new System.Windows.Forms.Label();
             this.panel_previous = new System.Windows.Forms.Panel();
-            this.button_previous = new System.Windows.Forms.Button();
+            this.button_previous_form = new System.Windows.Forms.Button();
+            this.textBox_nic = new System.Windows.Forms.TextBox();
+            this.textBox_fname = new System.Windows.Forms.TextBox();
+            this.textBox_lname = new System.Windows.Forms.TextBox();
+            this.textBox_dob = new System.Windows.Forms.TextBox();
+            this.textBox_phone = new System.Windows.Forms.TextBox();
+            this.textBox_email = new System.Windows.Forms.TextBox();
+            this.textBox_address = new System.Windows.Forms.TextBox();
+            this.textBox_ec_phone = new System.Windows.Forms.TextBox();
+            this.textBox_ec_name = new System.Windows.Forms.TextBox();
             this.textBox_confirm_password = new System.Windows.Forms.TextBox();
             this.textBox_new_password = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel_first = new System.Windows.Forms.TableLayoutPanel();
@@ -97,16 +98,7 @@
             this.label_length_rqmt = new System.Windows.Forms.Label();
             this.panel_sign_up_btn = new System.Windows.Forms.Panel();
             this.panel_registration_page = new System.Windows.Forms.Panel();
-            textBox_nic = new System.Windows.Forms.TextBox();
-            textBox_fname = new System.Windows.Forms.TextBox();
-            textBox_lname = new System.Windows.Forms.TextBox();
-            textBox_dob = new System.Windows.Forms.TextBox();
             table_header = new System.Windows.Forms.TableLayoutPanel();
-            textBox_phone = new System.Windows.Forms.TextBox();
-            textBox_email = new System.Windows.Forms.TextBox();
-            textBox_address = new System.Windows.Forms.TextBox();
-            textBox_ec_phone = new System.Windows.Forms.TextBox();
-            textBox_ec_name = new System.Windows.Forms.TextBox();
             table_header.SuspendLayout();
             this.panel_page_heading.SuspendLayout();
             this.panel_previous.SuspendLayout();
@@ -151,83 +143,6 @@
             this.panel_registration_page.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox_nic
-            // 
-            textBox_nic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            textBox_nic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            textBox_nic.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            textBox_nic.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            textBox_nic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            textBox_nic.Location = new System.Drawing.Point(10, 8);
-            textBox_nic.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_nic.MaxLength = 12;
-            textBox_nic.Name = "textBox_nic";
-            textBox_nic.Size = new System.Drawing.Size(340, 22);
-            textBox_nic.TabIndex = 5;
-            textBox_nic.Text = "XXXXXXXXXXXX";
-            textBox_nic.TextChanged += new System.EventHandler(this.textBox_nic_TextChanged);
-            textBox_nic.Enter += new System.EventHandler(this.RemovePlaceholder);
-            textBox_nic.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericOnly_KeyPress);
-            textBox_nic.Leave += new System.EventHandler(this.AddPlaceholder);
-            // 
-            // textBox_fname
-            // 
-            textBox_fname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            textBox_fname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            textBox_fname.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            textBox_fname.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            textBox_fname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            textBox_fname.Location = new System.Drawing.Point(10, 8);
-            textBox_fname.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_fname.MaxLength = 50;
-            textBox_fname.Name = "textBox_fname";
-            textBox_fname.Size = new System.Drawing.Size(340, 22);
-            textBox_fname.TabIndex = 5;
-            textBox_fname.Text = "First name";
-            textBox_fname.TextChanged += new System.EventHandler(this.textBox_fname_TextChanged);
-            textBox_fname.Enter += new System.EventHandler(this.RemovePlaceholder);
-            textBox_fname.Leave += new System.EventHandler(this.AddPlaceholder);
-            // 
-            // textBox_lname
-            // 
-            textBox_lname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            textBox_lname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            textBox_lname.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            textBox_lname.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            textBox_lname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            textBox_lname.Location = new System.Drawing.Point(10, 8);
-            textBox_lname.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_lname.MaxLength = 50;
-            textBox_lname.Name = "textBox_lname";
-            textBox_lname.Size = new System.Drawing.Size(340, 22);
-            textBox_lname.TabIndex = 5;
-            textBox_lname.Text = "Last name";
-            textBox_lname.TextChanged += new System.EventHandler(this.textBox_lname_TextChanged);
-            textBox_lname.Enter += new System.EventHandler(this.RemovePlaceholder);
-            textBox_lname.Leave += new System.EventHandler(this.AddPlaceholder);
-            // 
-            // textBox_dob
-            // 
-            textBox_dob.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            textBox_dob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            textBox_dob.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            textBox_dob.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            textBox_dob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            textBox_dob.Location = new System.Drawing.Point(10, 8);
-            textBox_dob.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_dob.MaxLength = 10;
-            textBox_dob.Name = "textBox_dob";
-            textBox_dob.Size = new System.Drawing.Size(340, 22);
-            textBox_dob.TabIndex = 5;
-            textBox_dob.Text = "YYYY/MM/DD";
-            textBox_dob.TextChanged += new System.EventHandler(this.textBox_dob_TextChanged);
-            textBox_dob.Enter += new System.EventHandler(this.RemovePlaceholder);
-            textBox_dob.Leave += new System.EventHandler(this.AddPlaceholder);
-            // 
             // table_header
             // 
             table_header.ColumnCount = 2;
@@ -246,12 +161,25 @@
             // 
             // panel_page_heading
             // 
+            this.panel_page_heading.Controls.Add(this.button_fill_data);
             this.panel_page_heading.Controls.Add(this.label_page_heading);
             this.panel_page_heading.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_page_heading.Location = new System.Drawing.Point(129, 3);
             this.panel_page_heading.Name = "panel_page_heading";
             this.panel_page_heading.Size = new System.Drawing.Size(1132, 114);
             this.panel_page_heading.TabIndex = 2;
+            // 
+            // button_fill_data
+            // 
+            this.button_fill_data.Font = new System.Drawing.Font("Noto Sans SemiBold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_fill_data.Location = new System.Drawing.Point(950, 27);
+            this.button_fill_data.Margin = new System.Windows.Forms.Padding(0);
+            this.button_fill_data.Name = "button_fill_data";
+            this.button_fill_data.Size = new System.Drawing.Size(151, 55);
+            this.button_fill_data.TabIndex = 2;
+            this.button_fill_data.Text = "Fill Data";
+            this.button_fill_data.UseVisualStyleBackColor = true;
+            this.button_fill_data.Click += new System.EventHandler(this.button_fill_data_Click);
             // 
             // label_page_heading
             // 
@@ -270,7 +198,7 @@
             // 
             // panel_previous
             // 
-            this.panel_previous.Controls.Add(this.button_previous);
+            this.panel_previous.Controls.Add(this.button_previous_form);
             this.panel_previous.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_previous.Location = new System.Drawing.Point(0, 0);
             this.panel_previous.Margin = new System.Windows.Forms.Padding(0);
@@ -278,119 +206,197 @@
             this.panel_previous.Size = new System.Drawing.Size(126, 120);
             this.panel_previous.TabIndex = 1;
             // 
-            // button_previous
+            // button_previous_form
             // 
-            this.button_previous.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.button_previous.BackColor = System.Drawing.Color.Black;
-            this.button_previous.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_previous.BackgroundImage")));
-            this.button_previous.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button_previous.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_previous.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
-            this.button_previous.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
-            this.button_previous.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_previous.Location = new System.Drawing.Point(46, 43);
-            this.button_previous.Margin = new System.Windows.Forms.Padding(0);
-            this.button_previous.Name = "button_previous";
-            this.button_previous.Size = new System.Drawing.Size(34, 34);
-            this.button_previous.TabIndex = 0;
-            this.button_previous.UseVisualStyleBackColor = false;
+            this.button_previous_form.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.button_previous_form.BackColor = System.Drawing.Color.Black;
+            this.button_previous_form.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button_previous_form.BackgroundImage")));
+            this.button_previous_form.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_previous_form.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_previous_form.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.button_previous_form.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Black;
+            this.button_previous_form.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_previous_form.Location = new System.Drawing.Point(46, 43);
+            this.button_previous_form.Margin = new System.Windows.Forms.Padding(0);
+            this.button_previous_form.Name = "button_previous_form";
+            this.button_previous_form.Size = new System.Drawing.Size(34, 34);
+            this.button_previous_form.TabIndex = 0;
+            this.button_previous_form.UseVisualStyleBackColor = false;
+            this.button_previous_form.Click += new System.EventHandler(this.button_previous_form_Click);
+            // 
+            // textBox_nic
+            // 
+            this.textBox_nic.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_nic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.textBox_nic.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_nic.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_nic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox_nic.Location = new System.Drawing.Point(10, 8);
+            this.textBox_nic.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.textBox_nic.MaxLength = 12;
+            this.textBox_nic.Name = "textBox_nic";
+            this.textBox_nic.Size = new System.Drawing.Size(340, 22);
+            this.textBox_nic.TabIndex = 5;
+            this.textBox_nic.Text = "XXXXXXXXXXXX";
+            this.textBox_nic.TextChanged += new System.EventHandler(this.textBox_nic_TextChanged);
+            this.textBox_nic.Enter += new System.EventHandler(this.RemovePlaceholder);
+            this.textBox_nic.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericOnly_KeyPress);
+            this.textBox_nic.Leave += new System.EventHandler(this.AddPlaceholder);
+            // 
+            // textBox_fname
+            // 
+            this.textBox_fname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_fname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.textBox_fname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_fname.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_fname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox_fname.Location = new System.Drawing.Point(10, 8);
+            this.textBox_fname.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.textBox_fname.MaxLength = 50;
+            this.textBox_fname.Name = "textBox_fname";
+            this.textBox_fname.Size = new System.Drawing.Size(340, 22);
+            this.textBox_fname.TabIndex = 5;
+            this.textBox_fname.Text = "First name";
+            this.textBox_fname.TextChanged += new System.EventHandler(this.textBox_fname_TextChanged);
+            this.textBox_fname.Enter += new System.EventHandler(this.RemovePlaceholder);
+            this.textBox_fname.Leave += new System.EventHandler(this.AddPlaceholder);
+            // 
+            // textBox_lname
+            // 
+            this.textBox_lname.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_lname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.textBox_lname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_lname.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_lname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox_lname.Location = new System.Drawing.Point(10, 8);
+            this.textBox_lname.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.textBox_lname.MaxLength = 50;
+            this.textBox_lname.Name = "textBox_lname";
+            this.textBox_lname.Size = new System.Drawing.Size(340, 22);
+            this.textBox_lname.TabIndex = 5;
+            this.textBox_lname.Text = "Last name";
+            this.textBox_lname.TextChanged += new System.EventHandler(this.textBox_lname_TextChanged);
+            this.textBox_lname.Enter += new System.EventHandler(this.RemovePlaceholder);
+            this.textBox_lname.Leave += new System.EventHandler(this.AddPlaceholder);
+            // 
+            // textBox_dob
+            // 
+            this.textBox_dob.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_dob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.textBox_dob.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_dob.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_dob.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox_dob.Location = new System.Drawing.Point(10, 8);
+            this.textBox_dob.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.textBox_dob.MaxLength = 10;
+            this.textBox_dob.Name = "textBox_dob";
+            this.textBox_dob.Size = new System.Drawing.Size(340, 22);
+            this.textBox_dob.TabIndex = 5;
+            this.textBox_dob.Text = "YYYY/MM/DD";
+            this.textBox_dob.TextChanged += new System.EventHandler(this.textBox_dob_TextChanged);
+            this.textBox_dob.Enter += new System.EventHandler(this.RemovePlaceholder);
+            this.textBox_dob.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // textBox_phone
             // 
-            textBox_phone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBox_phone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            textBox_phone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            textBox_phone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            textBox_phone.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            textBox_phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            textBox_phone.Location = new System.Drawing.Point(7, 8);
-            textBox_phone.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_phone.MaxLength = 10;
-            textBox_phone.Name = "textBox_phone";
-            textBox_phone.Size = new System.Drawing.Size(346, 22);
-            textBox_phone.TabIndex = 5;
-            textBox_phone.Text = "Phone";
-            textBox_phone.TextChanged += new System.EventHandler(this.textBox_phone_TextChanged);
-            textBox_phone.Enter += new System.EventHandler(this.RemovePlaceholder);
-            textBox_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericOnly_KeyPress);
-            textBox_phone.Leave += new System.EventHandler(this.AddPlaceholder);
+            this.textBox_phone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.textBox_phone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_phone.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox_phone.Location = new System.Drawing.Point(7, 8);
+            this.textBox_phone.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.textBox_phone.MaxLength = 10;
+            this.textBox_phone.Name = "textBox_phone";
+            this.textBox_phone.Size = new System.Drawing.Size(346, 22);
+            this.textBox_phone.TabIndex = 5;
+            this.textBox_phone.Text = "Phone";
+            this.textBox_phone.TextChanged += new System.EventHandler(this.textBox_phone_TextChanged);
+            this.textBox_phone.Enter += new System.EventHandler(this.RemovePlaceholder);
+            this.textBox_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericOnly_KeyPress);
+            this.textBox_phone.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // textBox_email
             // 
-            textBox_email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBox_email.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            textBox_email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            textBox_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            textBox_email.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            textBox_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            textBox_email.Location = new System.Drawing.Point(7, 8);
-            textBox_email.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_email.MaxLength = 100;
-            textBox_email.Name = "textBox_email";
-            textBox_email.Size = new System.Drawing.Size(346, 22);
-            textBox_email.TabIndex = 5;
-            textBox_email.Text = "E-mail";
-            textBox_email.TextChanged += new System.EventHandler(this.textBox_email_TextChanged);
-            textBox_email.Enter += new System.EventHandler(this.RemovePlaceholder);
-            textBox_email.Leave += new System.EventHandler(this.AddPlaceholder);
+            this.textBox_email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.textBox_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_email.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox_email.Location = new System.Drawing.Point(7, 8);
+            this.textBox_email.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.textBox_email.MaxLength = 100;
+            this.textBox_email.Name = "textBox_email";
+            this.textBox_email.Size = new System.Drawing.Size(346, 22);
+            this.textBox_email.TabIndex = 5;
+            this.textBox_email.Text = "E-mail";
+            this.textBox_email.TextChanged += new System.EventHandler(this.textBox_email_TextChanged);
+            this.textBox_email.Enter += new System.EventHandler(this.RemovePlaceholder);
+            this.textBox_email.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // textBox_address
             // 
-            textBox_address.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBox_address.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            textBox_address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            textBox_address.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            textBox_address.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            textBox_address.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            textBox_address.Location = new System.Drawing.Point(7, 8);
-            textBox_address.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_address.MaxLength = 255;
-            textBox_address.Name = "textBox_address";
-            textBox_address.Size = new System.Drawing.Size(346, 22);
-            textBox_address.TabIndex = 5;
-            textBox_address.Text = "Address";
-            textBox_address.TextChanged += new System.EventHandler(this.textBox_address_TextChanged);
-            textBox_address.Enter += new System.EventHandler(this.RemovePlaceholder);
-            textBox_address.Leave += new System.EventHandler(this.AddPlaceholder);
+            this.textBox_address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.textBox_address.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_address.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_address.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox_address.Location = new System.Drawing.Point(7, 8);
+            this.textBox_address.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.textBox_address.MaxLength = 255;
+            this.textBox_address.Name = "textBox_address";
+            this.textBox_address.Size = new System.Drawing.Size(346, 22);
+            this.textBox_address.TabIndex = 5;
+            this.textBox_address.Text = "Address";
+            this.textBox_address.TextChanged += new System.EventHandler(this.textBox_address_TextChanged);
+            this.textBox_address.Enter += new System.EventHandler(this.RemovePlaceholder);
+            this.textBox_address.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // textBox_ec_phone
             // 
-            textBox_ec_phone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBox_ec_phone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            textBox_ec_phone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            textBox_ec_phone.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            textBox_ec_phone.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            textBox_ec_phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            textBox_ec_phone.Location = new System.Drawing.Point(7, 8);
-            textBox_ec_phone.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_ec_phone.MaxLength = 100;
-            textBox_ec_phone.Name = "textBox_ec_phone";
-            textBox_ec_phone.Size = new System.Drawing.Size(353, 22);
-            textBox_ec_phone.TabIndex = 5;
-            textBox_ec_phone.Text = "Emergency contact phone";
-            textBox_ec_phone.TextChanged += new System.EventHandler(this.textBox_ec_phone_TextChanged);
-            textBox_ec_phone.Enter += new System.EventHandler(this.RemovePlaceholder);
-            textBox_ec_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericOnly_KeyPress);
-            textBox_ec_phone.Leave += new System.EventHandler(this.AddPlaceholder);
+            this.textBox_ec_phone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.textBox_ec_phone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_ec_phone.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ec_phone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox_ec_phone.Location = new System.Drawing.Point(7, 8);
+            this.textBox_ec_phone.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.textBox_ec_phone.MaxLength = 10;
+            this.textBox_ec_phone.Name = "textBox_ec_phone";
+            this.textBox_ec_phone.Size = new System.Drawing.Size(353, 22);
+            this.textBox_ec_phone.TabIndex = 5;
+            this.textBox_ec_phone.Text = "Emergency contact phone";
+            this.textBox_ec_phone.TextChanged += new System.EventHandler(this.textBox_ec_phone_TextChanged);
+            this.textBox_ec_phone.Enter += new System.EventHandler(this.RemovePlaceholder);
+            this.textBox_ec_phone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericOnly_KeyPress);
+            this.textBox_ec_phone.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // textBox_ec_name
             // 
-            textBox_ec_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBox_ec_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            textBox_ec_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            textBox_ec_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            textBox_ec_name.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            textBox_ec_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            textBox_ec_name.Location = new System.Drawing.Point(7, 8);
-            textBox_ec_name.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            textBox_ec_name.MaxLength = 100;
-            textBox_ec_name.Name = "textBox_ec_name";
-            textBox_ec_name.Size = new System.Drawing.Size(353, 22);
-            textBox_ec_name.TabIndex = 5;
-            textBox_ec_name.Text = "Emergency contact name";
-            textBox_ec_name.TextChanged += new System.EventHandler(this.textBox_ec_name_TextChanged);
-            textBox_ec_name.Enter += new System.EventHandler(this.RemovePlaceholder);
-            textBox_ec_name.Leave += new System.EventHandler(this.AddPlaceholder);
+            this.textBox_ec_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.textBox_ec_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_ec_name.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ec_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox_ec_name.Location = new System.Drawing.Point(7, 8);
+            this.textBox_ec_name.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.textBox_ec_name.MaxLength = 100;
+            this.textBox_ec_name.Name = "textBox_ec_name";
+            this.textBox_ec_name.Size = new System.Drawing.Size(353, 22);
+            this.textBox_ec_name.TabIndex = 5;
+            this.textBox_ec_name.Text = "Emergency contact name";
+            this.textBox_ec_name.TextChanged += new System.EventHandler(this.textBox_ec_name_TextChanged);
+            this.textBox_ec_name.Enter += new System.EventHandler(this.RemovePlaceholder);
+            this.textBox_ec_name.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // textBox_confirm_password
             // 
@@ -402,7 +408,7 @@
             this.textBox_confirm_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.textBox_confirm_password.Location = new System.Drawing.Point(7, 8);
             this.textBox_confirm_password.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.textBox_confirm_password.MaxLength = 100;
+            this.textBox_confirm_password.MaxLength = 24;
             this.textBox_confirm_password.Name = "textBox_confirm_password";
             this.textBox_confirm_password.Size = new System.Drawing.Size(346, 22);
             this.textBox_confirm_password.TabIndex = 5;
@@ -421,7 +427,7 @@
             this.textBox_new_password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.textBox_new_password.Location = new System.Drawing.Point(7, 8);
             this.textBox_new_password.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.textBox_new_password.MaxLength = 100;
+            this.textBox_new_password.MaxLength = 24;
             this.textBox_new_password.Name = "textBox_new_password";
             this.textBox_new_password.Size = new System.Drawing.Size(346, 22);
             this.textBox_new_password.TabIndex = 5;
@@ -571,7 +577,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_dob.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.panel_dob.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_dob.Controls.Add(textBox_dob);
+            this.panel_dob.Controls.Add(this.textBox_dob);
             this.panel_dob.Location = new System.Drawing.Point(27, 52);
             this.panel_dob.Margin = new System.Windows.Forms.Padding(27, 4, 27, 4);
             this.panel_dob.Name = "panel_dob";
@@ -625,7 +631,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_lname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.panel_lname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_lname.Controls.Add(textBox_lname);
+            this.panel_lname.Controls.Add(this.textBox_lname);
             this.panel_lname.Location = new System.Drawing.Point(27, 106);
             this.panel_lname.Margin = new System.Windows.Forms.Padding(27, 4, 27, 4);
             this.panel_lname.Name = "panel_lname";
@@ -638,7 +644,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_fname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.panel_fname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_fname.Controls.Add(textBox_fname);
+            this.panel_fname.Controls.Add(this.textBox_fname);
             this.panel_fname.Location = new System.Drawing.Point(27, 55);
             this.panel_fname.Margin = new System.Windows.Forms.Padding(27, 4, 27, 4);
             this.panel_fname.Name = "panel_fname";
@@ -690,7 +696,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_nic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.panel_nic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_nic.Controls.Add(textBox_nic);
+            this.panel_nic.Controls.Add(this.textBox_nic);
             this.panel_nic.Location = new System.Drawing.Point(27, 61);
             this.panel_nic.Margin = new System.Windows.Forms.Padding(27, 4, 27, 4);
             this.panel_nic.Name = "panel_nic";
@@ -734,6 +740,7 @@
             this.button_sign_up.TabIndex = 1;
             this.button_sign_up.Text = "SIGN UP";
             this.button_sign_up.UseVisualStyleBackColor = false;
+            this.button_sign_up.Click += new System.EventHandler(this.button_sign_up_Click);
             // 
             // panel_header
             // 
@@ -876,7 +883,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.panel_address.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_address.Controls.Add(textBox_address);
+            this.panel_address.Controls.Add(this.textBox_address);
             this.panel_address.Location = new System.Drawing.Point(24, 151);
             this.panel_address.Margin = new System.Windows.Forms.Padding(24, 4, 24, 4);
             this.panel_address.Name = "panel_address";
@@ -889,7 +896,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_phone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.panel_phone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_phone.Controls.Add(textBox_phone);
+            this.panel_phone.Controls.Add(this.textBox_phone);
             this.panel_phone.Location = new System.Drawing.Point(24, 103);
             this.panel_phone.Margin = new System.Windows.Forms.Padding(24, 4, 24, 4);
             this.panel_phone.Name = "panel_phone";
@@ -902,7 +909,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.panel_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_email.Controls.Add(textBox_email);
+            this.panel_email.Controls.Add(this.textBox_email);
             this.panel_email.Location = new System.Drawing.Point(24, 55);
             this.panel_email.Margin = new System.Windows.Forms.Padding(24, 4, 24, 4);
             this.panel_email.Name = "panel_email";
@@ -964,7 +971,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_ec_phone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.panel_ec_phone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_ec_phone.Controls.Add(textBox_ec_phone);
+            this.panel_ec_phone.Controls.Add(this.textBox_ec_phone);
             this.panel_ec_phone.Location = new System.Drawing.Point(24, 103);
             this.panel_ec_phone.Margin = new System.Windows.Forms.Padding(24, 4, 24, 4);
             this.panel_ec_phone.Name = "panel_ec_phone";
@@ -977,7 +984,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_ec_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.panel_ec_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_ec_name.Controls.Add(textBox_ec_name);
+            this.panel_ec_name.Controls.Add(this.textBox_ec_name);
             this.panel_ec_name.Location = new System.Drawing.Point(24, 55);
             this.panel_ec_name.Margin = new System.Windows.Forms.Padding(24, 4, 24, 4);
             this.panel_ec_name.Name = "panel_ec_name";
@@ -1113,8 +1120,7 @@
             // 
             // panel_registration_page
             // 
-            this.panel_registration_page.BackColor = System.Drawing.Color.Black;
-            this.panel_registration_page.BackgroundImage = global::fitness_home.Properties.Resources.Background;
+            this.panel_registration_page.BackColor = System.Drawing.Color.Transparent;
             this.panel_registration_page.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel_registration_page.Controls.Add(this.table_registration_page);
             this.panel_registration_page.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1129,7 +1135,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.BackgroundImage = global::fitness_home.Properties.Resources.Background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.panel_registration_page);
@@ -1229,7 +1234,7 @@
         private System.Windows.Forms.TableLayoutPanel table_registration_page;
         private System.Windows.Forms.Label label_page_heading;
         private System.Windows.Forms.Panel panel_previous;
-        private System.Windows.Forms.Button button_previous;
+        private System.Windows.Forms.Button button_previous_form;
         private System.Windows.Forms.Panel panel_sign_up_btn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_gender;
         private System.Windows.Forms.Panel panel_gender_heading;
@@ -1268,5 +1273,15 @@
         private System.Windows.Forms.PictureBox icon_passwords_match;
         private System.Windows.Forms.TextBox textBox_confirm_password;
         private System.Windows.Forms.TextBox textBox_new_password;
+        private System.Windows.Forms.TextBox textBox_nic;
+        private System.Windows.Forms.TextBox textBox_fname;
+        private System.Windows.Forms.TextBox textBox_lname;
+        private System.Windows.Forms.TextBox textBox_dob;
+        private System.Windows.Forms.TextBox textBox_phone;
+        private System.Windows.Forms.TextBox textBox_email;
+        private System.Windows.Forms.TextBox textBox_address;
+        private System.Windows.Forms.TextBox textBox_ec_phone;
+        private System.Windows.Forms.TextBox textBox_ec_name;
+        private System.Windows.Forms.Button button_fill_data;
     }
 }
