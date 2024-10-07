@@ -16,7 +16,8 @@ namespace fitness_home.Views.Onboarding.Register
         private decimal AdmissionFee = 2700;
         private decimal TotalAmount;
 
-        // Ensure that the user has provided inputs for all required fields
+        // Stores the list of textbox names, followed by a boolean value indicating validity of their inputs
+        // Later, we can check all these values to decide whether to enable the "Pay Now" button
         public static Dictionary<string, bool> HasEntered = new Dictionary<string, bool>();
 
         public Payment()
@@ -25,11 +26,11 @@ namespace fitness_home.Views.Onboarding.Register
 
             // Initialize fields to check
             // Format: key (textBox name) : state (boolean indicating availability of data)
-            HasEntered.Add("textBox_card_holder", true);
-            HasEntered.Add("textBox_card_number", true);
-            HasEntered.Add("textBox_cvc", true);
-            HasEntered.Add("textBox_exp_month", true);
-            HasEntered.Add("textBox_exp_year", true);
+            HasEntered.Add("textBox_card_holder", false);
+            HasEntered.Add("textBox_card_number", false);
+            HasEntered.Add("textBox_cvc", false);
+            HasEntered.Add("textBox_exp_month", false);
+            HasEntered.Add("textBox_exp_year", false);
         }
 
         public decimal MembershipFee
@@ -72,6 +73,13 @@ namespace fitness_home.Views.Onboarding.Register
             return $"{formattedAmount} LKR";
         }
 
+        // Enable or disable the "Pay Now" button based on whether all form fields are entered.
+        public static void UpdatePayNowButtonState(Button payNowButton)
+        {
+            // Check if all values in HasEntered are true
+            payNowButton.Enabled = HasEntered.Values.All(value => value);
+        }
+
 
         // Add placeholder text when the focus leaves
         private void AddPlaceholder(object sender, EventArgs e) => Placeholder.Add(ref sender);
@@ -83,6 +91,40 @@ namespace fitness_home.Views.Onboarding.Register
         private void textBox_card_holder_TextChanged(object sender, EventArgs e)
         {
             PaymentForm.PresenceCheck(sender, e, 4);
+
+            // Enable or disble the "Pay Now" button based on the input's validity
+            UpdatePayNowButtonState(button_pay);
+        }
+
+        // ** Event: Validate the cvc
+        // ** This method runs each time a character of cvc has changed 
+        private void textBox_cvc_TextChanged(object sender, EventArgs e)
+        {
+            PaymentForm.PresenceCheck(sender, e, 3);
+
+            // Enable or disble the "Pay Now" button based on the input's validity
+            UpdatePayNowButtonState(button_pay);
+        }
+
+        // ** Event: Validate the expiry month
+        // ** This method runs each time a character of expiry month has changed 
+        private void textBox_exp_month_TextChanged(object sender, EventArgs e)
+        {
+            PaymentForm.PresenceCheck(sender, e, 2);
+
+            // Enable or disble the "Pay Now" button based on the input's validity
+            UpdatePayNowButtonState(button_pay);
+        }
+
+        // ** Event: Validate the expiry year
+        // ** This method runs each time a character of expiry year has changed 
+        private void textBox_exp_year_TextChanged(object sender, EventArgs e)
+        {
+            PaymentForm.PresenceCheck(sender, e, 2);
+
+            // Enable or disble the "Pay Now" button based on the input's validity
+            UpdatePayNowButtonState(button_pay);
+
         }
 
         // ** Event: Format the card number while user enters it
@@ -144,13 +186,10 @@ namespace fitness_home.Views.Onboarding.Register
 
             // Reattach the event handler.
             textBox_card_number.TextChanged += textBox_card_number_TextChanged;
-        }
 
-        // ** Event: Validate the cvc
-        // ** This method runs each time a character of cvc has changed 
-        private void textBox_cvc_TextChanged(object sender, EventArgs e)
-        {
-            PaymentForm.PresenceCheck(sender, e, 3);
+            // Enable or disble the "Pay Now" button based on the input's validity
+            UpdatePayNowButtonState(button_pay);
+
         }
 
         // ** Event: This method runs when our form is first loaded 
@@ -196,7 +235,7 @@ namespace fitness_home.Views.Onboarding.Register
             // Initialize an instance of PaymentProcessor
             PaymentProcessor PaymentProcessor = new PaymentProcessor();
 
-            PaymentProcessor.CardPayment(
+            PaymentProcessor.PaymentStatus paymentStatus = PaymentProcessor.CardPayment(
                 amount: "2300 LKR",
                 cardHolder: textBox_card_holder.Text,
                 cardNumber: textBox_card_number.Text,
@@ -204,6 +243,16 @@ namespace fitness_home.Views.Onboarding.Register
                 expiryMonth: textBox_exp_month.Text,
                 expiryYear: textBox_exp_year.Text,
                 paymentForm: this);
+
+            if (paymentStatus == PaymentProcessor.PaymentStatus.Success) {
+                MessageBox.Show("Payment Success!");
+            } 
+
+            else
+            {
+                MessageBox.Show("Payment Failed!");
+
+            }
         }
     }
 }

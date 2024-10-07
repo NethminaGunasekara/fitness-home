@@ -1,4 +1,5 @@
-﻿using System;
+﻿using fitness_home.Views.Onboarding.Register;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -14,10 +15,6 @@ namespace fitness_home.Utils.Validate
         // Stores the list of textbox names, followed by their placeholders
         private readonly Dictionary<string, string> Placeholders = new Dictionary<string, string>();
 
-        // Stores the list of textbox names, followed by a boolean value indicating validity of their inputs
-        // Later, we can check all these values to decide whether to enable the "Pay Now" button
-        private readonly Dictionary<string, string> HasEntered = new Dictionary<string, string>();
-
         public PaymentForm() {
             // Format: key (textBox name) : value (placeholder text)
             Placeholders.Add("textBox_card_holder", "Card holder’s name");
@@ -29,7 +26,7 @@ namespace fitness_home.Utils.Validate
 
         // Checks if the given textbox has a number of characters (minimumLength)
         // If not change the background color to red, indicating an invalid input
-        public static void PresenceCheck(object sender, EventArgs e, int minimumLength = 1)
+        public static void PresenceCheck(object sender, EventArgs e, int minimumLength)
         {
             TextBox textBox = sender as TextBox;
 
@@ -37,6 +34,9 @@ namespace fitness_home.Utils.Validate
             if (textBox.Text == Placeholder.placeholders[textBox.Name])
             {
                 RegisterForm.SetBackColorDefault(textBox);
+
+                // Mark input for the textbox as invalid
+                Payment.HasEntered[textBox.Name] = false;
                 
             }
 
@@ -44,11 +44,17 @@ namespace fitness_home.Utils.Validate
             else if (textBox.Text.Length >= minimumLength)
             {
                 RegisterForm.SetBackColorDefault(textBox);
+
+                // Mark input for the textbox as valid
+                Payment.HasEntered[textBox.Name] = true;
             }
 
             else
             {
                 RegisterForm.SetBackColorRed(textBox);
+
+                // Mark input for the textbox as invalid
+                Payment.HasEntered[textBox.Name] = false;
             }
         }
     }

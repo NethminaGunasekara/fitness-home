@@ -213,6 +213,7 @@
             this.textBox_exp_year.TabIndex = 0;
             this.textBox_exp_year.Text = "Year";
             this.textBox_exp_year.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_exp_year.TextChanged += new System.EventHandler(this.textBox_exp_year_TextChanged);
             this.textBox_exp_year.Enter += new System.EventHandler(this.RemovePlaceholder);
             this.textBox_exp_year.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericOnly_KeyPress);
             this.textBox_exp_year.Leave += new System.EventHandler(this.AddPlaceholder);
@@ -244,6 +245,7 @@
             this.textBox_exp_month.TabIndex = 0;
             this.textBox_exp_month.Text = "Month";
             this.textBox_exp_month.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_exp_month.TextChanged += new System.EventHandler(this.textBox_exp_month_TextChanged);
             this.textBox_exp_month.Enter += new System.EventHandler(this.RemovePlaceholder);
             this.textBox_exp_month.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericOnly_KeyPress);
             this.textBox_exp_month.Leave += new System.EventHandler(this.AddPlaceholder);
@@ -451,6 +453,7 @@
             this.button_pay.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.button_pay.BackColor = System.Drawing.Color.Transparent;
             this.button_pay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_pay.Enabled = false;
             this.button_pay.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
             this.button_pay.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
             this.button_pay.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
