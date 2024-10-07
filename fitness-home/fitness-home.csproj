@@ -112,6 +112,7 @@
     <Compile Include="Views\Onboarding\Register\Payment.Designer.cs">
       <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Onboarding\Register\Services\PaymentProcessor.cs" />
     <Compile Include="Views\Onboarding\Register\Types\RegistrationInfo.cs" />
     <Compile Include="Views\Onboarding\Splash.cs">
       <SubType>Form</SubType>

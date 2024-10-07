@@ -3,11 +3,17 @@ using System.Windows.Forms;
 
 namespace fitness_home.Utils
 {
+    /// <summary>
+    /// A class for adding and removing placeholders from inputs.
+    /// Developed by Nethmina Gunasekara.
+    /// GitHub: https://github.com/NethminaGunasekara
+    /// </summary>
     internal class Placeholder
     {
-        // TextBox names and their placeholder values
+        // TextBox names and their placeholder values (Format: textbox name : placeholder)
         public static readonly Dictionary<string, string> placeholders = new Dictionary<string, string>
         {
+            // -- Register Form --
             { "textbox_email", "E-mail" },
             { "textBox_fname", "First name" },
             { "textBox_lname", "Last name" },
@@ -17,7 +23,14 @@ namespace fitness_home.Utils
             { "textBox_phone", "Phone" },
             { "textBox_address", "Address" },
             { "textBox_ec_name", "Emergency contact name" },
-            { "textBox_ec_phone", "Emergency contact phone" }
+            { "textBox_ec_phone", "Emergency contact phone" },
+            
+            // -- Payment Form --
+            { "textBox_card_holder", "Card holder’s name" },
+            { "textBox_card_number", "XXXX-XXXX-XXXX-XXXX" },
+            { "textBox_cvc", "CVC" },
+            { "textBox_exp_month", "Month" },
+            { "textBox_exp_year", "Year" },
         };
 
         public static void Remove(ref object sender)

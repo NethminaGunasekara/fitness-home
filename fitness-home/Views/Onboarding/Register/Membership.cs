@@ -156,17 +156,11 @@ namespace fitness_home.Views.Onboarding.Register
 
             // Proceed to the payment page
             Payment PaymentForm = FormProvider.Payment ?? (FormProvider.Payment = new Payment());
+
+            // Set the membership fee
+            PaymentForm.MembershipFee = fitness_home.Register.RegistrationInfo.MembershipPlan.MonthlyFee;
+
             Helpers.ShowForm(PaymentForm, this);
-        }
-
-        private void Membership_ResizeBegin(object sender, EventArgs e)
-        {
-            tableLayoutPanel_content.Visible = false;
-        }
-
-        private void Membership_ResizeEnd(object sender, EventArgs e)
-        {
-            tableLayoutPanel_content.Visible = false;
         }
 
         private void pictureBox_previous_Click(object sender, EventArgs e)

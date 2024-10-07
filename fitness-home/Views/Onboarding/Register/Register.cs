@@ -71,7 +71,7 @@ namespace fitness_home
         // Remove placeholder text when the focus enters
         private void RemovePlaceholder(object sender, EventArgs e) => Placeholder.Remove(ref sender);
 
-        // Only allow digits and control keys
+        // Only allow digits and control keys for required fields
         private void NumericOnly_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar));
