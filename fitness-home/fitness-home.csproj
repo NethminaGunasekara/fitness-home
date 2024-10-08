@@ -74,6 +74,18 @@
     <Compile Include="Views\Messages\DatabaseError.Designer.cs">
       <DependentUpon>DatabaseError.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Messages\PaymentFailed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Messages\PaymentFailed.Designer.cs">
+      <DependentUpon>PaymentFailed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Messages\PaymentSuccess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Messages\PaymentSuccess.Designer.cs">
+      <DependentUpon>PaymentSuccess.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Onboarding\Login.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Form</SubType>
@@ -148,6 +160,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Messages\LoginFailed.resx">
       <DependentUpon>LoginFailed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Messages\PaymentFailed.resx">
+      <DependentUpon>PaymentFailed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Messages\PaymentSuccess.resx">
+      <DependentUpon>PaymentSuccess.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Onboarding\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

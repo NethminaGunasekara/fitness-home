@@ -116,16 +116,6 @@ namespace fitness_home
                 setPosition: false);
         }
 
-        private void panel_previous_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel_logo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         // ** Event: Return to previous form
         private void button_previous_form_Click(object sender, EventArgs e)
         {

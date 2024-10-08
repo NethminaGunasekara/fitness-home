@@ -2,6 +2,7 @@
 using fitness_home.Services;
 using fitness_home.Utils;
 using fitness_home.Utils.Validate;
+using fitness_home.Views.Messages;
 using fitness_home.Views.Onboarding.Register.Services;
 using System;
 using System.Collections.Generic;
@@ -235,7 +236,8 @@ namespace fitness_home.Views.Onboarding.Register
             // Initialize an instance of PaymentProcessor
             PaymentProcessor PaymentProcessor = new PaymentProcessor();
 
-            PaymentProcessor.PaymentStatus paymentStatus = PaymentProcessor.CardPayment(
+            // Function to process a card payment
+            PaymentProcessor.PaymentStatus CardPayment() => PaymentProcessor.CardPayment(
                 amount: "2300 LKR",
                 cardHolder: textBox_card_holder.Text,
                 cardNumber: textBox_card_number.Text,
@@ -244,14 +246,61 @@ namespace fitness_home.Views.Onboarding.Register
                 expiryYear: textBox_exp_year.Text,
                 paymentForm: this);
 
-            if (paymentStatus == PaymentProcessor.PaymentStatus.Success) {
-                MessageBox.Show("Payment Success!");
-            } 
+            // Function to process a cash payment
+            PaymentProcessor.PaymentStatus CashPayment() => PaymentProcessor.PaymentStatus.Pending;
 
-            else
+            // Make card or cash payment, based on the type of payment user has chosen
+            PaymentProcessor.PaymentStatus paymentStatus = radioButton_cash.Checked ? CashPayment() : CardPayment();
+
+            // If the user has paid using VISA/Mastercard, and the payment is failed
+            if (paymentStatus == PaymentProcessor.PaymentStatus.Failed) {
+                // Display "PaymentFailed" message
+                new PaymentFailed().ShowDialog();
+
+                return; // Exit the method
+            }
+
+            // If the user has paid using VISA/Mastercard, and the payment is successful
+            else if (paymentStatus == PaymentProcessor.PaymentStatus.Success)
             {
-                MessageBox.Show("Payment Failed!");
+                // Display the payment successful message
+                new PaymentSuccess(AmountToDisplay(AdmissionFee + _MembershipFee)).ShowDialog();
 
+                return; // Exit the method
+            }
+
+            // The rest of this method will only run if the user has paid in cash
+
+            // Display the payment pending message
+            new PaymentSuccess(AmountToDisplay(AdmissionFee + _MembershipFee), cashPayment: true).ShowDialog();
+        }
+
+        // Event handler triggered when the "Cash" radio button's checked state changes.
+        // This method enables or disables the card input fields and the "Pay Now" button 
+        // based on whether the user selects to pay in cash or not.
+        private void radioButton_cash_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton cash = (RadioButton)sender;
+
+            // Toggle the enabled state of all card input fields based on whether the cash radio button is checked.
+            // If the user chooses "Cash" (cash.Checked is true), card input fields are disabled.
+            // If the user unchecks "Cash" (cash.Checked is false), card input fields are enabled for input.
+            textBox_card_holder.Enabled = !cash.Checked;
+            textBox_card_number.Enabled = !cash.Checked;
+            textBox_exp_month.Enabled = !cash.Checked;
+            textBox_exp_year.Enabled = !cash.Checked;
+            textBox_cvc.Enabled = !cash.Checked;
+
+
+            // Enable the "Pay Now" button if the user selects to pay in cash (cash.Checked is true).
+            // Otherwise, the button is disabled if the cash option is not selected.
+            button_pay.Enabled = cash.Checked;
+
+            // If the user deselects the "Cash" option (cash.Checked is false),
+            // check whether all required card input fields have been filled.
+            // If all card details are entered, re-enable the "Pay Now" button.
+            if (!cash.Checked) {
+                button_pay.Enabled = HasEntered.Values.All(value => value);
             }
         }
     }

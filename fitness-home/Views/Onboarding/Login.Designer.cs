@@ -187,7 +187,6 @@
             this.tableLayoutPanel1.SetRowSpan(this.panel_logo, 5);
             this.panel_logo.Size = new System.Drawing.Size(353, 450);
             this.panel_logo.TabIndex = 4;
-            this.panel_logo.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_logo_Paint);
             // 
             // button_previous_form
             // 

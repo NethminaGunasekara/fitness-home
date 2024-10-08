@@ -210,7 +210,7 @@
             this.textBox_exp_year.MaxLength = 2;
             this.textBox_exp_year.Name = "textBox_exp_year";
             this.textBox_exp_year.Size = new System.Drawing.Size(82, 22);
-            this.textBox_exp_year.TabIndex = 0;
+            this.textBox_exp_year.TabIndex = 4;
             this.textBox_exp_year.Text = "Year";
             this.textBox_exp_year.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_exp_year.TextChanged += new System.EventHandler(this.textBox_exp_year_TextChanged);
@@ -242,7 +242,7 @@
             this.textBox_exp_month.MaxLength = 2;
             this.textBox_exp_month.Name = "textBox_exp_month";
             this.textBox_exp_month.Size = new System.Drawing.Size(82, 22);
-            this.textBox_exp_month.TabIndex = 0;
+            this.textBox_exp_month.TabIndex = 3;
             this.textBox_exp_month.Text = "Month";
             this.textBox_exp_month.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_exp_month.TextChanged += new System.EventHandler(this.textBox_exp_month_TextChanged);
@@ -286,7 +286,7 @@
             this.textBox_cvc.MaxLength = 3;
             this.textBox_cvc.Name = "textBox_cvc";
             this.textBox_cvc.Size = new System.Drawing.Size(278, 22);
-            this.textBox_cvc.TabIndex = 0;
+            this.textBox_cvc.TabIndex = 2;
             this.textBox_cvc.Text = "CVC";
             this.textBox_cvc.TextChanged += new System.EventHandler(this.textBox_cvc_TextChanged);
             this.textBox_cvc.Enter += new System.EventHandler(this.RemovePlaceholder);
@@ -464,7 +464,7 @@
             this.button_pay.Margin = new System.Windows.Forms.Padding(0);
             this.button_pay.Name = "button_pay";
             this.button_pay.Size = new System.Drawing.Size(176, 43);
-            this.button_pay.TabIndex = 0;
+            this.button_pay.TabIndex = 5;
             this.button_pay.Text = "PAY NOW";
             this.button_pay.UseVisualStyleBackColor = false;
             this.button_pay.Click += new System.EventHandler(this.PayNow);
@@ -520,7 +520,7 @@
             this.button_previous.Margin = new System.Windows.Forms.Padding(0);
             this.button_previous.Name = "button_previous";
             this.button_previous.Size = new System.Drawing.Size(34, 34);
-            this.button_previous.TabIndex = 0;
+            this.button_previous.TabIndex = 6;
             this.button_previous.UseVisualStyleBackColor = false;
             this.button_previous.Click += new System.EventHandler(this.button_previous_Click);
             // 
@@ -613,7 +613,7 @@
             this.textBox_card_number.MaxLength = 19;
             this.textBox_card_number.Name = "textBox_card_number";
             this.textBox_card_number.Size = new System.Drawing.Size(334, 22);
-            this.textBox_card_number.TabIndex = 0;
+            this.textBox_card_number.TabIndex = 1;
             this.textBox_card_number.Text = "XXXX-XXXX-XXXX-XXXX";
             this.textBox_card_number.TextChanged += new System.EventHandler(this.textBox_card_number_TextChanged);
             this.textBox_card_number.Enter += new System.EventHandler(this.RemovePlaceholder);
@@ -761,6 +761,7 @@
             this.radioButton_cash.TabIndex = 3;
             this.radioButton_cash.Text = "Cash";
             this.radioButton_cash.UseVisualStyleBackColor = true;
+            this.radioButton_cash.CheckedChanged += new System.EventHandler(this.radioButton_cash_CheckedChanged);
             // 
             // panel_card_holder
             // 

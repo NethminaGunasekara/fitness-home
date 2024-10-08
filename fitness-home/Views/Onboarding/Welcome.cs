@@ -1,5 +1,4 @@
-﻿using AnimateDemo;
-using fitness_home.Services;
+﻿using fitness_home.Services;
 using fitness_home.Utils;
 using System;
 using System.Windows.Forms;

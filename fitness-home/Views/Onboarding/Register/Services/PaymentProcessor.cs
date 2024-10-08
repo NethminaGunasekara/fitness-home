@@ -29,6 +29,11 @@ namespace fitness_home.Views.Onboarding.Register.Services
             return PaymentStatus.Failed;
         }
 
+        public PaymentStatus CashPayment()
+        {
+            return PaymentStatus.Pending;
+        }
+
         public enum PaymentStatus
         {
             Pending,
