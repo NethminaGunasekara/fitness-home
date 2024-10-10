@@ -63,7 +63,7 @@ namespace fitness_home
             // If there's a database connection error
             else if (loginStatus == LoginStatus.DatabaseError)
             {
-                DatabaseError databaseError = new DatabaseError();
+                ApplicationError databaseError = new ApplicationError(ErrorType.DatabaseError);
                 
                 // Set error message position
                 databaseError.StartPosition = FormStartPosition.Manual;

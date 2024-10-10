@@ -3,10 +3,13 @@ using fitness_home.Services;
 using fitness_home.Utils;
 using fitness_home.Utils.Types;
 using fitness_home.Utils.Validate;
+using fitness_home.Views.Messages;
 using fitness_home.Views.Onboarding.Register;
+using fitness_home.Views.Onboarding.Register.Services;
 using fitness_home.Views.Onboarding.Register.Types;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -144,13 +147,13 @@ namespace fitness_home
             bool hasUpperCase = password.Any(char.IsUpper);
             bool hasLowerCase = password.Any(char.IsLower);
             bool hasDigit = password.Any(char.IsDigit);
-            
+
             HasRequiredChars = hasUpperCase && hasLowerCase && hasDigit;
             HasRequiredLength = password.Length >= 8 && password.Length <= 24 && textBox.PasswordChar == '*';
             PasswordsMatch = textBox_confirm_password.Text.Equals(password);
 
             // Display password policy pannel (if hidden)
-            if (!panel_pw_policy.Visible) 
+            if (!panel_pw_policy.Visible)
                 panel_pw_policy.Visible = true;
 
             // Set password policy status
@@ -212,6 +215,53 @@ namespace fitness_home
             Helpers.ShowForm(LoginForm, this, setSize: false, setPosition: false);
         }
 
+        private bool CheckKeyFields()
+        {
+            bool proceedToRegister = false;
+
+            // Create a connection to the database
+            using (SqlConnection conn = new SqlConnection(Authentication.Instance.ConnectionString))
+            {
+                conn.Open();
+
+                // Check if the email already exists in the account table and the role is "Member"
+                string query = "SELECT COUNT(*) FROM account WHERE email = @Email AND role = @Role";
+
+                using (SqlCommand checkEmailCmd = new SqlCommand(query, conn))
+                {
+                    checkEmailCmd.Parameters.AddWithValue("@Email", RegistrationInfo.Email);
+                    checkEmailCmd.Parameters.AddWithValue("@Role", Role.Member.ToString());
+                    int emailCount = (int)checkEmailCmd.ExecuteScalar();
+
+                    // If email already exists, display an error message
+                    if (emailCount > 0)
+                    {
+                        MessageBox.Show("The email is already registered. Please use a different email.", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        proceedToRegister = true;
+                    }
+                }
+
+                // Check if the NIC already exists in the member table
+                query = "SELECT COUNT(*) FROM member WHERE nic = @NIC";
+
+                using (SqlCommand checkNICCmd = new SqlCommand(query, conn))
+                {
+                    checkNICCmd.Parameters.AddWithValue("@NIC", RegistrationInfo.NIC);
+                    int nicCount = (int)checkNICCmd.ExecuteScalar();
+
+                    // If NIC already exists, display an error message
+                    if (nicCount > 0)
+                    {
+                        MessageBox.Show("The NIC is already registered. Please use a different NIC.", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        proceedToRegister = false;
+                    }
+                }
+            }
+
+            return proceedToRegister;
+        }
+
         private void button_sign_up_Click(object sender, EventArgs e)
         {
             // Parse the input and get a "DateTime" object
@@ -237,6 +287,142 @@ namespace fitness_home
             // Proceed to the membership selection page
             Membership Membership = FormProvider.Membership ?? (FormProvider.Membership = new Membership());
             Helpers.ShowForm(Membership, this, false, false);
+        }
+
+        public static void FinishRegistration(int transactionId)
+        {
+            try
+            {
+                // Create a connection to the database
+                using (SqlConnection conn = new SqlConnection(Authentication.Instance.ConnectionString))
+                {
+                    conn.Open();
+
+                    // If both email and NIC are available, continue to register the new member
+                    string query = @"INSERT INTO member (first_name, last_name, dob, nic, gender, email, phone, address, ec_name, ec_phone, plan_id, plan_expiry) 
+                            VALUES (@FirstName, @LastName, @Dob, @Nic, @Gender, @Email, @Phone, @Address, @EcName, @EcPhone, @PlanId, @PlanExpiry);
+                            SELECT SCOPE_IDENTITY();";
+
+                    int newMemberId = 0; // Variable to store the new member's ID
+
+                    // Insert the new member's details to the "member" table
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@FirstName", RegistrationInfo.FirstName);
+                        cmd.Parameters.AddWithValue("@LastName", RegistrationInfo.LastName);
+                        cmd.Parameters.AddWithValue("@Dob", RegistrationInfo.DOB);
+                        cmd.Parameters.AddWithValue("@Nic", RegistrationInfo.NIC);
+                        cmd.Parameters.AddWithValue("@Gender", RegistrationInfo.Gender.ToString());
+                        cmd.Parameters.AddWithValue("@Email", RegistrationInfo.Email);
+                        cmd.Parameters.AddWithValue("@Phone", RegistrationInfo.Phone);
+                        cmd.Parameters.AddWithValue("@Address", RegistrationInfo.Address);
+                        cmd.Parameters.AddWithValue("@EcName", RegistrationInfo.ECName);
+                        cmd.Parameters.AddWithValue("@EcPhone", RegistrationInfo.ECPhone);
+
+                        // Assign the selected membership plan and set the expiry date to one month from the current date.
+                        cmd.Parameters.AddWithValue("@PlanId", RegistrationInfo.MembershipPlan.PlanId);
+                        cmd.Parameters.AddWithValue("@PlanExpiry", DateTime.Now.AddMonths(1));
+
+                        // Execute the query and retrieve the new member ID
+                        // SCOPE_IDENTITY() function retrieves the last inserted identity value
+                        newMemberId = Convert.ToInt32(cmd.ExecuteScalar());
+                    }
+
+                    // Insert the new member's login details into the account table
+                    query = @"INSERT INTO account (role, email, password) 
+                            VALUES (@Role, @Email, @Password)";
+                    using (SqlCommand insertAccountCmd = new SqlCommand(query, conn))
+                    {
+                        insertAccountCmd.Parameters.AddWithValue("@Role", Role.Member.ToString());
+                        insertAccountCmd.Parameters.AddWithValue("@Email", RegistrationInfo.Email);
+                        insertAccountCmd.Parameters.AddWithValue("@Password", Authentication.Instance.HashPassword(RegistrationInfo.Password));
+
+                        insertAccountCmd.ExecuteNonQuery();
+                    }
+
+                    // Assign new member to the selected group
+                    AssignMemberToGroup(conn, newMemberId, RegistrationInfo.MembershipPlan.PlanId);
+
+                    // 
+                }
+
+                MessageBox.Show("Registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            // Catch SQL errors
+            catch (SqlException sqlEx)
+            {
+                // Log the error for debugging purposes
+                Console.WriteLine($"SQL Error: ${sqlEx.Message}");
+
+                // Display database error message
+                new ApplicationError(ErrorType.DatabaseError).ShowDialog();
+            }
+
+            // Catch any other errors
+            catch (Exception e)
+            {
+                // Log the error for debugging purposes
+                Console.WriteLine($"Unexpected Error: ${e.Message}");
+
+                // Display application error message
+                new ApplicationError(ErrorType.UnexpectedError).ShowDialog();
+            }
+        }
+
+        // Assign members to a group within the "member_group" table based on their membership plan id
+        private static void AssignMemberToGroup(SqlConnection conn, int memberId, int planId)
+        {
+            // Retrieves group numbers and member counts for a given plan, grouping by group number and ordering them.
+            string query = @"SELECT group_number, COUNT(*) as group_count
+                         FROM member_group
+                         WHERE plan_id = @PlanId
+                         GROUP BY group_number
+                         ORDER BY group_number";
+
+            using (SqlCommand cmd = new SqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("@PlanId", planId);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                int groupToAssign = 1;
+                bool groupFound = false;
+
+                // Find a group that has less than 24 members
+                while (reader.Read())
+                {
+                    int currentGroupNumber = reader.GetInt32(0);  // group_number
+                    int groupCount = reader.GetInt32(1);  // group_count
+
+                    if (groupCount < 24)
+                    {
+                        groupToAssign = currentGroupNumber;
+                        groupFound = true;
+                        break;
+                    }
+                }
+
+                reader.Close();
+
+                // If no group has less than 24 members, assign the member to a new group
+                if (!groupFound)
+                {
+                    // The next group number is one more than the last group's number
+                    groupToAssign++;
+                }
+
+                // Assign new member to the selected group
+                query = @"INSERT INTO member_group (member_id, plan_id, group_number)
+                      VALUES (@MemberId, @PlanId, @GroupNumber)";
+                using (SqlCommand insertCmd = new SqlCommand(query, conn))
+                {
+                    insertCmd.Parameters.AddWithValue("@MemberId", memberId);
+                    insertCmd.Parameters.AddWithValue("@PlanId", planId);
+                    insertCmd.Parameters.AddWithValue("@GroupNumber", groupToAssign);
+
+                    insertCmd.ExecuteNonQuery();
+                }
+            }
         }
 
         private void button_fill_data_Click(object sender, EventArgs e)

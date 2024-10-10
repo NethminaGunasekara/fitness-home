@@ -83,7 +83,7 @@ namespace fitness_home.Views.Onboarding
 
         private void OnDatabaseError()
         {
-            DatabaseError databaseError = new DatabaseError();
+            ApplicationError databaseError = new ApplicationError(ErrorType.DatabaseError);
 
             // Set error message position
             databaseError.StartPosition = FormStartPosition.Manual;

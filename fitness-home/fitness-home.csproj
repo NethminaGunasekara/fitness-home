@@ -68,11 +68,11 @@
     <Compile Include="Views\Dashboard\MemberDashboard.Designer.cs">
       <DependentUpon>MemberDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Messages\DatabaseError.cs">
+    <Compile Include="Views\Messages\ApplicationError.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Messages\DatabaseError.Designer.cs">
-      <DependentUpon>DatabaseError.cs</DependentUpon>
+    <Compile Include="Views\Messages\ApplicationError.Designer.cs">
+      <DependentUpon>ApplicationError.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Messages\PaymentFailed.cs">
       <SubType>Form</SubType>
@@ -155,8 +155,8 @@
     <EmbeddedResource Include="Views\Dashboard\MemberDashboard.resx">
       <DependentUpon>MemberDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Messages\DatabaseError.resx">
-      <DependentUpon>DatabaseError.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Messages\ApplicationError.resx">
+      <DependentUpon>ApplicationError.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Messages\LoginFailed.resx">
       <DependentUpon>LoginFailed.cs</DependentUpon>

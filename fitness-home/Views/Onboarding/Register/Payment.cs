@@ -4,6 +4,7 @@ using fitness_home.Utils;
 using fitness_home.Utils.Validate;
 using fitness_home.Views.Messages;
 using fitness_home.Views.Onboarding.Register.Services;
+using fitness_home.Views.Onboarding.Register.Types;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,7 +40,7 @@ namespace fitness_home.Views.Onboarding.Register
             get { return _MembershipFee; }
 
             set
-            { 
+            {
                 _MembershipFee = value;
 
                 // Set the total amount
@@ -64,7 +65,8 @@ namespace fitness_home.Views.Onboarding.Register
             {
                 // Format it with up to two decimal places.
                 formattedAmount = amount.ToString("#,##0.##");
-            } else
+            }
+            else
             {
                 // If not, convert it to an integer and format it without decimals.
                 formattedAmount = Convert.ToInt32(amount).ToString("#,##0");
@@ -137,12 +139,12 @@ namespace fitness_home.Views.Onboarding.Register
             PaymentForm.PresenceCheck(sender, e, 19);
 
             // Switch card type based on the card number entered
-            if(textBox.Text.Length >= 1)
+            if (textBox.Text.Length >= 1)
             {
                 radioButton_visa.Checked = textBox.Text[0] == '4';
                 radioButton_mc.Checked = textBox.Text[0] == '5';
             }
-            
+
             // Temporarily remove the event to avoid recursive calls.
             textBox_card_number.TextChanged -= textBox_card_number_TextChanged;
 
@@ -238,41 +240,49 @@ namespace fitness_home.Views.Onboarding.Register
 
             // Function to process a card payment
             PaymentProcessor.PaymentStatus CardPayment() => PaymentProcessor.CardPayment(
-                amount: "2300 LKR",
                 cardHolder: textBox_card_holder.Text,
                 cardNumber: textBox_card_number.Text,
                 cvc: textBox_cvc.Text,
                 expiryMonth: textBox_exp_month.Text,
-                expiryYear: textBox_exp_year.Text,
-                paymentForm: this);
+                expiryYear: textBox_exp_year.Text);
 
             // Function to process a cash payment
             PaymentProcessor.PaymentStatus CashPayment() => PaymentProcessor.PaymentStatus.Pending;
 
+            // Determine and store the type of payment method based on the selected radio button
+            // ** If the "Visa" radio button is checked, assigns PaymentMethod.VISA
+            // ** If the "MasterCard" radio button is checked, assigns PaymentMethod.MasterCard
+            // ** If neither is checked (i.e. user has decided to pay in cash), defaults to PaymentMethod.Cash
+            PaymentMethod paymentMethod = radioButton_visa.Checked ? PaymentMethod.VISA : radioButton_mc.Checked ? PaymentMethod.MasterCard : PaymentMethod.Cash;
+//
             // Make card or cash payment, based on the type of payment user has chosen
-            PaymentProcessor.PaymentStatus paymentStatus = radioButton_cash.Checked ? CashPayment() : CardPayment();
+            PaymentProcessor.PaymentStatus paymentStatus = paymentMethod == PaymentMethod.Cash ? CashPayment() : CardPayment();
 
             // If the user has paid using VISA/Mastercard, and the payment is failed
-            if (paymentStatus == PaymentProcessor.PaymentStatus.Failed) {
+            if (paymentStatus == PaymentProcessor.PaymentStatus.Failed)
+            {
                 // Display "PaymentFailed" message
                 new PaymentFailed().ShowDialog();
 
                 return; // Exit the method
             }
 
-            // If the user has paid using VISA/Mastercard, and the payment is successful
-            else if (paymentStatus == PaymentProcessor.PaymentStatus.Success)
-            {
-                // Display the payment successful message
-                new PaymentSuccess(AmountToDisplay(AdmissionFee + _MembershipFee)).ShowDialog();
+            // Save transaction information and retrieve the transaction id
+            int transactionId = PaymentProcessor.StoreTransactionInfo(
+                transactionDate: DateTime.Now,
+                paymentMethod: paymentMethod,
+                amount: AdmissionFee + _MembershipFee,
+                remarks: "Registration",
+                status: paymentStatus);
 
-                return; // Exit the method
-            }
+            // Display the payment successful message
+            new PaymentSuccess(
+                paymentAmount: AmountToDisplay(AdmissionFee + _MembershipFee),
+                transactionReference: transactionId,
+                cashPayment: paymentStatus == PaymentProcessor.PaymentStatus.Pending).ShowDialog();
 
-            // The rest of this method will only run if the user has paid in cash
-
-            // Display the payment pending message
-            new PaymentSuccess(AmountToDisplay(AdmissionFee + _MembershipFee), cashPayment: true).ShowDialog();
+            // Finish the member registration
+            fitness_home.Register.FinishRegistration(transactionId);
         }
 
         // Event handler triggered when the "Cash" radio button's checked state changes.
@@ -299,7 +309,8 @@ namespace fitness_home.Views.Onboarding.Register
             // If the user deselects the "Cash" option (cash.Checked is false),
             // check whether all required card input fields have been filled.
             // If all card details are entered, re-enable the "Pay Now" button.
-            if (!cash.Checked) {
+            if (!cash.Checked)
+            {
                 button_pay.Enabled = HasEntered.Values.All(value => value);
             }
         }
