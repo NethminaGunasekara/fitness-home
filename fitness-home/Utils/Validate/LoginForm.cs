@@ -28,7 +28,7 @@ namespace fitness_home.Utils.Validate
             string emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
 
             // If textbox still contains the initial value (placeholder)
-            if (email == "Email")
+            if (email == "E-mail")
             {
                 Login.hasEmailEntered = false;
                 RegisterForm.SetBackColorDefault(textBox);

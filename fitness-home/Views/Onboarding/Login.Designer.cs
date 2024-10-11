@@ -246,7 +246,7 @@
             this.textbox_email.Name = "textbox_email";
             this.textbox_email.Size = new System.Drawing.Size(379, 20);
             this.textbox_email.TabIndex = 5;
-            this.textbox_email.Text = "Email";
+            this.textbox_email.Text = "E-mail";
             this.textbox_email.TextChanged += new System.EventHandler(this.Email_TextChanged);
             this.textbox_email.Enter += new System.EventHandler(this.RemovePlaceholder);
             this.textbox_email.Leave += new System.EventHandler(this.AddPlaceholder);

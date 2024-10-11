@@ -117,7 +117,7 @@ namespace fitness_home.Services
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     // SQL query to fetch the user details
-                    string query = "SELECT id, role, password FROM account WHERE email = @Email";
+                    string query = "SELECT role, password FROM account WHERE email = @Email";
                     SqlCommand cmd = new SqlCommand(query, conn);
                     cmd.Parameters.AddWithValue("@Email", email);
 
@@ -135,9 +135,8 @@ namespace fitness_home.Services
                         // Move to the first row
                         reader.Read();
 
-                        // Get the id, role, and password from the result
-                        int id = Convert.ToInt32(reader["id"]);
-                        int role = Convert.ToInt32(reader["role"]);
+                        // Get the role, and password from the result
+                        string role = reader["role"].ToString();
                         string storedHash = reader["password"].ToString();
 
                         // Verify the hased version of entered password against the stored hash
@@ -146,13 +145,39 @@ namespace fitness_home.Services
                         // If login is successful
                         if (isPasswordValid)
                         {
-                            // Assign the user with role based on the database result
-                            if (role == 0)
-                                LoggedUser = new Admin(id);
-                            else if (role == 1)
-                                LoggedUser = new Trainer(id);
+                            // Assign the type of user with role to "LoggedUser"
+                            if (role == Role.Administrator.ToString())
+                            {
+                                // Retrieve the "admin_id" from the admin table
+                                using (SqlCommand getAdminIdCmd = new SqlCommand("SELECT admin_id FROM admin WHERE email = @Email", conn))
+                                {
+                                    getAdminIdCmd.Parameters.AddWithValue("@Email", email);
+                                    int adminId = (int)getAdminIdCmd.ExecuteScalar();
+                                    LoggedUser = new Admin(adminId);
+                                }
+                            }
+
+                            else if (role == Role.Trainer.ToString())
+                            {
+                                // Retrieve the "trainer_id" from the trainer table
+                                using (SqlCommand getTrainerIdCmd = new SqlCommand("SELECT trainer_id FROM trainer WHERE email = @Email", conn))
+                                {
+                                    getTrainerIdCmd.Parameters.AddWithValue("@Email", email);
+                                    int trainerId = (int)getTrainerIdCmd.ExecuteScalar();
+                                    LoggedUser = new Trainer(trainerId);
+                                }
+                            }
+
                             else
-                                LoggedUser = new Member(id);
+                            {
+                                // Retrieve the "member_id" from the member table
+                                using (SqlCommand getMemberIdCmd = new SqlCommand("SELECT member_id FROM member WHERE email = @Email", conn))
+                                {
+                                    getMemberIdCmd.Parameters.AddWithValue("@Email", email);
+                                    int memberId = (int)getMemberIdCmd.ExecuteScalar();
+                                    LoggedUser = new Member(memberId);
+                                }
+                            }
 
                             // Store login details upon a successful login
                             string storedEmail = ConfigurationManager.AppSettings["USER_EMAIL"];

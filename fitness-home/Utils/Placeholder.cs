@@ -19,7 +19,6 @@ namespace fitness_home.Utils
             { "textBox_lname", "Last name" },
             { "textBox_dob", "YYYY/MM/DD" },
             { "textBox_nic", "XXXXXXXXXXXX" },
-            { "textBox_email", "E-mail" },
             { "textBox_phone", "Phone" },
             { "textBox_address", "Address" },
             { "textBox_ec_name", "Emergency contact name" },

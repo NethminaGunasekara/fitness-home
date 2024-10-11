@@ -343,7 +343,18 @@ namespace fitness_home
                     // Assign new member to the selected group
                     AssignMemberToGroup(conn, newMemberId, RegistrationInfo.MembershipPlan.PlanId);
 
-                    // 
+                    // Update the transaction record by assigning it the new member's ID
+                    query = @"UPDATE [transaction]
+                            SET member_id = @MemberId
+                            WHERE transaction_id = @TransactionId";
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@MemberId", newMemberId);
+                        cmd.Parameters.AddWithValue("@TransactionId", transactionId);
+
+                        cmd.ExecuteNonQuery();
+                    }
                 }
 
                 MessageBox.Show("Registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -371,55 +382,52 @@ namespace fitness_home
         }
 
         // Assign members to a group within the "member_group" table based on their membership plan id
-        private static void AssignMemberToGroup(SqlConnection conn, int memberId, int planId)
+        public static void AssignMemberToGroup(SqlConnection conn, int memberId, int planId)
         {
-            // Retrieves group numbers and member counts for a given plan, grouping by group number and ordering them.
-            string query = @"SELECT group_number, COUNT(*) as group_count
-                         FROM member_group
-                         WHERE plan_id = @PlanId
-                         GROUP BY group_number
-                         ORDER BY group_number";
-
-            using (SqlCommand cmd = new SqlCommand(query, conn))
+            // Query to get the maximum group number for a given plan_id
+            using (SqlCommand cmd = new SqlCommand("SELECT MAX(group_number) FROM member_group WHERE plan_id = @planId", conn))
             {
-                cmd.Parameters.AddWithValue("@PlanId", planId);
-                SqlDataReader reader = cmd.ExecuteReader();
+                // Assign a planId to the query
+                cmd.Parameters.AddWithValue("@planId", planId);
 
-                int groupToAssign = 1;
-                bool groupFound = false;
+                // Execute the query and store the result (highest group_number)
+                object maxGroupNumber = cmd.ExecuteScalar();
 
-                // Find a group that has less than 24 members
-                while (reader.Read())
+                // If a group exists, increment the group number, otherwise, start at group 1
+                int groupNumber = maxGroupNumber != DBNull.Value ? (int)maxGroupNumber + 1 : 1;
+
+                // Check if the current group (groupNumber) already has 24 members
+                using (SqlCommand checkGroupCount = new SqlCommand("SELECT COUNT(*) FROM member_group WHERE group_number = @groupNumber AND plan_id = @planId", conn))
                 {
-                    int currentGroupNumber = reader.GetInt32(0);  // group_number
-                    int groupCount = reader.GetInt32(1);  // group_count
+                    // Add groupNumber and planId as parameters to the query
+                    checkGroupCount.Parameters.AddWithValue("@groupNumber", groupNumber);
+                    checkGroupCount.Parameters.AddWithValue("@planId", planId);
 
-                    if (groupCount < 24)
+                    // Execute the query and store the number of members in the group
+                    int groupCount = (int)checkGroupCount.ExecuteScalar();
+
+                    // While the group is full (24 members), increment groupNumber and check the next group
+                    while (groupCount >= 24)
                     {
-                        groupToAssign = currentGroupNumber;
-                        groupFound = true;
-                        break;
+                        groupNumber++; // Move to the next group number
+                        
+                        // Update the query parameter to check the new group number
+                        checkGroupCount.Parameters["@groupNumber"].Value = groupNumber;
+                        
+                        // Re-execute the query to get the member count of the new group
+                        groupCount = (int)checkGroupCount.ExecuteScalar();
                     }
                 }
 
-                reader.Close();
-
-                // If no group has less than 24 members, assign the member to a new group
-                if (!groupFound)
+                // Insert the new member into the determined group (groupNumber)
+                using (SqlCommand insertCmd = new SqlCommand("INSERT INTO member_group (member_id, plan_id, group_number) VALUES (@memberId, @planId, @groupNumber)", conn))
                 {
-                    // The next group number is one more than the last group's number
-                    groupToAssign++;
-                }
+                    // Add memberId, planId, and groupNumber as parameters to the insert query
+                    insertCmd.Parameters.AddWithValue("@memberId", memberId);
+                    insertCmd.Parameters.AddWithValue("@planId", planId);
+                    insertCmd.Parameters.AddWithValue("@groupNumber", groupNumber);
 
-                // Assign new member to the selected group
-                query = @"INSERT INTO member_group (member_id, plan_id, group_number)
-                      VALUES (@MemberId, @PlanId, @GroupNumber)";
-                using (SqlCommand insertCmd = new SqlCommand(query, conn))
-                {
-                    insertCmd.Parameters.AddWithValue("@MemberId", memberId);
-                    insertCmd.Parameters.AddWithValue("@PlanId", planId);
-                    insertCmd.Parameters.AddWithValue("@GroupNumber", groupToAssign);
-
+                    // Execute the insert command to add the new member to the member_group table
                     insertCmd.ExecuteNonQuery();
                 }
             }
