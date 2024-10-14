@@ -41,18 +41,7 @@ namespace fitness_home
         private void LoginButton_Click(object sender, EventArgs e)
         {
             LoginStatus loginStatus = Authentication.Instance.Login(email: textbox_email.Text, password: textbox_password.Text);
-
-            // Login failed message
-            LoginFailed loginError = new LoginFailed();
-            loginError.StartPosition = FormStartPosition.Manual;
-
-            int x = this.Location.X + (this.Width / 2) - loginError.Width / 2;
-            int y = this.Location.Y + (this.Height / 2) - loginError.Height / 2;
-
-            Point location = new Point(x, y);
-
-            loginError.Location = location;
-
+ 
             // Display login status
             if (loginStatus == LoginStatus.Success)
             {
@@ -63,24 +52,16 @@ namespace fitness_home
             // If there's a database connection error
             else if (loginStatus == LoginStatus.DatabaseError)
             {
-                ApplicationError databaseError = new ApplicationError(ErrorType.DatabaseError);
-                
-                // Set error message position
-                databaseError.StartPosition = FormStartPosition.Manual;
-
-                Point messageLocation = new Point(
-                    x: this.Location.X + (this.Width / 2) - databaseError.Width / 2,
-                    y: this.Location.Y + (this.Height / 2) - databaseError.Height / 2); 
-
-                databaseError.Location = messageLocation;
-
                 // Display the error message
-                databaseError.ShowDialog();
+                new ApplicationError(ErrorType.DatabaseError).ShowDialog();
             }
 
             // If either email isn't found or password is incorrect
             else
             {
+                // Login failed message
+                LoginFailed loginError = new LoginFailed();
+
                 loginError.title =
                     loginStatus == LoginStatus.InvalidEmail ?
                         "The email you entered is not found" : "The password you entered is incorrect";

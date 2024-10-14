@@ -1,11 +1,11 @@
-﻿namespace fitness_home.Utils.Types.User
+﻿namespace fitness_home.Utils.Types.UserTypes
 {
-    internal class Member : IUser
+    internal class Admin : User
     {
         public int ID { get; }
         public Role Role { get; }
 
-        public Member(int id)
+        public Admin(int id)
         {
             ID = id;
             Role = Role.Member;

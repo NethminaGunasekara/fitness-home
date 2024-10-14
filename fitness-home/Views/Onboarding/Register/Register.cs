@@ -5,7 +5,6 @@ using fitness_home.Utils.Types;
 using fitness_home.Utils.Validate;
 using fitness_home.Views.Messages;
 using fitness_home.Views.Onboarding.Register;
-using fitness_home.Views.Onboarding.Register.Services;
 using fitness_home.Views.Onboarding.Register.Types;
 using System;
 using System.Collections.Generic;
@@ -215,52 +214,65 @@ namespace fitness_home
             Helpers.ShowForm(LoginForm, this, setSize: false, setPosition: false);
         }
 
-        private bool CheckKeyFields()
+        /// <summary>
+        /// Checks if the email and NIC provided during registration already exist in the database.
+        /// If duplicates are found, it sets the appropriate error type and displays an error message.
+        /// </summary>
+        private InputErrorType CheckKeyFields()
         {
-            bool proceedToRegister = false;
+            // Initialize the error type to "None"
+            InputErrorType errorType = InputErrorType.None;
 
             // Create a connection to the database
             using (SqlConnection conn = new SqlConnection(Authentication.Instance.ConnectionString))
             {
-                conn.Open();
+                conn.Open();  // Open the database connection
 
-                // Check if the email already exists in the account table and the role is "Member"
+                // Query to check if the email already exists in the "account" table with the "Member" role
                 string query = "SELECT COUNT(*) FROM account WHERE email = @Email AND role = @Role";
 
                 using (SqlCommand checkEmailCmd = new SqlCommand(query, conn))
                 {
+                    // Add parameters for the email and role
                     checkEmailCmd.Parameters.AddWithValue("@Email", RegistrationInfo.Email);
                     checkEmailCmd.Parameters.AddWithValue("@Role", Role.Member.ToString());
+
+                    // Execute the query and get the count of matching email records
                     int emailCount = (int)checkEmailCmd.ExecuteScalar();
 
-                    // If email already exists, display an error message
+                    // If a matching email is found, set the error type to DuplicateEmail
                     if (emailCount > 0)
                     {
-                        MessageBox.Show("The email is already registered. Please use a different email.", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                        proceedToRegister = true;
+                        errorType = InputErrorType.DuplicateEmail;
                     }
                 }
 
-                // Check if the NIC already exists in the member table
+                // Query to check if the NIC already exists in the "member" table
                 query = "SELECT COUNT(*) FROM member WHERE nic = @NIC";
 
                 using (SqlCommand checkNICCmd = new SqlCommand(query, conn))
                 {
+                    // Add the NIC parameter
                     checkNICCmd.Parameters.AddWithValue("@NIC", RegistrationInfo.NIC);
+
+                    // Execute the query and get the count of matching NIC records
                     int nicCount = (int)checkNICCmd.ExecuteScalar();
 
-                    // If NIC already exists, display an error message
+                    // If a matching NIC is found, set the error type accordingly
                     if (nicCount > 0)
                     {
-                        MessageBox.Show("The NIC is already registered. Please use a different NIC.", "Registration Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        proceedToRegister = false;
+                        // If both email and NIC are duplicated, set the error type to DuplicateEmailAndNIC
+                        // Otherwise, set it to DuplicateNIC
+                        errorType = errorType == InputErrorType.DuplicateEmail
+                            ? InputErrorType.DuplicateEmailAndNIC
+                            : InputErrorType.DuplicateNIC;
                     }
                 }
             }
 
-            return proceedToRegister;
+            return errorType;
         }
+
 
         private void button_sign_up_Click(object sender, EventArgs e)
         {
@@ -283,6 +295,15 @@ namespace fitness_home
                 ecName: textBox_ec_name.Text,
                 ecPhone: textBox_ec_phone.Text
             );
+
+            InputErrorType errorType = CheckKeyFields();
+
+            // If any input errors were found, display an appropriate error message
+            if (errorType != InputErrorType.None)
+            {
+                new InputError(errorType).ShowDialog();  // Show the error dialog with the specific error type
+                return; // Exit the method
+            }
 
             // Proceed to the membership selection page
             Membership Membership = FormProvider.Membership ?? (FormProvider.Membership = new Membership());

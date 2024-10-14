@@ -38,5 +38,6 @@ namespace fitness_home.Views.Messages
     {
         DatabaseError,
         UnexpectedError,
+        RegistrationError,
     }
 }

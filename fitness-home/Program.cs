@@ -1,4 +1,5 @@
-﻿using fitness_home.Views.Onboarding;
+﻿using fitness_home.Views.Dashboard;
+using fitness_home.Views.Onboarding;
 using System;
 using System.Windows.Forms;
 
@@ -7,7 +8,7 @@ namespace fitness_home
 {
     internal static class Program
     {
-        public static Splash EntryPoint;
+        public static MemberDashboard EntryPoint;
 
         /// <summary>
         /// The main entry point for the application.
@@ -17,7 +18,7 @@ namespace fitness_home
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            EntryPoint = new Splash();
+            EntryPoint = new MemberDashboard();
             Application.Run(EntryPoint);
         }
     }

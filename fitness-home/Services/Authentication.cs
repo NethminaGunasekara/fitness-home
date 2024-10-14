@@ -4,10 +4,10 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using fitness_home.Utils.Types;
-using fitness_home.Utils.Types.User;
 using fitness_home.Utils;
 using fitness_home.Views.Dashboard;
 using System.Windows.Forms;
+using fitness_home.Utils.Types.UserTypes;
 
 namespace fitness_home.Services
 {
@@ -17,7 +17,7 @@ namespace fitness_home.Services
     internal class Authentication
     {
         // Stores logged user info
-        public static IUser LoggedUser;
+        public static User LoggedUser;
 
         // Singleton instance of the class
         private static Authentication instance;
@@ -139,6 +139,8 @@ namespace fitness_home.Services
                         string role = reader["role"].ToString();
                         string storedHash = reader["password"].ToString();
 
+                        reader.Close();
+
                         // Verify the hased version of entered password against the stored hash
                         bool isPasswordValid = VerifyPassword(password, storedHash);
 
@@ -179,12 +181,15 @@ namespace fitness_home.Services
                                 }
                             }
 
-                            // Store login details upon a successful login
+
+                            // Retrieve login details from the config (App.config)
                             string storedEmail = ConfigurationManager.AppSettings["USER_EMAIL"];
                             string storedPassword = ConfigurationManager.AppSettings["USER_PASSWORD"];
 
-                            // Update configuration if necessary
+                            // Open the configuration file
                             Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+                            // Update configuration if necessary
                             if (!storedEmail.Equals(email)) config.AppSettings.Settings["USER_EMAIL"].Value = email;
                             if (!storedPassword.Equals(password)) config.AppSettings.Settings["USER_PASSWORD"].Value = password;
 
@@ -195,6 +200,7 @@ namespace fitness_home.Services
                     }
                 }
             }
+
             catch (SqlException err)
             {
                 // Log the error for debugging purposes

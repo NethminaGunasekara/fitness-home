@@ -52,20 +52,26 @@
     <Compile Include="Services\Authentication.cs" />
     <Compile Include="Services\FormProvider.cs" />
     <Compile Include="Utils\Types\SharedTypes.cs" />
-    <Compile Include="Utils\Types\User\Admin.cs" />
-    <Compile Include="Utils\Types\User\IUser.cs" />
+    <Compile Include="Utils\Types\UserTypes\Admin.cs" />
     <Compile Include="Utils\Helpers.cs" />
     <Compile Include="Utils\Placeholder.cs" />
-    <Compile Include="Utils\Types\User\Member.cs" />
-    <Compile Include="Utils\Types\User\Trainer.cs" />
+    <Compile Include="Utils\Types\UserTypes\Member.cs" />
+    <Compile Include="Utils\Types\UserTypes\Trainer.cs" />
+    <Compile Include="Utils\Types\UserTypes\User.cs" />
     <Compile Include="Utils\Validate\LoginForm.cs" />
     <Compile Include="Utils\Validate\PaymentForm.cs" />
     <Compile Include="Utils\Validate\RegisterForm.cs" />
     <Compile Include="Utils\WinAPI.cs" />
-    <Compile Include="Views\Dashboard\MemberDashboard.cs">
+    <Compile Include="Views\Dashboard\Member\Components\SidebarButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\Member\Components\SidebarButton.Designer.cs">
+      <DependentUpon>SidebarButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\Member\MemberDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Dashboard\MemberDashboard.Designer.cs">
+    <Compile Include="Views\Dashboard\Member\MemberDashboard.Designer.cs">
       <DependentUpon>MemberDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Messages\ApplicationError.cs">
@@ -74,16 +80,22 @@
     <Compile Include="Views\Messages\ApplicationError.Designer.cs">
       <DependentUpon>ApplicationError.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Messages\PaymentFailed.cs">
+    <Compile Include="Views\Messages\InputError.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Messages\PaymentFailed.Designer.cs">
+    <Compile Include="Views\Messages\InputError.Designer.cs">
+      <DependentUpon>InputError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Messages\Registration\PaymentFailed.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Messages\Registration\PaymentFailed.Designer.cs">
       <DependentUpon>PaymentFailed.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Messages\PaymentSuccess.cs">
+    <Compile Include="Views\Messages\Registration\PaymentSuccess.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Messages\PaymentSuccess.Designer.cs">
+    <Compile Include="Views\Messages\Registration\PaymentSuccess.Designer.cs">
       <DependentUpon>PaymentSuccess.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Onboarding\Login.cs">
@@ -153,19 +165,25 @@
     <Compile Include="Views\Messages\LoginFailed.Designer.cs">
       <DependentUpon>LoginFailed.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\Dashboard\MemberDashboard.resx">
+    <EmbeddedResource Include="Views\Dashboard\Member\Components\SidebarButton.resx">
+      <DependentUpon>SidebarButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\Member\MemberDashboard.resx">
       <DependentUpon>MemberDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Messages\ApplicationError.resx">
       <DependentUpon>ApplicationError.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Messages\InputError.resx">
+      <DependentUpon>InputError.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Messages\LoginFailed.resx">
       <DependentUpon>LoginFailed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Messages\PaymentFailed.resx">
+    <EmbeddedResource Include="Views\Messages\Registration\PaymentFailed.resx">
       <DependentUpon>PaymentFailed.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Messages\PaymentSuccess.resx">
+    <EmbeddedResource Include="Views\Messages\Registration\PaymentSuccess.resx">
       <DependentUpon>PaymentSuccess.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Onboarding\Login.resx">
@@ -252,5 +270,6 @@
   <ItemGroup>
     <None Include="Resources\icons\list-item.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
