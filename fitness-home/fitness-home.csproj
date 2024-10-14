@@ -68,6 +68,18 @@
     <Compile Include="Views\Dashboard\Member\Components\SidebarButton.Designer.cs">
       <DependentUpon>SidebarButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dashboard\Member\Components\Views\DashboardView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\Member\Components\Views\DashboardView.Designer.cs">
+      <DependentUpon>DashboardView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\Member\Components\Views\ScheduleView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\Member\Components\Views\ScheduleView.Designer.cs">
+      <DependentUpon>ScheduleView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dashboard\Member\MemberDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +179,12 @@
     </Compile>
     <EmbeddedResource Include="Views\Dashboard\Member\Components\SidebarButton.resx">
       <DependentUpon>SidebarButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\Member\Components\Views\DashboardView.resx">
+      <DependentUpon>DashboardView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\Member\Components\Views\ScheduleView.resx">
+      <DependentUpon>ScheduleView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard\Member\MemberDashboard.resx">
       <DependentUpon>MemberDashboard.cs</DependentUpon>
@@ -270,6 +288,35 @@
   <ItemGroup>
     <None Include="Resources\icons\list-item.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\contact_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\home_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\membership.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\membership_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\payments.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\payments_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\schedule.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\schedule_dark.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

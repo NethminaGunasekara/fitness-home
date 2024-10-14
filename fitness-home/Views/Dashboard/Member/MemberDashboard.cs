@@ -1,66 +1,94 @@
 ﻿using AnimateDemo;
 using System;
-using System.Drawing.Drawing2D;
-using System.Drawing;
 using System.Windows.Forms;
 using fitness_home.Views.Dashboard.Member.Components;
+using fitness_home.Views.Dashboard.Member.Components.Views;
 
 namespace fitness_home.Views.Dashboard
 {
     public partial class MemberDashboard : Form
     {
+        // We use these fields to store the views after initializing them using the "new" keyword
+        // This avoids unnecessary re-instantiations, and allows us to keep data passed to those views
+        private DashboardView DashboardView;
+        private ScheduleView ScheduleView;
+
        public MemberDashboard()
         {
             InitializeComponent();
         }
 
-        private void Panel_Paint(object sender, PaintEventArgs e)
+        private void ChangeView(Control view)
         {
-            Panel panel = sender as Panel;
+            // Exit the method if the control of the content panel is "view" (It's unnecessary to reload it)
+            if (panel_content.Controls[0] == view) return;
 
-            // Adjust the radius as needed
-            int cornerRadius = 7;
+            // Remove the control assigned to content panel
+            panel_content.Controls.RemoveAt(0);
 
-            // Create a rounded rectangle path based on the panel's size
-            using (GraphicsPath path = GetRoundedRectanglePath(panel.ClientRectangle, cornerRadius))
-            {
-                // Set smoothing mode for smoother rendering
-                e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
-
-                // Clear background and draw the rounded path
-                e.Graphics.Clear(panel.BackColor);
-                e.Graphics.FillPath(new SolidBrush(panel.BackColor), path);
-
-                // Apply the rounded shape to the panel region
-                panel.Region = new Region(path);
-            }
-        }
-
-        // Helper Method: Creates a rounded rectangle path
-        private GraphicsPath GetRoundedRectanglePath(Rectangle rect, int radius)
-        {
-            GraphicsPath path = new GraphicsPath();
-            int diameter = radius * 2;
-
-            // Add rounded corners
-            path.AddArc(rect.X, rect.Y, diameter, diameter, 180, 90); // Top-left
-            path.AddArc(rect.Right - diameter, rect.Y, diameter, diameter, 270, 90); // Top-right
-            path.AddArc(rect.Right - diameter, rect.Bottom - diameter, diameter, diameter, 0, 90); // Bottom-right
-            path.AddArc(rect.X, rect.Bottom - diameter, diameter, diameter, 90, 90); // Bottom-left
-
-            path.CloseFigure();
-            return path;
+            // Assign the new control to our content panel
+            panel_content.Controls.Add(view);
         }
 
         private void Member_Load(object sender, EventArgs e)
         {
             // Form transition
-            WinAPI.AnimateWindow(this.Handle, 400, WinAPI.BLEND);
+            WinAPI.AnimateWindow(this.Handle, 700, WinAPI.BLEND);
+
+            SuspendLayout();
+
+            // Mount the dashboard view
+            DashboardView dashboardView = new DashboardView();
+            panel_content.Controls.Add(dashboardView);
+            dashboardView.Dock = DockStyle.Fill;
 
             // Add sidebar button controls
-            SidebarButton dashboardButton = new SidebarButton(activeButton: true);
+            SidebarButton dashboardButton = new SidebarButton(buttonType: ButtonType.Dashboard, activeButton: true);
             tableLayoutPanel_sidebar.Controls.Add(dashboardButton, 1, 1);
             dashboardButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+
+            SidebarButton scheduleButton = new SidebarButton(buttonType: ButtonType.Schedule);
+            tableLayoutPanel_sidebar.Controls.Add(scheduleButton, 1, 3);
+            scheduleButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+
+            SidebarButton membershipButton = new SidebarButton(buttonType: ButtonType.Membership);
+            tableLayoutPanel_sidebar.Controls.Add(membershipButton, 1, 5);
+            membershipButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+
+            SidebarButton paymentsButton = new SidebarButton(buttonType: ButtonType.Payments);
+            tableLayoutPanel_sidebar.Controls.Add(paymentsButton, 1, 7);
+            paymentsButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+
+            SidebarButton contactUsButton = new SidebarButton(buttonType: ButtonType.ContactUs);
+            tableLayoutPanel_sidebar.Controls.Add(contactUsButton, 1, 9);
+            contactUsButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+
+            ResumeLayout();
+
+            // ** Set the click events for all buttons
+            dashboardButton.BtnClick = delegate {
+                // Here, we first check if the "DashboardView" field is null, or undefined using the Nullish Coalescing Operator (??)
+                // Read: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-coalescing-operator
+                // If it's, we create a new instance of the "DashboardView" control using the "new" keyword, assign it to "DashboardView"
+                // field and pass it as the parameter to the "ChangeView" method to change the view to dashboard when the button is clicked
+                ChangeView(DashboardView ?? (DashboardView = new DashboardView()));
+
+                // Mark the dashboard button as active
+                dashboardButton.ActiveButton = true;
+
+                // Mark all other buttons as inactive
+                scheduleButton.ActiveButton = membershipButton.ActiveButton = paymentsButton.ActiveButton = contactUsButton.ActiveButton = false;
+            };
+
+            scheduleButton.BtnClick = delegate {
+                 ChangeView(ScheduleView ?? (ScheduleView = new ScheduleView()));
+
+                 // Mark the schedule button as active
+                 scheduleButton.ActiveButton = true;
+
+                 // Mark all other buttons as inactive
+                 dashboardButton.ActiveButton = membershipButton.ActiveButton = paymentsButton.ActiveButton = contactUsButton.ActiveButton = false;
+             };
         }
     }
 }
