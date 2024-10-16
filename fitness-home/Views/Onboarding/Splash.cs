@@ -139,7 +139,7 @@ namespace fitness_home.Views.Onboarding
                     label_fetching_data.Text = "LOGGING IN";
 
                     // Redirect user to the dashboard after another 2s
-                    await Task.Delay(2000);
+                    await Task.Delay(0);
 
                     // Redirect logged user to a dashboard based on the user type
                     Authentication.Instance.ShowDashboard(this);
@@ -149,7 +149,7 @@ namespace fitness_home.Views.Onboarding
                 else if(loginStatus == LoginStatus.InvalidEmail || loginStatus == LoginStatus.InvalidPassword)
                 {
                     // Display Welcome form after a delay of 2 seconds
-                    await Task.Delay(2000);
+                    await Task.Delay(0);
 
                     Welcome WelcomeForm = FormProvider.Welcome ?? (FormProvider.Welcome = new Welcome());
                     Helpers.ShowForm(WelcomeForm, this);

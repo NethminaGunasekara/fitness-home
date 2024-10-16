@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Services\MembershipInfo.cs" />
+    <Compile Include="Services\Membership.cs" />
     <Compile Include="Utils\Types\MembershipPlan.cs" />
     <Compile Include="Services\Authentication.cs" />
     <Compile Include="Services\FormProvider.cs" />
@@ -317,6 +317,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons\dashboard\schedule_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\avatar_male.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\avatar_female.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\bfp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\bmr_kcal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\daily_kcal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\lbm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\has_notifications.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\notifications.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\profile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

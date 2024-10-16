@@ -3,6 +3,7 @@ using System;
 using System.Windows.Forms;
 using fitness_home.Views.Dashboard.Member.Components;
 using fitness_home.Views.Dashboard.Member.Components.Views;
+using fitness_home.Services;
 
 namespace fitness_home.Views.Dashboard
 {
@@ -16,6 +17,9 @@ namespace fitness_home.Views.Dashboard
        public MemberDashboard()
         {
             InitializeComponent();
+
+            // Set the member name to welcome them
+            label_name.Text = $"{Authentication.LoggedUser.FirstName}!";
         }
 
         private void ChangeView(Control view)

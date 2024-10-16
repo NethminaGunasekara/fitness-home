@@ -63,7 +63,7 @@ namespace fitness_home.Views.Onboarding.Register
             InitializeComponent();
 
             // Retrieve all membership plans
-            MembershipPlans = MembershipInfo.GetAllPlans();
+            MembershipPlans = fitness_home.Services.Actions.Membership.GetAllPlans();
 
             // Set first three plans from "MembershipPlans" to display
             PlansToDisplay.AddRange(MembershipPlans.GetRange(StartIndex, 3));
