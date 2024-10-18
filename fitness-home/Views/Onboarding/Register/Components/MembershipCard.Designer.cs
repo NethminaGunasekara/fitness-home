@@ -119,6 +119,7 @@
             this.tableLayoutPanel_content.Size = new System.Drawing.Size(380, 461);
             this.tableLayoutPanel_content.TabIndex = 0;
             this.tableLayoutPanel_content.Click += new System.EventHandler(this.OnClick);
+            this.tableLayoutPanel_content.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_content_Paint);
             // 
             // panel_plan_name
             // 
@@ -131,6 +132,7 @@
             this.panel_plan_name.Size = new System.Drawing.Size(380, 70);
             this.panel_plan_name.TabIndex = 0;
             this.panel_plan_name.Click += new System.EventHandler(this.OnClick);
+            this.panel_plan_name.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_plan_name_Paint);
             // 
             // label_plan_name
             // 
@@ -155,6 +157,7 @@
             this.panel_plan_fee.Size = new System.Drawing.Size(380, 70);
             this.panel_plan_fee.TabIndex = 1;
             this.panel_plan_fee.Click += new System.EventHandler(this.OnClick);
+            this.panel_plan_fee.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_plan_fee_Paint);
             // 
             // flowLayoutPanel_fee
             // 
@@ -168,6 +171,7 @@
             this.flowLayoutPanel_fee.TabIndex = 4;
             this.flowLayoutPanel_fee.WrapContents = false;
             this.flowLayoutPanel_fee.Click += new System.EventHandler(this.OnClick);
+            this.flowLayoutPanel_fee.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel_fee_Paint);
             // 
             // panel_plan_fee_currency
             // 
@@ -177,6 +181,7 @@
             this.panel_plan_fee_currency.Size = new System.Drawing.Size(20, 43);
             this.panel_plan_fee_currency.TabIndex = 1;
             this.panel_plan_fee_currency.Click += new System.EventHandler(this.OnClick);
+            this.panel_plan_fee_currency.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_plan_fee_currency_Paint);
             // 
             // label_plan_fee_currency
             // 
@@ -214,6 +219,7 @@
             this.panel_plan_fee_per.Size = new System.Drawing.Size(35, 43);
             this.panel_plan_fee_per.TabIndex = 0;
             this.panel_plan_fee_per.Click += new System.EventHandler(this.OnClick);
+            this.panel_plan_fee_per.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_plan_fee_per_Paint);
             // 
             // label_plan_fee_per
             // 
@@ -240,6 +246,7 @@
             this.panel_benefits_title.Size = new System.Drawing.Size(380, 60);
             this.panel_benefits_title.TabIndex = 2;
             this.panel_benefits_title.Click += new System.EventHandler(this.OnClick);
+            this.panel_benefits_title.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_benefits_title_Paint);
             // 
             // label_plan_benefits_title
             // 
@@ -297,6 +304,7 @@
             this.panel_benefits.Size = new System.Drawing.Size(380, 261);
             this.panel_benefits.TabIndex = 3;
             this.panel_benefits.Click += new System.EventHandler(this.OnClick);
+            this.panel_benefits.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_benefits_Paint);
             // 
             // pictureBox8
             // 

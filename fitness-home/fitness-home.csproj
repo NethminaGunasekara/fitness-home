@@ -68,11 +68,29 @@
     <Compile Include="Views\Dashboard\Member\Components\SidebarButton.Designer.cs">
       <DependentUpon>SidebarButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Dashboard\Member\Components\Views\ContactUsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\Member\Components\Views\ContactUsView.Designer.cs">
+      <DependentUpon>ContactUsView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Dashboard\Member\Components\Views\DashboardView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\Dashboard\Member\Components\Views\DashboardView.Designer.cs">
       <DependentUpon>DashboardView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\Member\Components\Views\MembershipView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\Member\Components\Views\MembershipView.Designer.cs">
+      <DependentUpon>MembershipView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\Member\Components\Views\PaymentsView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\Member\Components\Views\PaymentsView.Designer.cs">
+      <DependentUpon>PaymentsView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Dashboard\Member\Components\Views\ScheduleView.cs">
       <SubType>UserControl</SubType>
@@ -180,8 +198,17 @@
     <EmbeddedResource Include="Views\Dashboard\Member\Components\SidebarButton.resx">
       <DependentUpon>SidebarButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\Member\Components\Views\ContactUsView.resx">
+      <DependentUpon>ContactUsView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard\Member\Components\Views\DashboardView.resx">
       <DependentUpon>DashboardView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\Member\Components\Views\MembershipView.resx">
+      <DependentUpon>MembershipView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\Member\Components\Views\PaymentsView.resx">
+      <DependentUpon>PaymentsView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard\Member\Components\Views\ScheduleView.resx">
       <DependentUpon>ScheduleView.cs</DependentUpon>
@@ -344,6 +371,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons\dashboard\profile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\send.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

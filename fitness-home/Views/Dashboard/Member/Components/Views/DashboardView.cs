@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
@@ -50,22 +49,6 @@ namespace fitness_home.Views.Dashboard.Member.Components.Views
                 pictureBox_avatar.BackgroundImage = Resources.avatar_female;
         }
 
-        // Helper Method: Creates a rounded rectangle path
-        private GraphicsPath GetRoundedRectanglePath(Rectangle rect, int radius)
-        {
-            GraphicsPath path = new GraphicsPath();
-            int diameter = radius * 2;
-
-            // Add rounded corners
-            path.AddArc(rect.X, rect.Y, diameter, diameter, 180, 90); // Top-left
-            path.AddArc(rect.Right - diameter, rect.Y, diameter, diameter, 270, 90); // Top-right
-            path.AddArc(rect.Right - diameter, rect.Bottom - diameter, diameter, diameter, 0, 90); // Bottom-right
-            path.AddArc(rect.X, rect.Bottom - diameter, diameter, diameter, 90, 90); // Bottom-left
-
-            path.CloseFigure();
-            return path;
-        }
-
         // Applies rounded corners around selected panels
         private void ApplyRoundedCorners()
         {
@@ -89,11 +72,21 @@ namespace fitness_home.Views.Dashboard.Member.Components.Views
             ApplyRoundedCorners();
         }
 
-        // ** Event: When the form is being resized
+        // ** Event: When the control is being resized
         private void DashboardView_Resize(object sender, EventArgs e)
         {
             // Here, we re-calculate the size of the panels with rounded corners as our control is resized
             ApplyRoundedCorners();
+        }
+
+        private void tableLayoutPanel_weekly_schedule_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel_profile_overview_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

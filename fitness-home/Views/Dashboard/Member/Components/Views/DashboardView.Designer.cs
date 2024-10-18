@@ -54,6 +54,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
+            this.button_next_classes = new System.Windows.Forms.Button();
             this.panel_calorie_goal = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_calorie_goal = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox_calorie_goal = new System.Windows.Forms.PictureBox();
@@ -89,7 +90,6 @@
             this.label_height_title = new System.Windows.Forms.Label();
             this.btn_edit_profile = new System.Windows.Forms.Button();
             this.label_profile_title = new System.Windows.Forms.Label();
-            this.button_next_classes = new System.Windows.Forms.Button();
             this.tableLayoutPanel_dashboard_layout.SuspendLayout();
             this.panel_schedule.SuspendLayout();
             this.tableLayoutPanel_weekly_schedule.SuspendLayout();
@@ -198,6 +198,7 @@
             this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_weekly_schedule.Size = new System.Drawing.Size(926, 211);
             this.tableLayoutPanel_weekly_schedule.TabIndex = 0;
+            this.tableLayoutPanel_weekly_schedule.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_weekly_schedule_Paint);
             // 
             // label_weekly_schedule
             // 
@@ -530,6 +531,24 @@
             this.label19.Text = "Bench press";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // button_next_classes
+            // 
+            this.button_next_classes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_next_classes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.button_next_classes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_next_classes.FlatAppearance.BorderSize = 0;
+            this.button_next_classes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
+            this.button_next_classes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_next_classes.Font = new System.Drawing.Font("Noto Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_next_classes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
+            this.button_next_classes.Location = new System.Drawing.Point(838, 15);
+            this.button_next_classes.Margin = new System.Windows.Forms.Padding(0);
+            this.button_next_classes.Name = "button_next_classes";
+            this.button_next_classes.Size = new System.Drawing.Size(47, 26);
+            this.button_next_classes.TabIndex = 17;
+            this.button_next_classes.Text = "Next";
+            this.button_next_classes.UseVisualStyleBackColor = false;
+            // 
             // panel_calorie_goal
             // 
             this.panel_calorie_goal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
@@ -851,6 +870,7 @@
             this.tableLayoutPanel_profile_overview.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_profile_overview.Size = new System.Drawing.Size(448, 188);
             this.tableLayoutPanel_profile_overview.TabIndex = 6;
+            this.tableLayoutPanel_profile_overview.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_profile_overview_Paint);
             // 
             // label_name
             // 
@@ -1040,24 +1060,6 @@
             this.label_profile_title.Size = new System.Drawing.Size(66, 26);
             this.label_profile_title.TabIndex = 0;
             this.label_profile_title.Text = "Profile";
-            // 
-            // button_next_classes
-            // 
-            this.button_next_classes.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button_next_classes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
-            this.button_next_classes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_next_classes.FlatAppearance.BorderSize = 0;
-            this.button_next_classes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
-            this.button_next_classes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_next_classes.Font = new System.Drawing.Font("Noto Sans", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_next_classes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
-            this.button_next_classes.Location = new System.Drawing.Point(838, 15);
-            this.button_next_classes.Margin = new System.Windows.Forms.Padding(0);
-            this.button_next_classes.Name = "button_next_classes";
-            this.button_next_classes.Size = new System.Drawing.Size(47, 26);
-            this.button_next_classes.TabIndex = 17;
-            this.button_next_classes.Text = "Next";
-            this.button_next_classes.UseVisualStyleBackColor = false;
             // 
             // DashboardView
             // 

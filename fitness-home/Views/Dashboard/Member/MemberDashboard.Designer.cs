@@ -38,8 +38,8 @@
             this.panel_heading = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_header = new System.Windows.Forms.TableLayoutPanel();
             this.button2 = new System.Windows.Forms.Button();
-            this.label_welcome = new System.Windows.Forms.Label();
-            this.label_name = new System.Windows.Forms.Label();
+            this.label_heading_1 = new System.Windows.Forms.Label();
+            this.label_heading_2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel_dashboard.SuspendLayout();
             this.panel_logo.SuspendLayout();
@@ -155,8 +155,8 @@
             this.tableLayoutPanel_header.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel_header.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel_header.Controls.Add(this.button2, 2, 1);
-            this.tableLayoutPanel_header.Controls.Add(this.label_welcome, 0, 1);
-            this.tableLayoutPanel_header.Controls.Add(this.label_name, 1, 1);
+            this.tableLayoutPanel_header.Controls.Add(this.label_heading_1, 0, 1);
+            this.tableLayoutPanel_header.Controls.Add(this.label_heading_2, 1, 1);
             this.tableLayoutPanel_header.Controls.Add(this.button1, 3, 1);
             this.tableLayoutPanel_header.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_header.Location = new System.Drawing.Point(0, 0);
@@ -187,37 +187,37 @@
             this.button2.TabIndex = 3;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // label_welcome
+            // label_heading_1
             // 
-            this.label_welcome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_heading_1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label_welcome.AutoSize = true;
-            this.label_welcome.Font = new System.Drawing.Font("Noto Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_welcome.ForeColor = System.Drawing.Color.White;
-            this.label_welcome.Location = new System.Drawing.Point(30, 30);
-            this.label_welcome.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
-            this.label_welcome.Name = "label_welcome";
-            this.label_welcome.Size = new System.Drawing.Size(122, 40);
-            this.label_welcome.TabIndex = 1;
-            this.label_welcome.Text = "Welcome,";
-            this.label_welcome.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_welcome.UseCompatibleTextRendering = true;
+            this.label_heading_1.AutoSize = true;
+            this.label_heading_1.Font = new System.Drawing.Font("Noto Sans", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_heading_1.ForeColor = System.Drawing.Color.White;
+            this.label_heading_1.Location = new System.Drawing.Point(30, 30);
+            this.label_heading_1.Margin = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.label_heading_1.Name = "label_heading_1";
+            this.label_heading_1.Size = new System.Drawing.Size(122, 40);
+            this.label_heading_1.TabIndex = 1;
+            this.label_heading_1.Text = "Welcome,";
+            this.label_heading_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_heading_1.UseCompatibleTextRendering = true;
             // 
-            // label_name
+            // label_heading_2
             // 
-            this.label_name.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label_heading_2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label_name.AutoSize = true;
-            this.label_name.Font = new System.Drawing.Font("Noto Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_name.ForeColor = System.Drawing.Color.White;
-            this.label_name.Location = new System.Drawing.Point(152, 30);
-            this.label_name.Margin = new System.Windows.Forms.Padding(0);
-            this.label_name.Name = "label_name";
-            this.label_name.Size = new System.Drawing.Size(119, 40);
-            this.label_name.TabIndex = 0;
-            this.label_name.Text = "Member!";
-            this.label_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_name.UseCompatibleTextRendering = true;
+            this.label_heading_2.AutoSize = true;
+            this.label_heading_2.Font = new System.Drawing.Font("Noto Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_heading_2.ForeColor = System.Drawing.Color.White;
+            this.label_heading_2.Location = new System.Drawing.Point(152, 30);
+            this.label_heading_2.Margin = new System.Windows.Forms.Padding(0);
+            this.label_heading_2.Name = "label_heading_2";
+            this.label_heading_2.Size = new System.Drawing.Size(119, 40);
+            this.label_heading_2.TabIndex = 0;
+            this.label_heading_2.Text = "Member!";
+            this.label_heading_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_heading_2.UseCompatibleTextRendering = true;
             // 
             // button1
             // 
@@ -271,8 +271,8 @@
         private System.Windows.Forms.Panel panel_heading;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_header;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_sidebar;
-        private System.Windows.Forms.Label label_name;
-        private System.Windows.Forms.Label label_welcome;
+        private System.Windows.Forms.Label label_heading_2;
+        private System.Windows.Forms.Label label_heading_1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

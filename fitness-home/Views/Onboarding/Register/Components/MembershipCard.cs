@@ -136,5 +136,45 @@ namespace fitness_home.Views.Onboarding.Register.Components
                 e.Graphics.DrawRectangle(pen, 0, 0, Width - 1, Height - 1);
             }
         }
+
+        private void panel_plan_fee_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_plan_name_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel_fee_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void tableLayoutPanel_content_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_plan_fee_currency_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_plan_fee_per_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_benefits_title_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_benefits_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

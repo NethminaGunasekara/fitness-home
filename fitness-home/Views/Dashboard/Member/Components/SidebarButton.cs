@@ -99,7 +99,7 @@ namespace fitness_home.Views.Dashboard.Member.Components
                 case ButtonType.Payments:
                     BtnIconLight = Resources.payments;
                     BtnIconDark = Resources.payments_dark;
-                    BtnText = "Dashboard";
+                    BtnText = "Payments";
                     break;
 
                 default:

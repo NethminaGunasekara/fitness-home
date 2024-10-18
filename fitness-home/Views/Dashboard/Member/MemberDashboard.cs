@@ -1,5 +1,6 @@
 ﻿using AnimateDemo;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 using fitness_home.Views.Dashboard.Member.Components;
 using fitness_home.Views.Dashboard.Member.Components.Views;
@@ -13,13 +14,13 @@ namespace fitness_home.Views.Dashboard
         // This avoids unnecessary re-instantiations, and allows us to keep data passed to those views
         private DashboardView DashboardView;
         private ScheduleView ScheduleView;
+        private MembershipView MembershipView;
+        private PaymentsView PaymentsView;
+        private ContactUsView ContactUsView;
 
        public MemberDashboard()
         {
             InitializeComponent();
-
-            // Set the member name to welcome them
-            label_name.Text = $"{Authentication.LoggedUser.FirstName}!";
         }
 
         private void ChangeView(Control view)
@@ -29,6 +30,9 @@ namespace fitness_home.Views.Dashboard
 
             // Remove the control assigned to content panel
             panel_content.Controls.RemoveAt(0);
+
+            // Set the dock style of the newly added view to fill
+            view.Dock = DockStyle.Fill;
 
             // Assign the new control to our content panel
             panel_content.Controls.Add(view);
@@ -45,6 +49,9 @@ namespace fitness_home.Views.Dashboard
             DashboardView dashboardView = new DashboardView();
             panel_content.Controls.Add(dashboardView);
             dashboardView.Dock = DockStyle.Fill;
+
+            // Display the member name to welcome them
+            label_heading_2.Text = $"{Authentication.LoggedUser.FirstName}!";
 
             // Add sidebar button controls
             SidebarButton dashboardButton = new SidebarButton(buttonType: ButtonType.Dashboard, activeButton: true);
@@ -77,6 +84,14 @@ namespace fitness_home.Views.Dashboard
                 // field and pass it as the parameter to the "ChangeView" method to change the view to dashboard when the button is clicked
                 ChangeView(DashboardView ?? (DashboardView = new DashboardView()));
 
+                // Set the first part of the form heading and its font
+                label_heading_1.Text = "Welcome,";
+                label_heading_1.Font = new Font("Noto Sans", 18, FontStyle.Regular);
+
+                // Set the second part of the form heading and its font
+                label_heading_2.Text = $"{Authentication.LoggedUser.FirstName}!";
+                label_heading_2.Font = new Font("Noto Sans", 18, FontStyle.Bold);
+
                 // Mark the dashboard button as active
                 dashboardButton.ActiveButton = true;
 
@@ -85,14 +100,72 @@ namespace fitness_home.Views.Dashboard
             };
 
             scheduleButton.BtnClick = delegate {
-                 ChangeView(ScheduleView ?? (ScheduleView = new ScheduleView()));
+                ChangeView(ScheduleView ?? (ScheduleView = new ScheduleView()));
 
-                 // Mark the schedule button as active
-                 scheduleButton.ActiveButton = true;
+                // Set the first part of the form heading and its font
+                label_heading_1.Text = "Weekly Schedule";
+                label_heading_1.Font = new Font("Noto Sans", 18, FontStyle.Bold);
+
+                // Set the second part of the form heading to blank
+                label_heading_2.Text = "";
+
+                // Mark the schedule button as active
+                scheduleButton.ActiveButton = true;
 
                  // Mark all other buttons as inactive
                  dashboardButton.ActiveButton = membershipButton.ActiveButton = paymentsButton.ActiveButton = contactUsButton.ActiveButton = false;
              };
+
+            membershipButton.BtnClick = delegate {
+                ChangeView(MembershipView ?? (MembershipView = new MembershipView()));
+
+                // Set the first part of the form heading and its font
+                label_heading_1.Text = "Membership";
+                label_heading_1.Font = new Font("Noto Sans", 18, FontStyle.Bold);
+
+                // Set the second part of the form heading to blank
+                label_heading_2.Text = "";
+
+                // Mark the membership button as active
+                membershipButton.ActiveButton = true;
+
+                // Mark all other buttons as inactive
+                scheduleButton.ActiveButton = dashboardButton.ActiveButton = paymentsButton.ActiveButton = contactUsButton.ActiveButton = false;
+            };
+
+            paymentsButton.BtnClick = delegate {
+                ChangeView(PaymentsView ?? (PaymentsView = new PaymentsView()));
+
+                // Set the first part of the form heading and its font
+                label_heading_1.Text = "Payments History";
+                label_heading_1.Font = new Font("Noto Sans", 18, FontStyle.Bold);
+
+                // Set the second part of the form heading to blank
+                label_heading_2.Text = "";
+
+                // Mark the payments button as active
+                paymentsButton.ActiveButton = true;
+
+                // Mark all other buttons as inactive
+                scheduleButton.ActiveButton = dashboardButton.ActiveButton = membershipButton.ActiveButton = contactUsButton.ActiveButton = false;
+            };
+
+            contactUsButton.BtnClick = delegate {
+                ChangeView(ContactUsView ?? (ContactUsView = new ContactUsView()));
+
+                // Set the first part of the form heading and its font
+                label_heading_1.Text = "Contact Us";
+                label_heading_1.Font = new Font("Noto Sans", 18, FontStyle.Bold);
+
+                // Set the second part of the form heading to blank
+                label_heading_2.Text = "";
+
+                // Mark the contact us button as active
+                contactUsButton.ActiveButton = true;
+
+                // Mark all other buttons as inactive
+                scheduleButton.ActiveButton = dashboardButton.ActiveButton = membershipButton.ActiveButton = paymentsButton.ActiveButton = false;
+            };
         }
     }
 }
