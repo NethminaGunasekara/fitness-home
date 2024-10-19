@@ -110,11 +110,29 @@
     <Compile Include="Views\Messages\ApplicationError.Designer.cs">
       <DependentUpon>ApplicationError.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Messages\AssessmentSuccessful.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Messages\AssessmentSuccessful.Designer.cs">
+      <DependentUpon>AssessmentSuccessful.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Messages\FeedbackReceived.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Messages\FeedbackReceived.Designer.cs">
+      <DependentUpon>FeedbackReceived.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Messages\InputError.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Messages\InputError.Designer.cs">
       <DependentUpon>InputError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Messages\MessageSent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Messages\MessageSent.Designer.cs">
+      <DependentUpon>MessageSent.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Messages\Registration\PaymentFailed.cs">
       <SubType>Form</SubType>
@@ -219,11 +237,17 @@
     <EmbeddedResource Include="Views\Messages\ApplicationError.resx">
       <DependentUpon>ApplicationError.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Messages\FeedbackReceived.resx">
+      <DependentUpon>FeedbackReceived.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Messages\InputError.resx">
       <DependentUpon>InputError.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Messages\LoginFailed.resx">
       <DependentUpon>LoginFailed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Messages\MessageSent.resx">
+      <DependentUpon>MessageSent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Messages\Registration\PaymentFailed.resx">
       <DependentUpon>PaymentFailed.cs</DependentUpon>

@@ -177,6 +177,7 @@ namespace fitness_home.Services
                                 {
                                     getMemberIdCmd.Parameters.AddWithValue("@Email", email);
                                     int memberId = (int)getMemberIdCmd.ExecuteScalar();
+
                                     LoggedUser = new Member(memberId);
                                 }
                             }

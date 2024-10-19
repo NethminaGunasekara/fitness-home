@@ -7,7 +7,7 @@ namespace fitness_home.Utils.Types.UserTypes
 {
     internal class Member : User
     {
-        public int ID { get; }
+        private readonly int _ID;
         public Role Role { get; }
         private string _FirstName;
         private string _LastName;
@@ -24,7 +24,7 @@ namespace fitness_home.Utils.Types.UserTypes
 
         public Member(int id)
         {
-            ID = id;
+            _ID = id;
             Role = Role.Member;
 
             // Retrieve member data from the database
@@ -113,6 +113,11 @@ namespace fitness_home.Utils.Types.UserTypes
                 // Display application error message
                 new ApplicationError(ErrorType.UnexpectedError).ShowDialog();
             }
+        }
+
+        public override int ID
+        {
+            get { return _ID; }
         }
 
         public override string FirstName
