@@ -5,10 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Windows.Forms;
 namespace fitness_home.Views.Onboarding.Register.Services
 {
-    public class PaymentProcessor
+    public class PaymentHelper
     {
        // Initialize a list of valid cards
         List<Card> ValidCards = new List<Card> {

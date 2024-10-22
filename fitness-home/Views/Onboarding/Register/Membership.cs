@@ -145,7 +145,7 @@ namespace fitness_home.Views.Onboarding.Register
         private void button_previous_Click(object sender, EventArgs e)
         {
             fitness_home.Register RegisterForm = FormProvider.Register ?? (FormProvider.Register = new fitness_home.Register());
-            Helpers.ShowForm(RegisterForm, this);
+            FormProvider.ShowForm(RegisterForm, this);
         }
 
         // ** Event: Continue to pay the membership fee
@@ -160,7 +160,7 @@ namespace fitness_home.Views.Onboarding.Register
             // Set the membership fee
             PaymentForm.MembershipFee = fitness_home.Register.RegistrationInfo.MembershipPlan.MonthlyFee;
 
-            Helpers.ShowForm(PaymentForm, this);
+            FormProvider.ShowForm(PaymentForm, this);
         }
 
         private void pictureBox_previous_Click(object sender, EventArgs e)

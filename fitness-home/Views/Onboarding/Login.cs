@@ -90,7 +90,7 @@ namespace fitness_home
 
         private void link_sign_up_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Helpers.ShowForm(
+            FormProvider.ShowForm(
                 targetForm: FormProvider.Register ?? (FormProvider.Register = new Register()),
                 currentForm: this, 
                 setSize: false, 
@@ -101,7 +101,7 @@ namespace fitness_home
         private void button_previous_form_Click(object sender, EventArgs e)
         {
             Welcome WelcomeForm = FormProvider.Welcome ?? (FormProvider.Welcome = new Welcome());
-            Helpers.ShowForm(WelcomeForm, this, setSize: false, setPosition: false);
+            FormProvider.ShowForm(WelcomeForm, this, setSize: false, setPosition: false);
         }
     }
 }

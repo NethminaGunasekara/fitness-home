@@ -8,6 +8,7 @@ using fitness_home.Utils;
 using fitness_home.Views.Dashboard;
 using System.Windows.Forms;
 using fitness_home.Utils.Types.UserTypes;
+using fitness_home.Views.Dashboard.Trainer;
 
 namespace fitness_home.Services
 {
@@ -28,9 +29,8 @@ namespace fitness_home.Services
         // Connection string to the database
         public readonly string ConnectionString;
 
-        /// <summary>
-        /// Private constructor to prevent direct instantiation.
-        /// </summary>
+
+        // Private constructor to prevent direct instantiation
         private Authentication()
         {
             // Build the connection string when an instance of the class is being created
@@ -81,10 +81,11 @@ namespace fitness_home.Services
             }
         }
 
-        /// <summary>
-        /// Gets the singleton instance of the Authentication class.
-        /// Ensures thread safety with double-check locking.
-        /// </summary>
+        // Gets the singleton instance of the Authentication class.
+        // This ensures thread safety with double-check locking.
+        // 
+        // Read more about the Singleton Design Pattern (Java):
+        // https://www.digitalocean.com/community/tutorials/java-singleton-design-pattern-best-practices-examples
         public static Authentication Instance
         {
             get
@@ -218,14 +219,27 @@ namespace fitness_home.Services
         /// <param name="currentForm">Form from which the user is redirected</param>
         public void ShowDashboard(Form currentForm)
         {
-            // Redirect to the Member Dashboard if the logged-in user is a member
+            // Redirect to the Member Dashboard if the logged user is a Member
             if (LoggedUser is Member)
             {
                 // Show the Member Dashboard
                 MemberDashboard MemberDashboard = FormProvider.MemberDashboard ?? (FormProvider.MemberDashboard = new MemberDashboard());
 
-                Helpers.ShowForm(
+                FormProvider.ShowForm(
                     targetForm: MemberDashboard,
+                    currentForm: currentForm,
+                    setSize: false,
+                    setPosition: false);
+            }
+
+            // Redirect to the Trainer Dashboard if the logged user is a Trainer
+            else if (LoggedUser is Trainer)
+            {
+                // Show the Trainer Dashboard
+                TrainerDashboard TrainerDashboard = FormProvider.TrainerDashboard ?? (FormProvider.TrainerDashboard = new TrainerDashboard());
+
+                FormProvider.ShowForm(
+                    targetForm: TrainerDashboard,
                     currentForm: currentForm,
                     setSize: false,
                     setPosition: false);

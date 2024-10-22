@@ -102,10 +102,34 @@ namespace fitness_home.Views.Dashboard.Member.Components
                     BtnText = "Payments";
                     break;
 
-                default:
+                case ButtonType.ContactUs:
                     BtnIconLight = Resources.contact;
                     BtnIconDark = Resources.contact_dark;
                     BtnText = "Contact Us";
+                    break;
+
+                case ButtonType.Classes:
+                    BtnIconLight = Resources.schedule;
+                    BtnIconDark = Resources.schedule_dark;
+                    BtnText = "Classes";
+                    break;
+
+                case ButtonType.Students:
+                    BtnIconLight = Resources.students;
+                    BtnIconDark = Resources.students_dark;
+                    BtnText = "Students";
+                    break;
+
+                case ButtonType.Feedbacks:
+                    BtnIconLight = Resources.feedbacks;
+                    BtnIconDark = Resources.feedbacks_dark;
+                    BtnText = "Feedbacks";
+                    break;
+
+                case ButtonType.Assessements:
+                    BtnIconLight = Resources.assessments;
+                    BtnIconDark = Resources.assessments_dark;
+                    BtnText = "Assessements";
                     break;
             }
 
@@ -181,10 +205,17 @@ namespace fitness_home.Views.Dashboard.Member.Components
 
     public enum ButtonType
     {
+        // Common and member specific buttons
         Dashboard,
         Schedule,
         Membership,
         Payments,
         ContactUs,
+
+        // Trainer specific buttons
+        Classes,
+        Students,
+        Feedbacks,
+        Assessements,
     }
 }

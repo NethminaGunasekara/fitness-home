@@ -15,27 +15,23 @@ namespace fitness_home.Views.Dashboard
         private DashboardView DashboardView;
         private ScheduleView ScheduleView;
         private MembershipView MembershipView;
+        private MembershipPayment MembershipPayment;
         private PaymentsView PaymentsView;
         private ContactUsView ContactUsView;
+        private ProfileView ProfileView;
 
        public MemberDashboard()
         {
             InitializeComponent();
-        }
 
-        private void ChangeView(Control view)
-        {
-            // Exit the method if the control of the content panel is "view" (It's unnecessary to reload it)
-            if (panel_content.Controls[0] == view) return;
-
-            // Remove the control assigned to content panel
-            panel_content.Controls.RemoveAt(0);
-
-            // Set the dock style of the newly added view to fill
-            view.Dock = DockStyle.Fill;
-
-            // Assign the new control to our content panel
-            panel_content.Controls.Add(view);
+            // Initialize all fields containing the tabs of member area
+            DashboardView = new DashboardView();
+            ScheduleView = new ScheduleView();
+            MembershipPayment = new MembershipPayment(MembershipView);
+            MembershipView = new MembershipView(MembershipPayment);
+            PaymentsView = new PaymentsView();
+            ContactUsView = new ContactUsView();
+            ProfileView = new ProfileView();
         }
 
         private void Member_Load(object sender, EventArgs e)
@@ -78,11 +74,14 @@ namespace fitness_home.Views.Dashboard
 
             // ** Set the click events for all buttons
             dashboardButton.BtnClick = delegate {
-                // Here, we first check if the "DashboardView" field is null, or undefined using the Nullish Coalescing Operator (??)
-                // Read: https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-coalescing-operator
-                // If it's, we create a new instance of the "DashboardView" control using the "new" keyword, assign it to "DashboardView"
-                // field and pass it as the parameter to the "ChangeView" method to change the view to dashboard when the button is clicked
-                ChangeView(DashboardView ?? (DashboardView = new DashboardView()));
+                // Remove all previous controls added to the content panel
+                panel_content.Controls.Clear();
+
+                // Set the dock style of the newly added view to fill
+                DashboardView.Dock = DockStyle.Fill;
+
+                // Assign the new control to our content panel
+                panel_content.Controls.Add(DashboardView);
 
                 // Set the first part of the form heading and its font
                 label_heading_1.Text = "Welcome,";
@@ -100,7 +99,14 @@ namespace fitness_home.Views.Dashboard
             };
 
             scheduleButton.BtnClick = delegate {
-                ChangeView(ScheduleView ?? (ScheduleView = new ScheduleView()));
+                // Remove all previous controls added to the content panel
+                panel_content.Controls.Clear();
+
+                // Set the dock style of the newly added view to fill
+                ScheduleView.Dock = DockStyle.Fill;
+
+                // Assign the new control to our content panel
+                panel_content.Controls.Add(ScheduleView);
 
                 // Set the first part of the form heading and its font
                 label_heading_1.Text = "Weekly Schedule";
@@ -112,12 +118,24 @@ namespace fitness_home.Views.Dashboard
                 // Mark the schedule button as active
                 scheduleButton.ActiveButton = true;
 
-                 // Mark all other buttons as inactive
-                 dashboardButton.ActiveButton = membershipButton.ActiveButton = paymentsButton.ActiveButton = contactUsButton.ActiveButton = false;
+                // Mark all other buttons as inactive
+                dashboardButton.ActiveButton = membershipButton.ActiveButton = paymentsButton.ActiveButton = contactUsButton.ActiveButton = false;
              };
 
             membershipButton.BtnClick = delegate {
-                ChangeView(MembershipView ?? (MembershipView = new MembershipView()));
+                // Remove all previous controls added to the content panel
+                panel_content.Controls.Clear();
+
+                // Set the dock style of the newly added view to fill
+                MembershipView.Dock = DockStyle.Fill;
+
+                // Assign the new control to our content panel
+                // In this case, we must add both MembershipView and MembershipPayment controls
+                panel_content.Controls.Add(MembershipView);
+                panel_content.Controls.Add(MembershipPayment);
+
+                // Invalidate the MembershipView, so that it can display the latest membership data
+                MembershipView.Invalidate();
 
                 // Set the first part of the form heading and its font
                 label_heading_1.Text = "Membership";
@@ -134,7 +152,17 @@ namespace fitness_home.Views.Dashboard
             };
 
             paymentsButton.BtnClick = delegate {
-                ChangeView(PaymentsView ?? (PaymentsView = new PaymentsView()));
+                // Remove all previous controls added to the content panel
+                panel_content.Controls.Clear();
+
+                // Set the dock style of the newly added view to fill
+                PaymentsView.Dock = DockStyle.Fill;
+
+                // Assign the new control to our content panel
+                panel_content.Controls.Add(PaymentsView);
+
+                // Invalidate the PaymentsView, so that it can display the latest transaction data
+                PaymentsView.Invalidate();
 
                 // Set the first part of the form heading and its font
                 label_heading_1.Text = "Payments History";
@@ -151,7 +179,14 @@ namespace fitness_home.Views.Dashboard
             };
 
             contactUsButton.BtnClick = delegate {
-                ChangeView(ContactUsView ?? (ContactUsView = new ContactUsView()));
+                // Remove all previous controls added to the content panel
+                panel_content.Controls.Clear();
+
+                // Set the dock style of the newly added view to fill
+                ContactUsView.Dock = DockStyle.Fill;
+
+                // Assign the new control to our content panel
+                panel_content.Controls.Add(ContactUsView);
 
                 // Set the first part of the form heading and its font
                 label_heading_1.Text = "Contact Us";
@@ -166,6 +201,19 @@ namespace fitness_home.Views.Dashboard
                 // Mark all other buttons as inactive
                 scheduleButton.ActiveButton = dashboardButton.ActiveButton = membershipButton.ActiveButton = paymentsButton.ActiveButton = false;
             };
+        }
+
+        // ** Event: When the view profile button is clicked
+        private void button_edit_profile_Click(object sender, EventArgs e)
+        {
+            // Remove all previous controls added to the content panel
+            panel_content.Controls.Clear();
+
+            // Set the dock style of the newly added view to fill
+            ProfileView.Dock = DockStyle.Fill;
+
+            // Assign the new control to our content panel
+            panel_content.Controls.Add(ProfileView);
         }
     }
 }

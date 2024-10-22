@@ -211,7 +211,7 @@ namespace fitness_home
         private void button_previous_form_Click(object sender, EventArgs e)
         {
             Login LoginForm = FormProvider.Login ?? (FormProvider.Login = new Login());
-            Helpers.ShowForm(LoginForm, this, setSize: false, setPosition: false);
+            FormProvider.ShowForm(LoginForm, this, setSize: false, setPosition: false);
         }
 
         /// <summary>
@@ -301,13 +301,13 @@ namespace fitness_home
             // If any input errors were found, display an appropriate error message
             if (errorType != InputErrorType.None)
             {
-                new InputError(errorType).ShowDialog();  // Show the error dialog with the specific error type
+                new RegistrationError(errorType).ShowDialog();  // Show the error dialog with the specific error type
                 return; // Exit the method
             }
 
             // Proceed to the membership selection page
             Membership Membership = FormProvider.Membership ?? (FormProvider.Membership = new Membership());
-            Helpers.ShowForm(Membership, this, false, false);
+            FormProvider.ShowForm(Membership, this, false, false);
         }
 
         public static void FinishRegistration(int transactionId)

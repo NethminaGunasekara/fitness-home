@@ -23,7 +23,7 @@ namespace fitness_home
         {
             // Create a new instance of Login form, or pass the existing one
             Login LoginForm = FormProvider.Login ?? (FormProvider.Login = new Login());
-            Helpers.ShowForm(LoginForm, this);
+            FormProvider.ShowForm(LoginForm, this);
         }
     }
 }

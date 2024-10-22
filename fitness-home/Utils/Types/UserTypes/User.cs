@@ -7,7 +7,7 @@ namespace fitness_home.Utils.Types.UserTypes
     /// </summary>
     abstract class User
     {
-        // Member properties
+        // Common user properties
         public virtual int ID { get; set; }
         public virtual string FirstName { get; set; }
         public virtual string LastName { get; set; }
@@ -17,9 +17,16 @@ namespace fitness_home.Utils.Types.UserTypes
         public virtual string Email { get; set; }
         public virtual string Phone { get; set; }
         public virtual string Address { get; set; }
+        public virtual int PlanID { get; set; }
+
+        // Member-specific properties
         public virtual string EmergencyContactName { get; set; }
         public virtual string EmergencyContactPhone { get; set; }
-        public virtual int PlanID { get; set; }
         public virtual DateTime PlanExpiry { get; set; }
+
+        // Trainer-specific properties
+        public virtual decimal Salary { get; set; }
+        public virtual string Specification { get; set; }
+        public virtual DateTime HiredDate { get; set; }
     }
 }

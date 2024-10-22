@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace fitness_home.Views.Messages
+namespace fitness_home.Views.Dashboard.Trainer.Views
 {
-    public partial class InputError : Form
+    public partial class DashboardView : UserControl
     {
-        public InputError()
+        public DashboardView()
         {
             InitializeComponent();
-        }
-
-        private void button_try_again_Click(object sender, EventArgs e)
-        {
-            this.Close(); // Close the message once the "Try Again" button is clicked
         }
     }
 }

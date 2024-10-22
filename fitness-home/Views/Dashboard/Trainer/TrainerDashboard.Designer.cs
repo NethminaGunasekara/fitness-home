@@ -1,6 +1,6 @@
-﻿namespace fitness_home.Views.Dashboard
+﻿namespace fitness_home.Views.Dashboard.Trainer
 {
-    partial class MemberDashboard
+    partial class TrainerDashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberDashboard));
             this.tableLayoutPanel_dashboard = new System.Windows.Forms.TableLayoutPanel();
             this.panel_logo = new System.Windows.Forms.Panel();
             this.pictureBox_logo = new System.Windows.Forms.PictureBox();
@@ -66,7 +65,7 @@
             this.tableLayoutPanel_dashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel_dashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_dashboard.Size = new System.Drawing.Size(1264, 681);
-            this.tableLayoutPanel_dashboard.TabIndex = 0;
+            this.tableLayoutPanel_dashboard.TabIndex = 1;
             // 
             // panel_logo
             // 
@@ -213,9 +212,9 @@
             this.label_heading_2.Location = new System.Drawing.Point(152, 30);
             this.label_heading_2.Margin = new System.Windows.Forms.Padding(0);
             this.label_heading_2.Name = "label_heading_2";
-            this.label_heading_2.Size = new System.Drawing.Size(119, 40);
+            this.label_heading_2.Size = new System.Drawing.Size(106, 40);
             this.label_heading_2.TabIndex = 0;
-            this.label_heading_2.Text = "Member!";
+            this.label_heading_2.Text = "Trainer!";
             this.label_heading_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_heading_2.UseCompatibleTextRendering = true;
             // 
@@ -236,21 +235,18 @@
             this.button_edit_profile.Size = new System.Drawing.Size(32, 32);
             this.button_edit_profile.TabIndex = 2;
             this.button_edit_profile.UseVisualStyleBackColor = false;
-            this.button_edit_profile.Click += new System.EventHandler(this.button_edit_profile_Click);
             // 
-            // MemberDashboard
+            // TrainerDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.tableLayoutPanel_dashboard);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1280, 718);
-            this.Name = "MemberDashboard";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Member Area - Fitness Home";
-            this.Load += new System.EventHandler(this.Member_Load);
+            this.Name = "TrainerDashboard";
+            this.Text = "Trainer Area - Fitness Home";
+            this.Load += new System.EventHandler(this.TrainerDashboard_Load);
             this.tableLayoutPanel_dashboard.ResumeLayout(false);
             this.panel_logo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_logo)).EndInit();
@@ -268,13 +264,13 @@
         private System.Windows.Forms.Panel panel_logo;
         private System.Windows.Forms.PictureBox pictureBox_logo;
         private System.Windows.Forms.Panel panel_sidebar;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_sidebar;
         private System.Windows.Forms.Panel panel_content;
         private System.Windows.Forms.Panel panel_heading;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_header;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_sidebar;
-        private System.Windows.Forms.Label label_heading_2;
-        private System.Windows.Forms.Label label_heading_1;
-        private System.Windows.Forms.Button button_edit_profile;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label_heading_1;
+        private System.Windows.Forms.Label label_heading_2;
+        private System.Windows.Forms.Button button_edit_profile;
     }
 }

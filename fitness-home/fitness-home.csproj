@@ -47,10 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\FeedbackManager.cs" />
+    <Compile Include="Helpers\MembershipPlan.cs" />
+    <Compile Include="Helpers\PaymentProcessor.cs" />
     <Compile Include="Services\Membership.cs" />
     <Compile Include="Utils\Types\MembershipPlan.cs" />
     <Compile Include="Services\Authentication.cs" />
-    <Compile Include="Services\FormProvider.cs" />
+    <Compile Include="Helpers\FormProvider.cs" />
     <Compile Include="Utils\Types\SharedTypes.cs" />
     <Compile Include="Utils\Types\UserTypes\Admin.cs" />
     <Compile Include="Utils\Helpers.cs" />
@@ -68,34 +71,46 @@
     <Compile Include="Views\Dashboard\Member\Components\SidebarButton.Designer.cs">
       <DependentUpon>SidebarButton.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Dashboard\Member\Components\Views\ContactUsView.cs">
+    <Compile Include="Views\Dashboard\Member\Views\ContactUsView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Dashboard\Member\Components\Views\ContactUsView.Designer.cs">
+    <Compile Include="Views\Dashboard\Member\Views\ContactUsView.Designer.cs">
       <DependentUpon>ContactUsView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Dashboard\Member\Components\Views\DashboardView.cs">
+    <Compile Include="Views\Dashboard\Member\Views\DashboardView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Dashboard\Member\Components\Views\DashboardView.Designer.cs">
+    <Compile Include="Views\Dashboard\Member\Views\DashboardView.Designer.cs">
       <DependentUpon>DashboardView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Dashboard\Member\Components\Views\MembershipView.cs">
+    <Compile Include="Views\Dashboard\Member\Views\MembershipPayment.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Dashboard\Member\Components\Views\MembershipView.Designer.cs">
+    <Compile Include="Views\Dashboard\Member\Views\MembershipPayment.Designer.cs">
+      <DependentUpon>MembershipPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\Member\Views\MembershipView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\Member\Views\MembershipView.Designer.cs">
       <DependentUpon>MembershipView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Dashboard\Member\Components\Views\PaymentsView.cs">
+    <Compile Include="Views\Dashboard\Member\Views\PaymentsView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Dashboard\Member\Components\Views\PaymentsView.Designer.cs">
+    <Compile Include="Views\Dashboard\Member\Views\PaymentsView.Designer.cs">
       <DependentUpon>PaymentsView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Dashboard\Member\Components\Views\ScheduleView.cs">
+    <Compile Include="Views\Dashboard\Member\Views\ProfileView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Dashboard\Member\Components\Views\ScheduleView.Designer.cs">
+    <Compile Include="Views\Dashboard\Member\Views\ProfileView.Designer.cs">
+      <DependentUpon>ProfileView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\Member\Views\ScheduleView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\Member\Views\ScheduleView.Designer.cs">
       <DependentUpon>ScheduleView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Dashboard\Member\MemberDashboard.cs">
@@ -103,6 +118,18 @@
     </Compile>
     <Compile Include="Views\Dashboard\Member\MemberDashboard.Designer.cs">
       <DependentUpon>MemberDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\Trainer\TrainerDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\Trainer\TrainerDashboard.Designer.cs">
+      <DependentUpon>TrainerDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Dashboard\Trainer\Views\DashboardView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Dashboard\Trainer\Views\DashboardView.Designer.cs">
+      <DependentUpon>DashboardView.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Messages\ApplicationError.cs">
       <SubType>Form</SubType>
@@ -127,6 +154,12 @@
     </Compile>
     <Compile Include="Views\Messages\InputError.Designer.cs">
       <DependentUpon>InputError.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Messages\RegistrationError.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Messages\RegistrationError.Designer.cs">
+      <DependentUpon>RegistrationError.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Messages\MessageSent.cs">
       <SubType>Form</SubType>
@@ -185,7 +218,7 @@
       <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Onboarding\Register\Services\MembershipManager.cs" />
-    <Compile Include="Views\Onboarding\Register\Services\PaymentProcessor.cs" />
+    <Compile Include="Views\Onboarding\Register\Services\PaymentHelper.cs" />
     <Compile Include="Views\Onboarding\Register\Types\RegistrationInfo.cs" />
     <Compile Include="Views\Onboarding\Splash.cs">
       <SubType>Form</SubType>
@@ -216,23 +249,35 @@
     <EmbeddedResource Include="Views\Dashboard\Member\Components\SidebarButton.resx">
       <DependentUpon>SidebarButton.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Dashboard\Member\Components\Views\ContactUsView.resx">
+    <EmbeddedResource Include="Views\Dashboard\Member\Views\ContactUsView.resx">
       <DependentUpon>ContactUsView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Dashboard\Member\Components\Views\DashboardView.resx">
+    <EmbeddedResource Include="Views\Dashboard\Member\Views\DashboardView.resx">
       <DependentUpon>DashboardView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Dashboard\Member\Components\Views\MembershipView.resx">
+    <EmbeddedResource Include="Views\Dashboard\Member\Views\MembershipPayment.resx">
+      <DependentUpon>MembershipPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\Member\Views\MembershipView.resx">
       <DependentUpon>MembershipView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Dashboard\Member\Components\Views\PaymentsView.resx">
+    <EmbeddedResource Include="Views\Dashboard\Member\Views\PaymentsView.resx">
       <DependentUpon>PaymentsView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Dashboard\Member\Components\Views\ScheduleView.resx">
+    <EmbeddedResource Include="Views\Dashboard\Member\Views\ProfileView.resx">
+      <DependentUpon>ProfileView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\Member\Views\ScheduleView.resx">
       <DependentUpon>ScheduleView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Dashboard\Member\MemberDashboard.resx">
       <DependentUpon>MemberDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\Trainer\TrainerDashboard.resx">
+      <DependentUpon>TrainerDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Dashboard\Trainer\Views\DashboardView.resx">
+      <DependentUpon>DashboardView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Messages\ApplicationError.resx">
       <DependentUpon>ApplicationError.cs</DependentUpon>
@@ -242,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Messages\InputError.resx">
       <DependentUpon>InputError.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Messages\RegistrationError.resx">
+      <DependentUpon>RegistrationError.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Messages\LoginFailed.resx">
       <DependentUpon>LoginFailed.cs</DependentUpon>
@@ -398,6 +446,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons\dashboard\send.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\edit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\assessments.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\feedbacks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\students.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\assessments_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\feedbacks_dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\dashboard\students_dark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

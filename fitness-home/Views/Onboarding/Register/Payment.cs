@@ -225,21 +225,21 @@ namespace fitness_home.Views.Onboarding.Register
             // - If "Membership" is not null (already created and hidden), the existing form is reused.
             Membership MembershipForm = FormProvider.Membership ?? (FormProvider.Membership = new Membership());
 
-            // Use the "Helpers.ShowForm()" method to display the "MembershipForm".
+            // Use the "FormProvider.ShowForm()" method to display the "MembershipForm".
             // - The first argument is the form to be shown ("MembershipForm").
             // - The second argument is "this", which refers to the current form
             // - The current form will be hidden after "MembershipForm" has shown.
-            Helpers.ShowForm(MembershipForm, this);
+            FormProvider.ShowForm(MembershipForm, this);
         }
 
         // ** Event: Pay the membership amount
         private void PayNow(object sender, EventArgs e)
         {
-            // Initialize an instance of PaymentProcessor
-            PaymentProcessor PaymentProcessor = new PaymentProcessor();
+            // Initialize an instance of PaymentHelper
+            PaymentHelper PaymentHelper = new PaymentHelper();
 
             // Function to process a card payment
-            PaymentProcessor.PaymentStatus CardPayment() => PaymentProcessor.CardPayment(
+            PaymentHelper.PaymentStatus CardPayment() => PaymentHelper.CardPayment(
                 cardHolder: textBox_card_holder.Text,
                 cardNumber: textBox_card_number.Text,
                 cvc: textBox_cvc.Text,
@@ -247,7 +247,7 @@ namespace fitness_home.Views.Onboarding.Register
                 expiryYear: textBox_exp_year.Text);
 
             // Function to process a cash payment
-            PaymentProcessor.PaymentStatus CashPayment() => PaymentProcessor.PaymentStatus.Pending;
+            PaymentHelper.PaymentStatus CashPayment() => PaymentHelper.PaymentStatus.Pending;
 
             // Determine and store the type of payment method based on the selected radio button
             // ** If the "Visa" radio button is checked, assigns PaymentMethod.VISA
@@ -256,10 +256,10 @@ namespace fitness_home.Views.Onboarding.Register
             PaymentMethod paymentMethod = radioButton_visa.Checked ? PaymentMethod.VISA : radioButton_mc.Checked ? PaymentMethod.MasterCard : PaymentMethod.Cash;
 //
             // Make card or cash payment, based on the type of payment user has chosen
-            PaymentProcessor.PaymentStatus paymentStatus = paymentMethod == PaymentMethod.Cash ? CashPayment() : CardPayment();
+            PaymentHelper.PaymentStatus paymentStatus = paymentMethod == PaymentMethod.Cash ? CashPayment() : CardPayment();
 
             // If the user has paid using VISA/Mastercard, and the payment is failed
-            if (paymentStatus == PaymentProcessor.PaymentStatus.Failed)
+            if (paymentStatus == PaymentHelper.PaymentStatus.Failed)
             {
                 // Display "PaymentFailed" message
                 new PaymentFailed().ShowDialog();
@@ -268,7 +268,7 @@ namespace fitness_home.Views.Onboarding.Register
             }
 
             // Save transaction information and retrieve the transaction id
-            int transactionId = PaymentProcessor.StoreTransactionInfo(
+            int transactionId = PaymentHelper.StoreTransactionInfo(
                 transactionDate: DateTime.Now,
                 paymentMethod: paymentMethod,
                 amount: AdmissionFee + _MembershipFee,
@@ -279,7 +279,7 @@ namespace fitness_home.Views.Onboarding.Register
             new PaymentSuccess(
                 paymentAmount: AmountToDisplay(AdmissionFee + _MembershipFee),
                 transactionReference: transactionId,
-                cashPayment: paymentStatus == PaymentProcessor.PaymentStatus.Pending).ShowDialog();
+                cashPayment: paymentStatus == PaymentHelper.PaymentStatus.Pending).ShowDialog();
 
             // Finish the member registration
             fitness_home.Register.FinishRegistration(transactionId);

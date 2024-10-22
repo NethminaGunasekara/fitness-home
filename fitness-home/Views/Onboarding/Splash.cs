@@ -118,7 +118,7 @@ namespace fitness_home.Views.Onboarding
                 await Task.Delay(2000);
 
                 Welcome WelcomeForm = FormProvider.Welcome ?? (FormProvider.Welcome = new Welcome());
-                Helpers.ShowForm(WelcomeForm, this);
+                FormProvider.ShowForm(WelcomeForm, this);
             }
 
             else
@@ -152,7 +152,7 @@ namespace fitness_home.Views.Onboarding
                     await Task.Delay(0);
 
                     Welcome WelcomeForm = FormProvider.Welcome ?? (FormProvider.Welcome = new Welcome());
-                    Helpers.ShowForm(WelcomeForm, this);
+                    FormProvider.ShowForm(WelcomeForm, this);
                 }
 
                 // If there's a database connection error

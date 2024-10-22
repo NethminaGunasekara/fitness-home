@@ -1,7 +1,7 @@
-﻿using fitness_home.Views.Dashboard;
-using fitness_home.Views.Onboarding;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using fitness_home.Views.Dashboard.Trainer;
+using fitness_home.Views.Onboarding;
 
 
 namespace fitness_home

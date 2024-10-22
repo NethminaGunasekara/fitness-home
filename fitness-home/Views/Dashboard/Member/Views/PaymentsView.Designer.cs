@@ -52,7 +52,7 @@
             this.label_status_3 = new System.Windows.Forms.Label();
             this.label_ref_2 = new System.Windows.Forms.Label();
             this.label_ref_3 = new System.Windows.Forms.Label();
-            this.label_weekly_schedule = new System.Windows.Forms.Label();
+            this.date_range = new System.Windows.Forms.Label();
             this.label_ref_4 = new System.Windows.Forms.Label();
             this.label_ref_5 = new System.Windows.Forms.Label();
             this.label_ref_6 = new System.Windows.Forms.Label();
@@ -143,7 +143,7 @@
             this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label_status_3, 5, 6);
             this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label_ref_2, 1, 5);
             this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label_ref_3, 1, 6);
-            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label_weekly_schedule, 2, 1);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.date_range, 2, 1);
             this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label_ref_4, 1, 7);
             this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label_ref_5, 1, 8);
             this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label_ref_6, 1, 9);
@@ -549,20 +549,20 @@
             this.label_ref_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label_ref_3.Visible = false;
             // 
-            // label_weekly_schedule
+            // date_range
             // 
-            this.label_weekly_schedule.AutoSize = true;
-            this.tableLayoutPanel_weekly_schedule.SetColumnSpan(this.label_weekly_schedule, 3);
-            this.label_weekly_schedule.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_weekly_schedule.Font = new System.Drawing.Font("Noto Sans", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_weekly_schedule.ForeColor = System.Drawing.Color.White;
-            this.label_weekly_schedule.Location = new System.Drawing.Point(208, 30);
-            this.label_weekly_schedule.Margin = new System.Windows.Forms.Padding(0);
-            this.label_weekly_schedule.Name = "label_weekly_schedule";
-            this.label_weekly_schedule.Size = new System.Drawing.Size(504, 29);
-            this.label_weekly_schedule.TabIndex = 0;
-            this.label_weekly_schedule.Text = "19 September, 2024 - 16 October, 2024";
-            this.label_weekly_schedule.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.date_range.AutoSize = true;
+            this.tableLayoutPanel_weekly_schedule.SetColumnSpan(this.date_range, 3);
+            this.date_range.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.date_range.Font = new System.Drawing.Font("Noto Sans", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date_range.ForeColor = System.Drawing.Color.White;
+            this.date_range.Location = new System.Drawing.Point(208, 30);
+            this.date_range.Margin = new System.Windows.Forms.Padding(0);
+            this.date_range.Name = "date_range";
+            this.date_range.Size = new System.Drawing.Size(504, 29);
+            this.date_range.TabIndex = 0;
+            this.date_range.Text = "19 September, 2024 - 16 October, 2024";
+            this.date_range.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label_ref_4
             // 
@@ -1333,7 +1333,7 @@
         private System.Windows.Forms.Label label_status_3;
         private System.Windows.Forms.Label label_ref_2;
         private System.Windows.Forms.Label label_ref_3;
-        private System.Windows.Forms.Label label_weekly_schedule;
+        private System.Windows.Forms.Label date_range;
         private System.Windows.Forms.Label label_ref_4;
         private System.Windows.Forms.Label label_ref_5;
         private System.Windows.Forms.Label label_ref_6;

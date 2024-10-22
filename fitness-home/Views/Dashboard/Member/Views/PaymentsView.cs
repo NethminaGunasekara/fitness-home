@@ -11,18 +11,6 @@ namespace fitness_home.Views.Dashboard.Member.Components.Views
 {
     public partial class PaymentsView : UserControl
     {
-        // Code for rounded rectangle panels (omitted for brevity)
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
-
-        private void ApplyRoundedCorners()
-        {
-            List<Panel> panelsToDraw = new List<Panel> { panel_content };
-            SuspendLayout();
-            panelsToDraw.ForEach(panel => panel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel.Width, panel.Height, 12, 12)));
-            ResumeLayout();
-        }
-
         // Fields to store transaction data and pagination state
         List<Transaction> Transactions = new List<Transaction>();
         int currentPage = 0; // Current page (0 = first set of 12 transactions)
@@ -39,7 +27,7 @@ namespace fitness_home.Views.Dashboard.Member.Components.Views
             ShowTransactions();     // Show the first page of transactions
         }
 
-        // ** Initialize lists of labels **
+        // ** Initialize lists of labels
         private void InitializeLabelLists()
         {
             ReferenceLabels = new List<Label> { label_ref_1, label_ref_2, label_ref_3, label_ref_4, label_ref_5, label_ref_6, label_ref_7, label_ref_8, label_ref_9, label_ref_10, label_ref_11, label_ref_12 };
@@ -49,9 +37,11 @@ namespace fitness_home.Views.Dashboard.Member.Components.Views
             StatusLabels = new List<Label> { label_status_1, label_status_2, label_status_3, label_status_4, label_status_5, label_status_6, label_status_7, label_status_8, label_status_9, label_status_10, label_status_11, label_status_12 };
         }
 
-        // ** Retrieve transactions from the database **
+        // Retrieves all transactions associated with the current user's id from the database,
+        // and assigns them to the "Transactions" field, so that we can display 12 transactions per page
         private void RetrieveTransactions()
         {
+            // Reuse the connection string from the Authentication class
             string connectionString = Authentication.Instance.ConnectionString;
 
             try
@@ -59,31 +49,42 @@ namespace fitness_home.Views.Dashboard.Member.Components.Views
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
+
+                    // Query to retrieve all transactions associated with the currently logged in user's id
                     string query = "SELECT transaction_id, transaction_date, payment_method, amount, remarks, status FROM [transaction]";
+
+
                     using (SqlCommand cmd = new SqlCommand(query, conn))
-                    using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        while (reader.Read())
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            Transactions.Add(new Transaction(
-                                reader.GetInt32(0),       // transaction_id
-                                reader.GetDateTime(1),    // transaction_date
-                                reader.GetString(2),      // payment_method
-                                reader.GetDecimal(3),     // amount
-                                reader.GetString(4),      // remarks
-                                reader.GetString(5)       // status
-                            ));
+                            while (reader.Read())
+                            {
+                                Transactions.Add(new Transaction(
+                                    reader.GetInt32(0),       // transaction_id
+                                    reader.GetDateTime(1),    // transaction_date
+                                    reader.GetString(2),      // payment_method
+                                    reader.GetDecimal(3),     // amount
+                                    reader.GetString(4),      // remarks
+                                    reader.GetString(5)       // status
+                                ));
+                            }
                         }
                     }
                 }
             }
+
+            // If the query above generates an error
             catch (SqlException)
             {
-                new ApplicationError(ErrorType.DatabaseError);
+                // Display the ApplicationError dialog indicating a database error
+                ApplicationError databaseError = new ApplicationError(ErrorType.DatabaseError);
+
+                databaseError.ShowDialog();
             }
         }
 
-        // ** Display transactions for the current page **
+        // ** Displays transactions for the current page
         private void ShowTransactions()
         {
             // Make all labels visible before setting new data
@@ -92,6 +93,12 @@ namespace fitness_home.Views.Dashboard.Member.Components.Views
             // Get the subset of transactions for the current page
             int startIndex = currentPage * pageSize;
             int endIndex = Math.Min(startIndex + pageSize, Transactions.Count);
+
+            // Set the date range
+            DateTime startDate = DateTime.Parse(Transactions[startIndex].Date);
+            DateTime endDate = DateTime.Parse(Transactions[endIndex-1].Date);
+
+            date_range.Text = $"{startDate:dd MMMM, yyyy} - {endDate:dd MMMM, yyyy}";
 
             for (int i = 0; i < pageSize; i++)
             {
@@ -157,6 +164,7 @@ namespace fitness_home.Views.Dashboard.Member.Components.Views
         {
             if (currentPage == 0) return; // No previous page to show
             currentPage--;
+
             ShowTransactions();
         }
 
@@ -165,10 +173,11 @@ namespace fitness_home.Views.Dashboard.Member.Components.Views
         {
             if ((currentPage + 1) * pageSize >= Transactions.Count) return; // No next page to show
             currentPage++;
+            
             ShowTransactions();
         }
 
-        // ** Transaction data structure **
+        // ** Transaction data structure
         class Transaction
         {
             public string Reference { get; }
@@ -192,7 +201,14 @@ namespace fitness_home.Views.Dashboard.Member.Components.Views
             }
         }
 
-        private void PaymentsView_Load(object sender, EventArgs e) => ApplyRoundedCorners();
-        private void PaymentsView_Resize(object sender, EventArgs e) => ApplyRoundedCorners();
+        // Code required to apply rounded rectangle corners to the main panel
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn(int nLeftRect, int nTopRect, int nRightRect, int nBottomRect, int nWidthEllipse, int nHeightEllipse);
+
+        // ** Event: Applying rounded rectangle corners to the main panel when the control has first loaded
+        private void PaymentsView_Load(object sender, EventArgs e) => panel_content.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel_content.Width, panel_content.Height, 12, 12));
+
+        // ** Event: Redraw rounded rectangle corners of the main panel when the control is being resized
+        private void PaymentsView_Resize(object sender, EventArgs e) => panel_content.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel_content.Width, panel_content.Height, 12, 12));
     }
 }

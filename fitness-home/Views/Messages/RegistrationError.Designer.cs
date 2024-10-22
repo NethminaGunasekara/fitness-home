@@ -1,6 +1,6 @@
 ﻿namespace fitness_home.Views.Messages
 {
-    partial class InputError
+    partial class RegistrationError
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InputError));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistrationError));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label_message = new System.Windows.Forms.Label();
             this.label_title = new System.Windows.Forms.Label();
@@ -56,7 +56,6 @@
             this.tableLayoutPanel1.Cursor = System.Windows.Forms.Cursors.Default;
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -64,8 +63,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(452, 240);
-            this.tableLayoutPanel1.TabIndex = 2;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(400, 240);
+            this.tableLayoutPanel1.TabIndex = 1;
             // 
             // label_message
             // 
@@ -79,9 +78,9 @@
             this.label_message.Location = new System.Drawing.Point(0, 123);
             this.label_message.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.label_message.Name = "label_message";
-            this.label_message.Size = new System.Drawing.Size(452, 22);
+            this.label_message.Size = new System.Drawing.Size(400, 22);
             this.label_message.TabIndex = 5;
-            this.label_message.Text = "Ensure all fields are filled correctly";
+            this.label_message.Text = "NIC and Email already registered";
             this.label_message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label_title
@@ -95,9 +94,9 @@
             this.label_title.Location = new System.Drawing.Point(0, 95);
             this.label_title.Margin = new System.Windows.Forms.Padding(0, 8, 0, 4);
             this.label_title.Name = "label_title";
-            this.label_title.Size = new System.Drawing.Size(452, 24);
+            this.label_title.Size = new System.Drawing.Size(400, 24);
             this.label_title.TabIndex = 0;
-            this.label_title.Text = "We couldn\'t process your submission";
+            this.label_title.Text = "Unable to continue registration";
             this.label_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // error_heading
@@ -107,7 +106,7 @@
             this.error_heading.Location = new System.Drawing.Point(0, 0);
             this.error_heading.Margin = new System.Windows.Forms.Padding(0);
             this.error_heading.Name = "error_heading";
-            this.error_heading.Size = new System.Drawing.Size(452, 87);
+            this.error_heading.Size = new System.Drawing.Size(400, 87);
             this.error_heading.TabIndex = 3;
             // 
             // tableLayoutPanel_heading
@@ -125,7 +124,7 @@
             this.tableLayoutPanel_heading.Name = "tableLayoutPanel_heading";
             this.tableLayoutPanel_heading.RowCount = 1;
             this.tableLayoutPanel_heading.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_heading.Size = new System.Drawing.Size(452, 87);
+            this.tableLayoutPanel_heading.Size = new System.Drawing.Size(400, 87);
             this.tableLayoutPanel_heading.TabIndex = 2;
             // 
             // label_error
@@ -139,9 +138,9 @@
             this.label_error.Location = new System.Drawing.Point(108, 49);
             this.label_error.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.label_error.Name = "label_error";
-            this.label_error.Size = new System.Drawing.Size(273, 34);
+            this.label_error.Size = new System.Drawing.Size(221, 34);
             this.label_error.TabIndex = 1;
-            this.label_error.Text = "Form Submission Error!";
+            this.label_error.Text = "Registration Error!";
             this.label_error.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pictureBox1
@@ -165,7 +164,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 156);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(446, 81);
+            this.panel1.Size = new System.Drawing.Size(394, 81);
             this.panel1.TabIndex = 4;
             // 
             // button_try_again
@@ -175,7 +174,7 @@
             this.button_try_again.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_try_again.Font = new System.Drawing.Font("Noto Sans", 11F, System.Drawing.FontStyle.Bold);
             this.button_try_again.ForeColor = System.Drawing.Color.White;
-            this.button_try_again.Location = new System.Drawing.Point(162, 8);
+            this.button_try_again.Location = new System.Drawing.Point(138, 8);
             this.button_try_again.Margin = new System.Windows.Forms.Padding(0);
             this.button_try_again.Name = "button_try_again";
             this.button_try_again.Size = new System.Drawing.Size(119, 33);
@@ -184,17 +183,21 @@
             this.button_try_again.UseVisualStyleBackColor = false;
             this.button_try_again.Click += new System.EventHandler(this.button_try_again_Click);
             // 
-            // InputError
+            // RegistrationError
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(452, 240);
+            this.ClientSize = new System.Drawing.Size(400, 240);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "InputError";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "RegistrationError";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "InputError";
+            this.Text = "RegistrationError";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.error_heading.ResumeLayout(false);
