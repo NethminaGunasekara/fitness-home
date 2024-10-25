@@ -1,9 +1,9 @@
 ﻿using AnimateDemo;
-using fitness_home.Views.Dashboard;
+using fitness_home.Views;
 using fitness_home.Views.Onboarding.Register;
 using System.Windows.Forms;
 using System;
-using fitness_home.Views.Dashboard.Trainer;
+using fitness_home.Views.Trainer;
 
 namespace fitness_home.Services
 {
@@ -19,8 +19,8 @@ namespace fitness_home.Services
         public static Payment Payment;
 
         // User Dashboards
-        public static MemberDashboard MemberDashboard;
-        public static TrainerDashboard TrainerDashboard;
+        public static MemberArea MemberDashboard;
+        public static TrainerArea TrainerDashboard;
 
         private static int TransitionDuration = 400;
 

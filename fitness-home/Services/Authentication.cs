@@ -4,11 +4,10 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Security.Cryptography;
 using fitness_home.Utils.Types;
-using fitness_home.Utils;
-using fitness_home.Views.Dashboard;
 using System.Windows.Forms;
 using fitness_home.Utils.Types.UserTypes;
-using fitness_home.Views.Dashboard.Trainer;
+using fitness_home.Views;
+using fitness_home.Views.Trainer;
 
 namespace fitness_home.Services
 {
@@ -223,7 +222,7 @@ namespace fitness_home.Services
             if (LoggedUser is Member)
             {
                 // Show the Member Dashboard
-                MemberDashboard MemberDashboard = FormProvider.MemberDashboard ?? (FormProvider.MemberDashboard = new MemberDashboard());
+                MemberArea MemberDashboard = FormProvider.MemberDashboard ?? (FormProvider.MemberDashboard = new MemberArea());
 
                 FormProvider.ShowForm(
                     targetForm: MemberDashboard,
@@ -236,7 +235,7 @@ namespace fitness_home.Services
             else if (LoggedUser is Trainer)
             {
                 // Show the Trainer Dashboard
-                TrainerDashboard TrainerDashboard = FormProvider.TrainerDashboard ?? (FormProvider.TrainerDashboard = new TrainerDashboard());
+                TrainerArea TrainerDashboard = FormProvider.TrainerDashboard ?? (FormProvider.TrainerDashboard = new TrainerArea());
 
                 FormProvider.ShowForm(
                     targetForm: TrainerDashboard,

@@ -1,6 +1,5 @@
 ﻿using AnimateDemo;
 using fitness_home.Services;
-using fitness_home.Utils;
 using fitness_home.Utils.Types;
 using fitness_home.Views.Messages;
 using System;

@@ -229,7 +229,7 @@ namespace fitness_home.Utils.Types.UserTypes
         }
 
         // Property for Salary
-        public decimal Salary
+        public override decimal Salary
         {
             get => _Salary;
             set
@@ -251,7 +251,7 @@ namespace fitness_home.Utils.Types.UserTypes
         }
 
         // Property for Hired Date
-        public DateTime HiredDate
+        public override DateTime HiredDate
         {
             get => _HiredDate;
             set

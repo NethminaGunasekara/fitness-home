@@ -2,7 +2,7 @@
 {
     internal class Admin : User
     {
-        public int ID { get; }
+        public new int ID { get; }
         public Role Role { get; }
 
         public Admin(int id)
