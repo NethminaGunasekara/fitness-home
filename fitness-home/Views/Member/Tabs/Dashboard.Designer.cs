@@ -136,7 +136,7 @@
             this.tableLayoutPanel_dashboard_layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tableLayoutPanel_dashboard_layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 155F));
             this.tableLayoutPanel_dashboard_layout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel_dashboard_layout.Size = new System.Drawing.Size(986, 581);
+            this.tableLayoutPanel_dashboard_layout.Size = new System.Drawing.Size(1392, 861);
             this.tableLayoutPanel_dashboard_layout.TabIndex = 1;
             // 
             // panel_schedule
@@ -148,7 +148,7 @@
             this.panel_schedule.Location = new System.Drawing.Point(30, 0);
             this.panel_schedule.Margin = new System.Windows.Forms.Padding(0);
             this.panel_schedule.Name = "panel_schedule";
-            this.panel_schedule.Size = new System.Drawing.Size(926, 211);
+            this.panel_schedule.Size = new System.Drawing.Size(1331, 491);
             this.panel_schedule.TabIndex = 1;
             // 
             // tableLayoutPanel_weekly_schedule
@@ -159,7 +159,7 @@
             this.tableLayoutPanel_weekly_schedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel_weekly_schedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel_weekly_schedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120F));
-            this.tableLayoutPanel_weekly_schedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 42F));
+            this.tableLayoutPanel_weekly_schedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label_weekly_schedule, 1, 1);
             this.tableLayoutPanel_weekly_schedule.Controls.Add(this.panel_table_heading, 1, 2);
             this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_name_1, 1, 3);
@@ -186,7 +186,7 @@
             this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_weekly_schedule.Size = new System.Drawing.Size(926, 211);
+            this.tableLayoutPanel_weekly_schedule.Size = new System.Drawing.Size(1331, 491);
             this.tableLayoutPanel_weekly_schedule.TabIndex = 0;
             // 
             // label_weekly_schedule
@@ -195,7 +195,7 @@
             this.tableLayoutPanel_weekly_schedule.SetColumnSpan(this.label_weekly_schedule, 3);
             this.label_weekly_schedule.Font = new System.Drawing.Font("Noto Sans", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_weekly_schedule.ForeColor = System.Drawing.Color.White;
-            this.label_weekly_schedule.Location = new System.Drawing.Point(40, 9);
+            this.label_weekly_schedule.Location = new System.Drawing.Point(40, 149);
             this.label_weekly_schedule.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.label_weekly_schedule.Name = "label_weekly_schedule";
             this.label_weekly_schedule.Size = new System.Drawing.Size(172, 29);
@@ -208,10 +208,10 @@
             this.tableLayoutPanel_weekly_schedule.SetColumnSpan(this.panel_table_heading, 4);
             this.panel_table_heading.Controls.Add(this.tableLayoutPanel_schedule_headings);
             this.panel_table_heading.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_table_heading.Location = new System.Drawing.Point(40, 46);
+            this.panel_table_heading.Location = new System.Drawing.Point(40, 186);
             this.panel_table_heading.Margin = new System.Windows.Forms.Padding(0);
             this.panel_table_heading.Name = "panel_table_heading";
-            this.panel_table_heading.Size = new System.Drawing.Size(843, 35);
+            this.panel_table_heading.Size = new System.Drawing.Size(1248, 35);
             this.panel_table_heading.TabIndex = 1;
             // 
             // tableLayoutPanel_schedule_headings
@@ -232,7 +232,7 @@
             this.tableLayoutPanel_schedule_headings.Name = "tableLayoutPanel_schedule_headings";
             this.tableLayoutPanel_schedule_headings.RowCount = 1;
             this.tableLayoutPanel_schedule_headings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_schedule_headings.Size = new System.Drawing.Size(843, 35);
+            this.tableLayoutPanel_schedule_headings.Size = new System.Drawing.Size(1248, 35);
             this.tableLayoutPanel_schedule_headings.TabIndex = 0;
             // 
             // label17
@@ -241,7 +241,7 @@
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Font = new System.Drawing.Font("Noto Sans SemiBold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(747, 0);
+            this.label17.Location = new System.Drawing.Point(1152, 0);
             this.label17.Margin = new System.Windows.Forms.Padding(24, 0, 24, 0);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(72, 35);
@@ -255,10 +255,10 @@
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label16.Font = new System.Drawing.Font("Noto Sans SemiBold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(506, 0);
+            this.label16.Location = new System.Drawing.Point(776, 0);
             this.label16.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(217, 35);
+            this.label16.Size = new System.Drawing.Size(352, 35);
             this.label16.TabIndex = 3;
             this.label16.Text = "Time";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -269,10 +269,10 @@
             this.label_trainer_column.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_trainer_column.Font = new System.Drawing.Font("Noto Sans SemiBold", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_trainer_column.ForeColor = System.Drawing.Color.White;
-            this.label_trainer_column.Location = new System.Drawing.Point(265, 0);
+            this.label_trainer_column.Location = new System.Drawing.Point(400, 0);
             this.label_trainer_column.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.label_trainer_column.Name = "label_trainer_column";
-            this.label_trainer_column.Size = new System.Drawing.Size(217, 35);
+            this.label_trainer_column.Size = new System.Drawing.Size(352, 35);
             this.label_trainer_column.TabIndex = 1;
             this.label_trainer_column.Text = "Trainer";
             this.label_trainer_column.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -286,7 +286,7 @@
             this.label_name_column.Location = new System.Drawing.Point(24, 0);
             this.label_name_column.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.label_name_column.Name = "label_name_column";
-            this.label_name_column.Size = new System.Drawing.Size(217, 35);
+            this.label_name_column.Size = new System.Drawing.Size(352, 35);
             this.label_name_column.TabIndex = 0;
             this.label_name_column.Text = "Name";
             this.label_name_column.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -297,10 +297,10 @@
             this.class_name_1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.class_name_1.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_name_1.ForeColor = System.Drawing.Color.White;
-            this.class_name_1.Location = new System.Drawing.Point(64, 88);
+            this.class_name_1.Location = new System.Drawing.Point(64, 228);
             this.class_name_1.Margin = new System.Windows.Forms.Padding(24, 7, 0, 7);
             this.class_name_1.Name = "class_name_1";
-            this.class_name_1.Size = new System.Drawing.Size(217, 26);
+            this.class_name_1.Size = new System.Drawing.Size(352, 26);
             this.class_name_1.TabIndex = 2;
             this.class_name_1.Text = "Bench press";
             this.class_name_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -312,10 +312,10 @@
             this.class_trainer_1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.class_trainer_1.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_trainer_1.ForeColor = System.Drawing.Color.White;
-            this.class_trainer_1.Location = new System.Drawing.Point(305, 81);
+            this.class_trainer_1.Location = new System.Drawing.Point(440, 221);
             this.class_trainer_1.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.class_trainer_1.Name = "class_trainer_1";
-            this.class_trainer_1.Size = new System.Drawing.Size(217, 40);
+            this.class_trainer_1.Size = new System.Drawing.Size(352, 40);
             this.class_trainer_1.TabIndex = 3;
             this.class_trainer_1.Text = "Diyath Liyanage";
             this.class_trainer_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -327,10 +327,10 @@
             this.class_time_1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.class_time_1.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_time_1.ForeColor = System.Drawing.Color.White;
-            this.class_time_1.Location = new System.Drawing.Point(546, 81);
+            this.class_time_1.Location = new System.Drawing.Point(816, 221);
             this.class_time_1.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.class_time_1.Name = "class_time_1";
-            this.class_time_1.Size = new System.Drawing.Size(217, 40);
+            this.class_time_1.Size = new System.Drawing.Size(352, 40);
             this.class_time_1.TabIndex = 5;
             this.class_time_1.Text = "10.00 - 11.30";
             this.class_time_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -343,7 +343,7 @@
             this.class_status_1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.class_status_1.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_status_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.class_status_1.Location = new System.Drawing.Point(763, 85);
+            this.class_status_1.Location = new System.Drawing.Point(1168, 225);
             this.class_status_1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.class_status_1.Name = "class_status_1";
             this.class_status_1.Size = new System.Drawing.Size(120, 32);
@@ -358,10 +358,10 @@
             this.class_trainer_2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.class_trainer_2.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_trainer_2.ForeColor = System.Drawing.Color.White;
-            this.class_trainer_2.Location = new System.Drawing.Point(305, 121);
+            this.class_trainer_2.Location = new System.Drawing.Point(440, 261);
             this.class_trainer_2.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.class_trainer_2.Name = "class_trainer_2";
-            this.class_trainer_2.Size = new System.Drawing.Size(217, 40);
+            this.class_trainer_2.Size = new System.Drawing.Size(352, 40);
             this.class_trainer_2.TabIndex = 7;
             this.class_trainer_2.Text = "Diyath Liyanage";
             this.class_trainer_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -373,10 +373,10 @@
             this.class_time_2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.class_time_2.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_time_2.ForeColor = System.Drawing.Color.White;
-            this.class_time_2.Location = new System.Drawing.Point(546, 121);
+            this.class_time_2.Location = new System.Drawing.Point(816, 261);
             this.class_time_2.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.class_time_2.Name = "class_time_2";
-            this.class_time_2.Size = new System.Drawing.Size(217, 40);
+            this.class_time_2.Size = new System.Drawing.Size(352, 40);
             this.class_time_2.TabIndex = 9;
             this.class_time_2.Text = "10.00 - 11.30";
             this.class_time_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -389,7 +389,7 @@
             this.class_status_2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.class_status_2.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_status_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.class_status_2.Location = new System.Drawing.Point(763, 125);
+            this.class_status_2.Location = new System.Drawing.Point(1168, 265);
             this.class_status_2.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.class_status_2.Name = "class_status_2";
             this.class_status_2.Size = new System.Drawing.Size(120, 32);
@@ -404,10 +404,10 @@
             this.class_trainer_3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.class_trainer_3.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_trainer_3.ForeColor = System.Drawing.Color.White;
-            this.class_trainer_3.Location = new System.Drawing.Point(305, 161);
+            this.class_trainer_3.Location = new System.Drawing.Point(440, 301);
             this.class_trainer_3.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.class_trainer_3.Name = "class_trainer_3";
-            this.class_trainer_3.Size = new System.Drawing.Size(217, 40);
+            this.class_trainer_3.Size = new System.Drawing.Size(352, 40);
             this.class_trainer_3.TabIndex = 11;
             this.class_trainer_3.Text = "Diyath Liyanage";
             this.class_trainer_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -419,10 +419,10 @@
             this.class_time_3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.class_time_3.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_time_3.ForeColor = System.Drawing.Color.White;
-            this.class_time_3.Location = new System.Drawing.Point(546, 161);
+            this.class_time_3.Location = new System.Drawing.Point(816, 301);
             this.class_time_3.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.class_time_3.Name = "class_time_3";
-            this.class_time_3.Size = new System.Drawing.Size(217, 40);
+            this.class_time_3.Size = new System.Drawing.Size(352, 40);
             this.class_time_3.TabIndex = 13;
             this.class_time_3.Text = "10.00 - 11.30";
             this.class_time_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -435,7 +435,7 @@
             this.class_status_3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.class_status_3.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_status_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.class_status_3.Location = new System.Drawing.Point(763, 165);
+            this.class_status_3.Location = new System.Drawing.Point(1168, 305);
             this.class_status_3.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.class_status_3.Name = "class_status_3";
             this.class_status_3.Size = new System.Drawing.Size(120, 32);
@@ -450,10 +450,10 @@
             this.class_name_2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.class_name_2.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_name_2.ForeColor = System.Drawing.Color.White;
-            this.class_name_2.Location = new System.Drawing.Point(64, 128);
+            this.class_name_2.Location = new System.Drawing.Point(64, 268);
             this.class_name_2.Margin = new System.Windows.Forms.Padding(24, 7, 0, 7);
             this.class_name_2.Name = "class_name_2";
-            this.class_name_2.Size = new System.Drawing.Size(217, 26);
+            this.class_name_2.Size = new System.Drawing.Size(352, 26);
             this.class_name_2.TabIndex = 15;
             this.class_name_2.Text = "Bench press";
             this.class_name_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -465,10 +465,10 @@
             this.class_name_3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.class_name_3.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_name_3.ForeColor = System.Drawing.Color.White;
-            this.class_name_3.Location = new System.Drawing.Point(64, 168);
+            this.class_name_3.Location = new System.Drawing.Point(64, 308);
             this.class_name_3.Margin = new System.Windows.Forms.Padding(24, 7, 0, 7);
             this.class_name_3.Name = "class_name_3";
-            this.class_name_3.Size = new System.Drawing.Size(217, 26);
+            this.class_name_3.Size = new System.Drawing.Size(352, 26);
             this.class_name_3.TabIndex = 16;
             this.class_name_3.Text = "Bench press";
             this.class_name_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -479,10 +479,10 @@
             this.panel_calorie_goal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.panel_calorie_goal.Controls.Add(this.tableLayoutPanel_calorie_goal);
             this.panel_calorie_goal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_calorie_goal.Location = new System.Drawing.Point(30, 226);
+            this.panel_calorie_goal.Location = new System.Drawing.Point(30, 506);
             this.panel_calorie_goal.Margin = new System.Windows.Forms.Padding(0);
             this.panel_calorie_goal.Name = "panel_calorie_goal";
-            this.panel_calorie_goal.Size = new System.Drawing.Size(224, 155);
+            this.panel_calorie_goal.Size = new System.Drawing.Size(325, 155);
             this.panel_calorie_goal.TabIndex = 2;
             // 
             // tableLayoutPanel_calorie_goal
@@ -502,7 +502,7 @@
             this.tableLayoutPanel_calorie_goal.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_calorie_goal.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_calorie_goal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_calorie_goal.Size = new System.Drawing.Size(224, 155);
+            this.tableLayoutPanel_calorie_goal.Size = new System.Drawing.Size(325, 155);
             this.tableLayoutPanel_calorie_goal.TabIndex = 5;
             // 
             // pictureBox_calorie_goal
@@ -514,7 +514,7 @@
             this.pictureBox_calorie_goal.Location = new System.Drawing.Point(0, 19);
             this.pictureBox_calorie_goal.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.pictureBox_calorie_goal.Name = "pictureBox_calorie_goal";
-            this.pictureBox_calorie_goal.Size = new System.Drawing.Size(224, 54);
+            this.pictureBox_calorie_goal.Size = new System.Drawing.Size(325, 54);
             this.pictureBox_calorie_goal.TabIndex = 0;
             this.pictureBox_calorie_goal.TabStop = false;
             // 
@@ -527,7 +527,7 @@
             this.label_calorie_goal.Location = new System.Drawing.Point(0, 77);
             this.label_calorie_goal.Margin = new System.Windows.Forms.Padding(0);
             this.label_calorie_goal.Name = "label_calorie_goal";
-            this.label_calorie_goal.Size = new System.Drawing.Size(224, 36);
+            this.label_calorie_goal.Size = new System.Drawing.Size(325, 36);
             this.label_calorie_goal.TabIndex = 4;
             this.label_calorie_goal.Text = "2300 kcal";
             this.label_calorie_goal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -541,7 +541,7 @@
             this.label_calorie_goal_name.Location = new System.Drawing.Point(0, 113);
             this.label_calorie_goal_name.Margin = new System.Windows.Forms.Padding(0);
             this.label_calorie_goal_name.Name = "label_calorie_goal_name";
-            this.label_calorie_goal_name.Size = new System.Drawing.Size(224, 22);
+            this.label_calorie_goal_name.Size = new System.Drawing.Size(325, 22);
             this.label_calorie_goal_name.TabIndex = 5;
             this.label_calorie_goal_name.Text = "Daily Calorie Goal";
             this.label_calorie_goal_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -551,10 +551,10 @@
             this.panel_lbm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.panel_lbm.Controls.Add(this.tableLayoutPanel_lbm);
             this.panel_lbm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_lbm.Location = new System.Drawing.Point(269, 226);
+            this.panel_lbm.Location = new System.Drawing.Point(370, 506);
             this.panel_lbm.Margin = new System.Windows.Forms.Padding(0);
             this.panel_lbm.Name = "panel_lbm";
-            this.panel_lbm.Size = new System.Drawing.Size(224, 155);
+            this.panel_lbm.Size = new System.Drawing.Size(325, 155);
             this.panel_lbm.TabIndex = 3;
             // 
             // tableLayoutPanel_lbm
@@ -574,7 +574,7 @@
             this.tableLayoutPanel_lbm.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_lbm.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_lbm.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_lbm.Size = new System.Drawing.Size(224, 155);
+            this.tableLayoutPanel_lbm.Size = new System.Drawing.Size(325, 155);
             this.tableLayoutPanel_lbm.TabIndex = 6;
             // 
             // pictureBox_lbm
@@ -586,7 +586,7 @@
             this.pictureBox_lbm.Location = new System.Drawing.Point(0, 19);
             this.pictureBox_lbm.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.pictureBox_lbm.Name = "pictureBox_lbm";
-            this.pictureBox_lbm.Size = new System.Drawing.Size(224, 54);
+            this.pictureBox_lbm.Size = new System.Drawing.Size(325, 54);
             this.pictureBox_lbm.TabIndex = 0;
             this.pictureBox_lbm.TabStop = false;
             // 
@@ -599,7 +599,7 @@
             this.label_lbm.Location = new System.Drawing.Point(0, 77);
             this.label_lbm.Margin = new System.Windows.Forms.Padding(0);
             this.label_lbm.Name = "label_lbm";
-            this.label_lbm.Size = new System.Drawing.Size(224, 36);
+            this.label_lbm.Size = new System.Drawing.Size(325, 36);
             this.label_lbm.TabIndex = 4;
             this.label_lbm.Text = "70%";
             this.label_lbm.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -613,7 +613,7 @@
             this.label_lbm_name.Location = new System.Drawing.Point(0, 113);
             this.label_lbm_name.Margin = new System.Windows.Forms.Padding(0);
             this.label_lbm_name.Name = "label_lbm_name";
-            this.label_lbm_name.Size = new System.Drawing.Size(224, 22);
+            this.label_lbm_name.Size = new System.Drawing.Size(325, 22);
             this.label_lbm_name.TabIndex = 5;
             this.label_lbm_name.Text = "LBM (Lean Body Mass)";
             this.label_lbm_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -623,10 +623,10 @@
             this.panel_bmr.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.panel_bmr.Controls.Add(this.tableLayoutPanel_bmr);
             this.panel_bmr.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_bmr.Location = new System.Drawing.Point(30, 396);
+            this.panel_bmr.Location = new System.Drawing.Point(30, 676);
             this.panel_bmr.Margin = new System.Windows.Forms.Padding(0);
             this.panel_bmr.Name = "panel_bmr";
-            this.panel_bmr.Size = new System.Drawing.Size(224, 155);
+            this.panel_bmr.Size = new System.Drawing.Size(325, 155);
             this.panel_bmr.TabIndex = 4;
             // 
             // tableLayoutPanel_bmr
@@ -646,7 +646,7 @@
             this.tableLayoutPanel_bmr.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_bmr.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_bmr.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_bmr.Size = new System.Drawing.Size(224, 155);
+            this.tableLayoutPanel_bmr.Size = new System.Drawing.Size(325, 155);
             this.tableLayoutPanel_bmr.TabIndex = 6;
             // 
             // pictureBox_bmr
@@ -658,7 +658,7 @@
             this.pictureBox_bmr.Location = new System.Drawing.Point(0, 19);
             this.pictureBox_bmr.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.pictureBox_bmr.Name = "pictureBox_bmr";
-            this.pictureBox_bmr.Size = new System.Drawing.Size(224, 54);
+            this.pictureBox_bmr.Size = new System.Drawing.Size(325, 54);
             this.pictureBox_bmr.TabIndex = 0;
             this.pictureBox_bmr.TabStop = false;
             // 
@@ -671,7 +671,7 @@
             this.label_bmr.Location = new System.Drawing.Point(0, 77);
             this.label_bmr.Margin = new System.Windows.Forms.Padding(0);
             this.label_bmr.Name = "label_bmr";
-            this.label_bmr.Size = new System.Drawing.Size(224, 36);
+            this.label_bmr.Size = new System.Drawing.Size(325, 36);
             this.label_bmr.TabIndex = 4;
             this.label_bmr.Text = "2300 kcal";
             this.label_bmr.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -685,7 +685,7 @@
             this.label_bmr_name.Location = new System.Drawing.Point(0, 113);
             this.label_bmr_name.Margin = new System.Windows.Forms.Padding(0);
             this.label_bmr_name.Name = "label_bmr_name";
-            this.label_bmr_name.Size = new System.Drawing.Size(224, 22);
+            this.label_bmr_name.Size = new System.Drawing.Size(325, 22);
             this.label_bmr_name.TabIndex = 5;
             this.label_bmr_name.Text = "Basal Metabolic Rate (BMR)";
             this.label_bmr_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -695,10 +695,10 @@
             this.panel_bfp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.panel_bfp.Controls.Add(this.tableLayoutPanel_bfp);
             this.panel_bfp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_bfp.Location = new System.Drawing.Point(269, 396);
+            this.panel_bfp.Location = new System.Drawing.Point(370, 676);
             this.panel_bfp.Margin = new System.Windows.Forms.Padding(0);
             this.panel_bfp.Name = "panel_bfp";
-            this.panel_bfp.Size = new System.Drawing.Size(224, 155);
+            this.panel_bfp.Size = new System.Drawing.Size(325, 155);
             this.panel_bfp.TabIndex = 5;
             // 
             // tableLayoutPanel_bfp
@@ -718,7 +718,7 @@
             this.tableLayoutPanel_bfp.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_bfp.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_bfp.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_bfp.Size = new System.Drawing.Size(224, 155);
+            this.tableLayoutPanel_bfp.Size = new System.Drawing.Size(325, 155);
             this.tableLayoutPanel_bfp.TabIndex = 6;
             // 
             // pictureBox_bfp
@@ -730,7 +730,7 @@
             this.pictureBox_bfp.Location = new System.Drawing.Point(0, 19);
             this.pictureBox_bfp.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.pictureBox_bfp.Name = "pictureBox_bfp";
-            this.pictureBox_bfp.Size = new System.Drawing.Size(224, 54);
+            this.pictureBox_bfp.Size = new System.Drawing.Size(325, 54);
             this.pictureBox_bfp.TabIndex = 0;
             this.pictureBox_bfp.TabStop = false;
             // 
@@ -743,7 +743,7 @@
             this.label_bfp.Location = new System.Drawing.Point(0, 77);
             this.label_bfp.Margin = new System.Windows.Forms.Padding(0);
             this.label_bfp.Name = "label_bfp";
-            this.label_bfp.Size = new System.Drawing.Size(224, 36);
+            this.label_bfp.Size = new System.Drawing.Size(325, 36);
             this.label_bfp.TabIndex = 4;
             this.label_bfp.Text = "12%";
             this.label_bfp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -757,7 +757,7 @@
             this.label_bfp_name.Location = new System.Drawing.Point(0, 113);
             this.label_bfp_name.Margin = new System.Windows.Forms.Padding(0);
             this.label_bfp_name.Name = "label_bfp_name";
-            this.label_bfp_name.Size = new System.Drawing.Size(224, 22);
+            this.label_bfp_name.Size = new System.Drawing.Size(325, 22);
             this.label_bfp_name.TabIndex = 5;
             this.label_bfp_name.Text = "Body Fat Percentage (BFP)";
             this.label_bfp_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -771,11 +771,11 @@
             this.panel_profile_view.Controls.Add(this.btn_edit_profile);
             this.panel_profile_view.Controls.Add(this.label_profile_title);
             this.panel_profile_view.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_profile_view.Location = new System.Drawing.Point(508, 226);
+            this.panel_profile_view.Location = new System.Drawing.Point(710, 506);
             this.panel_profile_view.Margin = new System.Windows.Forms.Padding(0);
             this.panel_profile_view.Name = "panel_profile_view";
             this.tableLayoutPanel_dashboard_layout.SetRowSpan(this.panel_profile_view, 3);
-            this.panel_profile_view.Size = new System.Drawing.Size(448, 325);
+            this.panel_profile_view.Size = new System.Drawing.Size(651, 325);
             this.panel_profile_view.TabIndex = 6;
             // 
             // tableLayoutPanel_profile_overview
@@ -793,7 +793,7 @@
             this.tableLayoutPanel_profile_overview.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_profile_overview.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_profile_overview.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel_profile_overview.Size = new System.Drawing.Size(448, 188);
+            this.tableLayoutPanel_profile_overview.Size = new System.Drawing.Size(651, 188);
             this.tableLayoutPanel_profile_overview.TabIndex = 6;
             // 
             // label_name
@@ -805,7 +805,7 @@
             this.label_name.ForeColor = System.Drawing.Color.White;
             this.label_name.Location = new System.Drawing.Point(3, 121);
             this.label_name.Name = "label_name";
-            this.label_name.Size = new System.Drawing.Size(442, 32);
+            this.label_name.Size = new System.Drawing.Size(645, 32);
             this.label_name.TabIndex = 3;
             this.label_name.Text = "Dulanja Nimesh";
             this.label_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -818,7 +818,7 @@
             this.label_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
             this.label_email.Location = new System.Drawing.Point(3, 153);
             this.label_email.Name = "label_email";
-            this.label_email.Size = new System.Drawing.Size(442, 35);
+            this.label_email.Size = new System.Drawing.Size(645, 35);
             this.label_email.TabIndex = 4;
             this.label_email.Text = "dulanjanimesh@gmail.com";
             this.label_email.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -828,7 +828,7 @@
             this.pictureBox_avatar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox_avatar.BackgroundImage = global::fitness_home.Properties.Resources.avatar_male;
             this.pictureBox_avatar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_avatar.Location = new System.Drawing.Point(166, 0);
+            this.pictureBox_avatar.Location = new System.Drawing.Point(267, 0);
             this.pictureBox_avatar.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_avatar.Name = "pictureBox_avatar";
             this.pictureBox_avatar.Size = new System.Drawing.Size(116, 121);
@@ -844,7 +844,7 @@
             this.panel_user_stats.Location = new System.Drawing.Point(25, 230);
             this.panel_user_stats.Margin = new System.Windows.Forms.Padding(0);
             this.panel_user_stats.Name = "panel_user_stats";
-            this.panel_user_stats.Size = new System.Drawing.Size(397, 64);
+            this.panel_user_stats.Size = new System.Drawing.Size(600, 64);
             this.panel_user_stats.TabIndex = 5;
             // 
             // tableLayoutPanel_user_stats
@@ -870,7 +870,7 @@
             this.tableLayoutPanel_user_stats.RowCount = 2;
             this.tableLayoutPanel_user_stats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_user_stats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_user_stats.Size = new System.Drawing.Size(397, 64);
+            this.tableLayoutPanel_user_stats.Size = new System.Drawing.Size(600, 64);
             this.tableLayoutPanel_user_stats.TabIndex = 0;
             // 
             // label_membership_type
@@ -879,7 +879,7 @@
             this.label_membership_type.Dock = System.Windows.Forms.DockStyle.Top;
             this.label_membership_type.Font = new System.Drawing.Font("Rajdhani SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_membership_type.ForeColor = System.Drawing.Color.White;
-            this.label_membership_type.Location = new System.Drawing.Point(231, 32);
+            this.label_membership_type.Location = new System.Drawing.Point(394, 32);
             this.label_membership_type.Margin = new System.Windows.Forms.Padding(0);
             this.label_membership_type.Name = "label_membership_type";
             this.label_membership_type.Size = new System.Drawing.Size(138, 25);
@@ -893,7 +893,7 @@
             this.label_weight_title.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label_weight_title.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_weight_title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.label_weight_title.Location = new System.Drawing.Point(28, 10);
+            this.label_weight_title.Location = new System.Drawing.Point(69, 10);
             this.label_weight_title.Name = "label_weight_title";
             this.label_weight_title.Size = new System.Drawing.Size(58, 22);
             this.label_weight_title.TabIndex = 5;
@@ -906,7 +906,7 @@
             this.label_weight.Dock = System.Windows.Forms.DockStyle.Top;
             this.label_weight.Font = new System.Drawing.Font("Rajdhani SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_weight.ForeColor = System.Drawing.Color.White;
-            this.label_weight.Location = new System.Drawing.Point(25, 32);
+            this.label_weight.Location = new System.Drawing.Point(66, 32);
             this.label_weight.Margin = new System.Windows.Forms.Padding(0);
             this.label_weight.Name = "label_weight";
             this.label_weight.Size = new System.Drawing.Size(64, 25);
@@ -920,7 +920,7 @@
             this.label_membership_type_title.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label_membership_type_title.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_membership_type_title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.label_membership_type_title.Location = new System.Drawing.Point(234, 10);
+            this.label_membership_type_title.Location = new System.Drawing.Point(397, 10);
             this.label_membership_type_title.Name = "label_membership_type_title";
             this.label_membership_type_title.Size = new System.Drawing.Size(132, 22);
             this.label_membership_type_title.TabIndex = 9;
@@ -933,7 +933,7 @@
             this.label_height.Dock = System.Windows.Forms.DockStyle.Top;
             this.label_height.Font = new System.Drawing.Font("Rajdhani SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_height.ForeColor = System.Drawing.Color.White;
-            this.label_height.Location = new System.Drawing.Point(140, 32);
+            this.label_height.Location = new System.Drawing.Point(262, 32);
             this.label_height.Margin = new System.Windows.Forms.Padding(0);
             this.label_height.Name = "label_height";
             this.label_height.Size = new System.Drawing.Size(66, 25);
@@ -947,7 +947,7 @@
             this.label_height_title.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label_height_title.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_height_title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.label_height_title.Location = new System.Drawing.Point(143, 10);
+            this.label_height_title.Location = new System.Drawing.Point(265, 10);
             this.label_height_title.Name = "label_height_title";
             this.label_height_title.Size = new System.Drawing.Size(60, 22);
             this.label_height_title.TabIndex = 7;
@@ -964,7 +964,7 @@
             this.btn_edit_profile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_edit_profile.Font = new System.Drawing.Font("Roboto", 8.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_edit_profile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
-            this.btn_edit_profile.Location = new System.Drawing.Point(382, 21);
+            this.btn_edit_profile.Location = new System.Drawing.Point(585, 21);
             this.btn_edit_profile.Margin = new System.Windows.Forms.Padding(0);
             this.btn_edit_profile.Name = "btn_edit_profile";
             this.btn_edit_profile.Size = new System.Drawing.Size(40, 20);
@@ -985,15 +985,15 @@
             this.label_profile_title.TabIndex = 0;
             this.label_profile_title.Text = "Profile";
             // 
-            // DashboardView
+            // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.Controls.Add(this.tableLayoutPanel_dashboard_layout);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "DashboardView";
-            this.Size = new System.Drawing.Size(986, 581);
+            this.Name = "Dashboard";
+            this.Size = new System.Drawing.Size(1392, 861);
             this.Load += new System.EventHandler(this.DashboardView_Load);
             this.Resize += new System.EventHandler(this.DashboardView_Resize);
             this.tableLayoutPanel_dashboard_layout.ResumeLayout(false);

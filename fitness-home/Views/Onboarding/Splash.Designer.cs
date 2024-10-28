@@ -64,8 +64,8 @@
             this.tableLayoutPanel_content.Name = "tableLayoutPanel_content";
             this.tableLayoutPanel_content.RowCount = 1;
             this.tableLayoutPanel_content.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_content.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel_content.Size = new System.Drawing.Size(884, 450);
+            this.tableLayoutPanel_content.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 450F));
+            this.tableLayoutPanel_content.Size = new System.Drawing.Size(1127, 612);
             this.tableLayoutPanel_content.TabIndex = 0;
             // 
             // panel_background
@@ -76,30 +76,30 @@
             this.panel_background.Controls.Add(this.label_said);
             this.panel_background.Controls.Add(this.label_quote);
             this.panel_background.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_background.Location = new System.Drawing.Point(356, 3);
+            this.panel_background.Location = new System.Drawing.Point(453, 3);
             this.panel_background.Name = "panel_background";
-            this.panel_background.Size = new System.Drawing.Size(525, 444);
+            this.panel_background.Size = new System.Drawing.Size(671, 606);
             this.panel_background.TabIndex = 0;
             // 
             // label_said
             // 
             this.label_said.AutoSize = true;
             this.label_said.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
-            this.label_said.Font = new System.Drawing.Font("Noto Sans SemiBold", 12F, System.Drawing.FontStyle.Bold);
-            this.label_said.Location = new System.Drawing.Point(324, 287);
+            this.label_said.Font = new System.Drawing.Font("Noto Sans SemiBold", 14F, System.Drawing.FontStyle.Bold);
+            this.label_said.Location = new System.Drawing.Point(373, 355);
             this.label_said.Name = "label_said";
-            this.label_said.Size = new System.Drawing.Size(124, 24);
+            this.label_said.Size = new System.Drawing.Size(171, 29);
             this.label_said.TabIndex = 1;
-            this.label_said.Text = "- Fitness Home";
+            this.label_said.Text = " - FITNESS HOME ";
             // 
             // label_quote
             // 
             this.label_quote.AutoSize = true;
-            this.label_quote.Font = new System.Drawing.Font("Rajdhani SemiBold", 15F, System.Drawing.FontStyle.Bold);
+            this.label_quote.Font = new System.Drawing.Font("Rajdhani SemiBold", 19F, System.Drawing.FontStyle.Bold);
             this.label_quote.ForeColor = System.Drawing.Color.White;
-            this.label_quote.Location = new System.Drawing.Point(95, 188);
+            this.label_quote.Location = new System.Drawing.Point(110, 231);
             this.label_quote.Name = "label_quote";
-            this.label_quote.Size = new System.Drawing.Size(361, 78);
+            this.label_quote.Size = new System.Drawing.Size(463, 99);
             this.label_quote.TabIndex = 0;
             this.label_quote.Text = "Strength doesn’t come from what you can \r\ndo, it comes from overcoming the things" +
     " \r\nyou once thought you couldn’t.";
@@ -117,7 +117,7 @@
             this.tableLayoutPanel_left.RowCount = 2;
             this.tableLayoutPanel_left.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel_left.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel_left.Size = new System.Drawing.Size(347, 444);
+            this.tableLayoutPanel_left.Size = new System.Drawing.Size(444, 606);
             this.tableLayoutPanel_left.TabIndex = 1;
             // 
             // panel_logo
@@ -126,17 +126,17 @@
             this.panel_logo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_logo.Location = new System.Drawing.Point(3, 3);
             this.panel_logo.Name = "panel_logo";
-            this.panel_logo.Size = new System.Drawing.Size(341, 260);
+            this.panel_logo.Size = new System.Drawing.Size(438, 357);
             this.panel_logo.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::fitness_home.Properties.Resources.logo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(49, 62);
+            this.pictureBox1.Location = new System.Drawing.Point(67, 117);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(264, 184);
+            this.pictureBox1.Size = new System.Drawing.Size(320, 215);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -149,16 +149,16 @@
             this.panel_loading.Controls.Add(this.label_message);
             this.panel_loading.Controls.Add(this.panel_separator);
             this.panel_loading.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_loading.Location = new System.Drawing.Point(3, 269);
+            this.panel_loading.Location = new System.Drawing.Point(3, 366);
             this.panel_loading.Name = "panel_loading";
-            this.panel_loading.Size = new System.Drawing.Size(341, 172);
+            this.panel_loading.Size = new System.Drawing.Size(438, 237);
             this.panel_loading.TabIndex = 1;
             // 
             // panel_square_3
             // 
             this.panel_square_3.BackColor = System.Drawing.Color.Transparent;
             this.panel_square_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_square_3.Location = new System.Drawing.Point(190, 115);
+            this.panel_square_3.Location = new System.Drawing.Point(258, 123);
             this.panel_square_3.Margin = new System.Windows.Forms.Padding(0);
             this.panel_square_3.Name = "panel_square_3";
             this.panel_square_3.Size = new System.Drawing.Size(12, 12);
@@ -169,7 +169,7 @@
             // 
             this.panel_square_2.BackColor = System.Drawing.Color.Transparent;
             this.panel_square_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_square_2.Location = new System.Drawing.Point(164, 115);
+            this.panel_square_2.Location = new System.Drawing.Point(225, 123);
             this.panel_square_2.Margin = new System.Windows.Forms.Padding(0);
             this.panel_square_2.Name = "panel_square_2";
             this.panel_square_2.Size = new System.Drawing.Size(12, 12);
@@ -180,7 +180,7 @@
             // 
             this.panel_square_1.BackColor = System.Drawing.Color.Transparent;
             this.panel_square_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel_square_1.Location = new System.Drawing.Point(138, 115);
+            this.panel_square_1.Location = new System.Drawing.Point(192, 123);
             this.panel_square_1.Margin = new System.Windows.Forms.Padding(0);
             this.panel_square_1.Name = "panel_square_1";
             this.panel_square_1.Size = new System.Drawing.Size(12, 12);
@@ -190,12 +190,12 @@
             // label_fetching_data
             // 
             this.label_fetching_data.AutoSize = true;
-            this.label_fetching_data.Font = new System.Drawing.Font("Rajdhani", 18F, System.Drawing.FontStyle.Bold);
+            this.label_fetching_data.Font = new System.Drawing.Font("Rajdhani", 20F, System.Drawing.FontStyle.Bold);
             this.label_fetching_data.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
-            this.label_fetching_data.Location = new System.Drawing.Point(96, 76);
+            this.label_fetching_data.Location = new System.Drawing.Point(143, 76);
             this.label_fetching_data.Margin = new System.Windows.Forms.Padding(0);
             this.label_fetching_data.Name = "label_fetching_data";
-            this.label_fetching_data.Size = new System.Drawing.Size(161, 30);
+            this.label_fetching_data.Size = new System.Drawing.Size(184, 34);
             this.label_fetching_data.TabIndex = 3;
             this.label_fetching_data.Text = "FETCHING DATA";
             // 
@@ -204,7 +204,7 @@
             this.label_message.AutoSize = true;
             this.label_message.Font = new System.Drawing.Font("Noto Sans Medium", 10F, System.Drawing.FontStyle.Bold);
             this.label_message.ForeColor = System.Drawing.Color.White;
-            this.label_message.Location = new System.Drawing.Point(97, 41);
+            this.label_message.Location = new System.Drawing.Point(144, 41);
             this.label_message.Name = "label_message";
             this.label_message.Size = new System.Drawing.Size(167, 22);
             this.label_message.TabIndex = 2;
@@ -216,7 +216,7 @@
             this.panel_separator.Location = new System.Drawing.Point(49, 0);
             this.panel_separator.Margin = new System.Windows.Forms.Padding(0);
             this.panel_separator.Name = "panel_separator";
-            this.panel_separator.Size = new System.Drawing.Size(270, 1);
+            this.panel_separator.Size = new System.Drawing.Size(340, 1);
             this.panel_separator.TabIndex = 1;
             // 
             // Splash
@@ -224,7 +224,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
-            this.ClientSize = new System.Drawing.Size(884, 450);
+            this.ClientSize = new System.Drawing.Size(1127, 612);
             this.Controls.Add(this.tableLayoutPanel_content);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

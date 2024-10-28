@@ -43,19 +43,22 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label_membership = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label_lbm_name = new System.Windows.Forms.Label();
             this.panel_card_holder = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox_card_holder = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -69,9 +72,6 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -93,21 +93,21 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel_card_holder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel_card_holder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -125,7 +125,7 @@
             this.panel_content.Location = new System.Drawing.Point(40, 0);
             this.panel_content.Margin = new System.Windows.Forms.Padding(0);
             this.panel_content.Name = "panel_content";
-            this.panel_content.Size = new System.Drawing.Size(906, 541);
+            this.panel_content.Size = new System.Drawing.Size(1312, 821);
             this.panel_content.TabIndex = 3;
             // 
             // tableLayoutPanel_content
@@ -150,7 +150,7 @@
             this.tableLayoutPanel_content.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70.3125F));
             this.tableLayoutPanel_content.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_content.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.6875F));
-            this.tableLayoutPanel_content.Size = new System.Drawing.Size(906, 541);
+            this.tableLayoutPanel_content.Size = new System.Drawing.Size(1312, 821);
             this.tableLayoutPanel_content.TabIndex = 0;
             // 
             // panel_header
@@ -161,7 +161,7 @@
             this.panel_header.Location = new System.Drawing.Point(70, 0);
             this.panel_header.Margin = new System.Windows.Forms.Padding(0);
             this.panel_header.Name = "panel_header";
-            this.panel_header.Size = new System.Drawing.Size(836, 180);
+            this.panel_header.Size = new System.Drawing.Size(1242, 376);
             this.panel_header.TabIndex = 0;
             // 
             // tableLayoutPanel_overview
@@ -317,7 +317,7 @@
             this.tableLayoutPanel1.Controls.Add(this.panel_card_holder, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(70, 180);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(70, 376);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
@@ -328,8 +328,90 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(234, 285);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(370, 285);
             this.tableLayoutPanel1.TabIndex = 13;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(4, 176);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(366, 37);
+            this.panel2.TabIndex = 17;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.BackgroundImage = global::fitness_home.Properties.Resources.edit_icon;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(336, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(19, 27);
+            this.pictureBox3.TabIndex = 1;
+            this.pictureBox3.TabStop = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Noto Sans Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox2.Location = new System.Drawing.Point(10, 5);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox2.MaxLength = 100;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(316, 20);
+            this.textBox2.TabIndex = 0;
+            this.textBox2.Text = "2003/09/15";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(4, 105);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(366, 37);
+            this.panel1.TabIndex = 15;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackgroundImage = global::fitness_home.Properties.Resources.edit_icon;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(336, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(19, 27);
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Noto Sans Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox1.Location = new System.Drawing.Point(10, 5);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox1.MaxLength = 100;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(316, 20);
+            this.textBox1.TabIndex = 0;
+            this.textBox1.Text = "Nimesh";
             // 
             // label5
             // 
@@ -367,7 +449,7 @@
             this.panel_card_holder.Location = new System.Drawing.Point(4, 34);
             this.panel_card_holder.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.panel_card_holder.Name = "panel_card_holder";
-            this.panel_card_holder.Size = new System.Drawing.Size(230, 37);
+            this.panel_card_holder.Size = new System.Drawing.Size(366, 37);
             this.panel_card_holder.TabIndex = 12;
             // 
             // pictureBox1
@@ -375,7 +457,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackgroundImage = global::fitness_home.Properties.Resources.edit_icon;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(200, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(336, 4);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(19, 27);
@@ -394,50 +476,9 @@
             this.textBox_card_holder.Margin = new System.Windows.Forms.Padding(0);
             this.textBox_card_holder.MaxLength = 100;
             this.textBox_card_holder.Name = "textBox_card_holder";
-            this.textBox_card_holder.Size = new System.Drawing.Size(180, 20);
+            this.textBox_card_holder.Size = new System.Drawing.Size(316, 20);
             this.textBox_card_holder.TabIndex = 0;
             this.textBox_card_holder.Text = "Dulanja";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(4, 105);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(230, 37);
-            this.panel1.TabIndex = 15;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.BackgroundImage = global::fitness_home.Properties.Resources.edit_icon;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(200, 4);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(19, 27);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Noto Sans Medium", 11F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.textBox1.Location = new System.Drawing.Point(10, 5);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox1.MaxLength = 100;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 20);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "Nimesh";
             // 
             // label6
             // 
@@ -452,47 +493,6 @@
             this.label6.Text = "Date of Birth";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.pictureBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(4, 176);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(230, 37);
-            this.panel2.TabIndex = 17;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.BackgroundImage = global::fitness_home.Properties.Resources.edit_icon;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(200, 4);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(19, 27);
-            this.pictureBox3.TabIndex = 1;
-            this.pictureBox3.TabStop = false;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Noto Sans Medium", 11F, System.Drawing.FontStyle.Bold);
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.textBox2.Location = new System.Drawing.Point(10, 5);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox2.MaxLength = 100;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 20);
-            this.textBox2.TabIndex = 0;
-            this.textBox2.Text = "2003/09/15";
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 1;
@@ -506,7 +506,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label9, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.label10, 0, 6);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(334, 180);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(470, 376);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 8;
@@ -518,8 +518,49 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(234, 285);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(370, 285);
             this.tableLayoutPanel2.TabIndex = 14;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.pictureBox7);
+            this.panel6.Controls.Add(this.textBox6);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(4, 247);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(366, 38);
+            this.panel6.TabIndex = 18;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox7.BackgroundImage = global::fitness_home.Properties.Resources.edit_icon;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox7.Location = new System.Drawing.Point(336, 4);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(19, 27);
+            this.pictureBox7.TabIndex = 1;
+            this.pictureBox7.TabStop = false;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox6.Font = new System.Drawing.Font("Noto Sans Medium", 11F, System.Drawing.FontStyle.Bold);
+            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox6.Location = new System.Drawing.Point(10, 5);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox6.MaxLength = 100;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(316, 20);
+            this.textBox6.TabIndex = 0;
+            this.textBox6.Text = "0702171422";
             // 
             // panel3
             // 
@@ -531,7 +572,7 @@
             this.panel3.Location = new System.Drawing.Point(4, 176);
             this.panel3.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(230, 37);
+            this.panel3.Size = new System.Drawing.Size(366, 37);
             this.panel3.TabIndex = 17;
             // 
             // pictureBox4
@@ -539,7 +580,7 @@
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.BackgroundImage = global::fitness_home.Properties.Resources.edit_icon;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox4.Location = new System.Drawing.Point(200, 4);
+            this.pictureBox4.Location = new System.Drawing.Point(336, 4);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(19, 27);
@@ -558,7 +599,7 @@
             this.textBox3.Margin = new System.Windows.Forms.Padding(0);
             this.textBox3.MaxLength = 100;
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(180, 20);
+            this.textBox3.Size = new System.Drawing.Size(316, 20);
             this.textBox3.TabIndex = 0;
             this.textBox3.Text = "Tharushi Jayasinghe";
             // 
@@ -572,7 +613,7 @@
             this.panel4.Location = new System.Drawing.Point(4, 105);
             this.panel4.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(230, 37);
+            this.panel4.Size = new System.Drawing.Size(366, 37);
             this.panel4.TabIndex = 15;
             // 
             // pictureBox5
@@ -580,7 +621,7 @@
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.BackgroundImage = global::fitness_home.Properties.Resources.edit_icon;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox5.Location = new System.Drawing.Point(200, 4);
+            this.pictureBox5.Location = new System.Drawing.Point(336, 4);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(19, 27);
@@ -599,7 +640,7 @@
             this.textBox4.Margin = new System.Windows.Forms.Padding(0);
             this.textBox4.MaxLength = 100;
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(180, 20);
+            this.textBox4.Size = new System.Drawing.Size(316, 20);
             this.textBox4.TabIndex = 0;
             this.textBox4.Text = "127, Korase, Udugampola";
             // 
@@ -639,7 +680,7 @@
             this.panel5.Location = new System.Drawing.Point(4, 34);
             this.panel5.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(230, 37);
+            this.panel5.Size = new System.Drawing.Size(366, 37);
             this.panel5.TabIndex = 12;
             // 
             // pictureBox6
@@ -647,7 +688,7 @@
             this.pictureBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox6.BackgroundImage = global::fitness_home.Properties.Resources.edit_icon;
             this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox6.Location = new System.Drawing.Point(200, 4);
+            this.pictureBox6.Location = new System.Drawing.Point(336, 4);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(19, 27);
@@ -666,7 +707,7 @@
             this.textBox5.Margin = new System.Windows.Forms.Padding(0);
             this.textBox5.MaxLength = 100;
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(180, 20);
+            this.textBox5.Size = new System.Drawing.Size(316, 20);
             this.textBox5.TabIndex = 0;
             this.textBox5.Text = "0774121427";
             // 
@@ -696,47 +737,6 @@
             this.label10.Text = "Emergency Contact Phone";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.pictureBox7);
-            this.panel6.Controls.Add(this.textBox6);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(4, 247);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(230, 38);
-            this.panel6.TabIndex = 18;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox7.BackgroundImage = global::fitness_home.Properties.Resources.edit_icon;
-            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox7.Location = new System.Drawing.Point(200, 4);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(19, 27);
-            this.pictureBox7.TabIndex = 1;
-            this.pictureBox7.TabStop = false;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.textBox6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox6.Font = new System.Drawing.Font("Noto Sans Medium", 11F, System.Drawing.FontStyle.Bold);
-            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.textBox6.Location = new System.Drawing.Point(10, 5);
-            this.textBox6.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox6.MaxLength = 100;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(180, 20);
-            this.textBox6.TabIndex = 0;
-            this.textBox6.Text = "0702171422";
-            // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
@@ -748,7 +748,7 @@
             this.tableLayoutPanel3.Controls.Add(this.panel10, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.label13, 0, 4);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(598, 180);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(870, 376);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 8;
@@ -760,7 +760,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(234, 285);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(370, 285);
             this.tableLayoutPanel3.TabIndex = 15;
             // 
             // panel8
@@ -773,7 +773,7 @@
             this.panel8.Location = new System.Drawing.Point(4, 176);
             this.panel8.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(230, 37);
+            this.panel8.Size = new System.Drawing.Size(366, 37);
             this.panel8.TabIndex = 17;
             // 
             // pictureBox9
@@ -781,7 +781,7 @@
             this.pictureBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox9.BackgroundImage = global::fitness_home.Properties.Resources.edit_icon;
             this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox9.Location = new System.Drawing.Point(200, 4);
+            this.pictureBox9.Location = new System.Drawing.Point(336, 4);
             this.pictureBox9.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(19, 27);
@@ -801,7 +801,7 @@
             this.textBox8.MaxLength = 100;
             this.textBox8.Name = "textBox8";
             this.textBox8.PasswordChar = '*';
-            this.textBox8.Size = new System.Drawing.Size(180, 20);
+            this.textBox8.Size = new System.Drawing.Size(316, 20);
             this.textBox8.TabIndex = 0;
             this.textBox8.Text = "Dulanja";
             // 
@@ -815,7 +815,7 @@
             this.panel9.Location = new System.Drawing.Point(4, 105);
             this.panel9.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(230, 37);
+            this.panel9.Size = new System.Drawing.Size(366, 37);
             this.panel9.TabIndex = 15;
             // 
             // pictureBox10
@@ -823,7 +823,7 @@
             this.pictureBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox10.BackgroundImage = global::fitness_home.Properties.Resources.edit_icon;
             this.pictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox10.Location = new System.Drawing.Point(200, 4);
+            this.pictureBox10.Location = new System.Drawing.Point(336, 4);
             this.pictureBox10.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(19, 27);
@@ -842,7 +842,7 @@
             this.textBox9.Margin = new System.Windows.Forms.Padding(0);
             this.textBox9.MaxLength = 100;
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(180, 20);
+            this.textBox9.Size = new System.Drawing.Size(316, 20);
             this.textBox9.TabIndex = 0;
             this.textBox9.Text = "200314711244";
             // 
@@ -882,7 +882,7 @@
             this.panel10.Location = new System.Drawing.Point(4, 34);
             this.panel10.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(230, 37);
+            this.panel10.Size = new System.Drawing.Size(366, 37);
             this.panel10.TabIndex = 12;
             // 
             // pictureBox11
@@ -890,7 +890,7 @@
             this.pictureBox11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox11.BackgroundImage = global::fitness_home.Properties.Resources.edit_icon;
             this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox11.Location = new System.Drawing.Point(200, 4);
+            this.pictureBox11.Location = new System.Drawing.Point(336, 4);
             this.pictureBox11.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(19, 27);
@@ -909,7 +909,7 @@
             this.textBox10.Margin = new System.Windows.Forms.Padding(0);
             this.textBox10.MaxLength = 100;
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(180, 20);
+            this.textBox10.Size = new System.Drawing.Size(316, 20);
             this.textBox10.TabIndex = 0;
             this.textBox10.Text = "dulanjanimesh@gmail.com";
             // 
@@ -935,7 +935,7 @@
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ProfileView";
             this.Padding = new System.Windows.Forms.Padding(40, 0, 40, 40);
-            this.Size = new System.Drawing.Size(986, 581);
+            this.Size = new System.Drawing.Size(1392, 861);
             this.Load += new System.EventHandler(this.ProfileView_Load);
             this.Resize += new System.EventHandler(this.ProfileView_Resize);
             this.panel_content.ResumeLayout(false);
@@ -949,17 +949,20 @@
             this.flowLayoutPanel2.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panel_card_holder.ResumeLayout(false);
-            this.panel_card_holder.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            this.panel_card_holder.ResumeLayout(false);
+            this.panel_card_holder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -969,9 +972,6 @@
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.panel8.ResumeLayout(false);

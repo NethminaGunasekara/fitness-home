@@ -166,7 +166,7 @@ namespace fitness_home.Services
                                 {
                                     getTrainerIdCmd.Parameters.AddWithValue("@Email", email);
                                     int trainerId = (int)getTrainerIdCmd.ExecuteScalar();
-                                    LoggedUser = new Trainer(trainerId);
+                                    LoggedUser = new TrainerData(trainerId);
                                 }
                             }
 
@@ -232,7 +232,7 @@ namespace fitness_home.Services
             }
 
             // Redirect to the Trainer Dashboard if the logged user is a Trainer
-            else if (LoggedUser is Trainer)
+            else if (LoggedUser is TrainerData)
             {
                 // Show the Trainer Dashboard
                 TrainerArea TrainerDashboard = FormProvider.TrainerDashboard ?? (FormProvider.TrainerDashboard = new TrainerArea());

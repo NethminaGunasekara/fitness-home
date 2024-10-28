@@ -131,7 +131,7 @@
             this.tableLayoutPanel_content.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_content.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel_content.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel_content.Size = new System.Drawing.Size(986, 581);
+            this.tableLayoutPanel_content.Size = new System.Drawing.Size(1392, 861);
             this.tableLayoutPanel_content.TabIndex = 0;
             // 
             // panel_current_plan
@@ -142,7 +142,7 @@
             this.panel_current_plan.Location = new System.Drawing.Point(30, 0);
             this.panel_current_plan.Margin = new System.Windows.Forms.Padding(0);
             this.panel_current_plan.Name = "panel_current_plan";
-            this.panel_current_plan.Size = new System.Drawing.Size(926, 149);
+            this.panel_current_plan.Size = new System.Drawing.Size(1332, 233);
             this.panel_current_plan.TabIndex = 0;
             // 
             // tableLayoutPanel_current_plan
@@ -162,7 +162,7 @@
             this.tableLayoutPanel_current_plan.RowCount = 2;
             this.tableLayoutPanel_current_plan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel_current_plan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
-            this.tableLayoutPanel_current_plan.Size = new System.Drawing.Size(926, 149);
+            this.tableLayoutPanel_current_plan.Size = new System.Drawing.Size(1332, 233);
             this.tableLayoutPanel_current_plan.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -175,12 +175,12 @@
             this.tableLayoutPanel3.Controls.Add(this.label_current_plan_days, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.label5, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(616, 89);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(887, 139);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(310, 60);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(445, 94);
             this.tableLayoutPanel3.TabIndex = 6;
             // 
             // label_current_plan_days
@@ -189,10 +189,10 @@
             this.label_current_plan_days.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_current_plan_days.Font = new System.Drawing.Font("Noto Sans", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_current_plan_days.ForeColor = System.Drawing.Color.White;
-            this.label_current_plan_days.Location = new System.Drawing.Point(209, 0);
+            this.label_current_plan_days.Location = new System.Drawing.Point(276, 0);
             this.label_current_plan_days.Margin = new System.Windows.Forms.Padding(0);
             this.label_current_plan_days.Name = "label_current_plan_days";
-            this.label_current_plan_days.Size = new System.Drawing.Size(28, 60);
+            this.label_current_plan_days.Size = new System.Drawing.Size(28, 94);
             this.label_current_plan_days.TabIndex = 1;
             this.label_current_plan_days.Text = "14";
             this.label_current_plan_days.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -203,10 +203,10 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Font = new System.Drawing.Font("Noto Sans", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(73, 0);
+            this.label5.Location = new System.Drawing.Point(140, 0);
             this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 60);
+            this.label5.Size = new System.Drawing.Size(136, 94);
             this.label5.TabIndex = 0;
             this.label5.Text = "Remaining Days:";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -221,12 +221,12 @@
             this.tableLayoutPanel2.Controls.Add(this.label_current_plan_purchase, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 89);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 139);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(308, 60);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(443, 94);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
             // label_current_plan_purchase
@@ -235,10 +235,10 @@
             this.label_current_plan_purchase.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_current_plan_purchase.Font = new System.Drawing.Font("Noto Sans", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_current_plan_purchase.ForeColor = System.Drawing.Color.White;
-            this.label_current_plan_purchase.Location = new System.Drawing.Point(173, 0);
+            this.label_current_plan_purchase.Location = new System.Drawing.Point(240, 0);
             this.label_current_plan_purchase.Margin = new System.Windows.Forms.Padding(0);
             this.label_current_plan_purchase.Name = "label_current_plan_purchase";
-            this.label_current_plan_purchase.Size = new System.Drawing.Size(94, 60);
+            this.label_current_plan_purchase.Size = new System.Drawing.Size(94, 94);
             this.label_current_plan_purchase.TabIndex = 1;
             this.label_current_plan_purchase.Text = "17/09/2024";
             this.label_current_plan_purchase.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -249,10 +249,10 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Noto Sans", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(41, 0);
+            this.label1.Location = new System.Drawing.Point(108, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(132, 60);
+            this.label1.Size = new System.Drawing.Size(132, 94);
             this.label1.TabIndex = 0;
             this.label1.Text = "Purchased Date:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -272,7 +272,7 @@
             this.tableLayoutPanel_current_plan_name.RowCount = 2;
             this.tableLayoutPanel_current_plan_name.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_current_plan_name.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_current_plan_name.Size = new System.Drawing.Size(926, 89);
+            this.tableLayoutPanel_current_plan_name.Size = new System.Drawing.Size(1332, 139);
             this.tableLayoutPanel_current_plan_name.TabIndex = 3;
             // 
             // label_current_plan_name
@@ -281,10 +281,10 @@
             this.label_current_plan_name.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_current_plan_name.Font = new System.Drawing.Font("Noto Sans", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_current_plan_name.ForeColor = System.Drawing.Color.White;
-            this.label_current_plan_name.Location = new System.Drawing.Point(0, 44);
+            this.label_current_plan_name.Location = new System.Drawing.Point(0, 69);
             this.label_current_plan_name.Margin = new System.Windows.Forms.Padding(0);
             this.label_current_plan_name.Name = "label_current_plan_name";
-            this.label_current_plan_name.Size = new System.Drawing.Size(926, 45);
+            this.label_current_plan_name.Size = new System.Drawing.Size(1332, 70);
             this.label_current_plan_name.TabIndex = 2;
             this.label_current_plan_name.Text = "Individual";
             this.label_current_plan_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -298,7 +298,7 @@
             this.label7.Location = new System.Drawing.Point(0, 8);
             this.label7.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(926, 36);
+            this.label7.Size = new System.Drawing.Size(1332, 61);
             this.label7.TabIndex = 1;
             this.label7.Text = "Your Current Membership Plan is";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -313,12 +313,12 @@
             this.tableLayoutPanel1.Controls.Add(this.label_current_plan_fee, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(308, 89);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(443, 139);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(308, 60);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(444, 94);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // label_current_plan_fee
@@ -327,10 +327,10 @@
             this.label_current_plan_fee.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_current_plan_fee.Font = new System.Drawing.Font("Noto Sans", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_current_plan_fee.ForeColor = System.Drawing.Color.White;
-            this.label_current_plan_fee.Location = new System.Drawing.Point(155, 0);
+            this.label_current_plan_fee.Location = new System.Drawing.Point(223, 0);
             this.label_current_plan_fee.Margin = new System.Windows.Forms.Padding(0);
             this.label_current_plan_fee.Name = "label_current_plan_fee";
-            this.label_current_plan_fee.Size = new System.Drawing.Size(106, 60);
+            this.label_current_plan_fee.Size = new System.Drawing.Size(106, 94);
             this.label_current_plan_fee.TabIndex = 1;
             this.label_current_plan_fee.Text = "LKR 3, 990.00";
             this.label_current_plan_fee.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -341,10 +341,10 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Font = new System.Drawing.Font("Noto Sans", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(47, 0);
+            this.label3.Location = new System.Drawing.Point(115, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 60);
+            this.label3.Size = new System.Drawing.Size(108, 94);
             this.label3.TabIndex = 0;
             this.label3.Text = "Monthly Fee:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -355,10 +355,10 @@
             this.label_change_plan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_change_plan.Font = new System.Drawing.Font("Noto Sans", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_change_plan.ForeColor = System.Drawing.Color.White;
-            this.label_change_plan.Location = new System.Drawing.Point(30, 161);
+            this.label_change_plan.Location = new System.Drawing.Point(30, 245);
             this.label_change_plan.Margin = new System.Windows.Forms.Padding(0, 12, 0, 12);
             this.label_change_plan.Name = "label_change_plan";
-            this.label_change_plan.Size = new System.Drawing.Size(926, 29);
+            this.label_change_plan.Size = new System.Drawing.Size(1332, 29);
             this.label_change_plan.TabIndex = 1;
             this.label_change_plan.Text = "Change Your Membership Plan";
             this.label_change_plan.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -368,10 +368,10 @@
             this.tableLayoutPanel_content.SetColumnSpan(this.panel_plans, 3);
             this.panel_plans.Controls.Add(this.tableLayoutPanel_plans);
             this.panel_plans.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_plans.Location = new System.Drawing.Point(0, 202);
+            this.panel_plans.Location = new System.Drawing.Point(0, 286);
             this.panel_plans.Margin = new System.Windows.Forms.Padding(0);
             this.panel_plans.Name = "panel_plans";
-            this.panel_plans.Size = new System.Drawing.Size(986, 348);
+            this.panel_plans.Size = new System.Drawing.Size(1392, 544);
             this.panel_plans.TabIndex = 0;
             // 
             // tableLayoutPanel_plans
@@ -395,7 +395,7 @@
             this.tableLayoutPanel_plans.Name = "tableLayoutPanel_plans";
             this.tableLayoutPanel_plans.RowCount = 1;
             this.tableLayoutPanel_plans.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_plans.Size = new System.Drawing.Size(986, 348);
+            this.tableLayoutPanel_plans.Size = new System.Drawing.Size(1392, 544);
             this.tableLayoutPanel_plans.TabIndex = 0;
             // 
             // panel_plan_3
@@ -403,10 +403,10 @@
             this.panel_plan_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.panel_plan_3.Controls.Add(this.tableLayoutPanel5);
             this.panel_plan_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_plan_3.Location = new System.Drawing.Point(653, 0);
+            this.panel_plan_3.Location = new System.Drawing.Point(923, 0);
             this.panel_plan_3.Margin = new System.Windows.Forms.Padding(0);
             this.panel_plan_3.Name = "panel_plan_3";
-            this.panel_plan_3.Size = new System.Drawing.Size(281, 348);
+            this.panel_plan_3.Size = new System.Drawing.Size(416, 544);
             this.panel_plan_3.TabIndex = 2;
             // 
             // tableLayoutPanel5
@@ -432,7 +432,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(281, 348);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(416, 544);
             this.tableLayoutPanel5.TabIndex = 1;
             // 
             // button_purchase_plan_3
@@ -445,10 +445,10 @@
             this.button_purchase_plan_3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
             this.button_purchase_plan_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_purchase_plan_3.Font = new System.Drawing.Font("Noto Sans", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_purchase_plan_3.Location = new System.Drawing.Point(20, 292);
+            this.button_purchase_plan_3.Location = new System.Drawing.Point(20, 488);
             this.button_purchase_plan_3.Margin = new System.Windows.Forms.Padding(0);
             this.button_purchase_plan_3.Name = "button_purchase_plan_3";
-            this.button_purchase_plan_3.Size = new System.Drawing.Size(241, 36);
+            this.button_purchase_plan_3.Size = new System.Drawing.Size(376, 36);
             this.button_purchase_plan_3.TabIndex = 8;
             this.button_purchase_plan_3.Text = "Purchase Plan";
             this.button_purchase_plan_3.UseVisualStyleBackColor = false;
@@ -566,10 +566,10 @@
             this.panel_plan_2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.panel_plan_2.Controls.Add(this.tableLayoutPanel4);
             this.panel_plan_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_plan_2.Location = new System.Drawing.Point(352, 0);
+            this.panel_plan_2.Location = new System.Drawing.Point(487, 0);
             this.panel_plan_2.Margin = new System.Windows.Forms.Padding(0);
             this.panel_plan_2.Name = "panel_plan_2";
-            this.panel_plan_2.Size = new System.Drawing.Size(281, 348);
+            this.panel_plan_2.Size = new System.Drawing.Size(416, 544);
             this.panel_plan_2.TabIndex = 2;
             // 
             // tableLayoutPanel4
@@ -595,7 +595,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(281, 348);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(416, 544);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // button_purchase_plan_2
@@ -608,10 +608,10 @@
             this.button_purchase_plan_2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
             this.button_purchase_plan_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_purchase_plan_2.Font = new System.Drawing.Font("Noto Sans", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_purchase_plan_2.Location = new System.Drawing.Point(20, 292);
+            this.button_purchase_plan_2.Location = new System.Drawing.Point(20, 488);
             this.button_purchase_plan_2.Margin = new System.Windows.Forms.Padding(0);
             this.button_purchase_plan_2.Name = "button_purchase_plan_2";
-            this.button_purchase_plan_2.Size = new System.Drawing.Size(241, 36);
+            this.button_purchase_plan_2.Size = new System.Drawing.Size(376, 36);
             this.button_purchase_plan_2.TabIndex = 8;
             this.button_purchase_plan_2.Text = "Purchase Plan";
             this.button_purchase_plan_2.UseVisualStyleBackColor = false;
@@ -732,7 +732,7 @@
             this.panel_plan_1.Location = new System.Drawing.Point(51, 0);
             this.panel_plan_1.Margin = new System.Windows.Forms.Padding(0);
             this.panel_plan_1.Name = "panel_plan_1";
-            this.panel_plan_1.Size = new System.Drawing.Size(281, 348);
+            this.panel_plan_1.Size = new System.Drawing.Size(416, 544);
             this.panel_plan_1.TabIndex = 1;
             // 
             // tableLayoutPanel_plan_1
@@ -758,7 +758,7 @@
             this.tableLayoutPanel_plan_1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_plan_1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_plan_1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel_plan_1.Size = new System.Drawing.Size(281, 348);
+            this.tableLayoutPanel_plan_1.Size = new System.Drawing.Size(416, 544);
             this.tableLayoutPanel_plan_1.TabIndex = 0;
             // 
             // button_purchase_plan_1
@@ -771,10 +771,10 @@
             this.button_purchase_plan_1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
             this.button_purchase_plan_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_purchase_plan_1.Font = new System.Drawing.Font("Noto Sans", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_purchase_plan_1.Location = new System.Drawing.Point(20, 292);
+            this.button_purchase_plan_1.Location = new System.Drawing.Point(20, 488);
             this.button_purchase_plan_1.Margin = new System.Windows.Forms.Padding(0);
             this.button_purchase_plan_1.Name = "button_purchase_plan_1";
-            this.button_purchase_plan_1.Size = new System.Drawing.Size(241, 36);
+            this.button_purchase_plan_1.Size = new System.Drawing.Size(376, 36);
             this.button_purchase_plan_1.TabIndex = 8;
             this.button_purchase_plan_1.Text = "Purchase Plan";
             this.button_purchase_plan_1.UseVisualStyleBackColor = false;
@@ -893,7 +893,7 @@
             this.pictureBox_previous.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_previous.BackgroundImage")));
             this.pictureBox_previous.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox_previous.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_previous.Location = new System.Drawing.Point(10, 157);
+            this.pictureBox_previous.Location = new System.Drawing.Point(10, 255);
             this.pictureBox_previous.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.pictureBox_previous.Name = "pictureBox_previous";
             this.pictureBox_previous.Size = new System.Drawing.Size(31, 34);
@@ -907,7 +907,7 @@
             this.pictureBox_next.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox_next.BackgroundImage")));
             this.pictureBox_next.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox_next.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_next.Location = new System.Drawing.Point(945, 157);
+            this.pictureBox_next.Location = new System.Drawing.Point(1351, 255);
             this.pictureBox_next.Margin = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.pictureBox_next.Name = "pictureBox_next";
             this.pictureBox_next.Size = new System.Drawing.Size(31, 34);
@@ -915,15 +915,15 @@
             this.pictureBox_next.TabStop = false;
             this.pictureBox_next.Click += new System.EventHandler(this.pictureBox_next_Click);
             // 
-            // MembershipView
+            // Membership
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.Controls.Add(this.tableLayoutPanel_content);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "MembershipView";
-            this.Size = new System.Drawing.Size(986, 581);
+            this.Name = "Membership";
+            this.Size = new System.Drawing.Size(1392, 861);
             this.Load += new System.EventHandler(this.MembershipView_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.MembershipView_Paint);
             this.Resize += new System.EventHandler(this.MembershipView_Resize);

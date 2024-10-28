@@ -133,28 +133,29 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label_description.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Roboto, 10.25pt</value>
+    <value>Roboto, 13pt</value>
   </data>
   <data name="label_description.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label_description.Location" type="System.Drawing.Point, System.Drawing">
-    <value>399, 208</value>
+    <value>516, 270</value>
   </data>
   <data name="label_description.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
+    <value>0, 12, 0, 0</value>
   </data>
   <data name="label_description.MaximumSize" type="System.Drawing.Size, System.Drawing">
-    <value>450, 0</value>
+    <value>540, 0</value>
   </data>
   <data name="label_description.Size" type="System.Drawing.Size, System.Drawing">
-    <value>438, 51</value>
+    <value>522, 66</value>
   </data>
   <data name="label_description.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="label_description.Text" xml:space="preserve">
-    <value>Our gym helps you to turn your goals into achievements, with the support and tools you need for every step of your journey. Join us and see how far you can go.</value>
+    <value>Our gym helps you to turn your goals into achievements, with the support and tools you need for every step of your journey. 
+Join us and see how far you can go.</value>
   </data>
   <data name="label_description.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
@@ -178,13 +179,13 @@
     <value>Bottom</value>
   </data>
   <data name="label_title.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Rajdhani, 26.25pt, style=Bold</value>
+    <value>Rajdhani, 30pt, style=Bold</value>
   </data>
   <data name="label_title.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="label_title.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 108</value>
+    <value>444, 150</value>
   </data>
   <data name="label_title.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
@@ -193,7 +194,7 @@
     <value>Yes</value>
   </data>
   <data name="label_title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>531, 90</value>
+    <value>667, 102</value>
   </data>
   <data name="label_title.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -227,7 +228,7 @@ P R O F E S S I O N A L S</value>
     <value>Flat</value>
   </data>
   <data name="btn_get_started.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Rajdhani SemiBold, 14.25pt, style=Bold</value>
+    <value>Rajdhani SemiBold, 16pt, style=Bold</value>
   </data>
   <data name="btn_get_started.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -236,13 +237,13 @@ P R O F E S S I O N A L S</value>
     <value>NoControl</value>
   </data>
   <data name="btn_get_started.Location" type="System.Drawing.Point, System.Drawing">
-    <value>534, 290</value>
+    <value>687, 363</value>
   </data>
   <data name="btn_get_started.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 20, 0, 0</value>
   </data>
   <data name="btn_get_started.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 41</value>
+    <value>181, 48</value>
   </data>
   <data name="btn_get_started.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -267,6 +268,75 @@ P R O F E S S I O N A L S</value>
   </data>
   <data name="panel_logo.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Center</value>
+  </data>
+  <data name="&gt;&gt;img_logo.Name" xml:space="preserve">
+    <value>img_logo</value>
+  </data>
+  <data name="&gt;&gt;img_logo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;img_logo.Parent" xml:space="preserve">
+    <value>panel_logo</value>
+  </data>
+  <data name="&gt;&gt;img_logo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="panel_logo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="panel_logo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="panel_logo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>444, 573</value>
+  </data>
+  <data name="panel_logo.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;panel_logo.Name" xml:space="preserve">
+    <value>panel_logo</value>
+  </data>
+  <data name="&gt;&gt;panel_logo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel_logo.Parent" xml:space="preserve">
+    <value>tableLayoutPanel_content</value>
+  </data>
+  <data name="&gt;&gt;panel_logo.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tableLayoutPanel_content.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tableLayoutPanel_content.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="tableLayoutPanel_content.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="tableLayoutPanel_content.RowCount" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tableLayoutPanel_content.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1111, 573</value>
+  </data>
+  <data name="tableLayoutPanel_content.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel_content.Name" xml:space="preserve">
+    <value>tableLayoutPanel_content</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel_content.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel_content.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tableLayoutPanel_content.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tableLayoutPanel_content.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label_description" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label_title" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btn_get_started" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="panel_logo" Row="0" RowSpan="3" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,40,Percent,60" /&gt;&lt;Rows Styles="Percent,44,Percent,16,Percent,40" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="img_logo.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left, Right</value>
@@ -8202,13 +8272,13 @@ P R O F E S S I O N A L S</value>
     <value>NoControl</value>
   </data>
   <data name="img_logo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 135</value>
+    <value>73, 196</value>
   </data>
   <data name="img_logo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="img_logo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 244</value>
+    <value>296, 244</value>
   </data>
   <data name="img_logo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -8228,63 +8298,6 @@ P R O F E S S I O N A L S</value>
   <data name="&gt;&gt;img_logo.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="panel_logo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="panel_logo.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="panel_logo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>353, 450</value>
-  </data>
-  <data name="panel_logo.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;panel_logo.Name" xml:space="preserve">
-    <value>panel_logo</value>
-  </data>
-  <data name="&gt;&gt;panel_logo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;panel_logo.Parent" xml:space="preserve">
-    <value>tableLayoutPanel_content</value>
-  </data>
-  <data name="&gt;&gt;panel_logo.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="tableLayoutPanel_content.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="tableLayoutPanel_content.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="tableLayoutPanel_content.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="tableLayoutPanel_content.RowCount" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="tableLayoutPanel_content.Size" type="System.Drawing.Size, System.Drawing">
-    <value>884, 450</value>
-  </data>
-  <data name="tableLayoutPanel_content.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel_content.Name" xml:space="preserve">
-    <value>tableLayoutPanel_content</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel_content.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TableLayoutPanel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel_content.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tableLayoutPanel_content.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="tableLayoutPanel_content.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="label_description" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="label_title" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="btn_get_started" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="panel_logo" Row="0" RowSpan="3" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,40,Percent,60" /&gt;&lt;Rows Styles="Percent,44,Percent,16,Percent,40" /&gt;&lt;/TableLayoutSettings&gt;</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -8298,7 +8311,7 @@ P R O F E S S I O N A L S</value>
     <value>Zoom</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>884, 450</value>
+    <value>1111, 573</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -8422,6 +8435,9 @@ P R O F E S S I O N A L S</value>
         IYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEIIIYQQQgghhBBCCCEkGf4X
         hUSxT+E+v00AAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Fitness Home - Welcome</value>

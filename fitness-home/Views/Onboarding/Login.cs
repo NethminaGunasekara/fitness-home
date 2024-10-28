@@ -40,7 +40,7 @@ namespace fitness_home
 
         private void LoginButton_Click(object sender, EventArgs e)
         {
-            LoginStatus loginStatus = Authentication.Instance.Login(email: textbox_email.Text, password: textbox_password.Text);
+            LoginStatus loginStatus = Authentication.Instance.Login(email: textBox_email.Text, password: textbox_password.Text);
  
             // Display login status
             if (loginStatus == LoginStatus.Success)

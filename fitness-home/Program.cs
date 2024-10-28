@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using fitness_home.Views.Trainer;
 using fitness_home.Views.Onboarding;
 
 

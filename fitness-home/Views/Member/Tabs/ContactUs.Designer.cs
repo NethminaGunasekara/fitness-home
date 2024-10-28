@@ -33,6 +33,7 @@
             this.label_change_plan = new System.Windows.Forms.Label();
             this.panel_send_message = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button_send_message = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label_email = new System.Windows.Forms.Label();
@@ -56,11 +57,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label_feedback_from = new System.Windows.Forms.Label();
             this.label_feedback_from_id = new System.Windows.Forms.Label();
+            this.button_send_feedback = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox_feedback_message = new System.Windows.Forms.TextBox();
-            this.button_send_message = new System.Windows.Forms.Button();
-            this.button_send_feedback = new System.Windows.Forms.Button();
             this.tableLayoutPanel_content.SuspendLayout();
             this.panel_send_message.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -93,7 +93,7 @@
             this.tableLayoutPanel_content.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_content.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel_content.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel_content.Size = new System.Drawing.Size(986, 581);
+            this.tableLayoutPanel_content.Size = new System.Drawing.Size(1392, 861);
             this.tableLayoutPanel_content.TabIndex = 0;
             // 
             // label_change_plan
@@ -101,7 +101,7 @@
             this.label_change_plan.AutoSize = true;
             this.label_change_plan.Font = new System.Drawing.Font("Noto Sans", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_change_plan.ForeColor = System.Drawing.Color.White;
-            this.label_change_plan.Location = new System.Drawing.Point(30, 310);
+            this.label_change_plan.Location = new System.Drawing.Point(30, 478);
             this.label_change_plan.Margin = new System.Windows.Forms.Padding(0, 12, 0, 12);
             this.label_change_plan.Name = "label_change_plan";
             this.label_change_plan.Size = new System.Drawing.Size(209, 29);
@@ -117,7 +117,7 @@
             this.panel_send_message.Location = new System.Drawing.Point(30, 0);
             this.panel_send_message.Margin = new System.Windows.Forms.Padding(0);
             this.panel_send_message.Name = "panel_send_message";
-            this.panel_send_message.Size = new System.Drawing.Size(926, 298);
+            this.panel_send_message.Size = new System.Drawing.Size(1332, 466);
             this.panel_send_message.TabIndex = 3;
             // 
             // tableLayoutPanel1
@@ -146,8 +146,29 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(926, 298);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1332, 466);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // button_send_message
+            // 
+            this.button_send_message.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
+            this.button_send_message.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_send_message.FlatAppearance.BorderSize = 0;
+            this.button_send_message.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
+            this.button_send_message.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
+            this.button_send_message.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_send_message.Font = new System.Drawing.Font("Noto Sans", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_send_message.Image = ((System.Drawing.Image)(resources.GetObject("button_send_message.Image")));
+            this.button_send_message.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_send_message.Location = new System.Drawing.Point(1232, 16);
+            this.button_send_message.Margin = new System.Windows.Forms.Padding(0, 4, 4, 0);
+            this.button_send_message.Name = "button_send_message";
+            this.button_send_message.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.button_send_message.Size = new System.Drawing.Size(84, 36);
+            this.button_send_message.TabIndex = 1;
+            this.button_send_message.Text = "Send";
+            this.button_send_message.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_send_message.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -307,7 +328,7 @@
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(896, 35);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1302, 35);
             this.tableLayoutPanel3.TabIndex = 8;
             // 
             // label4
@@ -368,7 +389,7 @@
             this.panel_message.Location = new System.Drawing.Point(12, 179);
             this.panel_message.Margin = new System.Windows.Forms.Padding(0);
             this.panel_message.Name = "panel_message";
-            this.panel_message.Size = new System.Drawing.Size(902, 107);
+            this.panel_message.Size = new System.Drawing.Size(1308, 275);
             this.panel_message.TabIndex = 10;
             // 
             // textBox_message
@@ -385,7 +406,7 @@
             this.textBox_message.MaxLength = 200;
             this.textBox_message.Multiline = true;
             this.textBox_message.Name = "textBox_message";
-            this.textBox_message.Size = new System.Drawing.Size(868, 82);
+            this.textBox_message.Size = new System.Drawing.Size(1274, 250);
             this.textBox_message.TabIndex = 0;
             // 
             // panel_provide_feedback
@@ -393,10 +414,10 @@
             this.panel_provide_feedback.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.panel_provide_feedback.Controls.Add(this.tableLayoutPanel2);
             this.panel_provide_feedback.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_provide_feedback.Location = new System.Drawing.Point(30, 351);
+            this.panel_provide_feedback.Location = new System.Drawing.Point(30, 519);
             this.panel_provide_feedback.Margin = new System.Windows.Forms.Padding(0);
             this.panel_provide_feedback.Name = "panel_provide_feedback";
-            this.panel_provide_feedback.Size = new System.Drawing.Size(926, 199);
+            this.panel_provide_feedback.Size = new System.Drawing.Size(1332, 311);
             this.panel_provide_feedback.TabIndex = 4;
             // 
             // tableLayoutPanel2
@@ -420,7 +441,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(926, 199);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1332, 311);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // flowLayoutPanel3
@@ -473,6 +494,29 @@
             this.label_feedback_from_id.Text = "(M001)";
             this.label_feedback_from_id.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
+            // button_send_feedback
+            // 
+            this.button_send_feedback.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
+            this.button_send_feedback.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_send_feedback.FlatAppearance.BorderSize = 0;
+            this.button_send_feedback.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
+            this.button_send_feedback.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
+            this.button_send_feedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_send_feedback.Font = new System.Drawing.Font("Noto Sans", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_send_feedback.Image = ((System.Drawing.Image)(resources.GetObject("button_send_feedback.Image")));
+            this.button_send_feedback.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_send_feedback.Location = new System.Drawing.Point(1232, 16);
+            this.button_send_feedback.Margin = new System.Windows.Forms.Padding(0, 4, 4, 0);
+            this.button_send_feedback.Name = "button_send_feedback";
+            this.button_send_feedback.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.tableLayoutPanel2.SetRowSpan(this.button_send_feedback, 2);
+            this.button_send_feedback.Size = new System.Drawing.Size(84, 36);
+            this.button_send_feedback.TabIndex = 2;
+            this.button_send_feedback.Text = "Send";
+            this.button_send_feedback.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_send_feedback.UseVisualStyleBackColor = false;
+            this.button_send_feedback.Click += new System.EventHandler(this.button_send_feedback_Click);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -495,7 +539,7 @@
             this.panel1.Location = new System.Drawing.Point(12, 77);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(902, 110);
+            this.panel1.Size = new System.Drawing.Size(1308, 222);
             this.panel1.TabIndex = 11;
             // 
             // textBox_feedback_message
@@ -512,63 +556,18 @@
             this.textBox_feedback_message.MaxLength = 200;
             this.textBox_feedback_message.Multiline = true;
             this.textBox_feedback_message.Name = "textBox_feedback_message";
-            this.textBox_feedback_message.Size = new System.Drawing.Size(868, 85);
+            this.textBox_feedback_message.Size = new System.Drawing.Size(1274, 197);
             this.textBox_feedback_message.TabIndex = 0;
             // 
-            // button_send_message
-            // 
-            this.button_send_message.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
-            this.button_send_message.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_send_message.FlatAppearance.BorderSize = 0;
-            this.button_send_message.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
-            this.button_send_message.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
-            this.button_send_message.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_send_message.Font = new System.Drawing.Font("Noto Sans", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_send_message.Image = ((System.Drawing.Image)(resources.GetObject("button_send_message.Image")));
-            this.button_send_message.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_send_message.Location = new System.Drawing.Point(826, 16);
-            this.button_send_message.Margin = new System.Windows.Forms.Padding(0, 4, 4, 0);
-            this.button_send_message.Name = "button_send_message";
-            this.button_send_message.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.button_send_message.Size = new System.Drawing.Size(84, 36);
-            this.button_send_message.TabIndex = 1;
-            this.button_send_message.Text = "Send";
-            this.button_send_message.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_send_message.UseVisualStyleBackColor = false;
-            this.button_send_message.Click += new System.EventHandler(this.button_send_message_Click);
-            // 
-            // button_send_feedback
-            // 
-            this.button_send_feedback.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
-            this.button_send_feedback.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button_send_feedback.FlatAppearance.BorderSize = 0;
-            this.button_send_feedback.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
-            this.button_send_feedback.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
-            this.button_send_feedback.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_send_feedback.Font = new System.Drawing.Font("Noto Sans", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_send_feedback.Image = ((System.Drawing.Image)(resources.GetObject("button_send_feedback.Image")));
-            this.button_send_feedback.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_send_feedback.Location = new System.Drawing.Point(826, 16);
-            this.button_send_feedback.Margin = new System.Windows.Forms.Padding(0, 4, 4, 0);
-            this.button_send_feedback.Name = "button_send_feedback";
-            this.button_send_feedback.Padding = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.tableLayoutPanel2.SetRowSpan(this.button_send_feedback, 2);
-            this.button_send_feedback.Size = new System.Drawing.Size(84, 36);
-            this.button_send_feedback.TabIndex = 2;
-            this.button_send_feedback.Text = "Send";
-            this.button_send_feedback.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button_send_feedback.UseVisualStyleBackColor = false;
-            this.button_send_feedback.Click += new System.EventHandler(this.button_send_feedback_Click);
-            // 
-            // ContactUsView
+            // ContactUs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.Controls.Add(this.tableLayoutPanel_content);
             this.Margin = new System.Windows.Forms.Padding(0);
-            this.Name = "ContactUsView";
-            this.Size = new System.Drawing.Size(986, 581);
+            this.Name = "ContactUs";
+            this.Size = new System.Drawing.Size(1392, 861);
             this.Load += new System.EventHandler(this.ContactUsView_Load);
             this.Resize += new System.EventHandler(this.ContactUsView_Resize);
             this.tableLayoutPanel_content.ResumeLayout(false);

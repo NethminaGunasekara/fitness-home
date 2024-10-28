@@ -44,15 +44,15 @@ namespace fitness_home.Helpers
         }
 
         // Stores transaction information in the database and returns the generated transaction ID.
-        public static int StoreTransactionInfo(DateTime transactionDate, string paymentMethod, decimal amount, string remarks, PaymentStatus status, int? memberId = null)
+        public static int StoreTransactionInfo(DateTime transactionDate, string paymentMethod, decimal amount, string remarks, PaymentStatus status, int? userId = null)
         {
             // Initialize the transaction ID
             int transactionId = 0;
 
             // Query to store transaction information in the database
-            string query = @"INSERT INTO [transaction] (transaction_date, payment_method, amount, remarks, status, member_id)
+            string query = @"INSERT INTO [transaction] (transaction_date, payment_method, amount, remarks, status, user_id)
                                 OUTPUT INSERTED.transaction_id
-                                VALUES (@TransactionDate, @PaymentMethod, @Amount, @Remarks, @Status, @MemberId)";
+                                VALUES (@TransactionDate, @PaymentMethod, @Amount, @Remarks, @Status, @UserId)";
 
             // Create a db connection by reusing the connection string from the "Authentication" class
             using (SqlConnection conn = new SqlConnection(Authentication.Instance.ConnectionString))
@@ -71,8 +71,8 @@ namespace fitness_home.Helpers
                         cmd.Parameters.AddWithValue("@Remarks", remarks);
                         cmd.Parameters.AddWithValue("@Status", status.ToString());
 
-                        // If memberId is null, pass DBNull to the query
-                        cmd.Parameters.AddWithValue("@MemberId", (object)memberId ?? DBNull.Value);
+                        // If userId is null, pass DBNull to the query
+                        cmd.Parameters.AddWithValue("@UserId", (object)userId ?? DBNull.Value);
 
                         // Execute the command and retrieve the transaction ID
                         transactionId = (int)cmd.ExecuteScalar();

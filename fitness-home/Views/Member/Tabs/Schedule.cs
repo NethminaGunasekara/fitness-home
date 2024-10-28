@@ -1,33 +1,19 @@
 ﻿using System;
 using System.Drawing;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 using fitness_home.Services;
 using fitness_home.Views.Messages;
-using static fitness_home.Views.Member.Components.Views.Schedule;
 using System.Data.SqlClient;
+using fitness_home.Helpers;
+using fitness_home.Utils.Types.UserTypes;
 
 namespace fitness_home.Views.Member.Components.Views
 {
     public partial class Schedule : UserControl
     {
-        // Code required to create rounded rectangle panels
-        // Source: https://stackoverflow.com/questions/38632035/winforms-smooth-the-rounded-edges-for-panel
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,
-            int nTopRect,
-            int nRightRect,
-            int nBottomRect,
-            int nWidthEllipse,
-            int nHeightEllipse
-        );
-
         // Field to store the dates for each day of the current week
+        // e.g. 2024/10/28 for Monday, 2024/10/29 for Tuesday
         private DaysOfWeek daysOfWeek;
 
         public Schedule()
@@ -95,7 +81,15 @@ namespace fitness_home.Views.Member.Components.Views
         // ** Event: When the control is first loaded
         private void ScheduleView_Load(object sender, EventArgs e)
         {
-            ApplyRoundedCorners();
+            // Apply rouunded corners to selected panels
+            RoundedCorners.Apply(panel_monday, panel_tuesday, panel_wednesday, panel_thursday, panel_friday, panel_saturday, panel_sunday, panel_schedule_for_day);
+        }
+
+        // ** Event: When the form is being resized
+        private void ScheduleView_Resize(object sender, EventArgs e)
+        {
+            // Here, we re-calculate the size of the panels with rounded corners as our control is resized
+            RoundedCorners.Apply(panel_monday, panel_tuesday, panel_wednesday, panel_thursday, panel_friday, panel_saturday, panel_sunday, panel_schedule_for_day);
         }
 
         private void DisplayClassDetails(DateTime date)
@@ -119,9 +113,7 @@ namespace fitness_home.Views.Member.Components.Views
                     trainerLabels[i].Visible = true;
                     timeLabels[i].Visible = true;
                     statusLabels[i].Visible = true;
-
-                    Console.WriteLine(i);
-
+            
                     // Set the class details for the current row
                     SetClassDetails(classDetails[i], classNameLabels[i], trainerLabels[i], timeLabels[i], statusLabels[i]);
                 }
@@ -136,7 +128,6 @@ namespace fitness_home.Views.Member.Components.Views
             }
         }
 
-
         private void SetClassDetails(ClassDetails classDetails, Label class_name, Label class_trainer, Label class_time, Label class_status)
         {
             // Make labels visible if they're hidden
@@ -146,7 +137,7 @@ namespace fitness_home.Views.Member.Components.Views
             class_name.Text = classDetails.Name;
 
             // Retrieve the trainer name by id and display it
-            class_trainer.Text = Schedule.GetTrainerNameById(classDetails.TrainerId);
+            class_trainer.Text = TrainerData.GetTrainerNameById(classDetails.TrainerId);
 
             // Convert class start and end times to the 24h format
             string classStartTime = classDetails.ClassStart.ToString("HH.mm");
@@ -182,14 +173,6 @@ namespace fitness_home.Views.Member.Components.Views
                 class_status.ForeColor = Color.FromArgb(118, 87, 255);
             }
         }
-
-        // ** Event: When the form is being resized
-        private void ScheduleView_Resize(object sender, EventArgs e)
-        {
-            // Here, we re-calculate the size of the panels with rounded corners as our control is resized
-            ApplyRoundedCorners();
-        }
-
 
         public static List<ClassDetails> GetScheduleForDay(DateTime date, int memberId, int planId)
         {
@@ -295,103 +278,6 @@ namespace fitness_home.Views.Member.Components.Views
             // Return "No Information" if no record is found
             return "No Information";
         }
-
-
-        // Helper method to retrieve the trainer's name using the trainer_id
-        public static string GetTrainerNameById(int trainerId)
-        {
-            string query = "SELECT first_name, last_name FROM trainer WHERE trainer_id = @TrainerId";
-
-            // Default name if the trainer isn't found
-            string trainerName = "Unknown Trainer";
-
-            using (SqlConnection conn = new SqlConnection(Authentication.Instance.ConnectionString))
-            {
-                conn.Open();
-
-                using (SqlCommand cmd = new SqlCommand(query, conn))
-                {
-                    cmd.Parameters.AddWithValue("@TrainerId", trainerId);
-
-                    using (SqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        // Check if a row is returned
-                        if (reader.Read())
-                        {
-                            string firstName = reader.GetString(0);
-                            string lastName = reader.GetString(1);
-
-                            // Construct the full name
-                            trainerName = $"{firstName} {lastName}";
-                        }
-                    }
-                }
-            }
-
-            return trainerName;
-        }
-
-
-        // Structure to represent the dates for each day of the current week
-        private class DaysOfWeek
-        {
-            // Properties for each day of the current week
-            public DateTime Monday { get; }
-            public DateTime Tuesday { get; }
-            public DateTime Wednesday { get; }
-            public DateTime Thursday { get; }
-            public DateTime Friday { get; }
-            public DateTime Saturday { get; }
-            public DateTime Sunday { get; }
-
-            // Constructor to initialize the dates for the current week
-            public DaysOfWeek()
-            {
-                // Get the current date
-                DateTime today = DateTime.Today;
-
-                // Calculate the day of the week as an integer (Monday = 0, Sunday = 6)
-                int daysSinceMonday = (int)today.DayOfWeek - 1;
-
-                // In C#, the DayOfWeek enumeration gives the value 0 for Sunday (Sunday = 0, Saturday = 6)
-                // If today is Sunday, the calculation above would result in "daysSinceMonday = 0 - 1 = -1;"
-                // This means the logic will attempt to "go back" a non-existent day
-                // Here, we correct this by setting daysSinceMonday to 6 if it becomes negative:
-                if (daysSinceMonday < 0) daysSinceMonday = 6;
-
-                // Calculate the Monday of the current week
-                DateTime mondayOfCurrentWeek = today.AddDays(-daysSinceMonday);
-
-                // Assign the dates for each day of the week
-                Monday = mondayOfCurrentWeek;
-                Tuesday = mondayOfCurrentWeek.AddDays(1);
-                Wednesday = mondayOfCurrentWeek.AddDays(2);
-                Thursday = mondayOfCurrentWeek.AddDays(3);
-                Friday = mondayOfCurrentWeek.AddDays(4);
-                Saturday = mondayOfCurrentWeek.AddDays(5);
-                Sunday = mondayOfCurrentWeek.AddDays(6);
-            }
-        }
-
-        // Applies rounded corners around selected panels
-        private void ApplyRoundedCorners()
-        {
-            // Initialize a list of pannels to apply rounded corners
-            List<Panel> panelsToDraw = new List<Panel> { panel_monday, panel_tuesday, panel_wednesday, panel_thursday, panel_friday, panel_saturday, panel_sunday, panel_schedule_for_day };
-
-            SuspendLayout();
-
-            // Apply rounded corners to all panels of the list above
-            panelsToDraw.ForEach((Panel panel) =>
-            {
-                panel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel.Width, panel.Height, 12, 12));
-            });
-
-            ResumeLayout();
-        }
-
-        // Method to retrieve and display the list of classes for a given date
-        
 
         // Method to set the background color of the clicked card's panel
         private void SetActiveCardBg(Panel panel)

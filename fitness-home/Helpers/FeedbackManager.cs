@@ -13,44 +13,12 @@ using fitness_home.Services;
 using fitness_home.Views.Messages;
 using System.Data.SqlClient;
 using System;
+using System.Collections.Generic;
 
 namespace fitness_home.Helpers
 {
     internal class FeedbackManager
     {
-        // Singleton instance of the class
-        private static FeedbackManager instance;
-
-        // Lock object used to ensure thread safety
-        private static readonly object _lock = new object();
-
-        // Private constructor to prevent direct instantiation
-        private FeedbackManager() { }
-
-        // Gets the singleton instance of the FeedbackManager class.
-        // This ensures thread safety with double-check locking.
-        // 
-        // Read more about the Singleton Design Pattern (Java):
-        // https://www.digitalocean.com/community/tutorials/java-singleton-design-pattern-best-practices-examples
-        public static FeedbackManager Instance
-        {
-            get
-            {
-                // Ensure thread-safe singleton initialization
-                if (instance == null)
-                {
-                    lock (_lock)
-                    {
-                        if (instance == null)
-                        {
-                            instance = new FeedbackManager();
-                        }
-                    }
-                }
-                return instance;
-            }
-        }
-
         /// <summary>
         /// Saves a feedback message to the database.
         /// Retrieves the relevant trainer's ID based on the logged-in user's membership plan
@@ -107,6 +75,87 @@ namespace fitness_home.Helpers
                 // Display an error dialog if a database error occurs
                 new ApplicationError(ErrorType.DatabaseError).ShowDialog();
             }
+        }
+
+        /// <summary>
+        /// Retrieves all feedback associated with the specified trainerId.
+        /// </summary>
+        /// <param name="trainerId">The ID of the trainer to retrieve feedback for.</param>
+        /// <returns>A list of Feedback objects with member name and feedback message.</returns>
+        public List<Feedback> GetFeedbackForTrainer(int trainerId)
+        {
+            List<Feedback> feedbackList = new List<Feedback>();
+
+            using (SqlConnection conn = new SqlConnection(Authentication.Instance.ConnectionString))
+            {
+                conn.Open();
+
+                // Step 1: Retrieve all feedback entries for the specified trainerId
+                string feedbackQuery = "SELECT member_id, message FROM feedback WHERE trainer_id = @TrainerId ORDER BY date DESC";
+
+                using (SqlCommand feedbackCmd = new SqlCommand(feedbackQuery, conn))
+                {
+                    feedbackCmd.Parameters.AddWithValue("@TrainerId", trainerId);
+
+                    using (SqlDataReader feedbackReader = feedbackCmd.ExecuteReader())
+                    {
+                        // List to store feedback data before retrieving member details
+                        List<(int memberId, string message)> feedbackData = new List<(int, string)>();
+
+                        while (feedbackReader.Read())
+                        {
+                            int memberId = feedbackReader.GetInt32(0);
+                            string message = feedbackReader.GetString(1);
+                            feedbackData.Add((memberId, message));
+                        }
+
+                        feedbackReader.Close();
+
+                        // Step 2: Retrieve member details for each unique memberId
+                        foreach (var (memberId, message) in feedbackData)
+                        {
+                            string memberQuery = "SELECT first_name, last_name FROM member WHERE member_id = @MemberId";
+
+                            using (SqlCommand memberCmd = new SqlCommand(memberQuery, conn))
+                            {
+                                memberCmd.Parameters.AddWithValue("@MemberId", memberId);
+
+                                using (SqlDataReader memberReader = memberCmd.ExecuteReader())
+                                {
+                                    if (memberReader.Read())
+                                    {
+                                        string firstName = memberReader.GetString(0);
+                                        string lastName = memberReader.GetString(1);
+
+                                        // Format the member name to look like: Chanuka Dilhara (M001)
+                                        string paddedMemberId = $"M{memberId.ToString().PadLeft(3, '0')}";
+                                        string memberName = $"{firstName} {lastName} ({paddedMemberId})";
+
+                                        // Create a new Feedback object and add it to the list
+                                        Feedback feedback = new Feedback(memberName, message);
+                                        feedbackList.Add(feedback);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return feedbackList;
+        }
+    }
+
+    // Data structure to represent a feedback
+    class Feedback
+    {
+        public string Member;
+        public string Message;
+
+        public Feedback(string member, string message)
+        {
+            Member = member;
+            Message = message;
         }
     }
 }

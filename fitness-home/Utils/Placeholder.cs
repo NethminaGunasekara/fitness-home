@@ -14,7 +14,7 @@ namespace fitness_home.Utils
         public static readonly Dictionary<string, string> placeholders = new Dictionary<string, string>
         {
             // -- Register Form --
-            { "textbox_email", "E-mail" },
+            { "textBox_email", "E-mail" },
             { "textBox_fname", "First name" },
             { "textBox_lname", "Last name" },
             { "textBox_dob", "YYYY/MM/DD" },

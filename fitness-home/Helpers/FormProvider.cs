@@ -31,14 +31,14 @@ namespace fitness_home.Services
             if (setPosition)
             {
                 // Set target form position
-                targetForm.StartPosition = FormStartPosition.Manual;
-                targetForm.Location = currentForm.Location;
+                // targetForm.StartPosition = FormStartPosition.Manual;
+                // targetForm.Location = currentForm.Location;
             }
 
             if (setSize)
             {
                 // Set target form size
-                targetForm.Size = currentForm.Size;
+                // targetForm.Size = currentForm.Size;
             }
 
             // Close the application once the user has closed the target form

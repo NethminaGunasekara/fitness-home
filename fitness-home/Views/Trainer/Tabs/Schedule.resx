@@ -117,10 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label_feedback_2.Text" xml:space="preserve">
-    <value>"I started training with Diyath six months ago, and the results have been incredible! I’ve lost 25 pounds and feel more energetic than ever. Dulanja’s weight loss program is tailored to my needs and keeps...”</value>
-  </data>
-  <data name="label_feedback_1.Text" xml:space="preserve">
-    <value>"I started training with Diyath six months ago, and the results have been incredible! I’ve lost 25 pounds and feel more energetic than ever. Dulanja’s weight loss program is tailored to my needs and keeps...”</value>
-  </data>
 </root>

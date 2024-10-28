@@ -97,7 +97,7 @@ namespace fitness_home.Views.Member.Components.Views
             class_name.Text = classDetails.Name;
 
             // Retrieve the trainer name by id and display it
-            class_trainer.Text = Schedule.GetTrainerNameById(classDetails.TrainerId);
+            class_trainer.Text = TrainerData.GetTrainerNameById(classDetails.TrainerId);
 
             // Convert class start and end times to the 24h format
             string classStartTime = classDetails.ClassStart.ToString("HH.mm");

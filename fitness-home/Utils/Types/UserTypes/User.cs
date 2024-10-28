@@ -3,7 +3,7 @@
 namespace fitness_home.Utils.Types.UserTypes
 {
     /// <summary>
-    /// Abstract base class for user types <see cref="Admin"/>, <see cref="Trainer"/>, and <see cref="Member"/>.
+    /// Abstract base class for user types <see cref="Admin"/>, <see cref="TrainerData"/>, and <see cref="Member"/>.
     /// </summary>
     abstract class User
     {

@@ -61,7 +61,10 @@
   <ItemGroup>
     <Compile Include="Helpers\FeedbackManager.cs" />
     <Compile Include="Helpers\MembershipPlan.cs" />
+    <Compile Include="Helpers\RoundedCorners.cs" />
+    <Compile Include="Helpers\TransactionInfo.cs" />
     <Compile Include="Helpers\PaymentProcessor.cs" />
+    <Compile Include="Helpers\ScheduleManager.cs" />
     <Compile Include="Services\HttpServer.cs" />
     <Compile Include="Services\Membership.cs" />
     <Compile Include="Utils\Types\MembershipPlan.cs" />
@@ -72,7 +75,7 @@
     <Compile Include="Utils\Helpers.cs" />
     <Compile Include="Utils\Placeholder.cs" />
     <Compile Include="Utils\Types\UserTypes\Member.cs" />
-    <Compile Include="Utils\Types\UserTypes\Trainer.cs" />
+    <Compile Include="Utils\Types\UserTypes\TrainerData.cs" />
     <Compile Include="Utils\Types\UserTypes\User.cs" />
     <Compile Include="Utils\Validate\LoginForm.cs" />
     <Compile Include="Utils\Validate\PaymentForm.cs" />
@@ -149,6 +152,12 @@
     </Compile>
     <Compile Include="Views\Trainer\Tabs\AttendanceTabs\Waiting.Designer.cs">
       <DependentUpon>Waiting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Trainer\Tabs\Schedule.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Trainer\Tabs\Schedule.Designer.cs">
+      <DependentUpon>Schedule.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Trainer\TrainerArea.cs">
       <SubType>Form</SubType>
@@ -306,6 +315,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Trainer\Tabs\AttendanceTabs\Initialize.resx">
       <DependentUpon>Initialize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Trainer\Tabs\Schedule.resx">
+      <DependentUpon>Schedule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Trainer\TrainerArea.resx">
       <DependentUpon>TrainerArea.cs</DependentUpon>

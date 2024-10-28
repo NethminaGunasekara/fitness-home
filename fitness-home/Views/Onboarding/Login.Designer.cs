@@ -40,7 +40,7 @@
             this.button_previous_form = new System.Windows.Forms.Button();
             this.pictureBox_logo = new System.Windows.Forms.PictureBox();
             this.panel_email = new System.Windows.Forms.Panel();
-            this.textbox_email = new System.Windows.Forms.TextBox();
+            this.textBox_email = new System.Windows.Forms.TextBox();
             this.panel_sign_up = new System.Windows.Forms.Panel();
             this.label_sign_up = new System.Windows.Forms.Label();
             this.link_sign_up = new System.Windows.Forms.LinkLabel();
@@ -61,7 +61,8 @@
             // 
             icon_password.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("icon_password.BackgroundImage")));
             icon_password.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            icon_password.Location = new System.Drawing.Point(16, 7);
+            icon_password.Location = new System.Drawing.Point(16, 9);
+            icon_password.Margin = new System.Windows.Forms.Padding(0);
             icon_password.Name = "icon_password";
             icon_password.Size = new System.Drawing.Size(28, 22);
             icon_password.TabIndex = 0;
@@ -72,14 +73,14 @@
             label_title.AutoSize = true;
             label_title.BackColor = System.Drawing.Color.Transparent;
             label_title.Dock = System.Windows.Forms.DockStyle.Bottom;
-            label_title.Font = new System.Drawing.Font("Rajdhani", 26.25F, System.Drawing.FontStyle.Bold);
+            label_title.Font = new System.Drawing.Font("Rajdhani", 30F, System.Drawing.FontStyle.Bold);
             label_title.ForeColor = System.Drawing.Color.White;
             label_title.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            label_title.Location = new System.Drawing.Point(353, 76);
-            label_title.Margin = new System.Windows.Forms.Padding(0, 0, 0, 20);
+            label_title.Location = new System.Drawing.Point(444, 125);
+            label_title.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
             label_title.Name = "label_title";
             label_title.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            label_title.Size = new System.Drawing.Size(531, 45);
+            label_title.Size = new System.Drawing.Size(667, 51);
             label_title.TabIndex = 0;
             label_title.Text = "Sign in to your account";
             label_title.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -88,7 +89,8 @@
             // 
             icon_email.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("icon_email.BackgroundImage")));
             icon_email.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            icon_email.Location = new System.Drawing.Point(16, -1);
+            icon_email.Location = new System.Drawing.Point(16, 2);
+            icon_email.Margin = new System.Windows.Forms.Padding(0);
             icon_email.Name = "icon_email";
             icon_email.Size = new System.Drawing.Size(28, 41);
             icon_email.TabIndex = 0;
@@ -102,15 +104,15 @@
             this.btn_get_started.Enabled = false;
             this.btn_get_started.FlatAppearance.BorderSize = 0;
             this.btn_get_started.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_get_started.Font = new System.Drawing.Font("Rajdhani SemiBold", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btn_get_started.Font = new System.Drawing.Font("Rajdhani SemiBold", 16F, System.Drawing.FontStyle.Bold);
             this.btn_get_started.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_get_started.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.btn_get_started.Location = new System.Drawing.Point(534, 329);
+            this.btn_get_started.Location = new System.Drawing.Point(693, 404);
             this.btn_get_started.Margin = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.btn_get_started.Name = "btn_get_started";
             this.btn_get_started.Size = new System.Drawing.Size(169, 41);
             this.btn_get_started.TabIndex = 3;
-            this.btn_get_started.Text = "GET STARTED";
+            this.btn_get_started.Text = "SIGN IN";
             this.btn_get_started.UseVisualStyleBackColor = false;
             this.btn_get_started.Click += new System.EventHandler(this.LoginButton_Click);
             // 
@@ -124,9 +126,9 @@
             this.tableLayoutPanel1.Controls.Add(this.panel_password, 0, 2);
             this.tableLayoutPanel1.Controls.Add(label_title, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel_logo, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btn_get_started, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.panel_email, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel_sign_up, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btn_get_started, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
@@ -137,7 +139,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1111, 573);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
             // panel_password
@@ -146,10 +148,10 @@
             this.panel_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.panel_password.Controls.Add(icon_password);
             this.panel_password.Controls.Add(this.textbox_password);
-            this.panel_password.Location = new System.Drawing.Point(393, 225);
-            this.panel_password.Margin = new System.Windows.Forms.Padding(40, 3, 40, 3);
+            this.panel_password.Location = new System.Drawing.Point(514, 276);
+            this.panel_password.Margin = new System.Windows.Forms.Padding(70, 10, 70, 20);
             this.panel_password.Name = "panel_password";
-            this.panel_password.Size = new System.Drawing.Size(451, 41);
+            this.panel_password.Size = new System.Drawing.Size(527, 48);
             this.panel_password.TabIndex = 8;
             // 
             // textbox_password
@@ -159,13 +161,13 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textbox_password.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.textbox_password.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textbox_password.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textbox_password.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textbox_password.ForeColor = System.Drawing.SystemColors.Window;
-            this.textbox_password.Location = new System.Drawing.Point(61, 9);
+            this.textbox_password.Location = new System.Drawing.Point(61, 11);
             this.textbox_password.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
             this.textbox_password.MaxLength = 72;
             this.textbox_password.Name = "textbox_password";
-            this.textbox_password.Size = new System.Drawing.Size(379, 20);
+            this.textbox_password.Size = new System.Drawing.Size(455, 23);
             this.textbox_password.TabIndex = 5;
             this.textbox_password.Text = "Password";
             this.textbox_password.TextChanged += new System.EventHandler(this.Password_TextChanged);
@@ -185,7 +187,7 @@
             this.panel_logo.Margin = new System.Windows.Forms.Padding(0);
             this.panel_logo.Name = "panel_logo";
             this.tableLayoutPanel1.SetRowSpan(this.panel_logo, 5);
-            this.panel_logo.Size = new System.Drawing.Size(353, 450);
+            this.panel_logo.Size = new System.Drawing.Size(444, 573);
             this.panel_logo.TabIndex = 4;
             // 
             // button_previous_form
@@ -212,10 +214,10 @@
             this.pictureBox_logo.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_logo.BackgroundImage = global::fitness_home.Properties.Resources.logo;
             this.pictureBox_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_logo.Location = new System.Drawing.Point(73, 135);
+            this.pictureBox_logo.Location = new System.Drawing.Point(73, 196);
             this.pictureBox_logo.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_logo.Name = "pictureBox_logo";
-            this.pictureBox_logo.Size = new System.Drawing.Size(205, 244);
+            this.pictureBox_logo.Size = new System.Drawing.Size(296, 244);
             this.pictureBox_logo.TabIndex = 1;
             this.pictureBox_logo.TabStop = false;
             // 
@@ -224,32 +226,32 @@
             this.panel_email.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
             this.panel_email.Controls.Add(icon_email);
-            this.panel_email.Controls.Add(this.textbox_email);
-            this.panel_email.Location = new System.Drawing.Point(393, 161);
-            this.panel_email.Margin = new System.Windows.Forms.Padding(40, 20, 40, 20);
+            this.panel_email.Controls.Add(this.textBox_email);
+            this.panel_email.Location = new System.Drawing.Point(514, 208);
+            this.panel_email.Margin = new System.Windows.Forms.Padding(70, 20, 70, 10);
             this.panel_email.Name = "panel_email";
-            this.panel_email.Size = new System.Drawing.Size(451, 41);
+            this.panel_email.Size = new System.Drawing.Size(527, 48);
             this.panel_email.TabIndex = 7;
             // 
-            // textbox_email
+            // textBox_email
             // 
-            this.textbox_email.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.textBox_email.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textbox_email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-            this.textbox_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textbox_email.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textbox_email.ForeColor = System.Drawing.SystemColors.Window;
-            this.textbox_email.Location = new System.Drawing.Point(61, 9);
-            this.textbox_email.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
-            this.textbox_email.MaxLength = 100;
-            this.textbox_email.Name = "textbox_email";
-            this.textbox_email.Size = new System.Drawing.Size(379, 20);
-            this.textbox_email.TabIndex = 5;
-            this.textbox_email.Text = "E-mail";
-            this.textbox_email.TextChanged += new System.EventHandler(this.Email_TextChanged);
-            this.textbox_email.Enter += new System.EventHandler(this.RemovePlaceholder);
-            this.textbox_email.Leave += new System.EventHandler(this.AddPlaceholder);
+            this.textBox_email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+            this.textBox_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_email.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_email.ForeColor = System.Drawing.SystemColors.Window;
+            this.textBox_email.Location = new System.Drawing.Point(61, 12);
+            this.textBox_email.Margin = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.textBox_email.MaxLength = 100;
+            this.textBox_email.Name = "textBox_email";
+            this.textBox_email.Size = new System.Drawing.Size(455, 23);
+            this.textBox_email.TabIndex = 5;
+            this.textBox_email.Text = "E-mail";
+            this.textBox_email.TextChanged += new System.EventHandler(this.Email_TextChanged);
+            this.textBox_email.Enter += new System.EventHandler(this.RemovePlaceholder);
+            this.textBox_email.Leave += new System.EventHandler(this.AddPlaceholder);
             // 
             // panel_sign_up
             // 
@@ -257,20 +259,20 @@
             this.panel_sign_up.Controls.Add(this.label_sign_up);
             this.panel_sign_up.Controls.Add(this.link_sign_up);
             this.panel_sign_up.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_sign_up.Location = new System.Drawing.Point(356, 272);
+            this.panel_sign_up.Location = new System.Drawing.Point(447, 347);
             this.panel_sign_up.Name = "panel_sign_up";
-            this.panel_sign_up.Size = new System.Drawing.Size(525, 34);
+            this.panel_sign_up.Size = new System.Drawing.Size(661, 34);
             this.panel_sign_up.TabIndex = 9;
             // 
             // label_sign_up
             // 
             this.label_sign_up.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label_sign_up.AutoSize = true;
-            this.label_sign_up.Font = new System.Drawing.Font("Roboto", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_sign_up.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_sign_up.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(164)))), ((int)(((byte)(164)))));
-            this.label_sign_up.Location = new System.Drawing.Point(149, 8);
+            this.label_sign_up.Location = new System.Drawing.Point(199, 9);
             this.label_sign_up.Name = "label_sign_up";
-            this.label_sign_up.Size = new System.Drawing.Size(163, 18);
+            this.label_sign_up.Size = new System.Drawing.Size(175, 19);
             this.label_sign_up.TabIndex = 0;
             this.label_sign_up.Text = "Don’t have an account?";
             this.label_sign_up.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -281,13 +283,13 @@
             this.link_sign_up.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.link_sign_up.AutoSize = true;
             this.link_sign_up.DisabledLinkColor = System.Drawing.Color.White;
-            this.link_sign_up.Font = new System.Drawing.Font("Noto Sans Medium", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.link_sign_up.Font = new System.Drawing.Font("Noto Sans Medium", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.link_sign_up.ForeColor = System.Drawing.Color.White;
             this.link_sign_up.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.link_sign_up.LinkColor = System.Drawing.Color.White;
-            this.link_sign_up.Location = new System.Drawing.Point(308, 5);
+            this.link_sign_up.Location = new System.Drawing.Point(372, 5);
             this.link_sign_up.Name = "link_sign_up";
-            this.link_sign_up.Size = new System.Drawing.Size(64, 23);
+            this.link_sign_up.Size = new System.Drawing.Size(69, 24);
             this.link_sign_up.TabIndex = 1;
             this.link_sign_up.TabStop = true;
             this.link_sign_up.Text = "Sign Up";
@@ -300,10 +302,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Desktop;
-            this.ClientSize = new System.Drawing.Size(884, 450);
+            this.ClientSize = new System.Drawing.Size(1111, 573);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login - Fitness Home";
             this.Load += new System.EventHandler(this.OnLoad);
             ((System.ComponentModel.ISupportInitialize)(icon_password)).EndInit();
@@ -326,7 +331,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel_logo;
-        private System.Windows.Forms.TextBox textbox_email;
+        private System.Windows.Forms.TextBox textBox_email;
         private System.Windows.Forms.Panel panel_email;
         private System.Windows.Forms.Panel panel_password;
         private System.Windows.Forms.TextBox textbox_password;

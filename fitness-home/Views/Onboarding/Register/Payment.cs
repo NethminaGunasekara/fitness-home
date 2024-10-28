@@ -1,6 +1,7 @@
 ﻿using AnimateDemo;
 using fitness_home.Services;
 using fitness_home.Utils;
+using fitness_home.Utils.Types;
 using fitness_home.Utils.Validate;
 using fitness_home.Views.Messages;
 using fitness_home.Views.Onboarding.Register.Services;
@@ -254,7 +255,7 @@ namespace fitness_home.Views.Onboarding.Register
             // ** If the "MasterCard" radio button is checked, assigns PaymentMethod.MasterCard
             // ** If neither is checked (i.e. user has decided to pay in cash), defaults to PaymentMethod.Cash
             PaymentMethod paymentMethod = radioButton_visa.Checked ? PaymentMethod.VISA : radioButton_mc.Checked ? PaymentMethod.MasterCard : PaymentMethod.Cash;
-//
+
             // Make card or cash payment, based on the type of payment user has chosen
             PaymentHelper.PaymentStatus paymentStatus = paymentMethod == PaymentMethod.Cash ? CashPayment() : CardPayment();
 
@@ -282,7 +283,13 @@ namespace fitness_home.Views.Onboarding.Register
                 cashPayment: paymentStatus == PaymentHelper.PaymentStatus.Pending).ShowDialog();
 
             // Finish the member registration
-            fitness_home.Register.FinishRegistration(transactionId);
+            LoginStatus loginStatus = fitness_home.Register.FinishRegistration(transactionId);
+
+            // Redirect the user to their dashboard
+            if (loginStatus == LoginStatus.Success)
+            {
+                Authentication.Instance.ShowDashboard(this);
+            }
         }
 
         // Event handler triggered when the "Cash" radio button's checked state changes.

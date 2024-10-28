@@ -310,7 +310,7 @@ namespace fitness_home
             FormProvider.ShowForm(Membership, this, false, false);
         }
 
-        public static void FinishRegistration(int transactionId)
+        public static LoginStatus FinishRegistration(int transactionId)
         {
             try
             {
@@ -366,19 +366,17 @@ namespace fitness_home
 
                     // Update the transaction record by assigning it the new member's ID
                     query = @"UPDATE [transaction]
-                            SET member_id = @MemberId
+                            SET user_id = @UserId
                             WHERE transaction_id = @TransactionId";
 
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@MemberId", newMemberId);
+                        cmd.Parameters.AddWithValue("@UserId", newMemberId);
                         cmd.Parameters.AddWithValue("@TransactionId", transactionId);
 
                         cmd.ExecuteNonQuery();
                     }
                 }
-
-                MessageBox.Show("Registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             // Catch SQL errors
@@ -400,6 +398,9 @@ namespace fitness_home
                 // Display application error message
                 new ApplicationError(ErrorType.UnexpectedError).ShowDialog();
             }
+
+            // Login with the new username and password
+            return Authentication.Instance.Login(RegistrationInfo.Email, RegistrationInfo.Password);
         }
 
         // Assign members to a group within the "member_group" table based on their membership plan id
@@ -452,23 +453,6 @@ namespace fitness_home
                     insertCmd.ExecuteNonQuery();
                 }
             }
-        }
-
-        private void button_fill_data_Click(object sender, EventArgs e)
-        {
-            textBox_fname.Text = "Nethmina";
-            textBox_lname.Text = "Gunasekara";
-            textBox_dob.Text = "2003/09/15";
-            textBox_nic.Text = "200325911491";
-            textBox_email.Text = "gunasekaraditn@gmail.com";
-            textBox_phone.Text = "0778168232";
-            textBox_address.Text = "158, Doranagoda, Udugampola";
-            textBox_new_password.PasswordChar = '*';
-            textBox_confirm_password.PasswordChar = '*';
-            textBox_new_password.Text = "Nethmina2003530";
-            textBox_confirm_password.Text = "Nethmina2003530";
-            textBox_ec_name.Text = "Ruwanthika Gunasekara";
-            textBox_ec_phone.Text = "0763241947";
         }
     }
 }

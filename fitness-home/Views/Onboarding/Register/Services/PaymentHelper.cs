@@ -41,9 +41,9 @@ namespace fitness_home.Views.Onboarding.Register.Services
             int transactionId = 0;
 
             // Query to store transaction information in the database
-            string query = @"INSERT INTO [transaction] (transaction_date, payment_method, amount, remarks, status, member_id)
+            string query = @"INSERT INTO [transaction] (transaction_date, payment_method, amount, remarks, status, user_id)
                      OUTPUT INSERTED.transaction_id
-                     VALUES (@TransactionDate, @PaymentMethod, @Amount, @Remarks, @Status, @MemberId)";
+                     VALUES (@TransactionDate, @PaymentMethod, @Amount, @Remarks, @Status, @UserId)";
 
             // Create a db connection by reusing the connection string from the "Authentication" class
             using (SqlConnection conn = new SqlConnection(Authentication.Instance.ConnectionString))
@@ -63,7 +63,7 @@ namespace fitness_home.Views.Onboarding.Register.Services
                         cmd.Parameters.AddWithValue("@Status", status.ToString());
 
                         // If memberId is null, pass DBNull to the query
-                        cmd.Parameters.AddWithValue("@MemberId", (object)memberId ?? DBNull.Value);
+                        cmd.Parameters.AddWithValue("@UserId", (object)memberId ?? DBNull.Value);
 
                         // Execute the command and retrieve the transaction ID
                         transactionId = (int)cmd.ExecuteScalar();

@@ -96,6 +96,8 @@
             this.BackColor = System.Drawing.SystemColors.Desktop;
             this.Controls.Add(this.tableLayoutPanel_content);
             this.DoubleBuffered = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Welcome";
             this.tableLayoutPanel_content.ResumeLayout(false);
             this.tableLayoutPanel_content.PerformLayout();

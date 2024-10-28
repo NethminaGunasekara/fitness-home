@@ -5,7 +5,7 @@ using fitness_home.Services;
 
 namespace fitness_home.Utils.Types.UserTypes
 {
-    internal class Trainer : User
+    internal class TrainerData : User
     {
         private readonly int _ID;
         public Role Role { get; }
@@ -22,7 +22,7 @@ namespace fitness_home.Utils.Types.UserTypes
         private DateTime _HiredDate;
         private int _PlanID;
 
-        public Trainer(int id)
+        public TrainerData(int id)
         {
             _ID = id;
             Role = Role.Trainer;
@@ -30,6 +30,40 @@ namespace fitness_home.Utils.Types.UserTypes
             // Retrieve trainer data and plan data from the database
             RetrieveTrainerData();
             RetrievePlanID();
+        }
+
+        // Helper method to retrieve the trainer's name using the trainer_id
+        public static string GetTrainerNameById(int trainerId)
+        {
+            string query = "SELECT first_name, last_name FROM trainer WHERE trainer_id = @TrainerId";
+
+            // Default name if the trainer isn't found
+            string trainerName = "Unknown Trainer";
+
+            using (SqlConnection conn = new SqlConnection(Authentication.Instance.ConnectionString))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@TrainerId", trainerId);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        // Check if a row is returned
+                        if (reader.Read())
+                        {
+                            string firstName = reader.GetString(0);
+                            string lastName = reader.GetString(1);
+
+                            // Construct the full name
+                            trainerName = $"{firstName} {lastName}";
+                        }
+                    }
+                }
+            }
+
+            return trainerName;
         }
 
         // Method to retrieve trainer data from the database based on the trainer ID

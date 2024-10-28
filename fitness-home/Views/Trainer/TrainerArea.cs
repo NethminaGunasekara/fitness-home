@@ -12,6 +12,7 @@ namespace fitness_home.Views.Trainer
         // We use these fields to store the views after initializing them using the "new" keyword
         // This avoids unnecessary re-instantiations, and allows us to keep data passed to those views
         private Dashboard Dashboard;
+        private Schedule Schedule;
         private Initialize Attendance;
 
         // Sidebar buttons
@@ -31,6 +32,7 @@ namespace fitness_home.Views.Trainer
 
             // Initialize all fields containing the tabs of member area
             Dashboard = new Dashboard();
+            Schedule = new Schedule();
             Attendance = new Initialize();
         }
 
@@ -127,7 +129,7 @@ namespace fitness_home.Views.Trainer
             ScheduleButton.BtnClick = delegate
             {
                 // Show the schedule tab
-                ChangeContent(Dashboard);
+                ChangeContent(Schedule);
 
                 // Set the schedule button as the active button
                 SetActiveButton(ScheduleButton);
@@ -153,14 +155,14 @@ namespace fitness_home.Views.Trainer
             };
         }
 
-            // ** Event: When the view profile button is clicked
-            private void button_edit_profile_Click(object sender, EventArgs e)
-            {
+        // ** Event: When the view profile button is clicked
+        private void button_edit_profile_Click(object sender, EventArgs e)
+        {
             // Mark all sidebar buttons as inactive
             DashboardButton.ActiveButton = ScheduleButton.ActiveButton = AttendanceButton.ActiveButton = AssessmentsButton.ActiveButton = PaymentsButton.ActiveButton = false;
 
             // Display the profile view
             ChangeContent(Dashboard);
-            }
-        } 
+        }
+    }
 }

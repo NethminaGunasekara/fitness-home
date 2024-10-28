@@ -64,7 +64,7 @@
             this.tableLayoutPanel_dashboard.RowCount = 2;
             this.tableLayoutPanel_dashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
             this.tableLayoutPanel_dashboard.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_dashboard.Size = new System.Drawing.Size(1264, 681);
+            this.tableLayoutPanel_dashboard.Size = new System.Drawing.Size(1784, 961);
             this.tableLayoutPanel_dashboard.TabIndex = 1;
             // 
             // panel_logo
@@ -75,7 +75,7 @@
             this.panel_logo.Location = new System.Drawing.Point(0, 0);
             this.panel_logo.Margin = new System.Windows.Forms.Padding(0);
             this.panel_logo.Name = "panel_logo";
-            this.panel_logo.Size = new System.Drawing.Size(278, 100);
+            this.panel_logo.Size = new System.Drawing.Size(392, 100);
             this.panel_logo.TabIndex = 1;
             // 
             // pictureBox_logo
@@ -83,7 +83,7 @@
             this.pictureBox_logo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pictureBox_logo.BackgroundImage = global::fitness_home.Properties.Resources.logo_cropped;
             this.pictureBox_logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_logo.Location = new System.Drawing.Point(81, 12);
+            this.pictureBox_logo.Location = new System.Drawing.Point(138, 12);
             this.pictureBox_logo.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox_logo.Name = "pictureBox_logo";
             this.pictureBox_logo.Size = new System.Drawing.Size(99, 88);
@@ -98,7 +98,7 @@
             this.panel_sidebar.Location = new System.Drawing.Point(0, 100);
             this.panel_sidebar.Margin = new System.Windows.Forms.Padding(0);
             this.panel_sidebar.Name = "panel_sidebar";
-            this.panel_sidebar.Size = new System.Drawing.Size(278, 581);
+            this.panel_sidebar.Size = new System.Drawing.Size(392, 861);
             this.panel_sidebar.TabIndex = 2;
             // 
             // tableLayoutPanel_sidebar
@@ -124,26 +124,26 @@
             this.tableLayoutPanel_sidebar.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_sidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_sidebar.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel_sidebar.Size = new System.Drawing.Size(278, 581);
+            this.tableLayoutPanel_sidebar.Size = new System.Drawing.Size(392, 861);
             this.tableLayoutPanel_sidebar.TabIndex = 0;
             // 
             // panel_content
             // 
             this.panel_content.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_content.Location = new System.Drawing.Point(278, 100);
+            this.panel_content.Location = new System.Drawing.Point(392, 100);
             this.panel_content.Margin = new System.Windows.Forms.Padding(0);
             this.panel_content.Name = "panel_content";
-            this.panel_content.Size = new System.Drawing.Size(986, 581);
+            this.panel_content.Size = new System.Drawing.Size(1392, 861);
             this.panel_content.TabIndex = 3;
             // 
             // panel_heading
             // 
             this.panel_heading.Controls.Add(this.tableLayoutPanel_header);
             this.panel_heading.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_heading.Location = new System.Drawing.Point(278, 0);
+            this.panel_heading.Location = new System.Drawing.Point(392, 0);
             this.panel_heading.Margin = new System.Windows.Forms.Padding(0);
             this.panel_heading.Name = "panel_heading";
-            this.panel_heading.Size = new System.Drawing.Size(986, 100);
+            this.panel_heading.Size = new System.Drawing.Size(1392, 100);
             this.panel_heading.TabIndex = 4;
             // 
             // tableLayoutPanel_header
@@ -165,7 +165,7 @@
             this.tableLayoutPanel_header.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_header.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_header.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel_header.Size = new System.Drawing.Size(986, 100);
+            this.tableLayoutPanel_header.Size = new System.Drawing.Size(1392, 100);
             this.tableLayoutPanel_header.TabIndex = 0;
             // 
             // button2
@@ -179,7 +179,7 @@
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(870, 34);
+            this.button2.Location = new System.Drawing.Point(1276, 34);
             this.button2.Margin = new System.Windows.Forms.Padding(0, 4, 22, 4);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(32, 32);
@@ -229,7 +229,7 @@
             this.button_edit_profile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button_edit_profile.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button_edit_profile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_edit_profile.Location = new System.Drawing.Point(924, 34);
+            this.button_edit_profile.Location = new System.Drawing.Point(1330, 34);
             this.button_edit_profile.Margin = new System.Windows.Forms.Padding(0, 4, 30, 4);
             this.button_edit_profile.Name = "button_edit_profile";
             this.button_edit_profile.Size = new System.Drawing.Size(32, 32);
@@ -241,9 +241,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1784, 961);
             this.Controls.Add(this.tableLayoutPanel_dashboard);
-            this.MinimumSize = new System.Drawing.Size(1280, 718);
+            this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "TrainerArea";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trainer Area - Fitness Home";
