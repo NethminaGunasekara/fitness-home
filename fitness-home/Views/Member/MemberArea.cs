@@ -34,26 +34,17 @@ namespace fitness_home.Views
             ProfileView = new ProfileView();
         }
 
-        private void Member_Load(object sender, EventArgs e)
+        // ** Method to initialize all sidebar buttons
+        private void InitializeButtons()
         {
-            // Form transition
-            WinAPI.AnimateWindow(this.Handle, 700, WinAPI.BLEND);
-
             SuspendLayout();
 
-            // Mount the dashboard view
-            Member.Components.Views.Dashboard dashboardView = new Member.Components.Views.Dashboard();
-            panel_content.Controls.Add(dashboardView);
-            dashboardView.Dock = DockStyle.Fill;
-
-            // Display the member name to welcome them
-            label_heading_2.Text = $"{Authentication.LoggedUser.FirstName}!";
-
-            // Add sidebar button controls
+            // Initialize the dashboard button, add it to the sidebar, and set it as the currently active button
             SidebarButton dashboardButton = new SidebarButton(buttonType: ButtonType.Dashboard, activeButton: true);
             tableLayoutPanel_sidebar.Controls.Add(dashboardButton, 1, 1);
             dashboardButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
 
+            // Initialize the schedule button, add it to the sidebar, and set it as the currently active button
             SidebarButton scheduleButton = new SidebarButton(buttonType: ButtonType.Schedule);
             tableLayoutPanel_sidebar.Controls.Add(scheduleButton, 1, 3);
             scheduleButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
@@ -71,6 +62,35 @@ namespace fitness_home.Views
             contactUsButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
 
             ResumeLayout();
+        }
+
+        // ** Method to switch the main panel's content by loading a new tab
+        private void ChangeContent(Control newTab)
+        {
+            // Clear any existing controls from the content panel
+            panel_content.Controls.Clear();
+
+            // Configure the new tab to fill the entire content panel
+            newTab.Dock = DockStyle.Fill;
+
+            // Add the new tab to the content panel
+            panel_content.Controls.Add(newTab);
+        }
+
+        private void Member_Load(object sender, EventArgs e)
+        {
+            // Form transition
+            WinAPI.AnimateWindow(this.Handle, 700, WinAPI.BLEND);
+
+            SuspendLayout();
+
+            // Mount the dashboard view
+            Member.Components.Views.Dashboard dashboardView = new Member.Components.Views.Dashboard();
+            panel_content.Controls.Add(dashboardView);
+            dashboardView.Dock = DockStyle.Fill;
+
+            // Display the member name to welcome them
+            label_heading_2.Text = $"{Authentication.LoggedUser.FirstName}!";
 
             // ** Set the click events for all buttons
             dashboardButton.BtnClick = delegate {
