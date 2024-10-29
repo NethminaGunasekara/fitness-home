@@ -40,7 +40,7 @@ namespace fitness_home.Views.Member.Components.Views
             label_feedback_from_id.Text = $"M{formattedId}";
 
             // Apply rounded corners to selected panels
-            RoundedCorners.Apply(panel_send_message, panel_provide_feedback, panel_message);
+            RoundedCorners.Apply(panel_send_message, panel_provide_feedback, panel_message, panel_feedback_message);
 
         }
 
@@ -90,7 +90,7 @@ namespace fitness_home.Views.Member.Components.Views
         private void ContactUsView_Resize(object sender, EventArgs e)
         {
             // Redraw the rounded corners of selected panels
-            RoundedCorners.Apply(panel_send_message, panel_provide_feedback, panel_message);
+            RoundedCorners.Apply(panel_send_message, panel_provide_feedback, panel_message, panel_feedback_message);
         }
     }
 }

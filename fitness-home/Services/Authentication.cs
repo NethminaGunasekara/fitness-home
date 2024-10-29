@@ -222,7 +222,7 @@ namespace fitness_home.Services
             if (LoggedUser is Member)
             {
                 // Show the Member Dashboard
-                MemberArea MemberDashboard = FormProvider.MemberDashboard ?? (FormProvider.MemberDashboard = new MemberArea());
+                MemberArea MemberDashboard = FormProvider.MemberArea ?? (FormProvider.MemberArea = new MemberArea());
 
                 FormProvider.ShowForm(
                     targetForm: MemberDashboard,
@@ -235,7 +235,7 @@ namespace fitness_home.Services
             else if (LoggedUser is TrainerData)
             {
                 // Show the Trainer Dashboard
-                TrainerArea TrainerDashboard = FormProvider.TrainerDashboard ?? (FormProvider.TrainerDashboard = new TrainerArea());
+                TrainerArea TrainerDashboard = FormProvider.TrainerArea ?? (FormProvider.TrainerArea = new TrainerArea());
 
                 FormProvider.ShowForm(
                     targetForm: TrainerDashboard,

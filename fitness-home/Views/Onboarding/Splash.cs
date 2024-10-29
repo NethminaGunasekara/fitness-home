@@ -127,8 +127,8 @@ namespace fitness_home.Views.Onboarding
 
                 if(loginStatus == LoginStatus.Success)
                 {
-                    // Change the loading status from "FETCHING DATA" to "LOGGING IN" after 2s
-                    await Task.Delay(2000);
+                    // Change the loading status from "FETCHING DATA" to "LOGGING IN" after 2s  to demonstrate the delay of fetching data for the application
+                    await Task.Delay(0);
 
                     // Add a margin to make it look better as it's shorter than the previous text
                     label_fetching_data.Location = new Point(
@@ -137,7 +137,7 @@ namespace fitness_home.Views.Onboarding
                     
                     label_fetching_data.Text = "LOGGING IN";
 
-                    // Redirect user to the dashboard after another 2s
+                    // Redirect user to the dashboard after another 2s to demonstrate the delay of logging in
                     await Task.Delay(0);
 
                     // Redirect logged user to a dashboard based on the user type

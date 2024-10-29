@@ -9,31 +9,12 @@ using fitness_home.Utils.Types.UserTypes;
 using fitness_home.Properties;
 using System.Data.SqlClient;
 using fitness_home.Views.Messages;
+using fitness_home.Helpers;
 
 namespace fitness_home.Views.Member.Components.Views
 {
     public partial class Dashboard : UserControl
     {
-        // Code required to create rounded rectangle panels
-        // Source: https://stackoverflow.com/questions/38632035/winforms-smooth-the-rounded-edges-for-panel
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,
-            int nTopRect,
-            int nRightRect,
-            int nBottomRect,
-            int nWidthEllipse,
-            int nHeightEllipse
-        );
-
-        // Fields to store assessments made my the trainer
-        private short MemberHeight;
-        private short MemberWeight;
-        private string ActivityFactor;
-        private short CalorieGoal;
-
         public Dashboard()
         {
             InitializeComponent();
@@ -41,36 +22,11 @@ namespace fitness_home.Views.Member.Components.Views
             // Retrieve and store logged user information from the "Authentication" class
             User loggedUser = Authentication.LoggedUser;
 
-            // Set the member's name in profile view panel
-            label_name.Text = $"{loggedUser.FirstName} {loggedUser.LastName}";
-
-            // Set the member's email in profile view panel
-            label_email.Text = loggedUser.Email;
-
-            // Retrieve and set the membership plan using the planId from "loggedUser" object
-            label_membership_type.Text = Services.Actions.Membership.GetPlanNameById(loggedUser.PlanID);
-
             // Set an avatar based on the user's gender
             pictureBox_avatar.BackgroundImage = loggedUser.Gender == Utils.Types.Gender.Male ? Resources.avatar_male : Resources.avatar_female;
 
-            // Retrieve the assessments for the user
-            RetrieveMemberAssessments(loggedUser.ID);
-
-            // Set the user's daily calorie goal value
-            label_calorie_goal.Text = $"{CalorieGoal} kcal";
-
-            // Calculate and set the user's BMR value
-            label_bmr.Text = $"{((int)CalculateBMR(MemberHeight, MemberWeight, loggedUser.DateOfBirth, ActivityFactor))} kcal";
-
-            // Calculate the user's BFP value
-
-            double bodyFatPercentage = CalculateBFP(MemberHeight, MemberWeight, loggedUser.DateOfBirth, loggedUser.Gender);
-
-            // Set the user's BFP value
-            label_bfp.Text = $"{bodyFatPercentage:F1}%";
-
-            // Calculate and set the user's LBM value
-            label_lbm.Text = $"{CalculateLBMPercentage(MemberWeight, bodyFatPercentage):F1}%";
+            // Display the assessments for the user
+            // DisplayMemberAssessments(loggedUser.ID);
 
             // Retrieve and display the first three classes for the current date
             List<ClassDetails> classDetails = Schedule.GetScheduleForDay(DateTime.Now.Date, loggedUser.ID, loggedUser.PlanID);
@@ -150,25 +106,25 @@ namespace fitness_home.Views.Member.Components.Views
             // TDEE (Total Daily Energy Expenditure) = BMR × Activity Factor
 
             // "Sedentary" (little to no exercise): BMR × 1.2
-            if (ActivityFactor == "Sedentary")
+            if (activityFactor == "Sedentary")
             {
                 return result * 1.2;
             }
 
             // "LightlyActive" (1-3 days of exercise per week): BMR × 1.375
-            else if (ActivityFactor == "LightlyActive")
+            else if (activityFactor == "LightlyActive")
             {
                 return result * 1.375;
             }
 
             // "ModeratelyActive" (3-5 days of exercise per week): BMR × 1.55
-            else if (ActivityFactor == "ModeratelyActive")
+            else if (activityFactor == "ModeratelyActive")
             {
                 return result * 1.55;
             }
 
             // "VeryActive" (6-7 days of intense exercise per week): BMR × 1.725
-            else if (ActivityFactor == "VeryActive")
+            else if (activityFactor == "VeryActive")
             {
                 return result * 1.725;
             }
@@ -209,9 +165,30 @@ namespace fitness_home.Views.Member.Components.Views
             return (lbm / weight) * 100; // Return the LBM percentage
         }
 
-        // Retrieves height, weight, and activity_level based on the given "memberId"
-        private void RetrieveMemberAssessments(int memberId)
+        // Retrieves and display information about the currently logged in member
+        private void DisplayMemberInformation(int memberId)
         {
+            // Retrieve and store logged user information from the "Authentication" class
+            User loggedUser = Authentication.LoggedUser;
+
+            // Set the member's name in profile view panel
+            label_name.Text = $"{loggedUser.FirstName} {loggedUser.LastName}";
+
+            // Set the member's email in profile view panel
+            label_email.Text = loggedUser.Email;
+
+            // Retrieve and set the membership plan using the planId from "loggedUser" object
+            label_membership_type.Text = MembershipPlan.Instance.GetPlanNameById(loggedUser.PlanID);
+
+            // Retrieve the membership plan id of the currently logged in user
+            int userPlanId = Authentication.LoggedUser.PlanID;
+
+            // Get the name of the membership plan associated with the user by using its id
+            string membershipPlanName = MembershipPlan.Instance.GetPlanById(userPlanId).PlanName;
+
+            // Set the user's membership plan name
+            label_membership_type.Text = membershipPlanName;
+
             try
             {
                 // Create a new SQL connection using the connection string from the Authentication class
@@ -232,16 +209,59 @@ namespace fitness_home.Views.Member.Components.Views
                             if (reader.Read())
                             {
                                 // Retrieve and store the 'MemberHeight' value from the first column (index 0)
-                                MemberHeight = reader.GetInt16(0);
+                                short MemberHeight = reader.GetInt16(0);
 
                                 // Retrieve and store the 'MemberWeight' value from the second column (index 1)
-                                MemberWeight = reader.GetInt16(1);
+                                short MemberWeight = reader.GetInt16(1);
 
                                 // Retrieve and store the 'activity_level' value from the third column (index 2)
-                                ActivityFactor = reader.GetString(2);
+                                string ActivityFactor = reader.GetString(2);
 
                                 // Retrieve and store the 'calorie_goal' value from the fourth column (index 3)
-                                CalorieGoal = reader.GetInt16(3);
+                                short CalorieGoal = reader.GetInt16(3);
+
+                                // Set the user's height
+                                label_height.Text = MemberHeight.ToString();
+
+                                // Set the user's weight
+                                label_weight.Text = MemberWeight.ToString();
+
+                                // Set the user's daily calorie goal value
+                                label_calorie_goal.Text = $"{CalorieGoal} kcal";
+
+                                // Calculate and set the user's BMR value
+                                label_bmr.Text = $"{((int)CalculateBMR(MemberHeight, MemberWeight, Authentication.LoggedUser.DateOfBirth, ActivityFactor))} kcal";
+
+                                // Calculate the user's BFP value
+                                double bodyFatPercentage = CalculateBFP(MemberHeight, MemberWeight, Authentication.LoggedUser.DateOfBirth, Authentication.LoggedUser.Gender);
+
+                                // Set the user's BFP value
+                                label_bfp.Text = $"{bodyFatPercentage:F1}%";
+
+                                // Calculate and set the user's LBM value
+                                label_lbm.Text = $"{CalculateLBMPercentage(MemberWeight, bodyFatPercentage):F1}%";
+                            }
+
+                            // If the query returned no results, display dashes indicating that no assessments are made for the user
+                            else
+                            {
+                                // Set the user's height
+                                label_height.Text = "-";
+
+                                // Set the user's weight
+                                label_weight.Text = "-";
+
+                                // Set the user's daily calorie goal value
+                                label_calorie_goal.Text = "-";
+
+                                // Calculate and set the user's BMR value
+                                label_bmr.Text = "-";
+
+                                // Set the user's BFP value
+                                label_bfp.Text = "-";
+
+                                // Calculate and set the user's LBM value
+                                label_lbm.Text = "-";
                             }
                         }
                     }
@@ -254,34 +274,128 @@ namespace fitness_home.Views.Member.Components.Views
             }
         }
 
-        // Applies rounded corners around selected panels
-        private void ApplyRoundedCorners()
-        {
-            // Initialize a list of panels to apply rounded corners
-            List<Panel> panelsToDraw = new List<Panel> { panel_schedule, panel_calorie_goal, panel_lbm, panel_bmr, panel_bfp, panel_profile_view, panel_user_stats, panel_table_heading };
-
-            SuspendLayout();
-
-            // Apply rounded corners to all panels of the list above
-            panelsToDraw.ForEach((Panel panel) =>
-            {
-                panel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, panel.Width, panel.Height, 12, 12));
-            });
-
-            ResumeLayout();
-        }
-
         // ** Event: When the control is first loaded
         private void DashboardView_Load(object sender, EventArgs e)
         {
-            ApplyRoundedCorners();
+            // Apply rounded corners to a list of selected panels
+            RoundedCorners.Apply(panel_schedule, panel_calorie_goal, panel_lbm, panel_bmr, panel_bfp, panel_profile_view, panel_user_stats, panel_table_heading);
         }
 
         // ** Event: When the control is being resized
         private void DashboardView_Resize(object sender, EventArgs e)
         {
             // Here, we re-calculate the size of the panels with rounded corners as our control is resized
-            ApplyRoundedCorners();
+            RoundedCorners.Apply(panel_schedule, panel_calorie_goal, panel_lbm, panel_bmr, panel_bfp, panel_profile_view, panel_user_stats, panel_table_heading);
+        }
+
+        // ** Event: When the control needs to be repainted
+        private void Dashboard_Paint(object sender, PaintEventArgs e)
+        {
+            // Retrieve the id of currently logged in user
+            int loggedUserId = Authentication.LoggedUser.ID;
+
+            // Display information about the currently logged in member
+            DisplayMemberInformation(loggedUserId);
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void class_trainer_3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void class_time_3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void class_name_3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void class_time_2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

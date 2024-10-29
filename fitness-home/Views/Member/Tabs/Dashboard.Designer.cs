@@ -45,11 +45,31 @@
             this.class_trainer_2 = new System.Windows.Forms.Label();
             this.class_time_2 = new System.Windows.Forms.Label();
             this.class_status_2 = new System.Windows.Forms.Label();
-            this.class_trainer_3 = new System.Windows.Forms.Label();
-            this.class_time_3 = new System.Windows.Forms.Label();
-            this.class_status_3 = new System.Windows.Forms.Label();
             this.class_name_2 = new System.Windows.Forms.Label();
             this.class_name_3 = new System.Windows.Forms.Label();
+            this.class_trainer_3 = new System.Windows.Forms.Label();
+            this.class_time_3 = new System.Windows.Forms.Label();
+            this.class_name_4 = new System.Windows.Forms.Label();
+            this.class_name_5 = new System.Windows.Forms.Label();
+            this.class_name_6 = new System.Windows.Forms.Label();
+            this.class_name_7 = new System.Windows.Forms.Label();
+            this.class_name_8 = new System.Windows.Forms.Label();
+            this.class_trainer_4 = new System.Windows.Forms.Label();
+            this.class_trainer_5 = new System.Windows.Forms.Label();
+            this.class_trainer_6 = new System.Windows.Forms.Label();
+            this.class_trainer_7 = new System.Windows.Forms.Label();
+            this.class_trainer_8 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.class_status_3 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.panel_calorie_goal = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_calorie_goal = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox_calorie_goal = new System.Windows.Forms.PictureBox();
@@ -169,23 +189,48 @@
             this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_trainer_2, 2, 4);
             this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_time_2, 3, 4);
             this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_status_2, 4, 4);
-            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_trainer_3, 2, 5);
-            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_time_3, 3, 5);
-            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_status_3, 4, 5);
             this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_name_2, 1, 4);
             this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_name_3, 1, 5);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_trainer_3, 2, 5);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_time_3, 3, 5);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_name_4, 1, 6);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_name_5, 1, 7);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_name_6, 1, 8);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_name_7, 1, 9);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_name_8, 1, 10);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_trainer_4, 2, 6);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_trainer_5, 2, 7);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_trainer_6, 2, 8);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_trainer_7, 2, 9);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_trainer_8, 2, 10);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label11, 3, 6);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label12, 3, 7);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label13, 3, 8);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label14, 3, 9);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label15, 3, 10);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.class_status_3, 4, 5);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label18, 4, 6);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label19, 4, 7);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label20, 4, 8);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label21, 4, 9);
+            this.tableLayoutPanel_weekly_schedule.Controls.Add(this.label22, 4, 10);
             this.tableLayoutPanel_weekly_schedule.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_weekly_schedule.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel_weekly_schedule.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel_weekly_schedule.Name = "tableLayoutPanel_weekly_schedule";
-            this.tableLayoutPanel_weekly_schedule.RowCount = 7;
-            this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel_weekly_schedule.RowCount = 12;
+            this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel_weekly_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_weekly_schedule.Size = new System.Drawing.Size(1331, 491);
             this.tableLayoutPanel_weekly_schedule.TabIndex = 0;
             // 
@@ -193,12 +238,12 @@
             // 
             this.label_weekly_schedule.AutoSize = true;
             this.tableLayoutPanel_weekly_schedule.SetColumnSpan(this.label_weekly_schedule, 3);
-            this.label_weekly_schedule.Font = new System.Drawing.Font("Noto Sans", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_weekly_schedule.Font = new System.Drawing.Font("Noto Sans", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_weekly_schedule.ForeColor = System.Drawing.Color.White;
-            this.label_weekly_schedule.Location = new System.Drawing.Point(40, 149);
+            this.label_weekly_schedule.Location = new System.Drawing.Point(40, 40);
             this.label_weekly_schedule.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.label_weekly_schedule.Name = "label_weekly_schedule";
-            this.label_weekly_schedule.Size = new System.Drawing.Size(172, 29);
+            this.label_weekly_schedule.Size = new System.Drawing.Size(201, 34);
             this.label_weekly_schedule.TabIndex = 0;
             this.label_weekly_schedule.Text = "Today\'s Schedule";
             // 
@@ -208,7 +253,7 @@
             this.tableLayoutPanel_weekly_schedule.SetColumnSpan(this.panel_table_heading, 4);
             this.panel_table_heading.Controls.Add(this.tableLayoutPanel_schedule_headings);
             this.panel_table_heading.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel_table_heading.Location = new System.Drawing.Point(40, 186);
+            this.panel_table_heading.Location = new System.Drawing.Point(40, 82);
             this.panel_table_heading.Margin = new System.Windows.Forms.Padding(0);
             this.panel_table_heading.Name = "panel_table_heading";
             this.panel_table_heading.Size = new System.Drawing.Size(1248, 35);
@@ -295,9 +340,9 @@
             // 
             this.class_name_1.AutoSize = true;
             this.class_name_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.class_name_1.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_name_1.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_name_1.ForeColor = System.Drawing.Color.White;
-            this.class_name_1.Location = new System.Drawing.Point(64, 228);
+            this.class_name_1.Location = new System.Drawing.Point(64, 124);
             this.class_name_1.Margin = new System.Windows.Forms.Padding(24, 7, 0, 7);
             this.class_name_1.Name = "class_name_1";
             this.class_name_1.Size = new System.Drawing.Size(352, 26);
@@ -310,9 +355,9 @@
             // 
             this.class_trainer_1.AutoSize = true;
             this.class_trainer_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.class_trainer_1.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_trainer_1.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_trainer_1.ForeColor = System.Drawing.Color.White;
-            this.class_trainer_1.Location = new System.Drawing.Point(440, 221);
+            this.class_trainer_1.Location = new System.Drawing.Point(440, 117);
             this.class_trainer_1.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.class_trainer_1.Name = "class_trainer_1";
             this.class_trainer_1.Size = new System.Drawing.Size(352, 40);
@@ -325,9 +370,9 @@
             // 
             this.class_time_1.AutoSize = true;
             this.class_time_1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.class_time_1.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_time_1.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_time_1.ForeColor = System.Drawing.Color.White;
-            this.class_time_1.Location = new System.Drawing.Point(816, 221);
+            this.class_time_1.Location = new System.Drawing.Point(816, 117);
             this.class_time_1.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.class_time_1.Name = "class_time_1";
             this.class_time_1.Size = new System.Drawing.Size(352, 40);
@@ -343,7 +388,7 @@
             this.class_status_1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.class_status_1.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_status_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.class_status_1.Location = new System.Drawing.Point(1168, 225);
+            this.class_status_1.Location = new System.Drawing.Point(1168, 121);
             this.class_status_1.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.class_status_1.Name = "class_status_1";
             this.class_status_1.Size = new System.Drawing.Size(120, 32);
@@ -356,9 +401,9 @@
             // 
             this.class_trainer_2.AutoSize = true;
             this.class_trainer_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.class_trainer_2.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_trainer_2.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_trainer_2.ForeColor = System.Drawing.Color.White;
-            this.class_trainer_2.Location = new System.Drawing.Point(440, 261);
+            this.class_trainer_2.Location = new System.Drawing.Point(440, 157);
             this.class_trainer_2.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.class_trainer_2.Name = "class_trainer_2";
             this.class_trainer_2.Size = new System.Drawing.Size(352, 40);
@@ -371,9 +416,9 @@
             // 
             this.class_time_2.AutoSize = true;
             this.class_time_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.class_time_2.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_time_2.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_time_2.ForeColor = System.Drawing.Color.White;
-            this.class_time_2.Location = new System.Drawing.Point(816, 261);
+            this.class_time_2.Location = new System.Drawing.Point(816, 157);
             this.class_time_2.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
             this.class_time_2.Name = "class_time_2";
             this.class_time_2.Size = new System.Drawing.Size(352, 40);
@@ -381,6 +426,7 @@
             this.class_time_2.Text = "10.00 - 11.30";
             this.class_time_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.class_time_2.Visible = false;
+            this.class_time_2.Click += new System.EventHandler(this.class_time_2_Click);
             // 
             // class_status_2
             // 
@@ -389,7 +435,7 @@
             this.class_status_2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.class_status_2.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_status_2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.class_status_2.Location = new System.Drawing.Point(1168, 265);
+            this.class_status_2.Location = new System.Drawing.Point(1168, 161);
             this.class_status_2.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
             this.class_status_2.Name = "class_status_2";
             this.class_status_2.Size = new System.Drawing.Size(120, 32);
@@ -398,59 +444,13 @@
             this.class_status_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.class_status_2.Visible = false;
             // 
-            // class_trainer_3
-            // 
-            this.class_trainer_3.AutoSize = true;
-            this.class_trainer_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.class_trainer_3.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.class_trainer_3.ForeColor = System.Drawing.Color.White;
-            this.class_trainer_3.Location = new System.Drawing.Point(440, 301);
-            this.class_trainer_3.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.class_trainer_3.Name = "class_trainer_3";
-            this.class_trainer_3.Size = new System.Drawing.Size(352, 40);
-            this.class_trainer_3.TabIndex = 11;
-            this.class_trainer_3.Text = "Diyath Liyanage";
-            this.class_trainer_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.class_trainer_3.Visible = false;
-            // 
-            // class_time_3
-            // 
-            this.class_time_3.AutoSize = true;
-            this.class_time_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.class_time_3.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.class_time_3.ForeColor = System.Drawing.Color.White;
-            this.class_time_3.Location = new System.Drawing.Point(816, 301);
-            this.class_time_3.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
-            this.class_time_3.Name = "class_time_3";
-            this.class_time_3.Size = new System.Drawing.Size(352, 40);
-            this.class_time_3.TabIndex = 13;
-            this.class_time_3.Text = "10.00 - 11.30";
-            this.class_time_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.class_time_3.Visible = false;
-            // 
-            // class_status_3
-            // 
-            this.class_status_3.AutoSize = true;
-            this.class_status_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(57)))));
-            this.class_status_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.class_status_3.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.class_status_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
-            this.class_status_3.Location = new System.Drawing.Point(1168, 305);
-            this.class_status_3.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
-            this.class_status_3.Name = "class_status_3";
-            this.class_status_3.Size = new System.Drawing.Size(120, 32);
-            this.class_status_3.TabIndex = 14;
-            this.class_status_3.Text = "No Information";
-            this.class_status_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.class_status_3.Visible = false;
-            // 
             // class_name_2
             // 
             this.class_name_2.AutoSize = true;
             this.class_name_2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.class_name_2.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_name_2.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_name_2.ForeColor = System.Drawing.Color.White;
-            this.class_name_2.Location = new System.Drawing.Point(64, 268);
+            this.class_name_2.Location = new System.Drawing.Point(64, 164);
             this.class_name_2.Margin = new System.Windows.Forms.Padding(24, 7, 0, 7);
             this.class_name_2.Name = "class_name_2";
             this.class_name_2.Size = new System.Drawing.Size(352, 26);
@@ -463,9 +463,9 @@
             // 
             this.class_name_3.AutoSize = true;
             this.class_name_3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.class_name_3.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_name_3.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.class_name_3.ForeColor = System.Drawing.Color.White;
-            this.class_name_3.Location = new System.Drawing.Point(64, 308);
+            this.class_name_3.Location = new System.Drawing.Point(64, 204);
             this.class_name_3.Margin = new System.Windows.Forms.Padding(24, 7, 0, 7);
             this.class_name_3.Name = "class_name_3";
             this.class_name_3.Size = new System.Drawing.Size(352, 26);
@@ -473,6 +473,376 @@
             this.class_name_3.Text = "Bench press";
             this.class_name_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.class_name_3.Visible = false;
+            this.class_name_3.Click += new System.EventHandler(this.class_name_3_Click);
+            // 
+            // class_trainer_3
+            // 
+            this.class_trainer_3.AutoSize = true;
+            this.class_trainer_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.class_trainer_3.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_trainer_3.ForeColor = System.Drawing.Color.White;
+            this.class_trainer_3.Location = new System.Drawing.Point(440, 197);
+            this.class_trainer_3.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.class_trainer_3.Name = "class_trainer_3";
+            this.class_trainer_3.Size = new System.Drawing.Size(352, 40);
+            this.class_trainer_3.TabIndex = 11;
+            this.class_trainer_3.Text = "Diyath Liyanage";
+            this.class_trainer_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.class_trainer_3.Visible = false;
+            this.class_trainer_3.Click += new System.EventHandler(this.class_trainer_3_Click);
+            // 
+            // class_time_3
+            // 
+            this.class_time_3.AutoSize = true;
+            this.class_time_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.class_time_3.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_time_3.ForeColor = System.Drawing.Color.White;
+            this.class_time_3.Location = new System.Drawing.Point(816, 197);
+            this.class_time_3.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.class_time_3.Name = "class_time_3";
+            this.class_time_3.Size = new System.Drawing.Size(352, 40);
+            this.class_time_3.TabIndex = 13;
+            this.class_time_3.Text = "10.00 - 11.30";
+            this.class_time_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.class_time_3.Visible = false;
+            this.class_time_3.Click += new System.EventHandler(this.class_time_3_Click);
+            // 
+            // class_name_4
+            // 
+            this.class_name_4.AutoSize = true;
+            this.class_name_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.class_name_4.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_name_4.ForeColor = System.Drawing.Color.White;
+            this.class_name_4.Location = new System.Drawing.Point(64, 244);
+            this.class_name_4.Margin = new System.Windows.Forms.Padding(24, 7, 0, 7);
+            this.class_name_4.Name = "class_name_4";
+            this.class_name_4.Size = new System.Drawing.Size(352, 26);
+            this.class_name_4.TabIndex = 17;
+            this.class_name_4.Text = "Bench press";
+            this.class_name_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.class_name_4.Visible = false;
+            this.class_name_4.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // class_name_5
+            // 
+            this.class_name_5.AutoSize = true;
+            this.class_name_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.class_name_5.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_name_5.ForeColor = System.Drawing.Color.White;
+            this.class_name_5.Location = new System.Drawing.Point(64, 284);
+            this.class_name_5.Margin = new System.Windows.Forms.Padding(24, 7, 0, 7);
+            this.class_name_5.Name = "class_name_5";
+            this.class_name_5.Size = new System.Drawing.Size(352, 26);
+            this.class_name_5.TabIndex = 18;
+            this.class_name_5.Text = "Bench press";
+            this.class_name_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.class_name_5.Visible = false;
+            this.class_name_5.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // class_name_6
+            // 
+            this.class_name_6.AutoSize = true;
+            this.class_name_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.class_name_6.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_name_6.ForeColor = System.Drawing.Color.White;
+            this.class_name_6.Location = new System.Drawing.Point(64, 324);
+            this.class_name_6.Margin = new System.Windows.Forms.Padding(24, 7, 0, 7);
+            this.class_name_6.Name = "class_name_6";
+            this.class_name_6.Size = new System.Drawing.Size(352, 26);
+            this.class_name_6.TabIndex = 19;
+            this.class_name_6.Text = "Bench press";
+            this.class_name_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.class_name_6.Visible = false;
+            this.class_name_6.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // class_name_7
+            // 
+            this.class_name_7.AutoSize = true;
+            this.class_name_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.class_name_7.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_name_7.ForeColor = System.Drawing.Color.White;
+            this.class_name_7.Location = new System.Drawing.Point(64, 364);
+            this.class_name_7.Margin = new System.Windows.Forms.Padding(24, 7, 0, 7);
+            this.class_name_7.Name = "class_name_7";
+            this.class_name_7.Size = new System.Drawing.Size(352, 26);
+            this.class_name_7.TabIndex = 20;
+            this.class_name_7.Text = "Bench press";
+            this.class_name_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.class_name_7.Visible = false;
+            this.class_name_7.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // class_name_8
+            // 
+            this.class_name_8.AutoSize = true;
+            this.class_name_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.class_name_8.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_name_8.ForeColor = System.Drawing.Color.White;
+            this.class_name_8.Location = new System.Drawing.Point(64, 404);
+            this.class_name_8.Margin = new System.Windows.Forms.Padding(24, 7, 0, 7);
+            this.class_name_8.Name = "class_name_8";
+            this.class_name_8.Size = new System.Drawing.Size(352, 26);
+            this.class_name_8.TabIndex = 21;
+            this.class_name_8.Text = "Bench press";
+            this.class_name_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.class_name_8.Visible = false;
+            this.class_name_8.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // class_trainer_4
+            // 
+            this.class_trainer_4.AutoSize = true;
+            this.class_trainer_4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.class_trainer_4.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_trainer_4.ForeColor = System.Drawing.Color.White;
+            this.class_trainer_4.Location = new System.Drawing.Point(440, 237);
+            this.class_trainer_4.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.class_trainer_4.Name = "class_trainer_4";
+            this.class_trainer_4.Size = new System.Drawing.Size(352, 40);
+            this.class_trainer_4.TabIndex = 22;
+            this.class_trainer_4.Text = "Diyath Liyanage";
+            this.class_trainer_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.class_trainer_4.Visible = false;
+            this.class_trainer_4.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // class_trainer_5
+            // 
+            this.class_trainer_5.AutoSize = true;
+            this.class_trainer_5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.class_trainer_5.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_trainer_5.ForeColor = System.Drawing.Color.White;
+            this.class_trainer_5.Location = new System.Drawing.Point(440, 277);
+            this.class_trainer_5.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.class_trainer_5.Name = "class_trainer_5";
+            this.class_trainer_5.Size = new System.Drawing.Size(352, 40);
+            this.class_trainer_5.TabIndex = 23;
+            this.class_trainer_5.Text = "Diyath Liyanage";
+            this.class_trainer_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.class_trainer_5.Visible = false;
+            this.class_trainer_5.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // class_trainer_6
+            // 
+            this.class_trainer_6.AutoSize = true;
+            this.class_trainer_6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.class_trainer_6.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_trainer_6.ForeColor = System.Drawing.Color.White;
+            this.class_trainer_6.Location = new System.Drawing.Point(440, 317);
+            this.class_trainer_6.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.class_trainer_6.Name = "class_trainer_6";
+            this.class_trainer_6.Size = new System.Drawing.Size(352, 40);
+            this.class_trainer_6.TabIndex = 24;
+            this.class_trainer_6.Text = "Diyath Liyanage";
+            this.class_trainer_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.class_trainer_6.Visible = false;
+            this.class_trainer_6.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // class_trainer_7
+            // 
+            this.class_trainer_7.AutoSize = true;
+            this.class_trainer_7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.class_trainer_7.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_trainer_7.ForeColor = System.Drawing.Color.White;
+            this.class_trainer_7.Location = new System.Drawing.Point(440, 357);
+            this.class_trainer_7.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.class_trainer_7.Name = "class_trainer_7";
+            this.class_trainer_7.Size = new System.Drawing.Size(352, 40);
+            this.class_trainer_7.TabIndex = 25;
+            this.class_trainer_7.Text = "Diyath Liyanage";
+            this.class_trainer_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.class_trainer_7.Visible = false;
+            this.class_trainer_7.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // class_trainer_8
+            // 
+            this.class_trainer_8.AutoSize = true;
+            this.class_trainer_8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.class_trainer_8.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_trainer_8.ForeColor = System.Drawing.Color.White;
+            this.class_trainer_8.Location = new System.Drawing.Point(440, 397);
+            this.class_trainer_8.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.class_trainer_8.Name = "class_trainer_8";
+            this.class_trainer_8.Size = new System.Drawing.Size(352, 40);
+            this.class_trainer_8.TabIndex = 26;
+            this.class_trainer_8.Text = "Diyath Liyanage";
+            this.class_trainer_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.class_trainer_8.Visible = false;
+            this.class_trainer_8.Click += new System.EventHandler(this.label10_Click);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(816, 237);
+            this.label11.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(352, 40);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "10.00 - 11.30";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label11.Visible = false;
+            this.label11.Click += new System.EventHandler(this.label11_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label12.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(816, 277);
+            this.label12.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(352, 40);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "10.00 - 11.30";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label12.Visible = false;
+            this.label12.Click += new System.EventHandler(this.label12_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label13.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(816, 317);
+            this.label13.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(352, 40);
+            this.label13.TabIndex = 29;
+            this.label13.Text = "10.00 - 11.30";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label13.Visible = false;
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label14.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(816, 357);
+            this.label14.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(352, 40);
+            this.label14.TabIndex = 30;
+            this.label14.Text = "10.00 - 11.30";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label14.Visible = false;
+            this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label15.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(816, 397);
+            this.label15.Margin = new System.Windows.Forms.Padding(24, 0, 0, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(352, 40);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "10.00 - 11.30";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label15.Visible = false;
+            this.label15.Click += new System.EventHandler(this.label15_Click);
+            // 
+            // class_status_3
+            // 
+            this.class_status_3.AutoSize = true;
+            this.class_status_3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(57)))));
+            this.class_status_3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.class_status_3.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.class_status_3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.class_status_3.Location = new System.Drawing.Point(1168, 201);
+            this.class_status_3.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.class_status_3.Name = "class_status_3";
+            this.class_status_3.Size = new System.Drawing.Size(120, 32);
+            this.class_status_3.TabIndex = 14;
+            this.class_status_3.Text = "No Information";
+            this.class_status_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.class_status_3.Visible = false;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(57)))));
+            this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label18.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.label18.Location = new System.Drawing.Point(1168, 241);
+            this.label18.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(120, 32);
+            this.label18.TabIndex = 32;
+            this.label18.Text = "No Information";
+            this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label18.Visible = false;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(57)))));
+            this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label19.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.label19.Location = new System.Drawing.Point(1168, 281);
+            this.label19.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(120, 32);
+            this.label19.TabIndex = 33;
+            this.label19.Text = "No Information";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label19.Visible = false;
+            this.label19.Click += new System.EventHandler(this.label19_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(57)))));
+            this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label20.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.label20.Location = new System.Drawing.Point(1168, 321);
+            this.label20.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(120, 32);
+            this.label20.TabIndex = 34;
+            this.label20.Text = "No Information";
+            this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label20.Visible = false;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(57)))));
+            this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label21.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.label21.Location = new System.Drawing.Point(1168, 361);
+            this.label21.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(120, 32);
+            this.label21.TabIndex = 35;
+            this.label21.Text = "No Information";
+            this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label21.Visible = false;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(44)))), ((int)(((byte)(57)))));
+            this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label22.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(118)))), ((int)(((byte)(87)))), ((int)(((byte)(255)))));
+            this.label22.Location = new System.Drawing.Point(1168, 401);
+            this.label22.Margin = new System.Windows.Forms.Padding(0, 4, 0, 4);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(120, 32);
+            this.label22.TabIndex = 36;
+            this.label22.Text = "No Information";
+            this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label22.Visible = false;
             // 
             // panel_calorie_goal
             // 
@@ -511,7 +881,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox_calorie_goal.BackgroundImage = global::fitness_home.Properties.Resources.daily_kcal;
             this.pictureBox_calorie_goal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_calorie_goal.Location = new System.Drawing.Point(0, 19);
+            this.pictureBox_calorie_goal.Location = new System.Drawing.Point(0, 18);
             this.pictureBox_calorie_goal.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.pictureBox_calorie_goal.Name = "pictureBox_calorie_goal";
             this.pictureBox_calorie_goal.Size = new System.Drawing.Size(325, 54);
@@ -524,7 +894,7 @@
             this.label_calorie_goal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_calorie_goal.Font = new System.Drawing.Font("Noto Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_calorie_goal.ForeColor = System.Drawing.Color.White;
-            this.label_calorie_goal.Location = new System.Drawing.Point(0, 77);
+            this.label_calorie_goal.Location = new System.Drawing.Point(0, 76);
             this.label_calorie_goal.Margin = new System.Windows.Forms.Padding(0);
             this.label_calorie_goal.Name = "label_calorie_goal";
             this.label_calorie_goal.Size = new System.Drawing.Size(325, 36);
@@ -536,12 +906,12 @@
             // 
             this.label_calorie_goal_name.AutoSize = true;
             this.label_calorie_goal_name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_calorie_goal_name.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_calorie_goal_name.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_calorie_goal_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.label_calorie_goal_name.Location = new System.Drawing.Point(0, 113);
+            this.label_calorie_goal_name.Location = new System.Drawing.Point(0, 112);
             this.label_calorie_goal_name.Margin = new System.Windows.Forms.Padding(0);
             this.label_calorie_goal_name.Name = "label_calorie_goal_name";
-            this.label_calorie_goal_name.Size = new System.Drawing.Size(325, 22);
+            this.label_calorie_goal_name.Size = new System.Drawing.Size(325, 24);
             this.label_calorie_goal_name.TabIndex = 5;
             this.label_calorie_goal_name.Text = "Daily Calorie Goal";
             this.label_calorie_goal_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -583,7 +953,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox_lbm.BackgroundImage = global::fitness_home.Properties.Resources.lbm;
             this.pictureBox_lbm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_lbm.Location = new System.Drawing.Point(0, 19);
+            this.pictureBox_lbm.Location = new System.Drawing.Point(0, 18);
             this.pictureBox_lbm.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.pictureBox_lbm.Name = "pictureBox_lbm";
             this.pictureBox_lbm.Size = new System.Drawing.Size(325, 54);
@@ -596,7 +966,7 @@
             this.label_lbm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_lbm.Font = new System.Drawing.Font("Noto Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_lbm.ForeColor = System.Drawing.Color.White;
-            this.label_lbm.Location = new System.Drawing.Point(0, 77);
+            this.label_lbm.Location = new System.Drawing.Point(0, 76);
             this.label_lbm.Margin = new System.Windows.Forms.Padding(0);
             this.label_lbm.Name = "label_lbm";
             this.label_lbm.Size = new System.Drawing.Size(325, 36);
@@ -608,12 +978,12 @@
             // 
             this.label_lbm_name.AutoSize = true;
             this.label_lbm_name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_lbm_name.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_lbm_name.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_lbm_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.label_lbm_name.Location = new System.Drawing.Point(0, 113);
+            this.label_lbm_name.Location = new System.Drawing.Point(0, 112);
             this.label_lbm_name.Margin = new System.Windows.Forms.Padding(0);
             this.label_lbm_name.Name = "label_lbm_name";
-            this.label_lbm_name.Size = new System.Drawing.Size(325, 22);
+            this.label_lbm_name.Size = new System.Drawing.Size(325, 24);
             this.label_lbm_name.TabIndex = 5;
             this.label_lbm_name.Text = "LBM (Lean Body Mass)";
             this.label_lbm_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -655,7 +1025,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox_bmr.BackgroundImage = global::fitness_home.Properties.Resources.bmr_kcal;
             this.pictureBox_bmr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_bmr.Location = new System.Drawing.Point(0, 19);
+            this.pictureBox_bmr.Location = new System.Drawing.Point(0, 18);
             this.pictureBox_bmr.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.pictureBox_bmr.Name = "pictureBox_bmr";
             this.pictureBox_bmr.Size = new System.Drawing.Size(325, 54);
@@ -668,7 +1038,7 @@
             this.label_bmr.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_bmr.Font = new System.Drawing.Font("Noto Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_bmr.ForeColor = System.Drawing.Color.White;
-            this.label_bmr.Location = new System.Drawing.Point(0, 77);
+            this.label_bmr.Location = new System.Drawing.Point(0, 76);
             this.label_bmr.Margin = new System.Windows.Forms.Padding(0);
             this.label_bmr.Name = "label_bmr";
             this.label_bmr.Size = new System.Drawing.Size(325, 36);
@@ -680,12 +1050,12 @@
             // 
             this.label_bmr_name.AutoSize = true;
             this.label_bmr_name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_bmr_name.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_bmr_name.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_bmr_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.label_bmr_name.Location = new System.Drawing.Point(0, 113);
+            this.label_bmr_name.Location = new System.Drawing.Point(0, 112);
             this.label_bmr_name.Margin = new System.Windows.Forms.Padding(0);
             this.label_bmr_name.Name = "label_bmr_name";
-            this.label_bmr_name.Size = new System.Drawing.Size(325, 22);
+            this.label_bmr_name.Size = new System.Drawing.Size(325, 24);
             this.label_bmr_name.TabIndex = 5;
             this.label_bmr_name.Text = "Basal Metabolic Rate (BMR)";
             this.label_bmr_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -727,7 +1097,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox_bfp.BackgroundImage = global::fitness_home.Properties.Resources.bfp;
             this.pictureBox_bfp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_bfp.Location = new System.Drawing.Point(0, 19);
+            this.pictureBox_bfp.Location = new System.Drawing.Point(0, 18);
             this.pictureBox_bfp.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.pictureBox_bfp.Name = "pictureBox_bfp";
             this.pictureBox_bfp.Size = new System.Drawing.Size(325, 54);
@@ -740,7 +1110,7 @@
             this.label_bfp.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_bfp.Font = new System.Drawing.Font("Noto Sans", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_bfp.ForeColor = System.Drawing.Color.White;
-            this.label_bfp.Location = new System.Drawing.Point(0, 77);
+            this.label_bfp.Location = new System.Drawing.Point(0, 76);
             this.label_bfp.Margin = new System.Windows.Forms.Padding(0);
             this.label_bfp.Name = "label_bfp";
             this.label_bfp.Size = new System.Drawing.Size(325, 36);
@@ -752,12 +1122,12 @@
             // 
             this.label_bfp_name.AutoSize = true;
             this.label_bfp_name.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_bfp_name.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_bfp_name.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_bfp_name.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.label_bfp_name.Location = new System.Drawing.Point(0, 113);
+            this.label_bfp_name.Location = new System.Drawing.Point(0, 112);
             this.label_bfp_name.Margin = new System.Windows.Forms.Padding(0);
             this.label_bfp_name.Name = "label_bfp_name";
-            this.label_bfp_name.Size = new System.Drawing.Size(325, 22);
+            this.label_bfp_name.Size = new System.Drawing.Size(325, 24);
             this.label_bfp_name.TabIndex = 5;
             this.label_bfp_name.Text = "Body Fat Percentage (BFP)";
             this.label_bfp_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -814,7 +1184,7 @@
             // 
             this.label_email.AutoSize = true;
             this.label_email.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_email.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_email.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_email.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
             this.label_email.Location = new System.Drawing.Point(3, 153);
             this.label_email.Name = "label_email";
@@ -879,10 +1249,10 @@
             this.label_membership_type.Dock = System.Windows.Forms.DockStyle.Top;
             this.label_membership_type.Font = new System.Drawing.Font("Rajdhani SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_membership_type.ForeColor = System.Drawing.Color.White;
-            this.label_membership_type.Location = new System.Drawing.Point(394, 32);
+            this.label_membership_type.Location = new System.Drawing.Point(385, 32);
             this.label_membership_type.Margin = new System.Windows.Forms.Padding(0);
             this.label_membership_type.Name = "label_membership_type";
-            this.label_membership_type.Size = new System.Drawing.Size(138, 25);
+            this.label_membership_type.Size = new System.Drawing.Size(153, 25);
             this.label_membership_type.TabIndex = 10;
             this.label_membership_type.Text = "Individual";
             this.label_membership_type.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -891,11 +1261,11 @@
             // 
             this.label_weight_title.AutoSize = true;
             this.label_weight_title.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label_weight_title.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_weight_title.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_weight_title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.label_weight_title.Location = new System.Drawing.Point(69, 10);
+            this.label_weight_title.Location = new System.Drawing.Point(65, 8);
             this.label_weight_title.Name = "label_weight_title";
-            this.label_weight_title.Size = new System.Drawing.Size(58, 22);
+            this.label_weight_title.Size = new System.Drawing.Size(64, 24);
             this.label_weight_title.TabIndex = 5;
             this.label_weight_title.Text = "Weight";
             this.label_weight_title.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -906,10 +1276,10 @@
             this.label_weight.Dock = System.Windows.Forms.DockStyle.Top;
             this.label_weight.Font = new System.Drawing.Font("Rajdhani SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_weight.ForeColor = System.Drawing.Color.White;
-            this.label_weight.Location = new System.Drawing.Point(66, 32);
+            this.label_weight.Location = new System.Drawing.Point(62, 32);
             this.label_weight.Margin = new System.Windows.Forms.Padding(0);
             this.label_weight.Name = "label_weight";
-            this.label_weight.Size = new System.Drawing.Size(64, 25);
+            this.label_weight.Size = new System.Drawing.Size(70, 25);
             this.label_weight.TabIndex = 6;
             this.label_weight.Text = "45 kg";
             this.label_weight.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -918,11 +1288,11 @@
             // 
             this.label_membership_type_title.AutoSize = true;
             this.label_membership_type_title.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label_membership_type_title.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_membership_type_title.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_membership_type_title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.label_membership_type_title.Location = new System.Drawing.Point(397, 10);
+            this.label_membership_type_title.Location = new System.Drawing.Point(388, 8);
             this.label_membership_type_title.Name = "label_membership_type_title";
-            this.label_membership_type_title.Size = new System.Drawing.Size(132, 22);
+            this.label_membership_type_title.Size = new System.Drawing.Size(147, 24);
             this.label_membership_type_title.TabIndex = 9;
             this.label_membership_type_title.Text = "Membership Type";
             this.label_membership_type_title.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -933,10 +1303,10 @@
             this.label_height.Dock = System.Windows.Forms.DockStyle.Top;
             this.label_height.Font = new System.Drawing.Font("Rajdhani SemiBold", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_height.ForeColor = System.Drawing.Color.White;
-            this.label_height.Location = new System.Drawing.Point(262, 32);
+            this.label_height.Location = new System.Drawing.Point(256, 32);
             this.label_height.Margin = new System.Windows.Forms.Padding(0);
             this.label_height.Name = "label_height";
-            this.label_height.Size = new System.Drawing.Size(66, 25);
+            this.label_height.Size = new System.Drawing.Size(67, 25);
             this.label_height.TabIndex = 8;
             this.label_height.Text = "163 cm";
             this.label_height.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -945,11 +1315,11 @@
             // 
             this.label_height_title.AutoSize = true;
             this.label_height_title.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label_height_title.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_height_title.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_height_title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.label_height_title.Location = new System.Drawing.Point(265, 10);
+            this.label_height_title.Location = new System.Drawing.Point(259, 8);
             this.label_height_title.Name = "label_height_title";
-            this.label_height_title.Size = new System.Drawing.Size(60, 22);
+            this.label_height_title.Size = new System.Drawing.Size(61, 24);
             this.label_height_title.TabIndex = 7;
             this.label_height_title.Text = "Height";
             this.label_height_title.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -995,6 +1365,7 @@
             this.Name = "Dashboard";
             this.Size = new System.Drawing.Size(1392, 861);
             this.Load += new System.EventHandler(this.DashboardView_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Dashboard_Paint);
             this.Resize += new System.EventHandler(this.DashboardView_Resize);
             this.tableLayoutPanel_dashboard_layout.ResumeLayout(false);
             this.panel_schedule.ResumeLayout(false);
@@ -1090,5 +1461,25 @@
         private System.Windows.Forms.Label class_status_3;
         private System.Windows.Forms.Label class_name_2;
         private System.Windows.Forms.Label class_name_3;
+        private System.Windows.Forms.Label class_name_4;
+        private System.Windows.Forms.Label class_name_5;
+        private System.Windows.Forms.Label class_name_6;
+        private System.Windows.Forms.Label class_name_7;
+        private System.Windows.Forms.Label class_name_8;
+        private System.Windows.Forms.Label class_trainer_4;
+        private System.Windows.Forms.Label class_trainer_5;
+        private System.Windows.Forms.Label class_trainer_6;
+        private System.Windows.Forms.Label class_trainer_7;
+        private System.Windows.Forms.Label class_trainer_8;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
     }
 }

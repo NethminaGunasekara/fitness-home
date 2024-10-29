@@ -26,10 +26,6 @@ namespace fitness_home.Views.Trainer
         {
             InitializeComponent();
 
-            HttpServer httpServer = new HttpServer();
-
-            httpServer.Start();
-
             // Initialize all fields containing the tabs of member area
             Dashboard = new Dashboard();
             Schedule = new Schedule();

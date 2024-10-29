@@ -9,13 +9,13 @@ namespace fitness_home.Views.Onboarding.Register.Components
     public partial class MembershipCard : UserControl
     {
         private Color _borderColor = Color.FromArgb(70, 70, 70);
-        private MembershipPlan _MembershipPlan;
+        private MembershipPlanDetails _MembershipPlan;
         private Action<string> OnClickAction;
 
         // Holds all bullets and labels for displaying the list of plan benefits
         private readonly List<List<Control>> Benefits = new List<List<Control>>();
 
-        public MembershipCard(MembershipPlan membershipPlan, Action<string> onClickAction = null)
+        public MembershipCard(MembershipPlanDetails membershipPlan, Action<string> onClickAction = null)
         {
             InitializeComponent();
 
@@ -34,7 +34,7 @@ namespace fitness_home.Views.Onboarding.Register.Components
         }
 
         // Get or set MembershipPlan
-        public MembershipPlan MembershipPlan
+        public MembershipPlanDetails MembershipPlan
         {
             get { return _MembershipPlan; }
 

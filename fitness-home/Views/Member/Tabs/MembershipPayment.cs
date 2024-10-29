@@ -1,5 +1,6 @@
 ﻿using fitness_home.Helpers;
 using fitness_home.Services;
+using fitness_home.Utils.Types;
 using fitness_home.Views.Messages;
 using System;
 using System.Drawing;
@@ -27,14 +28,12 @@ namespace fitness_home.Views.Member.Components.Views
         // Id of the plan to purchase
         public int PlanId;
 
-        // Field to store the previous view (membership selection)
+        // Field to store the previous view (membership selection) and member area
         public Membership MembershipView;
 
-        public MembershipPayment(Membership membershipView)
+        public MembershipPayment()
         {
             InitializeComponent();
-
-            MembershipView = membershipView;
         }
 
         // Adds placeholder text back to input fields when they lose focus
@@ -251,6 +250,8 @@ namespace fitness_home.Views.Member.Components.Views
                     // Store the payment information as a successful transaction
                     int transactionId = PaymentProcessor.StoreTransactionInfo(DateTime.Now.Date, paymentMethod, membershipPlanDetails.MonthlyFee, "Membership", Helpers.PaymentStatus.Success, Authentication.LoggedUser.ID);
 
+                    FormProvider.MemberArea.Refresh();
+
                     PaymentSuccess paymentSuccess = new PaymentSuccess($"LKR {membershipPlanDetails.MonthlyFee}", transactionId);
                     paymentSuccess.ShowDialog();
 
@@ -259,9 +260,6 @@ namespace fitness_home.Views.Member.Components.Views
 
                     // Return to the membership selection view
                     MembershipView.Show();
-
-                    // Invalidate the MembershipView, so that it can display the latest membership data
-                    MembershipView.Invalidate();
 
                     this.Hide();
                 }
@@ -280,6 +278,16 @@ namespace fitness_home.Views.Member.Components.Views
             textBox_exp_month.Enabled = !radioButton_cash.Checked;
             textBox_exp_year.Enabled = !radioButton_cash.Checked;
             textBox_cvc.Enabled = !radioButton_cash.Checked;
+        }
+
+        // Event: Cancel the payment if the "Cancel" button is clicked
+        private void btn_cancel_payment_Click(object sender, EventArgs e)
+        {
+            // Return to the membership selection view
+            MembershipView.Show();
+
+            // Hide the current view
+            this.Hide();
         }
     }
 }

@@ -67,7 +67,7 @@
     <Compile Include="Helpers\ScheduleManager.cs" />
     <Compile Include="Services\HttpServer.cs" />
     <Compile Include="Services\Membership.cs" />
-    <Compile Include="Utils\Types\MembershipPlan.cs" />
+    <Compile Include="Utils\Types\MembershipPlanDetails.cs" />
     <Compile Include="Services\Authentication.cs" />
     <Compile Include="Helpers\FormProvider.cs" />
     <Compile Include="Utils\Types\SharedTypes.cs" />

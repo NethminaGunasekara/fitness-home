@@ -59,7 +59,7 @@
             this.label_feedback_from_id = new System.Windows.Forms.Label();
             this.button_send_feedback = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel_feedback_message = new System.Windows.Forms.Panel();
             this.textBox_feedback_message = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel_content.SuspendLayout();
             this.panel_send_message.SuspendLayout();
@@ -72,7 +72,7 @@
             this.panel_provide_feedback.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel3.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel_feedback_message.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel_content
@@ -430,7 +430,7 @@
             this.tableLayoutPanel2.Controls.Add(this.flowLayoutPanel3, 1, 1);
             this.tableLayoutPanel2.Controls.Add(this.button_send_feedback, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.label10, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.panel1, 1, 3);
+            this.tableLayoutPanel2.Controls.Add(this.panel_feedback_message, 1, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
@@ -530,17 +530,17 @@
             this.label10.Text = "Message:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panel1
+            // panel_feedback_message
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.tableLayoutPanel2.SetColumnSpan(this.panel1, 2);
-            this.panel1.Controls.Add(this.textBox_feedback_message);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(12, 77);
-            this.panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1308, 222);
-            this.panel1.TabIndex = 11;
+            this.panel_feedback_message.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
+            this.tableLayoutPanel2.SetColumnSpan(this.panel_feedback_message, 2);
+            this.panel_feedback_message.Controls.Add(this.textBox_feedback_message);
+            this.panel_feedback_message.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_feedback_message.Location = new System.Drawing.Point(12, 77);
+            this.panel_feedback_message.Margin = new System.Windows.Forms.Padding(0);
+            this.panel_feedback_message.Name = "panel_feedback_message";
+            this.panel_feedback_message.Size = new System.Drawing.Size(1308, 222);
+            this.panel_feedback_message.TabIndex = 11;
             // 
             // textBox_feedback_message
             // 
@@ -590,8 +590,8 @@
             this.tableLayoutPanel2.PerformLayout();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel_feedback_message.ResumeLayout(false);
+            this.panel_feedback_message.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -628,7 +628,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label_feedback_from;
         private System.Windows.Forms.Label label_feedback_from_id;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_feedback_message;
         private System.Windows.Forms.TextBox textBox_feedback_message;
     }
 }

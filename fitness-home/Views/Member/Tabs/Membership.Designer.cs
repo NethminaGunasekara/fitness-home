@@ -415,18 +415,19 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Controls.Add(this.button_purchase_plan_3, 1, 5);
+            this.tableLayoutPanel5.Controls.Add(this.button_purchase_plan_3, 1, 6);
             this.tableLayoutPanel5.Controls.Add(this.label_plan_name_3, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel2, 1, 2);
-            this.tableLayoutPanel5.Controls.Add(this.label20, 1, 3);
-            this.tableLayoutPanel5.Controls.Add(this.plan_benefits_3, 1, 4);
+            this.tableLayoutPanel5.Controls.Add(this.flowLayoutPanel2, 1, 3);
+            this.tableLayoutPanel5.Controls.Add(this.label20, 1, 4);
+            this.tableLayoutPanel5.Controls.Add(this.plan_benefits_3, 1, 5);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 7;
+            this.tableLayoutPanel5.RowCount = 8;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -457,12 +458,12 @@
             // label_plan_name_3
             // 
             this.label_plan_name_3.AutoSize = true;
-            this.label_plan_name_3.Font = new System.Drawing.Font("Noto Sans", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_plan_name_3.Font = new System.Drawing.Font("Noto Sans", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_plan_name_3.ForeColor = System.Drawing.Color.White;
             this.label_plan_name_3.Location = new System.Drawing.Point(20, 20);
             this.label_plan_name_3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 6);
             this.label_plan_name_3.Name = "label_plan_name_3";
-            this.label_plan_name_3.Size = new System.Drawing.Size(127, 34);
+            this.label_plan_name_3.Size = new System.Drawing.Size(154, 41);
             this.label_plan_name_3.TabIndex = 0;
             this.label_plan_name_3.Text = "Individual";
             // 
@@ -471,7 +472,7 @@
             this.flowLayoutPanel2.Controls.Add(this.panel3);
             this.flowLayoutPanel2.Controls.Add(this.label_plan_fee_3);
             this.flowLayoutPanel2.Controls.Add(this.panel4);
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(20, 60);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(20, 79);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(241, 43);
@@ -502,12 +503,12 @@
             // label_plan_fee_3
             // 
             this.label_plan_fee_3.AutoSize = true;
-            this.label_plan_fee_3.Font = new System.Drawing.Font("Roboto", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_plan_fee_3.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_plan_fee_3.ForeColor = System.Drawing.Color.White;
             this.label_plan_fee_3.Location = new System.Drawing.Point(26, 0);
             this.label_plan_fee_3.Margin = new System.Windows.Forms.Padding(0);
             this.label_plan_fee_3.Name = "label_plan_fee_3";
-            this.label_plan_fee_3.Size = new System.Drawing.Size(78, 42);
+            this.label_plan_fee_3.Size = new System.Drawing.Size(85, 46);
             this.label_plan_fee_3.TabIndex = 1;
             this.label_plan_fee_3.Text = "3990";
             this.label_plan_fee_3.UseCompatibleTextRendering = true;
@@ -515,7 +516,7 @@
             // panel4
             // 
             this.panel4.Controls.Add(this.label19);
-            this.panel4.Location = new System.Drawing.Point(107, 3);
+            this.panel4.Location = new System.Drawing.Point(114, 3);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(35, 43);
             this.panel4.TabIndex = 0;
@@ -536,12 +537,12 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(20, 115);
+            this.label20.Location = new System.Drawing.Point(20, 134);
             this.label20.Margin = new System.Windows.Forms.Padding(0, 12, 0, 12);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(137, 22);
+            this.label20.Size = new System.Drawing.Size(159, 24);
             this.label20.TabIndex = 6;
             this.label20.Text = "This plan includes:";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -549,12 +550,12 @@
             // plan_benefits_3
             // 
             this.plan_benefits_3.AutoSize = true;
-            this.plan_benefits_3.Font = new System.Drawing.Font("Noto Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.plan_benefits_3.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.plan_benefits_3.ForeColor = System.Drawing.Color.White;
-            this.plan_benefits_3.Location = new System.Drawing.Point(20, 149);
+            this.plan_benefits_3.Location = new System.Drawing.Point(20, 170);
             this.plan_benefits_3.Margin = new System.Windows.Forms.Padding(0);
             this.plan_benefits_3.Name = "plan_benefits_3";
-            this.plan_benefits_3.Size = new System.Drawing.Size(224, 108);
+            this.plan_benefits_3.Size = new System.Drawing.Size(306, 144);
             this.plan_benefits_3.TabIndex = 7;
             this.plan_benefits_3.Text = "⦿ All Gym Facilities\r\n⦿ Supplement Offers\r\n⦿ Diet and nutrition plan\r\n⦿ Strength," +
     " Functional, Cardio Training\r\n⦿ Free Wi-Fi and Parking\r\n⦿ Monthly progress repor" +
@@ -578,18 +579,19 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel4.Controls.Add(this.button_purchase_plan_2, 1, 5);
+            this.tableLayoutPanel4.Controls.Add(this.button_purchase_plan_2, 1, 6);
             this.tableLayoutPanel4.Controls.Add(this.label_plan_name_2, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel1, 1, 2);
-            this.tableLayoutPanel4.Controls.Add(this.label14, 1, 3);
-            this.tableLayoutPanel4.Controls.Add(this.plan_benefits_2, 1, 4);
+            this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel1, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.label14, 1, 4);
+            this.tableLayoutPanel4.Controls.Add(this.plan_benefits_2, 1, 5);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 7;
+            this.tableLayoutPanel4.RowCount = 8;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -620,12 +622,12 @@
             // label_plan_name_2
             // 
             this.label_plan_name_2.AutoSize = true;
-            this.label_plan_name_2.Font = new System.Drawing.Font("Noto Sans", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_plan_name_2.Font = new System.Drawing.Font("Noto Sans", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_plan_name_2.ForeColor = System.Drawing.Color.White;
             this.label_plan_name_2.Location = new System.Drawing.Point(20, 20);
             this.label_plan_name_2.Margin = new System.Windows.Forms.Padding(0, 0, 0, 6);
             this.label_plan_name_2.Name = "label_plan_name_2";
-            this.label_plan_name_2.Size = new System.Drawing.Size(127, 34);
+            this.label_plan_name_2.Size = new System.Drawing.Size(154, 41);
             this.label_plan_name_2.TabIndex = 0;
             this.label_plan_name_2.Text = "Individual";
             // 
@@ -634,10 +636,10 @@
             this.flowLayoutPanel1.Controls.Add(this.panel1);
             this.flowLayoutPanel1.Controls.Add(this.label_plan_fee_2);
             this.flowLayoutPanel1.Controls.Add(this.panel2);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 60);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 79);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(241, 43);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(241, 40);
             this.flowLayoutPanel1.TabIndex = 5;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -665,12 +667,12 @@
             // label_plan_fee_2
             // 
             this.label_plan_fee_2.AutoSize = true;
-            this.label_plan_fee_2.Font = new System.Drawing.Font("Roboto", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_plan_fee_2.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_plan_fee_2.ForeColor = System.Drawing.Color.White;
             this.label_plan_fee_2.Location = new System.Drawing.Point(26, 0);
             this.label_plan_fee_2.Margin = new System.Windows.Forms.Padding(0);
             this.label_plan_fee_2.Name = "label_plan_fee_2";
-            this.label_plan_fee_2.Size = new System.Drawing.Size(78, 42);
+            this.label_plan_fee_2.Size = new System.Drawing.Size(85, 46);
             this.label_plan_fee_2.TabIndex = 1;
             this.label_plan_fee_2.Text = "3990";
             this.label_plan_fee_2.UseCompatibleTextRendering = true;
@@ -678,7 +680,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.label13);
-            this.panel2.Location = new System.Drawing.Point(107, 3);
+            this.panel2.Location = new System.Drawing.Point(114, 3);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(35, 43);
             this.panel2.TabIndex = 0;
@@ -699,12 +701,12 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(20, 115);
+            this.label14.Location = new System.Drawing.Point(20, 131);
             this.label14.Margin = new System.Windows.Forms.Padding(0, 12, 0, 12);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(137, 22);
+            this.label14.Size = new System.Drawing.Size(159, 24);
             this.label14.TabIndex = 6;
             this.label14.Text = "This plan includes:";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -712,12 +714,12 @@
             // plan_benefits_2
             // 
             this.plan_benefits_2.AutoSize = true;
-            this.plan_benefits_2.Font = new System.Drawing.Font("Noto Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.plan_benefits_2.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.plan_benefits_2.ForeColor = System.Drawing.Color.White;
-            this.plan_benefits_2.Location = new System.Drawing.Point(20, 149);
+            this.plan_benefits_2.Location = new System.Drawing.Point(20, 167);
             this.plan_benefits_2.Margin = new System.Windows.Forms.Padding(0);
             this.plan_benefits_2.Name = "plan_benefits_2";
-            this.plan_benefits_2.Size = new System.Drawing.Size(224, 108);
+            this.plan_benefits_2.Size = new System.Drawing.Size(306, 144);
             this.plan_benefits_2.TabIndex = 7;
             this.plan_benefits_2.Text = "⦿ All Gym Facilities\r\n⦿ Supplement Offers\r\n⦿ Diet and nutrition plan\r\n⦿ Strength," +
     " Functional, Cardio Training\r\n⦿ Free Wi-Fi and Parking\r\n⦿ Monthly progress repor" +
@@ -741,18 +743,19 @@
             this.tableLayoutPanel_plan_1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel_plan_1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_plan_1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel_plan_1.Controls.Add(this.button_purchase_plan_1, 1, 5);
+            this.tableLayoutPanel_plan_1.Controls.Add(this.button_purchase_plan_1, 1, 6);
             this.tableLayoutPanel_plan_1.Controls.Add(this.label_plan_name_1, 1, 1);
-            this.tableLayoutPanel_plan_1.Controls.Add(this.flowLayoutPanel_fee, 1, 2);
-            this.tableLayoutPanel_plan_1.Controls.Add(this.label9, 1, 3);
-            this.tableLayoutPanel_plan_1.Controls.Add(this.plan_benefits_1, 1, 4);
+            this.tableLayoutPanel_plan_1.Controls.Add(this.flowLayoutPanel_fee, 1, 3);
+            this.tableLayoutPanel_plan_1.Controls.Add(this.label9, 1, 4);
+            this.tableLayoutPanel_plan_1.Controls.Add(this.plan_benefits_1, 1, 5);
             this.tableLayoutPanel_plan_1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_plan_1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel_plan_1.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel_plan_1.Name = "tableLayoutPanel_plan_1";
-            this.tableLayoutPanel_plan_1.RowCount = 7;
+            this.tableLayoutPanel_plan_1.RowCount = 8;
             this.tableLayoutPanel_plan_1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel_plan_1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel_plan_1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tableLayoutPanel_plan_1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_plan_1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_plan_1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -783,12 +786,12 @@
             // label_plan_name_1
             // 
             this.label_plan_name_1.AutoSize = true;
-            this.label_plan_name_1.Font = new System.Drawing.Font("Noto Sans", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_plan_name_1.Font = new System.Drawing.Font("Noto Sans", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_plan_name_1.ForeColor = System.Drawing.Color.White;
             this.label_plan_name_1.Location = new System.Drawing.Point(20, 20);
             this.label_plan_name_1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 6);
             this.label_plan_name_1.Name = "label_plan_name_1";
-            this.label_plan_name_1.Size = new System.Drawing.Size(127, 34);
+            this.label_plan_name_1.Size = new System.Drawing.Size(154, 41);
             this.label_plan_name_1.TabIndex = 0;
             this.label_plan_name_1.Text = "Individual";
             // 
@@ -797,7 +800,7 @@
             this.flowLayoutPanel_fee.Controls.Add(this.panel_plan_fee_currency);
             this.flowLayoutPanel_fee.Controls.Add(this.label_plan_fee_1);
             this.flowLayoutPanel_fee.Controls.Add(this.panel_plan_fee_per);
-            this.flowLayoutPanel_fee.Location = new System.Drawing.Point(20, 60);
+            this.flowLayoutPanel_fee.Location = new System.Drawing.Point(20, 79);
             this.flowLayoutPanel_fee.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel_fee.Name = "flowLayoutPanel_fee";
             this.flowLayoutPanel_fee.Size = new System.Drawing.Size(241, 43);
@@ -828,12 +831,12 @@
             // label_plan_fee_1
             // 
             this.label_plan_fee_1.AutoSize = true;
-            this.label_plan_fee_1.Font = new System.Drawing.Font("Roboto", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_plan_fee_1.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_plan_fee_1.ForeColor = System.Drawing.Color.White;
             this.label_plan_fee_1.Location = new System.Drawing.Point(26, 0);
             this.label_plan_fee_1.Margin = new System.Windows.Forms.Padding(0);
             this.label_plan_fee_1.Name = "label_plan_fee_1";
-            this.label_plan_fee_1.Size = new System.Drawing.Size(78, 42);
+            this.label_plan_fee_1.Size = new System.Drawing.Size(85, 46);
             this.label_plan_fee_1.TabIndex = 1;
             this.label_plan_fee_1.Text = "3990";
             this.label_plan_fee_1.UseCompatibleTextRendering = true;
@@ -841,7 +844,7 @@
             // panel_plan_fee_per
             // 
             this.panel_plan_fee_per.Controls.Add(this.label_plan_fee_per);
-            this.panel_plan_fee_per.Location = new System.Drawing.Point(107, 3);
+            this.panel_plan_fee_per.Location = new System.Drawing.Point(114, 3);
             this.panel_plan_fee_per.Name = "panel_plan_fee_per";
             this.panel_plan_fee_per.Size = new System.Drawing.Size(35, 43);
             this.panel_plan_fee_per.TabIndex = 0;
@@ -862,12 +865,12 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(20, 115);
+            this.label9.Location = new System.Drawing.Point(20, 134);
             this.label9.Margin = new System.Windows.Forms.Padding(0, 12, 0, 12);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(137, 22);
+            this.label9.Size = new System.Drawing.Size(159, 24);
             this.label9.TabIndex = 6;
             this.label9.Text = "This plan includes:";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -875,12 +878,12 @@
             // plan_benefits_1
             // 
             this.plan_benefits_1.AutoSize = true;
-            this.plan_benefits_1.Font = new System.Drawing.Font("Noto Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.plan_benefits_1.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.plan_benefits_1.ForeColor = System.Drawing.Color.White;
-            this.plan_benefits_1.Location = new System.Drawing.Point(20, 149);
+            this.plan_benefits_1.Location = new System.Drawing.Point(20, 170);
             this.plan_benefits_1.Margin = new System.Windows.Forms.Padding(0);
             this.plan_benefits_1.Name = "plan_benefits_1";
-            this.plan_benefits_1.Size = new System.Drawing.Size(224, 108);
+            this.plan_benefits_1.Size = new System.Drawing.Size(306, 144);
             this.plan_benefits_1.TabIndex = 7;
             this.plan_benefits_1.Text = "⦿ All Gym Facilities\r\n⦿ Supplement Offers\r\n⦿ Diet and nutrition plan\r\n⦿ Strength," +
     " Functional, Cardio Training\r\n⦿ Free Wi-Fi and Parking\r\n⦿ Monthly progress repor" +

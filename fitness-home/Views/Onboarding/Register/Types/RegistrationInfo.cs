@@ -20,7 +20,7 @@ namespace fitness_home.Views.Onboarding.Register.Types
         public string ECPhone;// Emergency contact phone
 
         // -- Membership Info --
-        public MembershipPlan MembershipPlan;
+        public MembershipPlanDetails MembershipPlan;
 
         // -- Payment Info --
         public PaymentMethod PaymentMethod;

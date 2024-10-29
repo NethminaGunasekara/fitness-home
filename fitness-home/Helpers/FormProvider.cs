@@ -19,8 +19,8 @@ namespace fitness_home.Services
         public static Payment Payment;
 
         // User Dashboards
-        public static MemberArea MemberDashboard;
-        public static TrainerArea TrainerDashboard;
+        public static MemberArea MemberArea;
+        public static TrainerArea TrainerArea;
 
         private static int TransitionDuration = 400;
 

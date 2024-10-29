@@ -1,4 +1,5 @@
-﻿using fitness_home.Services;
+﻿using fitness_home.Helpers;
+using fitness_home.Services;
 using fitness_home.Services.Actions;
 using fitness_home.Utils;
 using fitness_home.Utils.Types;
@@ -13,13 +14,13 @@ namespace fitness_home.Views.Onboarding.Register
     public partial class Membership : Form
     {
         // All membership plans
-        private List<MembershipPlan> MembershipPlans;
+        private List<MembershipPlanDetails> MembershipPlans;
 
         // Plans to display
-        private List<MembershipPlan> _PlansToDisplay = new List<MembershipPlan>();
+        private List<MembershipPlanDetails> _PlansToDisplay = new List<MembershipPlanDetails>();
 
         // Selected membership plan
-        private MembershipPlan SelectedPlan;
+        private MembershipPlanDetails SelectedPlan;
 
         // Index to get next or previous three plans from
         private int StartIndex = 0;
@@ -29,7 +30,7 @@ namespace fitness_home.Views.Onboarding.Register
         private MembershipCard card_2;
         private MembershipCard card_3;
 
-        private List<MembershipPlan> PlansToDisplay
+        private List<MembershipPlanDetails> PlansToDisplay
         {
             get { return _PlansToDisplay; }
 
@@ -63,7 +64,7 @@ namespace fitness_home.Views.Onboarding.Register
             InitializeComponent();
 
             // Retrieve all membership plans
-            MembershipPlans = fitness_home.Services.Actions.Membership.GetAllPlans();
+            MembershipPlans = MembershipPlan.Instance.GetAllPlans();
 
             // Set first three plans from "MembershipPlans" to display
             PlansToDisplay.AddRange(MembershipPlans.GetRange(StartIndex, 3));

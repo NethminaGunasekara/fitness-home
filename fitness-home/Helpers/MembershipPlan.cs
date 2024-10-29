@@ -9,6 +9,7 @@
 // This code is part of the Fitness Home project.
 // ----------------------------------------------------------------------------
 using fitness_home.Services;
+using fitness_home.Utils.Types;
 using fitness_home.Views.Messages;
 using System;
 using System.Collections.Generic;
@@ -81,7 +82,7 @@ namespace fitness_home.Helpers
                                     // Retrieve the value of "trainer_id" column
                                     TrainerId = reader.GetInt32(1),
                                     // Retrieve the value of "plan_name" column
-                                    Name = reader.GetString(2),
+                                    PlanName = reader.GetString(2),
                                     // Retrieve the value of "monthly_fee" column
                                     MonthlyFee = reader.GetDecimal(3)
                                 };
@@ -95,7 +96,7 @@ namespace fitness_home.Helpers
                     // Fetch the benefits for each plan and assign them to the "benefits" property
                     foreach (MembershipPlanDetails plan in plans)
                     {
-                        plan.benefits = GetBenefitsForPlan(conn, plan.PlanId);
+                        plan.Benefits = GetBenefitsForPlan(conn, plan.PlanId);
                     }
                 }
             }
@@ -207,7 +208,7 @@ namespace fitness_home.Helpers
                                     // Retrieve the value of "trainer_id" column
                                     TrainerId = reader.GetInt32(1),
                                     // Retrieve the value of "plan_name" column
-                                    Name = reader.GetString(2),
+                                    PlanName = reader.GetString(2),
                                     // Retrieve the value of "monthly_fee" column
                                     MonthlyFee = reader.GetDecimal(3)
                                 };
@@ -215,7 +216,7 @@ namespace fitness_home.Helpers
                         }
 
                         // Fetch and assign the list of benefits for the current plan
-                        plan.benefits = GetBenefitsForPlan(conn, plan.PlanId);
+                        plan.Benefits = GetBenefitsForPlan(conn, plan.PlanId);
                     }
                 }
             }
@@ -227,19 +228,50 @@ namespace fitness_home.Helpers
 
             return plan;
         }
-    }
 
-    // Type for storing properties of a membership plan
-    public class MembershipPlanDetails
-    {
-        public int PlanId;
-        public int TrainerId;
-        public string Name;
-        public decimal MonthlyFee;
+        /// <summary>
+        /// Retrieves the plan name of a given plan ID.
+        /// </summary>
+        /// <param name="planId">ID of the plan to retrieve the name of.</param>
+        /// <returns>The name of the plan as a string, or null if not found.</returns>
+        public string GetPlanNameById(int planId)
+        {
+            string planName = null;
 
-        // List of benifits for the current plan
-        public List<string> benefits;
+            // Query to retrieve the plan name from the "membership_plan" table
+            string query = "SELECT plan_name FROM membership_plan WHERE plan_id = @planId";
 
-        public MembershipPlanDetails() { }
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Authentication.Instance.ConnectionString)) // Use the same connection string
+                {
+                    conn.Open(); // Open the connection
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn)) // Prepare the SQL command
+                    {
+                        // Add the "planId" parameter
+                        cmd.Parameters.AddWithValue("@planId", planId);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader()) // Execute the query
+                        {
+                            if (reader.Read()) // If a result is found
+                            {
+                                planName = reader.GetString(0); // Assign the plan name to the variable
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Handle database connection errors
+            catch (SqlException e)
+            {
+                new ApplicationError(errorType: ErrorType.DatabaseError).ShowDialog();
+
+                Console.WriteLine($"DB Error: {e.Message}");
+            }
+
+            return planName; // Return the plan name or null if not found
+        }
     }
 }

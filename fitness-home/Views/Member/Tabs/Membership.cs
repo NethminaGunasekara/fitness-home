@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using fitness_home.Helpers;
 using fitness_home.Services;
+using fitness_home.Utils.Types;
 
 namespace fitness_home.Views.Member.Components.Views
 {
@@ -53,6 +54,11 @@ namespace fitness_home.Views.Member.Components.Views
             ResumeLayout();
         }
 
+        public void HelloWorld()
+        {
+            Console.WriteLine("Hello World!");
+        }
+
         // ** Event: Triggered when the control is first loaded. 
         // Fetches membership plans and displays the first set of plans.
         private void MembershipView_Load(object sender, EventArgs e)
@@ -95,7 +101,7 @@ namespace fitness_home.Views.Member.Components.Views
             int daysDifference = difference.Days >=0 ? difference.Days : 0;
 
             // Display the current membership plan information
-            label_current_plan_name.Text = currentPlan.Name;
+            label_current_plan_name.Text = currentPlan.PlanName;
             label_current_plan_fee.Text = $"LKR {currentPlan.MonthlyFee}";
             label_current_plan_purchase.Text = Authentication.LoggedUser.PlanExpiry.ToString("dd/MM//yyyy");
             label_current_plan_days.Text = daysDifference.ToString();
@@ -111,7 +117,7 @@ namespace fitness_home.Views.Member.Components.Views
                 var plan = MembershipPlans[index];
 
                 // Set the name label to display the plan's name
-                nameLabel.Text = plan.Name;
+                nameLabel.Text = plan.PlanName;
 
                 // If the fee has no decimal part, show it as an integer
                 // Otherwise, display two decimal places for precision
@@ -124,7 +130,7 @@ namespace fitness_home.Views.Member.Components.Views
 
                 // Loop through each benefit in the plan's benefits list
                 // and append it to the 'benefits' string with a bullet point and a new line.
-                plan.benefits.ForEach(benefit => benefits += $"⦿ {benefit}\n");
+                plan.Benefits.ForEach(benefit => benefits += $"⦿ {benefit}\n");
 
                 // Assign the built string to the benefits label to display the plan's benefits.
                 benefitsLabel.Text = benefits;
