@@ -23,14 +23,6 @@ namespace fitness_home.Views.Onboarding.Register.Components
             OnClickAction = onClickAction;
 
             // Add all benefits and bullets to "Benefits"
-            Benefits.Add(new List<Control> { pictureBox_bullet_1, label_benefit_1 });
-            Benefits.Add(new List<Control> { pictureBox_bullet_2, label_benefit_2 });
-            Benefits.Add(new List<Control> { pictureBox_bullet_3, label_benefit_3 });
-            Benefits.Add(new List<Control> { pictureBox_bullet_4, label_benefit_4 });
-            Benefits.Add(new List<Control> { pictureBox_bullet_5, label_benefit_5 });
-            Benefits.Add(new List<Control> { pictureBox_bullet_6, label_benefit_6 });
-            Benefits.Add(new List<Control> { pictureBox_bullet_7, label_benefit_7 });
-            Benefits.Add(new List<Control> { pictureBox_bullet_8, label_benefit_8 });
         }
 
         // Get or set MembershipPlan
@@ -67,29 +59,15 @@ namespace fitness_home.Views.Onboarding.Register.Components
             // Limit the number of benefits displayed to 8, even if the database has more
             int benefitCount = Math.Min(_MembershipPlan.Benefits.Count, 8);
 
-            // Add all benefits and bullets to the TableLayoutPanel
-            for (int i = 0; i < benefitCount; i++)
-            {
-                PictureBox bullet = Benefits[i][0] as PictureBox;
-                Label label = Benefits[i][1] as Label;
-                label.Text = _MembershipPlan.Benefits[i];
+            // Initialize an empty string to build the text for the benefits label.
+            string benefits = String.Empty;
 
-                bullet.Visible = true;
-                label.Visible = true;
+            // Loop through each benefit in the plan's benefits list
+            // and append it to the 'benefits' string with a bullet point and a new line.
+            MembershipPlan.Benefits.ForEach(benefit => benefits += $"⦿ {benefit}\n");
 
-                // Hide the previous benefits before adding the new ones
-                if (benefitCount == i + 1)
-                {
-                    Benefits.ForEach((List<Control> control) =>
-                    {
-                        if (Benefits.IndexOf(control) >= i + 1)
-                        {
-                            control[0].Visible = false;
-                            control[1].Visible = false;
-                        }
-                    });
-                }
-            }
+            // Assign the built string to the benefits label to display the plan's benefits.
+            plan_benefits.Text = benefits;
 
             // Resume layout updates
             this.ResumeLayout();
@@ -135,46 +113,6 @@ namespace fitness_home.Views.Onboarding.Register.Components
             {
                 e.Graphics.DrawRectangle(pen, 0, 0, Width - 1, Height - 1);
             }
-        }
-
-        private void panel_plan_fee_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel_plan_name_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void flowLayoutPanel_fee_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel_content_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel_plan_fee_currency_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel_plan_fee_per_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel_benefits_title_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel_benefits_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

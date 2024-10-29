@@ -33,7 +33,7 @@ namespace fitness_home.Helpers
                     conn.Open();
 
                     // Retrieve the class details from the schedule table
-                    string query = @"SELECT class_id, class_name, start_time, end_time
+                    string query = @"SELECT class_id, class_name, [group], start_time, end_time
                                             FROM schedule
                                             WHERE trainer_id = @TrainerId 
                                             AND date = @Date";
@@ -50,15 +50,16 @@ namespace fitness_home.Helpers
                             {
                                 int classId = reader.GetInt32(0);
                                 string className = reader.GetString(1);
-                                TimeSpan startTime = reader.GetTimeSpan(2);
-                                TimeSpan endTime = reader.GetTimeSpan(3);
+                                int groupNumber = reader.GetInt32(2);
+                                TimeSpan startTime = reader.GetTimeSpan(3);
+                                TimeSpan endTime = reader.GetTimeSpan(4);
 
                                 // Construct start and end DateTime values by combining the date with the times
                                 DateTime classStart = date.Date.Add(startTime);
                                 DateTime classEnd = date.Date.Add(endTime);
 
                                 // Create a ClassDetails object and add it to the list
-                                classes.Add(new ClassDetails(classId, className, trainerId, classStart, classEnd));
+                                classes.Add(new ClassDetails(classId, className, trainerId, groupNumber, classStart, classEnd));
                             }
                         }
                     }
@@ -124,57 +125,6 @@ namespace fitness_home.Helpers
             }
         }
 
-        // ** Helper Method: Displays the list of classes associated with the trainer for a given date
-        public List<ClassDetails> GetScheduleOfTrainer(DateTime date)
-        {
-            List<ClassDetails> classDetailsList = new List<ClassDetails>();
-
-            Console.WriteLine($"Retrieving schedule for the day {date.ToString("dd MMMM, yyyy")}");
-
-            int trainerId = Authentication.LoggedUser.ID;
-
-            // SQL query to retrieve classes for the given trainer and date
-            string query = "SELECT class_id, class_name, trainer_id, start_time, end_time FROM schedule WHERE trainer_id = @TrainerId AND CAST(date AS DATE) = @Date";
-
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(Authentication.Instance.ConnectionString))
-                {
-                    conn.Open();
-
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@TrainerId", trainerId);
-                        cmd.Parameters.AddWithValue("@Date", date.Date);
-
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                int classId = reader.GetInt32(0);
-                                string className = reader.GetString(1);
-                                int retrievedTrainerId = reader.GetInt32(2);
-                                DateTime classStart = reader.GetDateTime(3);
-                                DateTime classEnd = reader.GetDateTime(4);
-
-                                // Initialize with a default status of "Canceled"
-                                ClassDetails classDetails = new ClassDetails(classId, className, retrievedTrainerId, classStart, classEnd);
-
-                                // Add to the list
-                                classDetailsList.Add(classDetails);
-                            }
-                        }
-                    }
-                }
-            }
-            catch (SqlException)
-            {
-                // Handle SQL errors, maybe log or show a message
-            }
-
-            return classDetailsList;
-        }
-
         // ** Helper Method: Clears text content of labels
         public void ClearTextContent(List<Label> labels)
         {
@@ -187,12 +137,6 @@ namespace fitness_home.Helpers
                 // Reset the background color of the label
                 label.BackColor = Color.Transparent;
             });
-        }
-
-        // ** Helper Method: Displays the schedule for a given date
-        public void DisplayScheduleFor(DateTime date)
-        {
-
         }
     }
 
@@ -243,15 +187,17 @@ namespace fitness_home.Helpers
         public int ClassId;
         public string Name;
         public int TrainerId;
+        public int GroupNumber;
         public DateTime ClassStart;
         public DateTime ClassEnd;
         public string ClassStatus; // "Not Started", "Finished", or "Canceled"
 
-        public ClassDetails(int classId, string name, int trainerId, DateTime classStart, DateTime classEnd, string classStatus = "Cancelled")
+        public ClassDetails(int classId, string name, int trainerId, int groupNumber, DateTime classStart, DateTime classEnd, string classStatus = "Cancelled")
         {
             ClassId = classId;
             Name = name;
             TrainerId = trainerId;
+            GroupNumber = groupNumber;
             ClassStart = classStart;
             ClassEnd = classEnd;
             ClassStatus = classStatus;

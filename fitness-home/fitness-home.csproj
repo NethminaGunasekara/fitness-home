@@ -135,6 +135,12 @@
     <Compile Include="Views\Member\MemberArea.Designer.cs">
       <DependentUpon>MemberArea.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Tests\InitializeData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Tests\InitializeData.Designer.cs">
+      <DependentUpon>InitializeData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Trainer\Tabs\AttendanceTabs\Initialize.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -312,6 +318,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Member\MemberArea.resx">
       <DependentUpon>MemberArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Tests\InitializeData.resx">
+      <DependentUpon>InitializeData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Trainer\Tabs\AttendanceTabs\Initialize.resx">
       <DependentUpon>Initialize.cs</DependentUpon>

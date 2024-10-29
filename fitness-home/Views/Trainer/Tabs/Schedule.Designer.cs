@@ -232,7 +232,6 @@
             this.label_name_1.TabIndex = 2;
             this.label_name_1.Text = "Bench press";
             this.label_name_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_name_1.Visible = false;
             // 
             // label_time_1
             // 
@@ -247,7 +246,6 @@
             this.label_time_1.TabIndex = 5;
             this.label_time_1.Text = "10.00 - 11.30";
             this.label_time_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_time_1.Visible = false;
             // 
             // label_status_1
             // 
@@ -263,7 +261,6 @@
             this.label_status_1.TabIndex = 6;
             this.label_status_1.Text = "Not Started";
             this.label_status_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_status_1.Visible = false;
             // 
             // label_time_2
             // 
@@ -278,7 +275,6 @@
             this.label_time_2.TabIndex = 9;
             this.label_time_2.Text = "10.00 - 11.30";
             this.label_time_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_time_2.Visible = false;
             // 
             // label_status_2
             // 
@@ -294,7 +290,6 @@
             this.label_status_2.TabIndex = 10;
             this.label_status_2.Text = "Not Started";
             this.label_status_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_status_2.Visible = false;
             // 
             // label_time_3
             // 
@@ -309,7 +304,6 @@
             this.label_time_3.TabIndex = 13;
             this.label_time_3.Text = "10.00 - 11.30";
             this.label_time_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_time_3.Visible = false;
             // 
             // label_status_3
             // 
@@ -325,7 +319,6 @@
             this.label_status_3.TabIndex = 14;
             this.label_status_3.Text = "Not Started";
             this.label_status_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_status_3.Visible = false;
             // 
             // label_name_2
             // 
@@ -340,7 +333,6 @@
             this.label_name_2.TabIndex = 15;
             this.label_name_2.Text = "Bench press";
             this.label_name_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_name_2.Visible = false;
             // 
             // label_name_3
             // 
@@ -355,7 +347,6 @@
             this.label_name_3.TabIndex = 16;
             this.label_name_3.Text = "Bench press";
             this.label_name_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_name_3.Visible = false;
             // 
             // label_weekly_schedule
             // 
@@ -383,7 +374,6 @@
             this.label_name_4.TabIndex = 17;
             this.label_name_4.Text = "Bench press";
             this.label_name_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_name_4.Visible = false;
             // 
             // label_name_5
             // 
@@ -398,7 +388,6 @@
             this.label_name_5.TabIndex = 18;
             this.label_name_5.Text = "Bench press";
             this.label_name_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_name_5.Visible = false;
             // 
             // label_name_6
             // 
@@ -413,7 +402,6 @@
             this.label_name_6.TabIndex = 19;
             this.label_name_6.Text = "Bench press";
             this.label_name_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_name_6.Visible = false;
             // 
             // label_name_7
             // 
@@ -428,7 +416,6 @@
             this.label_name_7.TabIndex = 20;
             this.label_name_7.Text = "Bench press";
             this.label_name_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_name_7.Visible = false;
             // 
             // label_name_8
             // 
@@ -443,7 +430,6 @@
             this.label_name_8.TabIndex = 21;
             this.label_name_8.Text = "Bench press";
             this.label_name_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_name_8.Visible = false;
             // 
             // label_time_4
             // 
@@ -458,7 +444,6 @@
             this.label_time_4.TabIndex = 32;
             this.label_time_4.Text = "10.00 - 11.30";
             this.label_time_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_time_4.Visible = false;
             // 
             // label_time_5
             // 
@@ -473,7 +458,6 @@
             this.label_time_5.TabIndex = 33;
             this.label_time_5.Text = "10.00 - 11.30";
             this.label_time_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_time_5.Visible = false;
             // 
             // label_time_6
             // 
@@ -488,7 +472,6 @@
             this.label_time_6.TabIndex = 34;
             this.label_time_6.Text = "10.00 - 11.30";
             this.label_time_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_time_6.Visible = false;
             // 
             // label_time_7
             // 
@@ -503,7 +486,6 @@
             this.label_time_7.TabIndex = 35;
             this.label_time_7.Text = "10.00 - 11.30";
             this.label_time_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_time_7.Visible = false;
             // 
             // label_time_8
             // 
@@ -518,7 +500,6 @@
             this.label_time_8.TabIndex = 36;
             this.label_time_8.Text = "10.00 - 11.30";
             this.label_time_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_time_8.Visible = false;
             // 
             // label_status_4
             // 
@@ -534,7 +515,6 @@
             this.label_status_4.TabIndex = 37;
             this.label_status_4.Text = "Not Started";
             this.label_status_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_status_4.Visible = false;
             // 
             // label_status_5
             // 
@@ -550,7 +530,6 @@
             this.label_status_5.TabIndex = 38;
             this.label_status_5.Text = "Not Started";
             this.label_status_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_status_5.Visible = false;
             // 
             // label_status_6
             // 
@@ -566,7 +545,6 @@
             this.label_status_6.TabIndex = 39;
             this.label_status_6.Text = "Not Started";
             this.label_status_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_status_6.Visible = false;
             // 
             // label_status_7
             // 
@@ -582,7 +560,6 @@
             this.label_status_7.TabIndex = 40;
             this.label_status_7.Text = "Not Started";
             this.label_status_7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_status_7.Visible = false;
             // 
             // label_status_8
             // 
@@ -598,7 +575,6 @@
             this.label_status_8.TabIndex = 41;
             this.label_status_8.Text = "Not Started";
             this.label_status_8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label_status_8.Visible = false;
             // 
             // tableLayoutPanel_content
             // 
@@ -1057,7 +1033,6 @@
             this.label_group_1.TabIndex = 44;
             this.label_group_1.Text = "Group 1";
             this.label_group_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_group_1.Visible = false;
             // 
             // label_group_2
             // 
@@ -1072,7 +1047,6 @@
             this.label_group_2.TabIndex = 45;
             this.label_group_2.Text = "Group 1";
             this.label_group_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_group_2.Visible = false;
             // 
             // label_group_3
             // 
@@ -1087,7 +1061,6 @@
             this.label_group_3.TabIndex = 46;
             this.label_group_3.Text = "Group 1";
             this.label_group_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_group_3.Visible = false;
             // 
             // label_group_4
             // 
@@ -1102,7 +1075,6 @@
             this.label_group_4.TabIndex = 47;
             this.label_group_4.Text = "Group 1";
             this.label_group_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_group_4.Visible = false;
             // 
             // label_group_5
             // 
@@ -1117,7 +1089,6 @@
             this.label_group_5.TabIndex = 48;
             this.label_group_5.Text = "Group 1";
             this.label_group_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_group_5.Visible = false;
             // 
             // label_group_6
             // 
@@ -1132,7 +1103,6 @@
             this.label_group_6.TabIndex = 49;
             this.label_group_6.Text = "Group 1";
             this.label_group_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_group_6.Visible = false;
             // 
             // label_group_7
             // 
@@ -1147,7 +1117,6 @@
             this.label_group_7.TabIndex = 50;
             this.label_group_7.Text = "Group 1";
             this.label_group_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_group_7.Visible = false;
             // 
             // label_group_8
             // 
@@ -1162,7 +1131,6 @@
             this.label_group_8.TabIndex = 51;
             this.label_group_8.Text = "Group 1";
             this.label_group_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_group_8.Visible = false;
             // 
             // label_students_1
             // 
@@ -1177,7 +1145,6 @@
             this.label_students_1.TabIndex = 52;
             this.label_students_1.Text = "12";
             this.label_students_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_students_1.Visible = false;
             // 
             // label_students_2
             // 
@@ -1192,7 +1159,6 @@
             this.label_students_2.TabIndex = 53;
             this.label_students_2.Text = "12";
             this.label_students_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_students_2.Visible = false;
             // 
             // label_students_3
             // 
@@ -1207,7 +1173,6 @@
             this.label_students_3.TabIndex = 54;
             this.label_students_3.Text = "12";
             this.label_students_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_students_3.Visible = false;
             // 
             // label_students_4
             // 
@@ -1222,7 +1187,6 @@
             this.label_students_4.TabIndex = 55;
             this.label_students_4.Text = "12";
             this.label_students_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_students_4.Visible = false;
             // 
             // label_students_5
             // 
@@ -1237,7 +1201,6 @@
             this.label_students_5.TabIndex = 56;
             this.label_students_5.Text = "12";
             this.label_students_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_students_5.Visible = false;
             // 
             // label_students_6
             // 
@@ -1252,7 +1215,6 @@
             this.label_students_6.TabIndex = 57;
             this.label_students_6.Text = "12";
             this.label_students_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_students_6.Visible = false;
             // 
             // label_students_8
             // 
@@ -1267,7 +1229,6 @@
             this.label_students_8.TabIndex = 58;
             this.label_students_8.Text = "12";
             this.label_students_8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_students_8.Visible = false;
             // 
             // label_students_7
             // 
@@ -1282,7 +1243,6 @@
             this.label_students_7.TabIndex = 59;
             this.label_students_7.Text = "12";
             this.label_students_7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_students_7.Visible = false;
             // 
             // Schedule
             // 

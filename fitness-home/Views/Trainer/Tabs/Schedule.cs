@@ -216,8 +216,24 @@ namespace fitness_home.Views.Trainer.Tabs
             scheduleManager.ClearTextContent(TimeLabels);
             scheduleManager.ClearTextContent(StatusLabels);
 
-            // Display the list of classes for the curreent date
+            // Display the list of classes for the selected date
+            for(int i = 0; i < Math.Min(classDetails.Count, 8); i++)
+            {
+                ClassDetails classInfo = classDetails[i];
 
+                NameLabels[i].Text = classInfo.Name;
+                GroupLabels[i].Text = $"Group {classInfo.GroupNumber}";
+
+                /*
+                             NameLabels = new List<Label> { label_name_1, label_name_2, label_name_3, label_name_4, label_name_5, label_name_6, label_name_7, label_name_8 };
+            GroupLabels = new List<Label> { label_group_1, label_group_2, label_group_3, label_group_4, label_group_5, label_group_6, label_group_7, label_group_8 };
+            StudentsCountLabels = new List<Label> { label_students_1, label_students_2, label_students_3, label_students_4, label_students_5, label_students_6, label_students_7, label_students_8 };
+            TimeLabels = new List<Label> { label_time_1, label_time_2, label_time_3, label_time_4, label_time_5, label_time_6, label_time_7, label_time_8 };
+            StatusLabels = new List<Label> { label_status_1, label_status_2, label_status_3, label_status_4, label_status_5, label_status_6, label_status_7, label_status_8 };
+                 */
+
+
+            }
         }
     }
 }
