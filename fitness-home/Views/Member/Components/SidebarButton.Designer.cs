@@ -56,7 +56,7 @@
             this.tableLayoutPanel_btn_content.ColumnCount = 4;
             this.tableLayoutPanel_btn_content.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_btn_content.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel_btn_content.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 124F));
+            this.tableLayoutPanel_btn_content.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 160F));
             this.tableLayoutPanel_btn_content.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_btn_content.Controls.Add(this.pictureBox_icon, 1, 1);
             this.tableLayoutPanel_btn_content.Controls.Add(this.label_btn_text, 2, 1);
@@ -78,7 +78,7 @@
             this.pictureBox_icon.BackgroundImage = global::fitness_home.Properties.Resources.home;
             this.pictureBox_icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox_icon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox_icon.Location = new System.Drawing.Point(44, 14);
+            this.pictureBox_icon.Location = new System.Drawing.Point(26, 14);
             this.pictureBox_icon.Margin = new System.Windows.Forms.Padding(0, 3, 0, 4);
             this.pictureBox_icon.Name = "pictureBox_icon";
             this.pictureBox_icon.Size = new System.Drawing.Size(20, 22);
@@ -94,10 +94,10 @@
             this.label_btn_text.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_btn_text.Font = new System.Drawing.Font("Rajdhani SemiBold", 15.6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_btn_text.ForeColor = System.Drawing.Color.White;
-            this.label_btn_text.Location = new System.Drawing.Point(70, 13);
+            this.label_btn_text.Location = new System.Drawing.Point(52, 13);
             this.label_btn_text.Margin = new System.Windows.Forms.Padding(6, 2, 0, 0);
             this.label_btn_text.Name = "label_btn_text";
-            this.label_btn_text.Size = new System.Drawing.Size(118, 27);
+            this.label_btn_text.Size = new System.Drawing.Size(154, 27);
             this.label_btn_text.TabIndex = 1;
             this.label_btn_text.Text = "Dashboard";
             this.label_btn_text.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

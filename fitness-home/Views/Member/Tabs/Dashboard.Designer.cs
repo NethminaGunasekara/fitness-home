@@ -103,7 +103,6 @@
             this.label_membership_type_title = new System.Windows.Forms.Label();
             this.label_height = new System.Windows.Forms.Label();
             this.label_height_title = new System.Windows.Forms.Label();
-            this.btn_edit_profile = new System.Windows.Forms.Button();
             this.label_profile_title = new System.Windows.Forms.Label();
             this.tableLayoutPanel_dashboard_layout.SuspendLayout();
             this.panel_schedule.SuspendLayout();
@@ -1138,7 +1137,6 @@
             this.panel_profile_view.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel_profile_view.Controls.Add(this.tableLayoutPanel_profile_overview);
             this.panel_profile_view.Controls.Add(this.panel_user_stats);
-            this.panel_profile_view.Controls.Add(this.btn_edit_profile);
             this.panel_profile_view.Controls.Add(this.label_profile_title);
             this.panel_profile_view.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_profile_view.Location = new System.Drawing.Point(710, 506);
@@ -1324,24 +1322,6 @@
             this.label_height_title.Text = "Height";
             this.label_height_title.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // btn_edit_profile
-            // 
-            this.btn_edit_profile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_edit_profile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
-            this.btn_edit_profile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_edit_profile.FlatAppearance.BorderSize = 0;
-            this.btn_edit_profile.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
-            this.btn_edit_profile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_edit_profile.Font = new System.Drawing.Font("Roboto", 8.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_edit_profile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
-            this.btn_edit_profile.Location = new System.Drawing.Point(585, 21);
-            this.btn_edit_profile.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_edit_profile.Name = "btn_edit_profile";
-            this.btn_edit_profile.Size = new System.Drawing.Size(40, 20);
-            this.btn_edit_profile.TabIndex = 1;
-            this.btn_edit_profile.Text = "Edit";
-            this.btn_edit_profile.UseVisualStyleBackColor = false;
-            // 
             // label_profile_title
             // 
             this.label_profile_title.AutoSize = true;
@@ -1412,7 +1392,6 @@
         private System.Windows.Forms.Panel panel_bfp;
         private System.Windows.Forms.Panel panel_profile_view;
         private System.Windows.Forms.Label label_profile_title;
-        private System.Windows.Forms.Button btn_edit_profile;
         private System.Windows.Forms.PictureBox pictureBox_avatar;
         private System.Windows.Forms.Label label_name;
         private System.Windows.Forms.Label label_email;

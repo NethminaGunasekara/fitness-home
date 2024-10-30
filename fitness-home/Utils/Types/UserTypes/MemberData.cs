@@ -5,7 +5,7 @@ using fitness_home.Services;
 
 namespace fitness_home.Utils.Types.UserTypes
 {
-    internal class Member : User
+    internal class MemberData : User
     {
         private readonly int _ID;
         public Role Role { get; }
@@ -22,7 +22,7 @@ namespace fitness_home.Utils.Types.UserTypes
         private int _PlanID;
         private DateTime _PlanExpiry;
 
-        public Member(int id)
+        public MemberData(int id)
         {
             _ID = id;
             Role = Role.Member;
@@ -68,7 +68,7 @@ namespace fitness_home.Utils.Types.UserTypes
                         else
                         {
                             // Handle case where no member is found
-                            throw new Exception("Member not found with the given ID.");
+                            throw new MemberNotFoundException("Member not found with the given ID.");
                         }
                     }
                 }
@@ -238,6 +238,24 @@ namespace fitness_home.Utils.Types.UserTypes
                 _PlanExpiry = value;
                 UpdateDatabase("plan_expiry", value);  // Update the "plan_expiry" in the database
             }
+        }
+    }
+
+    // ** Exception thrown when no member is found with the given id
+    public class MemberNotFoundException : Exception
+    {
+        public MemberNotFoundException()
+        {
+        }
+
+        public MemberNotFoundException(string message)
+            : base(message)
+        {
+        }
+
+        public MemberNotFoundException(string message, Exception inner)
+            : base(message, inner)
+        {
         }
     }
 }

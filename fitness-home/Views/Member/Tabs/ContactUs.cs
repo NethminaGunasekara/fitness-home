@@ -17,31 +17,16 @@ namespace fitness_home.Views.Member.Components.Views
         private void ContactUsView_Load(object sender, EventArgs e)
         {
             // Retrieve the logged-in user's details from the authentication class
-            int memberId = Authentication.LoggedUser.ID;
-            string firstName = Authentication.LoggedUser.FirstName;
-            string lastName = Authentication.LoggedUser.LastName;
+            int memberId = Authentication.LoggedUser.ID; // Retrieve the logged in member's id
+            string firstName = Authentication.LoggedUser.FirstName; // Retrieve the logged in member's first name
+            string lastName = Authentication.LoggedUser.LastName; // Retrieve the logged in member's last name
 
             // Display the logged-in user's full name as the sender (e.g., "Dulanja Nimesh")
             label_from.Text = $"{firstName} {lastName}";
             label_feedback_from.Text = $"{firstName} {lastName}";
 
-            // Format the member ID by prefixing it with 'M' and padding with leading zeros
-            // Example: If memberId = 1, the result will be "M001"
-            //
-            // Methods used: 
-            // ** ToString() converts the integer memberId to a string.
-            // ** PadLeft(3, '0') ensures that the string is at least 3 characters long by 
-            //   adding '0' characters to the left if necessary. If the ID is already 
-            //   3 or more digits, no padding is applied.
-            string formattedId = memberId.ToString().PadLeft(3, '0');
-            
-            // Set the formatted member id as the text content of message from and feedback from labe;s
-            label_from_id.Text = $"M{formattedId}";
-            label_feedback_from_id.Text = $"M{formattedId}";
-
             // Apply rounded corners to selected panels
             RoundedCorners.Apply(panel_send_message, panel_provide_feedback, panel_message, panel_feedback_message);
-
         }
 
         // ** Click Event: When the button to select trainer as the message receiver is being clicked
@@ -52,7 +37,7 @@ namespace fitness_home.Views.Member.Components.Views
             // Set the default foreground color to the Admin button (text color)
             button_select_admin.ForeColor = Color.FromArgb(148, 148, 148);
 
-            // Set active button background color to the Trainer button
+            // Set active button background color to the Trainer button (blue)
             button_select_trainer.BackColor = Color.FromArgb(46, 44, 57);
             // Set active button foreground color to the Trainer button (text color)
             button_select_trainer.ForeColor = Color.FromArgb(118, 87, 255);
@@ -81,7 +66,7 @@ namespace fitness_home.Views.Member.Components.Views
                 // Initialize an instance of FeedbackManager helper class, in order to use "SaveFeedback" helper method from it
                 FeedbackManager feedbackManager = new FeedbackManager();
 
-                // Store the feedback in the database
+                // Store the feedback in the database 
                 feedbackManager.SaveFeedback(textBox_feedback_message.Text);
             }
         }

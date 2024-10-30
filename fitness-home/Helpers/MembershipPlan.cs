@@ -229,6 +229,46 @@ namespace fitness_home.Helpers
             return plan;
         }
 
+        // ** Retrieves the group number of a given member.
+        public int? GetGroupNumberForMember(int memberId, int planId)
+        {
+            int? groupNumber = null;
+
+            // Query to retrieve the first matching group number for the specified member_id and plan_id
+            string query = "SELECT TOP 1 group_number FROM member_group WHERE member_id = @memberId AND plan_id = @planId";
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(Authentication.Instance.ConnectionString))
+                {
+                    conn.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        // Add parameters for memberId and planId
+                        cmd.Parameters.AddWithValue("@memberId", memberId);
+                        cmd.Parameters.AddWithValue("@planId", planId);
+
+                        // Execute the query and read the result
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                groupNumber = reader.GetInt32(0); // Get the value of group_number
+                            }
+                        }
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                // Handle database connection errors
+                new ApplicationError(ErrorType.DatabaseError).ShowDialog();
+            }
+
+            return groupNumber; // Return the group number, or null if not found
+        }
+
         /// <summary>
         /// Retrieves the plan name of a given plan ID.
         /// </summary>

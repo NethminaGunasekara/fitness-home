@@ -13,14 +13,14 @@ namespace fitness_home.Views.Trainer
         // This avoids unnecessary re-instantiations, and allows us to keep data passed to those views
         private Dashboard Dashboard;
         private Schedule Schedule;
-        private Initialize Attendance;
+        private Attendance Attendance;
+        private Assessments Assessments;
 
         // Sidebar buttons
         SidebarButton DashboardButton;
         SidebarButton ScheduleButton;
         SidebarButton AttendanceButton;
         SidebarButton AssessmentsButton;
-        SidebarButton PaymentsButton;
 
         public TrainerArea()
         {
@@ -29,7 +29,8 @@ namespace fitness_home.Views.Trainer
             // Initialize all fields containing the tabs of member area
             Dashboard = new Dashboard();
             Schedule = new Schedule();
-            Attendance = new Initialize();
+            Attendance = new Attendance();
+            Assessments = new Assessments();
         }
 
         // ** Method to initialize all sidebar buttons
@@ -54,11 +55,6 @@ namespace fitness_home.Views.Trainer
             AssessmentsButton = new SidebarButton(buttonType: ButtonType.Assessments);
             tableLayoutPanel_sidebar.Controls.Add(AssessmentsButton, 1, 7);
             AssessmentsButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-
-            // Initialize the payments button and add it to the sidebar
-            PaymentsButton = new SidebarButton(buttonType: ButtonType.Payments);
-            tableLayoutPanel_sidebar.Controls.Add(PaymentsButton, 1, 9);
-            PaymentsButton.Anchor = AnchorStyles.Left | AnchorStyles.Right;
         }
 
         // ** Method to switch the main panel's content by loading a new tab
@@ -78,7 +74,7 @@ namespace fitness_home.Views.Trainer
         private void SetActiveButton(SidebarButton ActiveButton)
         {
             // Mark all other buttons as inactive
-            DashboardButton.ActiveButton = ScheduleButton.ActiveButton = AttendanceButton.ActiveButton = AssessmentsButton.ActiveButton = PaymentsButton.ActiveButton = false;
+            DashboardButton.ActiveButton = ScheduleButton.ActiveButton = AttendanceButton.ActiveButton = AssessmentsButton.ActiveButton = false;
 
             // Mark the button passed as a parameter as active
             ActiveButton.ActiveButton = true;
@@ -105,7 +101,7 @@ namespace fitness_home.Views.Trainer
 
             ResumeLayout();
 
-            // Code to run when the dashboard button is clicked
+            // Code to run when the "Dashboard" button is clicked
             DashboardButton.BtnClick = delegate
             {
                 // Show the dashboard tab
@@ -121,7 +117,7 @@ namespace fitness_home.Views.Trainer
                 label_heading_2.Text = $"{Authentication.LoggedUser.FirstName}!";
             };
 
-            // Code to run when the schedule button is clicked
+            // Code to run when the "Schedule" button is clicked
             ScheduleButton.BtnClick = delegate
             {
                 // Show the schedule tab
@@ -137,7 +133,7 @@ namespace fitness_home.Views.Trainer
                 label_heading_2.Text = "Schedule";
             };
 
-            // Code to run when the attendance button is clicked
+            // Code to run when the "Attendance" button is clicked
             AttendanceButton.BtnClick = delegate
             {
                 // Show the schedule tab
@@ -149,13 +145,29 @@ namespace fitness_home.Views.Trainer
                 // Clear the text content of both parts of the heading
                 label_heading_1.Text = label_heading_2.Text = "";
             };
+
+            // Code to run when the "Assessments" button is clicked
+            AssessmentsButton.BtnClick = delegate
+            {
+                // Show the assessments tab
+                ChangeContent(Assessments);
+
+                // Set the assessments button as the active button
+                SetActiveButton(AssessmentsButton);
+
+                // Clear the text content of both parts of the heading
+                label_heading_1.Text = label_heading_2.Text = "";
+
+                // Set the first part of the form heading
+                label_heading_1.Text = "Assessments";
+            };
         }
 
         // ** Event: When the view profile button is clicked
         private void button_edit_profile_Click(object sender, EventArgs e)
         {
             // Mark all sidebar buttons as inactive
-            DashboardButton.ActiveButton = ScheduleButton.ActiveButton = AttendanceButton.ActiveButton = AssessmentsButton.ActiveButton = PaymentsButton.ActiveButton = false;
+            DashboardButton.ActiveButton = ScheduleButton.ActiveButton = AttendanceButton.ActiveButton = AssessmentsButton.ActiveButton = false;
 
             // Display the profile view
             ChangeContent(Dashboard);

@@ -67,6 +67,7 @@
     <Compile Include="Helpers\ScheduleManager.cs" />
     <Compile Include="Services\HttpServer.cs" />
     <Compile Include="Services\Membership.cs" />
+    <Compile Include="Utils\Types\AssessmentsForMember.cs" />
     <Compile Include="Utils\Types\MembershipPlanDetails.cs" />
     <Compile Include="Services\Authentication.cs" />
     <Compile Include="Helpers\FormProvider.cs" />
@@ -74,7 +75,7 @@
     <Compile Include="Utils\Types\UserTypes\Admin.cs" />
     <Compile Include="Utils\Helpers.cs" />
     <Compile Include="Utils\Placeholder.cs" />
-    <Compile Include="Utils\Types\UserTypes\Member.cs" />
+    <Compile Include="Utils\Types\UserTypes\MemberData.cs" />
     <Compile Include="Utils\Types\UserTypes\TrainerData.cs" />
     <Compile Include="Utils\Types\UserTypes\User.cs" />
     <Compile Include="Utils\Validate\LoginForm.cs" />
@@ -135,29 +136,41 @@
     <Compile Include="Views\Member\MemberArea.Designer.cs">
       <DependentUpon>MemberArea.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Messages\Assessments\InvalidMemberId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Messages\Assessments\InvalidMemberId.Designer.cs">
+      <DependentUpon>InvalidMemberId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Messages\SuccessMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Messages\SuccessMessage.Designer.cs">
+      <DependentUpon>SuccessMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Tests\InitializeData.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Tests\InitializeData.Designer.cs">
       <DependentUpon>InitializeData.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Trainer\Tabs\AttendanceTabs\Initialize.cs">
+    <Compile Include="Views\Trainer\Tabs\AddClass.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Trainer\Tabs\AttendanceTabs\Initialize.Designer.cs">
-      <DependentUpon>Initialize.cs</DependentUpon>
+    <Compile Include="Views\Trainer\Tabs\AddClass.Designer.cs">
+      <DependentUpon>AddClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Trainer\Tabs\AttendanceTabs\StudentInfo.cs">
+    <Compile Include="Views\Trainer\Tabs\Assessments.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Trainer\Tabs\AttendanceTabs\StudentInfo.Designer.cs">
-      <DependentUpon>StudentInfo.cs</DependentUpon>
+    <Compile Include="Views\Trainer\Tabs\Assessments.Designer.cs">
+      <DependentUpon>Assessments.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Trainer\Tabs\AttendanceTabs\Waiting.cs">
+    <Compile Include="Views\Trainer\Tabs\Attendance.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Views\Trainer\Tabs\AttendanceTabs\Waiting.Designer.cs">
-      <DependentUpon>Waiting.cs</DependentUpon>
+    <Compile Include="Views\Trainer\Tabs\Attendance.Designer.cs">
+      <DependentUpon>Attendance.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Trainer\Tabs\Schedule.cs">
       <SubType>UserControl</SubType>
@@ -182,12 +195,6 @@
     </Compile>
     <Compile Include="Views\Messages\ApplicationError.Designer.cs">
       <DependentUpon>ApplicationError.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Messages\AssessmentSuccessful.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Messages\AssessmentSuccessful.Designer.cs">
-      <DependentUpon>AssessmentSuccessful.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Messages\FeedbackReceived.cs">
       <SubType>Form</SubType>
@@ -232,18 +239,6 @@
     <Compile Include="Views\Onboarding\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="Views\Onboarding\Register\Components\Benefit.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Onboarding\Register\Components\Benefit.Designer.cs">
-      <DependentUpon>Benefit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Onboarding\Register\Components\Bullet.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\Onboarding\Register\Components\Bullet.Designer.cs">
-      <DependentUpon>Bullet.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Onboarding\Register\Components\MembershipCard.cs">
       <SubType>UserControl</SubType>
@@ -319,11 +314,20 @@
     <EmbeddedResource Include="Views\Member\MemberArea.resx">
       <DependentUpon>MemberArea.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Messages\SuccessMessage.resx">
+      <DependentUpon>SuccessMessage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Tests\InitializeData.resx">
       <DependentUpon>InitializeData.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Trainer\Tabs\AttendanceTabs\Initialize.resx">
-      <DependentUpon>Initialize.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Trainer\Tabs\AddClass.resx">
+      <DependentUpon>AddClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Trainer\Tabs\Assessments.resx">
+      <DependentUpon>Assessments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Trainer\Tabs\Attendance.resx">
+      <DependentUpon>Attendance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Trainer\Tabs\Schedule.resx">
       <DependentUpon>Schedule.cs</DependentUpon>
@@ -361,12 +365,6 @@
     <EmbeddedResource Include="Views\Onboarding\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Onboarding\Register\Components\Benefit.resx">
-      <DependentUpon>Benefit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Onboarding\Register\Components\Bullet.resx">
-      <DependentUpon>Bullet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Onboarding\Register\Components\MembershipCard.resx">
       <DependentUpon>MembershipCard.cs</DependentUpon>
@@ -524,6 +522,17 @@
   <ItemGroup>
     <None Include="Resources\icons\dashboard\students_dark.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons\keyboard_double_arrow_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\keyboard_double_arrow_righ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\material-symbols_cancel-rounded.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons\material-symbols_check-circle-rounded.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace fitness_home.Views.Messages
+namespace fitness_home.Views.Trainer.Tabs
 {
-    public partial class AssessmentSuccessful : Form
+    public partial class Attendance : UserControl
     {
-        public AssessmentSuccessful()
+        public Attendance()
         {
             InitializeComponent();
+        }
+
+        private void tableLayoutPanel_assessments_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

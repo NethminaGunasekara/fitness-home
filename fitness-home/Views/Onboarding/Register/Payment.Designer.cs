@@ -63,22 +63,22 @@
             this.label_heading = new System.Windows.Forms.Label();
             this.panel_card_details = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_card_info = new System.Windows.Forms.TableLayoutPanel();
-            this.panel_card_holder = new System.Windows.Forms.Panel();
-            this.textBox_card_holder = new System.Windows.Forms.TextBox();
-            this.label_payment_type = new System.Windows.Forms.Label();
-            this.label_card_holder = new System.Windows.Forms.Label();
-            this.label_card_number = new System.Windows.Forms.Label();
             this.panel_card_ = new System.Windows.Forms.Panel();
             this.textBox_card_number = new System.Windows.Forms.TextBox();
+            this.label_card_number = new System.Windows.Forms.Label();
+            this.label_card_holder = new System.Windows.Forms.Label();
             this.panel_cash_icon = new System.Windows.Forms.Panel();
             this.pictureBox_cash = new System.Windows.Forms.PictureBox();
             this.panel_mc_logo = new System.Windows.Forms.Panel();
             this.pictureBox_mc = new System.Windows.Forms.PictureBox();
+            this.label_payment_type = new System.Windows.Forms.Label();
             this.radioButton_mc = new System.Windows.Forms.RadioButton();
             this.radioButton_visa = new System.Windows.Forms.RadioButton();
             this.panel_visa_logo = new System.Windows.Forms.Panel();
             this.pictureBox_visa = new System.Windows.Forms.PictureBox();
             this.radioButton_cash = new System.Windows.Forms.RadioButton();
+            this.panel_card_holder = new System.Windows.Forms.Panel();
+            this.textBox_card_holder = new System.Windows.Forms.TextBox();
             this.panel_content.SuspendLayout();
             this.tableLayoutPanel_content.SuspendLayout();
             this.panel_security_info.SuspendLayout();
@@ -98,7 +98,6 @@
             this.panel_heading.SuspendLayout();
             this.panel_card_details.SuspendLayout();
             this.tableLayoutPanel_card_info.SuspendLayout();
-            this.panel_card_holder.SuspendLayout();
             this.panel_card_.SuspendLayout();
             this.panel_cash_icon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_cash)).BeginInit();
@@ -106,6 +105,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_mc)).BeginInit();
             this.panel_visa_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_visa)).BeginInit();
+            this.panel_card_holder.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_content
@@ -591,76 +591,6 @@
             this.tableLayoutPanel_card_info.Size = new System.Drawing.Size(705, 358);
             this.tableLayoutPanel_card_info.TabIndex = 0;
             // 
-            // panel_card_holder
-            // 
-            this.panel_card_holder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.panel_card_holder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tableLayoutPanel_card_info.SetColumnSpan(this.panel_card_holder, 3);
-            this.panel_card_holder.Controls.Add(this.textBox_card_holder);
-            this.panel_card_holder.Location = new System.Drawing.Point(4, 186);
-            this.panel_card_holder.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.panel_card_holder.Name = "panel_card_holder";
-            this.panel_card_holder.Size = new System.Drawing.Size(356, 48);
-            this.panel_card_holder.TabIndex = 10;
-            // 
-            // textBox_card_holder
-            // 
-            this.textBox_card_holder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
-            this.textBox_card_holder.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_card_holder.Font = new System.Drawing.Font("Noto Sans Medium", 14F, System.Drawing.FontStyle.Bold);
-            this.textBox_card_holder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.textBox_card_holder.Location = new System.Drawing.Point(13, 9);
-            this.textBox_card_holder.Margin = new System.Windows.Forms.Padding(0);
-            this.textBox_card_holder.MaxLength = 100;
-            this.textBox_card_holder.Name = "textBox_card_holder";
-            this.textBox_card_holder.Size = new System.Drawing.Size(334, 26);
-            this.textBox_card_holder.TabIndex = 0;
-            this.textBox_card_holder.Text = "Card holder’s name";
-            this.textBox_card_holder.TextChanged += new System.EventHandler(this.textBox_card_holder_TextChanged);
-            this.textBox_card_holder.Enter += new System.EventHandler(this.RemovePlaceholder);
-            this.textBox_card_holder.Leave += new System.EventHandler(this.AddPlaceholder);
-            // 
-            // label_payment_type
-            // 
-            this.label_payment_type.AutoSize = true;
-            this.tableLayoutPanel_card_info.SetColumnSpan(this.label_payment_type, 3);
-            this.label_payment_type.Font = new System.Drawing.Font("Rajdhani SemiBold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_payment_type.ForeColor = System.Drawing.Color.White;
-            this.label_payment_type.Location = new System.Drawing.Point(0, 0);
-            this.label_payment_type.Margin = new System.Windows.Forms.Padding(0);
-            this.label_payment_type.Name = "label_payment_type";
-            this.label_payment_type.Size = new System.Drawing.Size(123, 25);
-            this.label_payment_type.TabIndex = 0;
-            this.label_payment_type.Text = "Payment Type";
-            // 
-            // label_card_holder
-            // 
-            this.label_card_holder.AutoSize = true;
-            this.tableLayoutPanel_card_info.SetColumnSpan(this.label_card_holder, 3);
-            this.label_card_holder.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label_card_holder.Font = new System.Drawing.Font("Rajdhani SemiBold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_card_holder.ForeColor = System.Drawing.Color.White;
-            this.label_card_holder.Location = new System.Drawing.Point(0, 149);
-            this.label_card_holder.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
-            this.label_card_holder.Name = "label_card_holder";
-            this.label_card_holder.Size = new System.Drawing.Size(705, 25);
-            this.label_card_holder.TabIndex = 8;
-            this.label_card_holder.Text = "Card holder’s name";
-            // 
-            // label_card_number
-            // 
-            this.label_card_number.AutoSize = true;
-            this.tableLayoutPanel_card_info.SetColumnSpan(this.label_card_number, 3);
-            this.label_card_number.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label_card_number.Font = new System.Drawing.Font("Rajdhani SemiBold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_card_number.ForeColor = System.Drawing.Color.White;
-            this.label_card_number.Location = new System.Drawing.Point(0, 272);
-            this.label_card_number.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
-            this.label_card_number.Name = "label_card_number";
-            this.label_card_number.Size = new System.Drawing.Size(705, 25);
-            this.label_card_number.TabIndex = 9;
-            this.label_card_number.Text = "Card number";
-            // 
             // panel_card_
             // 
             this.panel_card_.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
@@ -690,6 +620,34 @@
             this.textBox_card_number.Enter += new System.EventHandler(this.RemovePlaceholder);
             this.textBox_card_number.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.NumericOnly_KeyPress);
             this.textBox_card_number.Leave += new System.EventHandler(this.AddPlaceholder);
+            // 
+            // label_card_number
+            // 
+            this.label_card_number.AutoSize = true;
+            this.tableLayoutPanel_card_info.SetColumnSpan(this.label_card_number, 3);
+            this.label_card_number.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label_card_number.Font = new System.Drawing.Font("Rajdhani SemiBold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_card_number.ForeColor = System.Drawing.Color.White;
+            this.label_card_number.Location = new System.Drawing.Point(0, 272);
+            this.label_card_number.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
+            this.label_card_number.Name = "label_card_number";
+            this.label_card_number.Size = new System.Drawing.Size(705, 25);
+            this.label_card_number.TabIndex = 9;
+            this.label_card_number.Text = "Card number";
+            // 
+            // label_card_holder
+            // 
+            this.label_card_holder.AutoSize = true;
+            this.tableLayoutPanel_card_info.SetColumnSpan(this.label_card_holder, 3);
+            this.label_card_holder.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.label_card_holder.Font = new System.Drawing.Font("Rajdhani SemiBold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_card_holder.ForeColor = System.Drawing.Color.White;
+            this.label_card_holder.Location = new System.Drawing.Point(0, 149);
+            this.label_card_holder.Margin = new System.Windows.Forms.Padding(0, 0, 0, 12);
+            this.label_card_holder.Name = "label_card_holder";
+            this.label_card_holder.Size = new System.Drawing.Size(705, 25);
+            this.label_card_holder.TabIndex = 8;
+            this.label_card_holder.Text = "Card holder’s name";
             // 
             // panel_cash_icon
             // 
@@ -730,6 +688,19 @@
             this.pictureBox_mc.Size = new System.Drawing.Size(55, 48);
             this.pictureBox_mc.TabIndex = 4;
             this.pictureBox_mc.TabStop = false;
+            // 
+            // label_payment_type
+            // 
+            this.label_payment_type.AutoSize = true;
+            this.tableLayoutPanel_card_info.SetColumnSpan(this.label_payment_type, 3);
+            this.label_payment_type.Font = new System.Drawing.Font("Rajdhani SemiBold", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_payment_type.ForeColor = System.Drawing.Color.White;
+            this.label_payment_type.Location = new System.Drawing.Point(0, 0);
+            this.label_payment_type.Margin = new System.Windows.Forms.Padding(0);
+            this.label_payment_type.Name = "label_payment_type";
+            this.label_payment_type.Size = new System.Drawing.Size(123, 25);
+            this.label_payment_type.TabIndex = 0;
+            this.label_payment_type.Text = "Payment Type";
             // 
             // radioButton_mc
             // 
@@ -793,6 +764,35 @@
             this.radioButton_cash.UseVisualStyleBackColor = true;
             this.radioButton_cash.CheckedChanged += new System.EventHandler(this.radioButton_cash_CheckedChanged);
             // 
+            // panel_card_holder
+            // 
+            this.panel_card_holder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.panel_card_holder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tableLayoutPanel_card_info.SetColumnSpan(this.panel_card_holder, 3);
+            this.panel_card_holder.Controls.Add(this.textBox_card_holder);
+            this.panel_card_holder.Location = new System.Drawing.Point(4, 186);
+            this.panel_card_holder.Margin = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.panel_card_holder.Name = "panel_card_holder";
+            this.panel_card_holder.Size = new System.Drawing.Size(356, 48);
+            this.panel_card_holder.TabIndex = 10;
+            // 
+            // textBox_card_holder
+            // 
+            this.textBox_card_holder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(36)))), ((int)(((byte)(36)))));
+            this.textBox_card_holder.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_card_holder.Font = new System.Drawing.Font("Noto Sans Medium", 14F, System.Drawing.FontStyle.Bold);
+            this.textBox_card_holder.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.textBox_card_holder.Location = new System.Drawing.Point(13, 9);
+            this.textBox_card_holder.Margin = new System.Windows.Forms.Padding(0);
+            this.textBox_card_holder.MaxLength = 100;
+            this.textBox_card_holder.Name = "textBox_card_holder";
+            this.textBox_card_holder.Size = new System.Drawing.Size(334, 26);
+            this.textBox_card_holder.TabIndex = 0;
+            this.textBox_card_holder.Text = "Card holder’s name";
+            this.textBox_card_holder.TextChanged += new System.EventHandler(this.textBox_card_holder_TextChanged);
+            this.textBox_card_holder.Enter += new System.EventHandler(this.RemovePlaceholder);
+            this.textBox_card_holder.Leave += new System.EventHandler(this.AddPlaceholder);
+            // 
             // Payment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -835,8 +835,6 @@
             this.panel_card_details.ResumeLayout(false);
             this.tableLayoutPanel_card_info.ResumeLayout(false);
             this.tableLayoutPanel_card_info.PerformLayout();
-            this.panel_card_holder.ResumeLayout(false);
-            this.panel_card_holder.PerformLayout();
             this.panel_card_.ResumeLayout(false);
             this.panel_card_.PerformLayout();
             this.panel_cash_icon.ResumeLayout(false);
@@ -845,6 +843,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_mc)).EndInit();
             this.panel_visa_logo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_visa)).EndInit();
+            this.panel_card_holder.ResumeLayout(false);
+            this.panel_card_holder.PerformLayout();
             this.ResumeLayout(false);
 
         }

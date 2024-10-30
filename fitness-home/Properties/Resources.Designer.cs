@@ -223,6 +223,26 @@ namespace fitness_home.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap keyboard_double_arrow_left {
+            get {
+                object obj = ResourceManager.GetObject("keyboard_double_arrow_left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap keyboard_double_arrow_righ {
+            get {
+                object obj = ResourceManager.GetObject("keyboard_double_arrow_righ", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lbm {
             get {
                 object obj = ResourceManager.GetObject("lbm", resourceCulture);
@@ -256,6 +276,26 @@ namespace fitness_home.Properties {
         internal static System.Drawing.Bitmap logo_cropped {
             get {
                 object obj = ResourceManager.GetObject("logo_cropped", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap material_symbols_cancel_rounded {
+            get {
+                object obj = ResourceManager.GetObject("material-symbols_cancel-rounded", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap material_symbols_check_circle_rounded {
+            get {
+                object obj = ResourceManager.GetObject("material-symbols_check-circle-rounded", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

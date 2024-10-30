@@ -329,6 +329,7 @@
             this.btn_edit_profile.TabIndex = 1;
             this.btn_edit_profile.Text = "Edit";
             this.btn_edit_profile.UseVisualStyleBackColor = false;
+            this.btn_edit_profile.Click += new System.EventHandler(this.btn_edit_profile_Click);
             // 
             // label_profile_title
             // 

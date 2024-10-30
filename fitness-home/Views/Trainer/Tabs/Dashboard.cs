@@ -254,5 +254,10 @@ namespace fitness_home.Views.Trainer.Tabs
             // Here, we re-calculate the size of the panels with rounded corners as our control is resized
             RoundedCorners.Apply(panel_schedule, panel_calorie_goal, panel_profile_view, panel_user_stats, panel_table_heading, panel_feedback_1, panel_feedback_2);
         }
+
+        private void btn_edit_profile_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -117,10 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label2.Text" xml:space="preserve">
-    <value>1. Launch the Fitness Home gym management app on your mobile device.
-2. If you're not already on the home screen, tap the Home icon at the bottom of the app.
-3. Tap the Mark Attendance button on the home screen to proceed.
-4. You will be redirected to the QR code scanner page.</value>
-  </data>
 </root>

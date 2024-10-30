@@ -38,7 +38,6 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label_email = new System.Windows.Forms.Label();
             this.label_from = new System.Windows.Forms.Label();
-            this.label_from_id = new System.Windows.Forms.Label();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.button_select_trainer = new System.Windows.Forms.Button();
@@ -56,7 +55,6 @@
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.label_feedback_from = new System.Windows.Forms.Label();
-            this.label_feedback_from_id = new System.Windows.Forms.Label();
             this.button_send_feedback = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.panel_feedback_message = new System.Windows.Forms.Panel();
@@ -192,7 +190,6 @@
             // 
             this.flowLayoutPanel1.Controls.Add(this.label_email);
             this.flowLayoutPanel1.Controls.Add(this.label_from);
-            this.flowLayoutPanel1.Controls.Add(this.label_from_id);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
@@ -224,19 +221,6 @@
             this.label_from.TabIndex = 6;
             this.label_from.Text = "Dulanja Nimesh";
             this.label_from.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label_from_id
-            // 
-            this.label_from_id.AutoSize = true;
-            this.label_from_id.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_from_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.label_from_id.Location = new System.Drawing.Point(187, 0);
-            this.label_from_id.Margin = new System.Windows.Forms.Padding(0);
-            this.label_from_id.Name = "label_from_id";
-            this.label_from_id.Size = new System.Drawing.Size(62, 24);
-            this.label_from_id.TabIndex = 7;
-            this.label_from_id.Text = "(M001)";
-            this.label_from_id.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // flowLayoutPanel2
             // 
@@ -448,7 +432,6 @@
             // 
             this.flowLayoutPanel3.Controls.Add(this.label7);
             this.flowLayoutPanel3.Controls.Add(this.label_feedback_from);
-            this.flowLayoutPanel3.Controls.Add(this.label_feedback_from_id);
             this.flowLayoutPanel3.Location = new System.Drawing.Point(12, 12);
             this.flowLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
@@ -480,19 +463,6 @@
             this.label_feedback_from.TabIndex = 6;
             this.label_feedback_from.Text = "Dulanja Nimesh";
             this.label_feedback_from.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label_feedback_from_id
-            // 
-            this.label_feedback_from_id.AutoSize = true;
-            this.label_feedback_from_id.Font = new System.Drawing.Font("Noto Sans", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_feedback_from_id.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.label_feedback_from_id.Location = new System.Drawing.Point(187, 0);
-            this.label_feedback_from_id.Margin = new System.Windows.Forms.Padding(0);
-            this.label_feedback_from_id.Name = "label_feedback_from_id";
-            this.label_feedback_from_id.Size = new System.Drawing.Size(62, 24);
-            this.label_feedback_from_id.TabIndex = 7;
-            this.label_feedback_from_id.Text = "(M001)";
-            this.label_feedback_from_id.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // button_send_feedback
             // 
@@ -607,7 +577,6 @@
         private System.Windows.Forms.Label label_email;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label_from;
-        private System.Windows.Forms.Label label_from_id;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button_select_trainer;
@@ -627,7 +596,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label_feedback_from;
-        private System.Windows.Forms.Label label_feedback_from_id;
         private System.Windows.Forms.Panel panel_feedback_message;
         private System.Windows.Forms.TextBox textBox_feedback_message;
     }

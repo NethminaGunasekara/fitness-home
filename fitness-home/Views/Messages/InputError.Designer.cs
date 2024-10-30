@@ -64,7 +64,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(452, 240);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(479, 240);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // label_message
@@ -79,7 +79,7 @@
             this.label_message.Location = new System.Drawing.Point(0, 123);
             this.label_message.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.label_message.Name = "label_message";
-            this.label_message.Size = new System.Drawing.Size(452, 22);
+            this.label_message.Size = new System.Drawing.Size(479, 22);
             this.label_message.TabIndex = 5;
             this.label_message.Text = "Ensure all fields are filled correctly";
             this.label_message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,7 +95,7 @@
             this.label_title.Location = new System.Drawing.Point(0, 95);
             this.label_title.Margin = new System.Windows.Forms.Padding(0, 8, 0, 4);
             this.label_title.Name = "label_title";
-            this.label_title.Size = new System.Drawing.Size(452, 24);
+            this.label_title.Size = new System.Drawing.Size(479, 24);
             this.label_title.TabIndex = 0;
             this.label_title.Text = "We couldn\'t process your submission";
             this.label_title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -107,7 +107,7 @@
             this.error_heading.Location = new System.Drawing.Point(0, 0);
             this.error_heading.Margin = new System.Windows.Forms.Padding(0);
             this.error_heading.Name = "error_heading";
-            this.error_heading.Size = new System.Drawing.Size(452, 87);
+            this.error_heading.Size = new System.Drawing.Size(479, 87);
             this.error_heading.TabIndex = 3;
             // 
             // tableLayoutPanel_heading
@@ -125,7 +125,7 @@
             this.tableLayoutPanel_heading.Name = "tableLayoutPanel_heading";
             this.tableLayoutPanel_heading.RowCount = 1;
             this.tableLayoutPanel_heading.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_heading.Size = new System.Drawing.Size(452, 87);
+            this.tableLayoutPanel_heading.Size = new System.Drawing.Size(479, 87);
             this.tableLayoutPanel_heading.TabIndex = 2;
             // 
             // label_error
@@ -136,7 +136,7 @@
             this.label_error.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label_error.Font = new System.Drawing.Font("Noto Sans", 16F, System.Drawing.FontStyle.Bold);
             this.label_error.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(46)))), ((int)(((byte)(46)))));
-            this.label_error.Location = new System.Drawing.Point(108, 49);
+            this.label_error.Location = new System.Drawing.Point(121, 49);
             this.label_error.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.label_error.Name = "label_error";
             this.label_error.Size = new System.Drawing.Size(273, 34);
@@ -151,7 +151,7 @@
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pictureBox1.Enabled = false;
-            this.pictureBox1.Location = new System.Drawing.Point(71, 51);
+            this.pictureBox1.Location = new System.Drawing.Point(84, 51);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(37, 32);
@@ -165,7 +165,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 156);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(446, 81);
+            this.panel1.Size = new System.Drawing.Size(473, 81);
             this.panel1.TabIndex = 4;
             // 
             // button_try_again
@@ -175,7 +175,7 @@
             this.button_try_again.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_try_again.Font = new System.Drawing.Font("Noto Sans", 11F, System.Drawing.FontStyle.Bold);
             this.button_try_again.ForeColor = System.Drawing.Color.White;
-            this.button_try_again.Location = new System.Drawing.Point(162, 8);
+            this.button_try_again.Location = new System.Drawing.Point(179, 0);
             this.button_try_again.Margin = new System.Windows.Forms.Padding(0);
             this.button_try_again.Name = "button_try_again";
             this.button_try_again.Size = new System.Drawing.Size(119, 33);
@@ -189,7 +189,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(452, 240);
+            this.ClientSize = new System.Drawing.Size(479, 240);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InputError";

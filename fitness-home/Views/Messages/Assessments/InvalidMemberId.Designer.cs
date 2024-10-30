@@ -1,6 +1,6 @@
-﻿namespace fitness_home.Views.Messages
+﻿namespace fitness_home.Views.Messages.Assessments
 {
-    partial class AssessmentSuccessful
+    partial class InvalidMemberId
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "AssessmentSuccessful";
+            this.Text = "InvalidMemberId";
         }
 
         #endregion

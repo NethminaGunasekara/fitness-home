@@ -130,8 +130,14 @@
   <data name="avatar_male" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\dashboard\avatar_male.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="keyboard_double_arrow_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\keyboard_double_arrow_left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bmr_kcal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\dashboard\bmr_kcal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="feedbacks_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\dashboard\feedbacks_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="daily_kcal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\dashboard\daily_kcal.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,17 +145,20 @@
   <data name="students" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\dashboard\students.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pw_policy_tick" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons\pw_policy_tick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="profile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\dashboard\profile.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images\background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="membership" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\dashboard\membership.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="pw_policy_cross" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\pw_policy_cross.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="assessments_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\dashboard\assessments_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="list-item" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\list-item.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,6 +193,9 @@
   <data name="schedule" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\dashboard\schedule.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="keyboard_double_arrow_righ" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\keyboard_double_arrow_righ.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="has_notifications" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\dashboard\has_notifications.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -196,28 +208,28 @@
   <data name="logo_cropped" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\images\dashboard\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\images\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pw_policy_tick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\pw_policy_tick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="contact" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\dashboard\contact.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\images\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="membership_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\dashboard\membership_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="membership" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons\dashboard\membership.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="students_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\dashboard\students_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="avatar_female" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons\dashboard\avatar_female.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="assessments_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons\dashboard\assessments_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="material-symbols_cancel-rounded" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\material-symbols_cancel-rounded.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="feedbacks_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons\dashboard\feedbacks_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="students_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons\dashboard\students_dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="material-symbols_check-circle-rounded" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons\material-symbols_check-circle-rounded.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

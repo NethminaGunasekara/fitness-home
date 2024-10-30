@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrainerArea));
             this.tableLayoutPanel_dashboard = new System.Windows.Forms.TableLayoutPanel();
             this.panel_logo = new System.Windows.Forms.Panel();
             this.pictureBox_logo = new System.Windows.Forms.PictureBox();
@@ -243,6 +244,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(13)))), ((int)(((byte)(13)))));
             this.ClientSize = new System.Drawing.Size(1784, 961);
             this.Controls.Add(this.tableLayoutPanel_dashboard);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(1280, 720);
             this.Name = "TrainerArea";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

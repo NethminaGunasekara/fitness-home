@@ -178,7 +178,7 @@ namespace fitness_home.Services
                                     getMemberIdCmd.Parameters.AddWithValue("@Email", email);
                                     int memberId = (int)getMemberIdCmd.ExecuteScalar();
 
-                                    LoggedUser = new Member(memberId);
+                                    LoggedUser = new MemberData(memberId);
                                 }
                             }
 
@@ -219,7 +219,7 @@ namespace fitness_home.Services
         public void ShowDashboard(Form currentForm)
         {
             // Redirect to the Member Dashboard if the logged user is a Member
-            if (LoggedUser is Member)
+            if (LoggedUser is MemberData)
             {
                 // Show the Member Dashboard
                 MemberArea MemberDashboard = FormProvider.MemberArea ?? (FormProvider.MemberArea = new MemberArea());

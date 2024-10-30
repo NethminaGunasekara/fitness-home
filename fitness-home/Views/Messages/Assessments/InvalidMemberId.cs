@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace fitness_home.Views.Trainer.Tabs.AttendanceTabs
+namespace fitness_home.Views.Messages.Assessments
 {
-    public partial class StudentInfo : UserControl
+    public partial class InvalidMemberId : Form
     {
-        public StudentInfo()
+        public InvalidMemberId()
         {
             InitializeComponent();
         }
