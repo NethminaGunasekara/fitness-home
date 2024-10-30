@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace fitness_home.Helpers
 {
-    internal class TransactionInfo  
+    internal class TransactionInfo
     {
         // Retrieves all transactions associated with the current user's id from the database
         // Assigns them to the "Transactions" field, so that we can display 12 transactions per page
@@ -62,8 +62,8 @@ namespace fitness_home.Helpers
 
                 databaseError.ShowDialog();
             }
-        
-           
+
+
             // Return the list of transactions retrieved (an empty list if no transactions are found)
             return Transactions;
         }
@@ -177,6 +177,49 @@ namespace fitness_home.Helpers
                         break;
                 }
             }
+        }
+
+        /// <summary>
+        /// Calculates the total amount of transactions for the current month.
+        /// </summary>
+        /// <returns>A string representing the total amount in the format "273,000 LKR", omitting cents if they are ".00".</returns>
+        public static string CalculateMonthlyTransactionTotal()
+        {
+            decimal totalAmount = 0m; // Initialize total amount
+
+            // SQL query to sum the transaction amounts for the current month
+            string query = @"
+        SELECT SUM(amount)
+        FROM [transaction]
+        WHERE MONTH(transaction_date) = MONTH(GETDATE()) 
+          AND YEAR(transaction_date) = YEAR(GETDATE())";
+
+            try
+            {
+                // Open a connection to the database using the connection string from the Authentication class
+                using (SqlConnection conn = new SqlConnection(Authentication.Instance.ConnectionString))
+                {
+                    conn.Open();
+
+                    // Execute the query
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        object result = cmd.ExecuteScalar();
+                        totalAmount = result != DBNull.Value ? (decimal)result : 0m;
+                    }
+                }
+            }
+            catch (SqlException)
+            {
+                // Handle database connection errors by showing an error dialog
+                ApplicationError databaseError = new ApplicationError(ErrorType.DatabaseError);
+                databaseError.ShowDialog();
+            }
+
+            // Format the total amount with comma separators, and add "LKR" at the end
+            return totalAmount % 1 == 0
+                ? $"{(int)totalAmount:N0} LKR" // Format without decimals if whole number
+                : $"{totalAmount:0,0.00} LKR"; // Format with decimals if there are cents
         }
     }
 

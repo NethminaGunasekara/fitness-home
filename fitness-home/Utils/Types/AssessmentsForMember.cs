@@ -14,7 +14,7 @@ namespace fitness_home.Utils.Types
         // Fields to store retrieved information about member
         private short _MemberHeight;
         private short _MemberWeight;
-        private ActivityLevel _ActivityLevel;
+        private ActivityLevel _ActivityLevel = ActivityLevel.NotSpecified;
         private short _CalorieGoal;
 
         public AssessmentsForMember(int memberId) {
@@ -34,7 +34,6 @@ namespace fitness_home.Utils.Types
             {
                 if (_MemberHeight != value)
                 {
-                    UpdateDatabase("height", value);  // Update the "height" in the database
                     _MemberHeight = value; // Update the value of _MemberHeight field
                 }
             }
@@ -49,7 +48,6 @@ namespace fitness_home.Utils.Types
             {
                 if (_MemberWeight != value)
                 {
-                    UpdateDatabase("weight", value);  // Update the "weight" in the database
                     _MemberWeight = value; // Update the value of _MemberWeight field
                 }
             }
@@ -64,7 +62,6 @@ namespace fitness_home.Utils.Types
             {
                 if (_ActivityLevel != value)
                 {
-                    UpdateDatabase("activity_level", value.ToString());  // Update the "activity_level" in the database
                     _ActivityLevel = value; // Update the value of _ActivityLevel field
                 }
             }
@@ -79,45 +76,56 @@ namespace fitness_home.Utils.Types
             {
                 if (_CalorieGoal != value)
                 {
-                    UpdateDatabase("calorie_goal", value.ToString());  // Update the "calorie_goal" in the database
                     _CalorieGoal = value; // Update the value of _CalorieGoal field
                 }
             }
         }
 
-        // Method to update the database
-        private void UpdateDatabase(string column, object value)
+        // Update or create a set of assessments for a member
+        public static void Update(int memberId, int height, int weight, string activityLevel, int calorieGoal)
         {
             try
             {
                 using (SqlConnection conn = new SqlConnection(Authentication.Instance.ConnectionString))
                 {
-                    string query = $"UPDATE assessments SET {column} = @Value WHERE member_id = @MemberId";
-                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    conn.Open();
+
+                    // Step 1: Delete any existing records for the given member ID
+                    string deleteQuery = "DELETE FROM assessments WHERE member_id = @MemberId";
+                    using (SqlCommand deleteCmd = new SqlCommand(deleteQuery, conn))
                     {
-                        cmd.Parameters.AddWithValue("@Value", value);
-                        cmd.Parameters.AddWithValue("@MemberId", MemberId);
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
+                        deleteCmd.Parameters.AddWithValue("@MemberId", memberId);
+                        deleteCmd.ExecuteNonQuery();
+                    }
+
+                    // Step 2: Insert the new record
+                    string insertQuery = "INSERT INTO assessments (member_id, height, weight, activity_level, calorie_goal) VALUES (@MemberId, @Height, @Weight, @ActivityLevel, @CalorieGoal)";
+
+                    using (SqlCommand insertCmd = new SqlCommand(insertQuery, conn))
+                    {
+                        insertCmd.Parameters.AddWithValue("@MemberId", memberId);
+                        insertCmd.Parameters.AddWithValue("@Height", height);
+                        insertCmd.Parameters.AddWithValue("@Weight", weight);
+                        insertCmd.Parameters.AddWithValue("@ActivityLevel", activityLevel);
+                        insertCmd.Parameters.AddWithValue("@CalorieGoal", calorieGoal);
+
+                        insertCmd.ExecuteNonQuery();
                     }
                 }
             }
-
-
-            // Catch SQL errors
             catch (SqlException sqlEx)
             {
                 // Log the error for debugging purposes
-                Console.WriteLine($"SQL Error: ${sqlEx.Message}");
+                Console.WriteLine($"SQL Error: {sqlEx.Message}");
 
-                // Display database error message
+                // Display a database error message
                 new ApplicationError(ErrorType.DatabaseError).ShowDialog();
             }
         }
 
-        
-        // Retrieves information about a member and initialize fields used to store member information
-        private void InitializeFields()
+
+            // Retrieves information about a member and initialize fields used to store member information
+            private void InitializeFields()
         {
                 // Create a new SQL connection using the connection string from the Authentication class
                 using (SqlConnection conn = new SqlConnection(Authentication.Instance.ConnectionString))
@@ -147,12 +155,6 @@ namespace fitness_home.Utils.Types
 
                                 // Retrieve and store the 'calorie_goal' value from the fourth column (index 3)
                                 _CalorieGoal = reader.GetInt16(3);
-                            }
-
-                            // If the query returned no results, throw a "MemberNotFoundException" exception
-                            else
-                            {
-                                throw new NoAssessmentsMadeException("No assessments are made for the member with the given ID.");
                             }
                         }
                     }
@@ -244,23 +246,5 @@ namespace fitness_home.Utils.Types
         VeryActive, // Very Active (6-7 days of exercise/week)
         SuperActive, // Super Active (intense exercise twice a day)
         NotSpecified, // If the activity level is not assigned
-    }
-
-    // ** Exception thrown when no no assessments are made for the given member id
-    public class NoAssessmentsMadeException : Exception
-    {
-        public NoAssessmentsMadeException()
-        {
-        }
-
-        public NoAssessmentsMadeException(string message)
-            : base(message)
-        {
-        }
-
-        public NoAssessmentsMadeException(string message, Exception inner)
-            : base(message, inner)
-        {
-        }
     }
 }

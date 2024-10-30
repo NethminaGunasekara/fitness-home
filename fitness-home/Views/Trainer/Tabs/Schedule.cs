@@ -9,7 +9,7 @@ namespace fitness_home.Views.Trainer.Tabs
 {
     public partial class Schedule : UserControl
     {
-        List<Label> NameLabels, GroupLabels, StudentsCountLabels, TimeLabels, StatusLabels;
+        List<Label> NameLabels, GroupLabels, TimeLabels, StatusLabels;
 
         // Field to store the dates for each day of the current week
         // e.g. 2024/10/28 for Monday, 2024/10/29 for Tuesday
@@ -17,6 +17,9 @@ namespace fitness_home.Views.Trainer.Tabs
 
         // Initialize the ScheduleManager class to use its helper methods
         ScheduleManager scheduleManager = new ScheduleManager();
+
+        // Save an instance of AddClass view to navigate between this view and it
+        AddClass AddClass;
 
         // ** Event: When the control is first loaded
         private void Schedule_Load(object sender, System.EventArgs e)
@@ -115,7 +118,7 @@ namespace fitness_home.Views.Trainer.Tabs
             RoundedCorners.Apply(panel_monday, panel_tuesday, panel_wednesday, panel_thursday, panel_friday, panel_saturday, panel_sunday, panel_schedule_for_day);
         }
 
-        public Schedule()
+        public Schedule(Control AddClaassView)
         {
             InitializeComponent();
 
@@ -125,7 +128,6 @@ namespace fitness_home.Views.Trainer.Tabs
             // Initialize the lists of labels used for displaying data
             NameLabels = new List<Label> { label_name_1, label_name_2, label_name_3, label_name_4, label_name_5, label_name_6, label_name_7, label_name_8 };
             GroupLabels = new List<Label> { label_group_1, label_group_2, label_group_3, label_group_4, label_group_5, label_group_6, label_group_7, label_group_8 };
-            StudentsCountLabels = new List<Label> { label_students_1, label_students_2, label_students_3, label_students_4, label_students_5, label_students_6, label_students_7, label_students_8 };
             TimeLabels = new List<Label> { label_time_1, label_time_2, label_time_3, label_time_4, label_time_5, label_time_6, label_time_7, label_time_8 };
             StatusLabels = new List<Label> { label_status_1, label_status_2, label_status_3, label_status_4, label_status_5, label_status_6, label_status_7, label_status_8 };
 
@@ -212,7 +214,6 @@ namespace fitness_home.Views.Trainer.Tabs
             // Clear text content of all labels before displaying new values
             scheduleManager.ClearTextContent(NameLabels);
             scheduleManager.ClearTextContent(GroupLabels);
-            scheduleManager.ClearTextContent(StudentsCountLabels);
             scheduleManager.ClearTextContent(TimeLabels);
             scheduleManager.ClearTextContent(StatusLabels);
 
@@ -223,8 +224,23 @@ namespace fitness_home.Views.Trainer.Tabs
             {
                 ClassDetails classInfo = classDetails[i];
 
+                // Set the name of the current class
                 NameLabels[i].Text = classInfo.Name;
+
+                // Set the group number of the current class
                 GroupLabels[i].Text = $"Group {classInfo.GroupNumber}";
+
+                // Convert start and end times of current class from DateTime to string before displaying them
+                string startTime = classInfo.ClassStart.ToString("hh:mm tt"); // e.g. 12:27 AM ("tt" represents the AM/PM part)
+                string endTime = classInfo.ClassEnd.ToString("hh:mm tt");
+
+                // Display the class time
+                TimeLabels[i].Text = $"{startTime} - {endTime}";
+
+                // Display the class status using a helper method from the "ScheduleManager" class
+                // Compares class dates. If the class date is ahead of the current date, it marks class as "Not Started"
+                // Otherwise checks if any attendance records are available. ("Finished" if yes, otherwise "Canceled")
+                scheduleManager.SetClassStatus(StatusLabels[i], classInfo.ClassId, classInfo.ClassStart.Date);
             }
         }
     }

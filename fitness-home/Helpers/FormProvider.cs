@@ -4,6 +4,7 @@ using fitness_home.Views.Onboarding.Register;
 using System.Windows.Forms;
 using System;
 using fitness_home.Views.Trainer;
+using fitness_home.Views.Admin;
 
 namespace fitness_home.Services
 {
@@ -21,6 +22,7 @@ namespace fitness_home.Services
         // User Dashboards
         public static MemberArea MemberArea;
         public static TrainerArea TrainerArea;
+        public static AdminArea AdminArea;
 
         private static int TransitionDuration = 400;
 

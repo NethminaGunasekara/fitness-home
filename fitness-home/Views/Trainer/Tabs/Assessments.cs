@@ -55,22 +55,11 @@ namespace fitness_home.Views.Trainer.Tabs
                 return; // Exit the method as we don't want to continue after an exception occurs
             }
 
-            // Retrieve the assessments and information for a member
+            // Retrieve the information about a member
             try
             {
                 // Retrieve personal information of the searched member
                 MemberData = new MemberData(MemberId);
-
-                // Retrieve information for the searched member
-                AssessmentsForMember = new AssessmentsForMember(MemberId);
-            }
-
-            // If no assessments are made for the current member (assessment table has no record associated with the member)
-            catch (NoAssessmentsMadeException)
-            {
-
-
-                return; // Exit the method as we don't want to continue after an exception occurs
             }
 
             // If the custom exception thrown when no user is found with the given id occurs
@@ -90,22 +79,17 @@ namespace fitness_home.Views.Trainer.Tabs
 
             // Proceed to display assessments as no errors are occured
 
+            // Retrieve information for the searched member
+            AssessmentsForMember = new AssessmentsForMember(MemberId);
+
+            // Display the name and id of the member being assessed
+            UpdateTitle();
+
             // Make all hidden panels and other controls visible before displaying and editing data
             label_assessments_for_title.Visible = label_assessments_for.Visible = panel_daily_kcal.Visible = panel_lbm.Visible = panel_bmr.Visible = panel_bfp.Visible = panel_activity_level.Visible = true;
 
-            // Display the name and id of the member being assessed
-
-            // Step 1: Convert the integer memberId to a string first
-            string memberIdString = MemberId.ToString();
-
-            // Step 2: Add a padding left of "0"s to have a minimum length of 3 digits for the numeric part of the member id
-            string paddedMemberId = memberIdString.PadLeft(3, '0');
-
-            // Step 3: Combine the padded numeric part of the member id (e.g. "003") with the letter "M" and display it as the id of the member being assessed
-            string formattedMemberId = $"M{paddedMemberId}";
-
-            // Step 4: Combine the formatted member id with the member's name and display
-            label_assessments_for.Text = $"{MemberData.FirstName} {MemberData.LastName} ({formattedMemberId})";
+            // Display the retrieved assessments for the member id
+            DisplayAssessments();
         }
 
         // Update the assessments for the current user
@@ -149,19 +133,14 @@ namespace fitness_home.Views.Trainer.Tabs
                 short weight = short.Parse(textBox_weight.Text);
                 short height = short.Parse(textBox_height.Text);
                 short dailyKcal = short.Parse(textBox_daily_kcal.Text);
-                ActivityLevel activityLevel = CheckActivityLevel();
 
-                // If no errors are occured while parsing, proceed to update the assessments for "MemberId"
-                // Fields that have are automatically skipped by the "AssessmentsForMember" helper class as it's unnecessary to update them
-                AssessmentsForMember.MemberWeight = weight;
-                AssessmentsForMember.MemberHeight = height;
-                AssessmentsForMember.CalorieGoal = dailyKcal;
-                AssessmentsForMember.ActivityLevel = activityLevel;
+                // If none of the errors occured while parsing inputs, proceed to update assessments
+                AssessmentsForMember.Update(MemberId, height, weight, CheckActivityLevel().ToString(), dailyKcal);
 
                 // Display an update operation successful message if updating the assessments is successful
                 SuccessMessage successMessage = new SuccessMessage(
                     heading: "Assessment Successful!",
-                    title: "The member's assessment has been updated successfully",
+                    title: "Assessment has been updated successfully",
                     reference: "All changes are now reflected on the member's dashboard"
                 );
 
@@ -180,15 +159,51 @@ namespace fitness_home.Views.Trainer.Tabs
 
                 // Display the error message
                 parsingError.ShowDialog();
-            }
 
-            // Proceed to update assessments if "AssessmentsForMember" is not null
-            DisplayAssessments();
+                return; // Exit the method
+            }
+        }
+
+        // Update the "assessments for" title (e.g. "Assessments For: Shehan Anushka (M002)")
+        private void UpdateTitle()
+        {
+            // Step 1: Convert the integer memberId to a string first
+            string memberIdString = MemberId.ToString();
+
+            // Step 2: Add a padding left of "0"s to have a minimum length of 3 digits for the numeric part of the member id
+            string paddedMemberId = memberIdString.PadLeft(3, '0');
+
+            // Step 3: Combine the padded numeric part of the member id (e.g. "003") with the letter "M" and display it as the id of the member being assessed
+            string formattedMemberId = $"M{paddedMemberId}";
+
+            // Step 4: Combine the formatted member id with the member's name and display
+            label_assessments_for.Text = $"{MemberData.FirstName} {MemberData.LastName} ({formattedMemberId})";
         }
 
         // ** Helper method to display assessments for a given user
         private void DisplayAssessments()
         {
+            // If the activity level is not specified for the member, we can assume that no assessments are made for the searched member id
+            if(AssessmentsForMember.ActivityLevel == ActivityLevel.NotSpecified) {
+                // Display the name and id of the member being assessed
+                UpdateTitle();
+
+                // Make all hidden panels and other controls visible before displaying and editing data
+                label_assessments_for_title.Visible = label_assessments_for.Visible = panel_daily_kcal.Visible = panel_lbm.Visible = panel_bmr.Visible = panel_bfp.Visible = panel_activity_level.Visible = true;
+
+                // Display an empty list of assessments as none of the assessments are made for the currently searched user
+                textBox_daily_kcal.Text = "-";
+                label_lbm.Text = "-%";
+                label_bmr.Text = "- kcal";
+                label_bfp.Text = "-%";
+                textBox_weight.Text = "-";
+                textBox_height.Text = "-";
+
+                return; // Exit the method after displaying some blank data
+            }
+
+            // The following code only rund if assessments are made for the given member id
+
             // Display the daily calorie goal
             textBox_daily_kcal.Text = AssessmentsForMember.CalorieGoal.ToString();
 

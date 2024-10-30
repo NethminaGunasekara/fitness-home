@@ -15,6 +15,7 @@ namespace fitness_home.Views.Trainer
         private Schedule Schedule;
         private Attendance Attendance;
         private Assessments Assessments;
+        private AddClass AddClass;
 
         // Sidebar buttons
         SidebarButton DashboardButton;
@@ -28,7 +29,8 @@ namespace fitness_home.Views.Trainer
 
             // Initialize all fields containing the tabs of member area
             Dashboard = new Dashboard();
-            Schedule = new Schedule();
+            AddClass = new AddClass();
+            Schedule = new Schedule(AddClass);
             Attendance = new Attendance();
             Assessments = new Assessments();
         }
@@ -97,7 +99,7 @@ namespace fitness_home.Views.Trainer
             InitializeButtons();
 
             // Display the trainer name to welcome them
-            label_heading_2.Text = $"{"Trainer"}!";
+            label_heading_2.Text = $"{Authentication.LoggedUser.FirstName}!";
 
             ResumeLayout();
 

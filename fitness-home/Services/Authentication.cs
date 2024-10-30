@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using fitness_home.Utils.Types.UserTypes;
 using fitness_home.Views;
 using fitness_home.Views.Trainer;
+using fitness_home.Views.Admin;
 
 namespace fitness_home.Services
 {
@@ -155,7 +156,7 @@ namespace fitness_home.Services
                                 {
                                     getAdminIdCmd.Parameters.AddWithValue("@Email", email);
                                     int adminId = (int)getAdminIdCmd.ExecuteScalar();
-                                    LoggedUser = new Admin(adminId);
+                                    LoggedUser = new AdminData(adminId);
                                 }
                             }
 
@@ -239,6 +240,19 @@ namespace fitness_home.Services
 
                 FormProvider.ShowForm(
                     targetForm: TrainerDashboard,
+                    currentForm: currentForm,
+                    setSize: false,
+                    setPosition: false);
+            }
+
+            // Redirect to the Trainer Dashboard if the logged user is a Trainer
+            else if (LoggedUser is AdminData)
+            {
+                // Show the Trainer Dashboard
+                AdminArea AdminArea = FormProvider.AdminArea ?? (FormProvider.AdminArea = new AdminArea());
+
+                FormProvider.ShowForm(
+                    targetForm: AdminArea,
                     currentForm: currentForm,
                     setSize: false,
                     setPosition: false);

@@ -92,7 +92,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanel1.Controls.Add(this.label7, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel6, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 3);
@@ -139,7 +139,7 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Controls.Add(this.panel4, 0, 1);
             this.tableLayoutPanel6.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(727, 245);
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(726, 245);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 3;
@@ -367,7 +367,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel5.Controls.Add(this.panel3, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.label4, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(727, 130);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(726, 130);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 3;
@@ -476,7 +476,7 @@
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
             this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.label6);
-            this.panel5.Location = new System.Drawing.Point(727, 360);
+            this.panel5.Location = new System.Drawing.Point(726, 360);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
             this.panel5.Padding = new System.Windows.Forms.Padding(12, 14, 12, 0);
@@ -508,7 +508,7 @@
             this.button_update_assessments.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(220)))), ((int)(((byte)(12)))));
             this.button_update_assessments.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_update_assessments.Font = new System.Drawing.Font("Roboto Medium", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_update_assessments.Location = new System.Drawing.Point(586, 745);
+            this.button_update_assessments.Location = new System.Drawing.Point(585, 745);
             this.button_update_assessments.Margin = new System.Windows.Forms.Padding(0);
             this.button_update_assessments.Name = "button_update_assessments";
             this.button_update_assessments.Size = new System.Drawing.Size(157, 46);
@@ -526,7 +526,7 @@
             this.button_next_transactions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_next_transactions.Font = new System.Drawing.Font("Noto Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_next_transactions.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(148)))), ((int)(((byte)(148)))), ((int)(((byte)(148)))));
-            this.button_next_transactions.Location = new System.Drawing.Point(1202, 40);
+            this.button_next_transactions.Location = new System.Drawing.Point(1201, 40);
             this.button_next_transactions.Margin = new System.Windows.Forms.Padding(0);
             this.button_next_transactions.Name = "button_next_transactions";
             this.button_next_transactions.Size = new System.Drawing.Size(87, 35);

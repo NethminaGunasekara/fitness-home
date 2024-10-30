@@ -34,12 +34,12 @@
             this.button_search_member = new System.Windows.Forms.Button();
             this.panel_search = new System.Windows.Forms.Panel();
             this.textBox_search = new System.Windows.Forms.TextBox();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel_title = new System.Windows.Forms.FlowLayoutPanel();
             this.label_assessments_for_title = new System.Windows.Forms.Label();
             this.label_assessments_for = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.button_update_assessments = new System.Windows.Forms.Button();
-            this.tableLayoutPanel_assessments = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel_schedule = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.mark_absent_8 = new System.Windows.Forms.Button();
             this.mark_attended_8 = new System.Windows.Forms.Button();
@@ -98,9 +98,9 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel_search.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.flowLayoutPanel_title.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel_assessments.SuspendLayout();
+            this.tableLayoutPanel_schedule.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
@@ -131,9 +131,9 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel_title, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel_assessments, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel_schedule, 1, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -178,6 +178,7 @@
             this.button_search_member.TabIndex = 0;
             this.button_search_member.Text = "Search";
             this.button_search_member.UseVisualStyleBackColor = false;
+            this.button_search_member.Click += new System.EventHandler(this.button_search_member_Click);
             // 
             // panel_search
             // 
@@ -205,16 +206,17 @@
             this.textBox_search.TabIndex = 0;
             this.textBox_search.Text = "Enter Member ID";
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanel_title
             // 
-            this.flowLayoutPanel1.Controls.Add(this.label_assessments_for_title);
-            this.flowLayoutPanel1.Controls.Add(this.label_assessments_for);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(30, 96);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0, 16, 0, 16);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1272, 30);
-            this.flowLayoutPanel1.TabIndex = 1;
+            this.flowLayoutPanel_title.Controls.Add(this.label_assessments_for_title);
+            this.flowLayoutPanel_title.Controls.Add(this.label_assessments_for);
+            this.flowLayoutPanel_title.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel_title.Location = new System.Drawing.Point(30, 96);
+            this.flowLayoutPanel_title.Margin = new System.Windows.Forms.Padding(0, 16, 0, 16);
+            this.flowLayoutPanel_title.Name = "flowLayoutPanel_title";
+            this.flowLayoutPanel_title.Size = new System.Drawing.Size(1272, 30);
+            this.flowLayoutPanel_title.TabIndex = 1;
+            this.flowLayoutPanel_title.Visible = false;
             // 
             // label_assessments_for_title
             // 
@@ -227,7 +229,6 @@
             this.label_assessments_for_title.Size = new System.Drawing.Size(213, 34);
             this.label_assessments_for_title.TabIndex = 0;
             this.label_assessments_for_title.Text = "Daily Schedule For";
-            this.label_assessments_for_title.Visible = false;
             // 
             // label_assessments_for
             // 
@@ -240,7 +241,6 @@
             this.label_assessments_for.Size = new System.Drawing.Size(269, 34);
             this.label_assessments_for.TabIndex = 1;
             this.label_assessments_for.Text = "Shehan Anushka (M002)";
-            this.label_assessments_for.Visible = false;
             // 
             // tableLayoutPanel3
             // 
@@ -274,64 +274,63 @@
             this.button_update_assessments.Text = "Update";
             this.button_update_assessments.UseVisualStyleBackColor = false;
             // 
-            // tableLayoutPanel_assessments
+            // tableLayoutPanel_schedule
             // 
-            this.tableLayoutPanel_assessments.ColumnCount = 4;
-            this.tableLayoutPanel_assessments.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel_assessments.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel_assessments.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel_assessments.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel_assessments.Controls.Add(this.tableLayoutPanel12, 3, 9);
-            this.tableLayoutPanel_assessments.Controls.Add(this.tableLayoutPanel11, 3, 8);
-            this.tableLayoutPanel_assessments.Controls.Add(this.tableLayoutPanel10, 3, 7);
-            this.tableLayoutPanel_assessments.Controls.Add(this.tableLayoutPanel9, 3, 6);
-            this.tableLayoutPanel_assessments.Controls.Add(this.tableLayoutPanel8, 3, 5);
-            this.tableLayoutPanel_assessments.Controls.Add(this.tableLayoutPanel7, 3, 4);
-            this.tableLayoutPanel_assessments.Controls.Add(this.class_name_1, 0, 2);
-            this.tableLayoutPanel_assessments.Controls.Add(this.panel1, 0, 1);
-            this.tableLayoutPanel_assessments.Controls.Add(this.class_name_2, 0, 3);
-            this.tableLayoutPanel_assessments.Controls.Add(this.class_name_3, 0, 4);
-            this.tableLayoutPanel_assessments.Controls.Add(this.class_name_4, 0, 5);
-            this.tableLayoutPanel_assessments.Controls.Add(this.class_name_5, 0, 6);
-            this.tableLayoutPanel_assessments.Controls.Add(this.class_name_6, 0, 7);
-            this.tableLayoutPanel_assessments.Controls.Add(this.class_name_7, 0, 8);
-            this.tableLayoutPanel_assessments.Controls.Add(this.class_name_8, 0, 9);
-            this.tableLayoutPanel_assessments.Controls.Add(this.class_time_1, 1, 2);
-            this.tableLayoutPanel_assessments.Controls.Add(this.class_time_2, 1, 3);
-            this.tableLayoutPanel_assessments.Controls.Add(this.class_time_3, 1, 4);
-            this.tableLayoutPanel_assessments.Controls.Add(this.class_time_4, 1, 5);
-            this.tableLayoutPanel_assessments.Controls.Add(this.class_time_5, 1, 6);
-            this.tableLayoutPanel_assessments.Controls.Add(this.class_time_6, 1, 7);
-            this.tableLayoutPanel_assessments.Controls.Add(this.class_time_7, 1, 8);
-            this.tableLayoutPanel_assessments.Controls.Add(this.class_time_8, 1, 9);
-            this.tableLayoutPanel_assessments.Controls.Add(this.attendance_1, 2, 2);
-            this.tableLayoutPanel_assessments.Controls.Add(this.attendance_2, 2, 3);
-            this.tableLayoutPanel_assessments.Controls.Add(this.attendance_3, 2, 4);
-            this.tableLayoutPanel_assessments.Controls.Add(this.attendance_4, 2, 5);
-            this.tableLayoutPanel_assessments.Controls.Add(this.attendance_5, 2, 6);
-            this.tableLayoutPanel_assessments.Controls.Add(this.attendance_6, 2, 7);
-            this.tableLayoutPanel_assessments.Controls.Add(this.attendance_7, 2, 8);
-            this.tableLayoutPanel_assessments.Controls.Add(this.attendance_8, 2, 9);
-            this.tableLayoutPanel_assessments.Controls.Add(this.tableLayoutPanel5, 3, 2);
-            this.tableLayoutPanel_assessments.Controls.Add(this.tableLayoutPanel6, 3, 3);
-            this.tableLayoutPanel_assessments.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel_assessments.Location = new System.Drawing.Point(30, 142);
-            this.tableLayoutPanel_assessments.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel_assessments.Name = "tableLayoutPanel_assessments";
-            this.tableLayoutPanel_assessments.RowCount = 10;
-            this.tableLayoutPanel_assessments.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel_assessments.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel_assessments.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel_assessments.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel_assessments.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel_assessments.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel_assessments.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel_assessments.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel_assessments.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel_assessments.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel_assessments.Size = new System.Drawing.Size(1272, 582);
-            this.tableLayoutPanel_assessments.TabIndex = 4;
-            this.tableLayoutPanel_assessments.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_assessments_Paint);
+            this.tableLayoutPanel_schedule.ColumnCount = 4;
+            this.tableLayoutPanel_schedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_schedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_schedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel_schedule.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel_schedule.Controls.Add(this.tableLayoutPanel12, 3, 9);
+            this.tableLayoutPanel_schedule.Controls.Add(this.tableLayoutPanel11, 3, 8);
+            this.tableLayoutPanel_schedule.Controls.Add(this.tableLayoutPanel10, 3, 7);
+            this.tableLayoutPanel_schedule.Controls.Add(this.tableLayoutPanel9, 3, 6);
+            this.tableLayoutPanel_schedule.Controls.Add(this.tableLayoutPanel8, 3, 5);
+            this.tableLayoutPanel_schedule.Controls.Add(this.tableLayoutPanel7, 3, 4);
+            this.tableLayoutPanel_schedule.Controls.Add(this.class_name_1, 0, 2);
+            this.tableLayoutPanel_schedule.Controls.Add(this.panel1, 0, 1);
+            this.tableLayoutPanel_schedule.Controls.Add(this.class_name_2, 0, 3);
+            this.tableLayoutPanel_schedule.Controls.Add(this.class_name_3, 0, 4);
+            this.tableLayoutPanel_schedule.Controls.Add(this.class_name_4, 0, 5);
+            this.tableLayoutPanel_schedule.Controls.Add(this.class_name_5, 0, 6);
+            this.tableLayoutPanel_schedule.Controls.Add(this.class_name_6, 0, 7);
+            this.tableLayoutPanel_schedule.Controls.Add(this.class_name_7, 0, 8);
+            this.tableLayoutPanel_schedule.Controls.Add(this.class_name_8, 0, 9);
+            this.tableLayoutPanel_schedule.Controls.Add(this.class_time_1, 1, 2);
+            this.tableLayoutPanel_schedule.Controls.Add(this.class_time_2, 1, 3);
+            this.tableLayoutPanel_schedule.Controls.Add(this.class_time_3, 1, 4);
+            this.tableLayoutPanel_schedule.Controls.Add(this.class_time_4, 1, 5);
+            this.tableLayoutPanel_schedule.Controls.Add(this.class_time_5, 1, 6);
+            this.tableLayoutPanel_schedule.Controls.Add(this.class_time_6, 1, 7);
+            this.tableLayoutPanel_schedule.Controls.Add(this.class_time_7, 1, 8);
+            this.tableLayoutPanel_schedule.Controls.Add(this.class_time_8, 1, 9);
+            this.tableLayoutPanel_schedule.Controls.Add(this.attendance_1, 2, 2);
+            this.tableLayoutPanel_schedule.Controls.Add(this.attendance_2, 2, 3);
+            this.tableLayoutPanel_schedule.Controls.Add(this.attendance_3, 2, 4);
+            this.tableLayoutPanel_schedule.Controls.Add(this.attendance_4, 2, 5);
+            this.tableLayoutPanel_schedule.Controls.Add(this.attendance_5, 2, 6);
+            this.tableLayoutPanel_schedule.Controls.Add(this.attendance_6, 2, 7);
+            this.tableLayoutPanel_schedule.Controls.Add(this.attendance_7, 2, 8);
+            this.tableLayoutPanel_schedule.Controls.Add(this.attendance_8, 2, 9);
+            this.tableLayoutPanel_schedule.Controls.Add(this.tableLayoutPanel5, 3, 2);
+            this.tableLayoutPanel_schedule.Controls.Add(this.tableLayoutPanel6, 3, 3);
+            this.tableLayoutPanel_schedule.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel_schedule.Location = new System.Drawing.Point(30, 142);
+            this.tableLayoutPanel_schedule.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel_schedule.Name = "tableLayoutPanel_schedule";
+            this.tableLayoutPanel_schedule.RowCount = 10;
+            this.tableLayoutPanel_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel_schedule.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel_schedule.Size = new System.Drawing.Size(1272, 582);
+            this.tableLayoutPanel_schedule.TabIndex = 4;
             // 
             // tableLayoutPanel12
             // 
@@ -680,7 +679,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(49)))), ((int)(((byte)(49)))), ((int)(((byte)(49)))));
-            this.tableLayoutPanel_assessments.SetColumnSpan(this.panel1, 4);
+            this.tableLayoutPanel_schedule.SetColumnSpan(this.panel1, 4);
             this.panel1.Controls.Add(this.tableLayoutPanel4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 40);
@@ -1212,11 +1211,11 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panel_search.ResumeLayout(false);
             this.panel_search.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.flowLayoutPanel1.PerformLayout();
+            this.flowLayoutPanel_title.ResumeLayout(false);
+            this.flowLayoutPanel_title.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
-            this.tableLayoutPanel_assessments.ResumeLayout(false);
-            this.tableLayoutPanel_assessments.PerformLayout();
+            this.tableLayoutPanel_schedule.ResumeLayout(false);
+            this.tableLayoutPanel_schedule.PerformLayout();
             this.tableLayoutPanel12.ResumeLayout(false);
             this.tableLayoutPanel11.ResumeLayout(false);
             this.tableLayoutPanel10.ResumeLayout(false);
@@ -1239,12 +1238,12 @@
         private System.Windows.Forms.Button button_search_member;
         private System.Windows.Forms.Panel panel_search;
         private System.Windows.Forms.TextBox textBox_search;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel_title;
         private System.Windows.Forms.Label label_assessments_for_title;
         private System.Windows.Forms.Label label_assessments_for;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button button_update_assessments;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_assessments;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_schedule;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label_class_name_header;

@@ -35,20 +35,20 @@
             this.tableLayoutPanel_reference = new System.Windows.Forms.TableLayoutPanel();
             this.label_reference = new System.Windows.Forms.Label();
             this.panel_heading = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox_tick = new System.Windows.Forms.PictureBox();
             this.label_heading = new System.Windows.Forms.Label();
             this.label_title = new System.Windows.Forms.Label();
             this.panel_dashboard_button = new System.Windows.Forms.Panel();
             this.button_dashboard = new System.Windows.Forms.Button();
-            this.pictureBox_tick = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel_content.SuspendLayout();
             this.tableLayoutPanel_layout.SuspendLayout();
             this.panel_reference.SuspendLayout();
             this.tableLayoutPanel_reference.SuspendLayout();
             this.panel_heading.SuspendLayout();
-            this.panel_dashboard_button.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_tick)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_tick)).BeginInit();
+            this.panel_dashboard_button.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_content
@@ -132,6 +132,36 @@
             this.panel_heading.Size = new System.Drawing.Size(470, 92);
             this.panel_heading.TabIndex = 0;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox_tick, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.label_heading, 2, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(470, 92);
+            this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // pictureBox_tick
+            // 
+            this.pictureBox_tick.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox_tick.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_tick.Image")));
+            this.pictureBox_tick.Location = new System.Drawing.Point(124, 29);
+            this.pictureBox_tick.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox_tick.Name = "pictureBox_tick";
+            this.pictureBox_tick.Size = new System.Drawing.Size(63, 63);
+            this.pictureBox_tick.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_tick.TabIndex = 0;
+            this.pictureBox_tick.TabStop = false;
+            // 
             // label_heading
             // 
             this.label_heading.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -191,36 +221,6 @@
             this.button_dashboard.UseVisualStyleBackColor = false;
             this.button_dashboard.Click += new System.EventHandler(this.button_dashboard_Click);
             // 
-            // pictureBox_tick
-            // 
-            this.pictureBox_tick.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox_tick.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_tick.Image")));
-            this.pictureBox_tick.Location = new System.Drawing.Point(124, 29);
-            this.pictureBox_tick.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox_tick.Name = "pictureBox_tick";
-            this.pictureBox_tick.Size = new System.Drawing.Size(63, 63);
-            this.pictureBox_tick.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_tick.TabIndex = 0;
-            this.pictureBox_tick.TabStop = false;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox_tick, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.label_heading, 2, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(470, 92);
-            this.tableLayoutPanel1.TabIndex = 3;
-            // 
             // SuccessMessage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,6 +231,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SuccessMessage";
             this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "SuccessMessage";
             this.panel_content.ResumeLayout(false);
             this.tableLayoutPanel_layout.ResumeLayout(false);
@@ -239,10 +240,10 @@
             this.tableLayoutPanel_reference.ResumeLayout(false);
             this.tableLayoutPanel_reference.PerformLayout();
             this.panel_heading.ResumeLayout(false);
-            this.panel_dashboard_button.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_tick)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_tick)).EndInit();
+            this.panel_dashboard_button.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

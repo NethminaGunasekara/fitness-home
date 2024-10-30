@@ -55,63 +55,6 @@ namespace fitness_home.Views.Trainer.Tabs
             }
         }
 
-        // ** Helper Method: Retrieves the number of students involved in a class
-        private string GetNumberOfStudents(int classId)
-        {
-            // Initialize variables to store "plan_id" and "group" from the schedule table
-            int planId = 0;
-            int groupId = 0;
-
-            // Set up the database connection using the connection string from "Authentication" class
-            using (SqlConnection connection = new SqlConnection(Authentication.Instance.ConnectionString))
-            {
-                connection.Open();
-
-                // Step 1: Retrieve "plan_id" and "group" from the schedule table where "class_id" matches
-                string scheduleQuery = "SELECT plan_id, [group] FROM schedule WHERE class_id = @ClassId";
-
-                using (SqlCommand scheduleCommand = new SqlCommand(scheduleQuery, connection))
-                {
-                    // Bind required values as parameters to the query before execution
-                    scheduleCommand.Parameters.AddWithValue("@ClassId", classId);
-
-                    // Execute the command and read the results
-                    using (SqlDataReader reader = scheduleCommand.ExecuteReader())
-                    {
-                        // If any matching rows are found
-                        if (reader.Read())
-                        {
-                            // Retrieve "plan_id" and "group" values from the result set
-                            planId = reader.GetInt32(0);
-                            groupId = reader.GetInt32(1);
-                        }
-
-                        else
-                        {
-                            // Return "0" if no matching record is found in the schedule table
-                            return "0";
-                        }
-                    }
-                }
-
-                // Step 2: Count the number of rows in the "member_group" table where "plan_id" and "group" match
-                string countQuery = "SELECT COUNT(*) FROM member_group WHERE plan_id = @PlanId AND group_number = @Group";
-
-                using (SqlCommand countCommand = new SqlCommand(countQuery, connection))
-                {
-                    // Parameterize the query with the retrieved `plan_id` and `group` values
-                    countCommand.Parameters.AddWithValue("@PlanId", planId);
-                    countCommand.Parameters.AddWithValue("@Group", groupId);
-
-                    // Execute the count query and retrieve the number of matching rows
-                    int studentCount = (int)countCommand.ExecuteScalar();
-
-                    // Return the count as a string
-                    return studentCount.ToString();
-                }
-            }
-        }
-
         // Retrieve and display last two feedbacks received by the logged in trainer
         private void LoadLatestFeedbacks()
         {
@@ -188,7 +131,7 @@ namespace fitness_home.Views.Trainer.Tabs
                     // Set the class data for current row
                     ClassNameLabels[i].Text = classDetails.Name;
                     TimeLabels[i].Text = $"{classStartTime} - {classEndTime}";
-                    StudentsCountLabels[i].Text = GetNumberOfStudents(classDetails.ClassId);
+                    StudentsCountLabels[i].Text = ScheduleManager.GetNumberOfStudents(classDetails.ClassId);
 
                     // Set class status ("Not Started", "Finished", or "Canceled")
                     scheduleManager.SetClassStatus(StatusLabels[i], classDetails.ClassId, classDetails.ClassStart);
