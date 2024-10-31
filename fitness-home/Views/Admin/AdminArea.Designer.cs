@@ -217,6 +217,7 @@
             this.button_edit_profile.Size = new System.Drawing.Size(40, 32);
             this.button_edit_profile.TabIndex = 2;
             this.button_edit_profile.UseVisualStyleBackColor = false;
+            this.button_edit_profile.Click += new System.EventHandler(this.button_edit_profile_Click);
             // 
             // AdminArea
             // 

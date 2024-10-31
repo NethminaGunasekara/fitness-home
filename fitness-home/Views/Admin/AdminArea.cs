@@ -12,6 +12,7 @@ namespace fitness_home.Views.Admin
         // We use these fields to store the views after initializing them using the "new" keyword
         // This avoids unnecessary re-instantiations, and allows us to keep data passed to those views
         private Dashboard Dashboard;
+        private ProfileView ProfileView;
 
         // Sidebar buttons
         SidebarButton DashboardButton;
@@ -25,6 +26,7 @@ namespace fitness_home.Views.Admin
 
             // Initialize all fields containing the tabs of admin area
             Dashboard = new Dashboard();
+            ProfileView = new ProfileView();
         }
 
         // ** Method to initialize all sidebar buttons
@@ -82,6 +84,16 @@ namespace fitness_home.Views.Admin
             label_heading_2.Text = $"{Authentication.LoggedUser.FirstName}!";
 
             ResumeLayout();
+        }
+
+        // ** Event: When the view profile button is clicked
+        private void button_edit_profile_Click(object sender, EventArgs e)
+        {
+            // Mark all sidebar buttons as inactive
+            DashboardButton.ActiveButton = false;
+
+            // Display the profile view
+            ChangeContent(ProfileView);
         }
     }
 }

@@ -37,7 +37,6 @@
             this.panel_content = new System.Windows.Forms.Panel();
             this.panel_heading = new System.Windows.Forms.Panel();
             this.tableLayoutPanel_header = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
             this.label_heading_1 = new System.Windows.Forms.Label();
             this.label_heading_2 = new System.Windows.Forms.Label();
             this.button_edit_profile = new System.Windows.Forms.Button();
@@ -149,15 +148,14 @@
             // 
             // tableLayoutPanel_header
             // 
-            this.tableLayoutPanel_header.ColumnCount = 4;
+            this.tableLayoutPanel_header.ColumnCount = 3;
             this.tableLayoutPanel_header.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel_header.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_header.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel_header.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel_header.Controls.Add(this.button2, 2, 1);
+            this.tableLayoutPanel_header.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel_header.Controls.Add(this.label_heading_1, 0, 1);
             this.tableLayoutPanel_header.Controls.Add(this.label_heading_2, 1, 1);
-            this.tableLayoutPanel_header.Controls.Add(this.button_edit_profile, 3, 1);
+            this.tableLayoutPanel_header.Controls.Add(this.button_edit_profile, 2, 1);
             this.tableLayoutPanel_header.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_header.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel_header.Margin = new System.Windows.Forms.Padding(0);
@@ -168,24 +166,6 @@
             this.tableLayoutPanel_header.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_header.Size = new System.Drawing.Size(1392, 100);
             this.tableLayoutPanel_header.TabIndex = 0;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            this.button2.BackgroundImage = global::fitness_home.Properties.Resources.has_notifications;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(1276, 34);
-            this.button2.Margin = new System.Windows.Forms.Padding(0, 4, 22, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 32);
-            this.button2.TabIndex = 3;
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // label_heading_1
             // 
@@ -236,6 +216,7 @@
             this.button_edit_profile.Size = new System.Drawing.Size(32, 32);
             this.button_edit_profile.TabIndex = 2;
             this.button_edit_profile.UseVisualStyleBackColor = false;
+            this.button_edit_profile.Click += new System.EventHandler(this.button_edit_profile_Click);
             // 
             // TrainerArea
             // 
@@ -271,7 +252,6 @@
         private System.Windows.Forms.Panel panel_content;
         private System.Windows.Forms.Panel panel_heading;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_header;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label_heading_1;
         private System.Windows.Forms.Label label_heading_2;
         private System.Windows.Forms.Button button_edit_profile;

@@ -16,6 +16,7 @@ namespace fitness_home.Views.Trainer
         private Attendance Attendance;
         private Assessments Assessments;
         private AddClass AddClass;
+        private ProfileView ProfileView;
 
         // Sidebar buttons
         SidebarButton DashboardButton;
@@ -33,6 +34,7 @@ namespace fitness_home.Views.Trainer
             Schedule = new Schedule(AddClass);
             Attendance = new Attendance();
             Assessments = new Assessments();
+            ProfileView = new ProfileView();
         }
 
         // ** Method to initialize all sidebar buttons
@@ -172,7 +174,8 @@ namespace fitness_home.Views.Trainer
             DashboardButton.ActiveButton = ScheduleButton.ActiveButton = AttendanceButton.ActiveButton = AssessmentsButton.ActiveButton = false;
 
             // Display the profile view
-            ChangeContent(Dashboard);
+            ChangeContent(ProfileView);
         }
+
     }
 }

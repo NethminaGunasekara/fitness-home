@@ -118,6 +118,7 @@
             this.panel_content.Name = "panel_content";
             this.panel_content.Size = new System.Drawing.Size(1312, 821);
             this.panel_content.TabIndex = 3;
+            this.panel_content.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_content_Paint);
             // 
             // tableLayoutPanel_content
             // 
@@ -144,6 +145,7 @@
             this.tableLayoutPanel_content.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel_content.Size = new System.Drawing.Size(1312, 821);
             this.tableLayoutPanel_content.TabIndex = 0;
+            this.tableLayoutPanel_content.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_content_Paint);
             // 
             // panel_header
             // 
@@ -154,6 +156,7 @@
             this.panel_header.Name = "panel_header";
             this.panel_header.Size = new System.Drawing.Size(1242, 281);
             this.panel_header.TabIndex = 0;
+            this.panel_header.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_header_Paint);
             // 
             // tableLayoutPanel_overview
             // 
@@ -173,6 +176,7 @@
             this.tableLayoutPanel_overview.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel_overview.Size = new System.Drawing.Size(1242, 281);
             this.tableLayoutPanel_overview.TabIndex = 0;
+            this.tableLayoutPanel_overview.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel_overview_Paint);
             // 
             // pictureBox_avatar
             // 
@@ -186,6 +190,7 @@
             this.pictureBox_avatar.Size = new System.Drawing.Size(159, 251);
             this.pictureBox_avatar.TabIndex = 3;
             this.pictureBox_avatar.TabStop = false;
+            this.pictureBox_avatar.Click += new System.EventHandler(this.pictureBox_avatar_Click);
             // 
             // flowLayoutPanel2
             // 
@@ -196,6 +201,7 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(673, 69);
             this.flowLayoutPanel2.TabIndex = 6;
+            this.flowLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel2_Paint);
             // 
             // label3
             // 
@@ -208,6 +214,7 @@
             this.label3.Size = new System.Drawing.Size(137, 29);
             this.label3.TabIndex = 7;
             this.label3.Text = "Membership:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label_membership_plan
             // 
@@ -220,6 +227,7 @@
             this.label_membership_plan.Size = new System.Drawing.Size(103, 29);
             this.label_membership_plan.TabIndex = 8;
             this.label_membership_plan.Text = "Individual";
+            this.label_membership_plan.Click += new System.EventHandler(this.label_membership_plan_Click);
             // 
             // panel7
             // 
@@ -231,6 +239,7 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(1083, 125);
             this.panel7.TabIndex = 0;
+            this.panel7.Paint += new System.Windows.Forms.PaintEventHandler(this.panel7_Paint);
             // 
             // flowLayoutPanel1
             // 
@@ -241,6 +250,7 @@
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1083, 46);
             this.flowLayoutPanel1.TabIndex = 5;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // label_member_name
             // 
@@ -253,6 +263,7 @@
             this.label_member_name.Size = new System.Drawing.Size(341, 42);
             this.label_member_name.TabIndex = 4;
             this.label_member_name.Text = "Dulanja Nimesh (M001)";
+            this.label_member_name.Click += new System.EventHandler(this.label_member_name_Click);
             // 
             // button_logout
             // 
@@ -298,6 +309,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(370, 434);
             this.tableLayoutPanel1.TabIndex = 13;
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // panel2
             // 
@@ -312,6 +324,7 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(12, 8, 12, 0);
             this.panel2.Size = new System.Drawing.Size(366, 44);
             this.panel2.TabIndex = 17;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // textBox_dob
             // 
@@ -328,6 +341,7 @@
             this.textBox_dob.Size = new System.Drawing.Size(340, 24);
             this.textBox_dob.TabIndex = 0;
             this.textBox_dob.Text = "2003/09/15";
+            this.textBox_dob.TextChanged += new System.EventHandler(this.textBox_dob_TextChanged);
             // 
             // panel1
             // 
@@ -342,6 +356,7 @@
             this.panel1.Padding = new System.Windows.Forms.Padding(12, 8, 12, 0);
             this.panel1.Size = new System.Drawing.Size(366, 44);
             this.panel1.TabIndex = 15;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // textBox_last_name
             // 
@@ -358,6 +373,7 @@
             this.textBox_last_name.Size = new System.Drawing.Size(340, 24);
             this.textBox_last_name.TabIndex = 0;
             this.textBox_last_name.Text = "Nimesh";
+            this.textBox_last_name.TextChanged += new System.EventHandler(this.textBox_last_name_TextChanged);
             // 
             // label5
             // 
@@ -371,6 +387,7 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "Last Name";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label_lbm_name
             // 
@@ -384,6 +401,7 @@
             this.label_lbm_name.TabIndex = 13;
             this.label_lbm_name.Text = "First Name";
             this.label_lbm_name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_lbm_name.Click += new System.EventHandler(this.label_lbm_name_Click);
             // 
             // panel_card_holder
             // 
@@ -398,6 +416,7 @@
             this.panel_card_holder.Padding = new System.Windows.Forms.Padding(12, 8, 12, 0);
             this.panel_card_holder.Size = new System.Drawing.Size(366, 44);
             this.panel_card_holder.TabIndex = 12;
+            this.panel_card_holder.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_card_holder_Paint);
             // 
             // textBox_first_name
             // 
@@ -414,6 +433,7 @@
             this.textBox_first_name.Size = new System.Drawing.Size(340, 24);
             this.textBox_first_name.TabIndex = 0;
             this.textBox_first_name.Text = "Dulanja";
+            this.textBox_first_name.TextChanged += new System.EventHandler(this.textBox_first_name_TextChanged);
             // 
             // label6
             // 
@@ -427,6 +447,7 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Date of Birth";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -456,6 +477,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(370, 434);
             this.tableLayoutPanel2.TabIndex = 14;
+            this.tableLayoutPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel2_Paint);
             // 
             // panel6
             // 
@@ -470,6 +492,7 @@
             this.panel6.Padding = new System.Windows.Forms.Padding(12, 8, 12, 0);
             this.panel6.Size = new System.Drawing.Size(366, 45);
             this.panel6.TabIndex = 18;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // textBox_ec_phone
             // 
@@ -485,6 +508,7 @@
             this.textBox_ec_phone.Size = new System.Drawing.Size(340, 24);
             this.textBox_ec_phone.TabIndex = 0;
             this.textBox_ec_phone.Text = "0702171422";
+            this.textBox_ec_phone.TextChanged += new System.EventHandler(this.textBox_ec_phone_TextChanged);
             // 
             // panel3
             // 
@@ -499,6 +523,7 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(12, 8, 12, 0);
             this.panel3.Size = new System.Drawing.Size(366, 44);
             this.panel3.TabIndex = 17;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // textBox_ec_name
             // 
@@ -514,6 +539,7 @@
             this.textBox_ec_name.Size = new System.Drawing.Size(340, 24);
             this.textBox_ec_name.TabIndex = 0;
             this.textBox_ec_name.Text = "Tharushi Jayasinghe";
+            this.textBox_ec_name.TextChanged += new System.EventHandler(this.textBox_ec_name_TextChanged);
             // 
             // panel4
             // 
@@ -528,6 +554,7 @@
             this.panel4.Padding = new System.Windows.Forms.Padding(12, 8, 12, 0);
             this.panel4.Size = new System.Drawing.Size(366, 44);
             this.panel4.TabIndex = 15;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // textBox_address
             // 
@@ -543,6 +570,7 @@
             this.textBox_address.Size = new System.Drawing.Size(340, 24);
             this.textBox_address.TabIndex = 0;
             this.textBox_address.Text = "127, Korase, Udugampola";
+            this.textBox_address.TextChanged += new System.EventHandler(this.textBox_address_TextChanged);
             // 
             // label7
             // 
@@ -556,6 +584,7 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Address";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -569,6 +598,7 @@
             this.label8.TabIndex = 13;
             this.label8.Text = "Phone";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // panel5
             // 
@@ -583,6 +613,7 @@
             this.panel5.Padding = new System.Windows.Forms.Padding(12, 8, 12, 0);
             this.panel5.Size = new System.Drawing.Size(366, 44);
             this.panel5.TabIndex = 12;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // textBox_phone
             // 
@@ -598,6 +629,7 @@
             this.textBox_phone.Size = new System.Drawing.Size(340, 24);
             this.textBox_phone.TabIndex = 0;
             this.textBox_phone.Text = "0774121427";
+            this.textBox_phone.TextChanged += new System.EventHandler(this.textBox_phone_TextChanged);
             // 
             // label9
             // 
@@ -611,6 +643,7 @@
             this.label9.TabIndex = 16;
             this.label9.Text = "Emergency Contact Name";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label10
             // 
@@ -624,6 +657,7 @@
             this.label10.TabIndex = 18;
             this.label10.Text = "Emergency Contact Phone";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -651,6 +685,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.Size = new System.Drawing.Size(370, 434);
             this.tableLayoutPanel3.TabIndex = 15;
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
             // panel8
             // 
@@ -665,6 +700,7 @@
             this.panel8.Padding = new System.Windows.Forms.Padding(12, 8, 12, 0);
             this.panel8.Size = new System.Drawing.Size(366, 44);
             this.panel8.TabIndex = 17;
+            this.panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.panel8_Paint);
             // 
             // textBox_password
             // 
@@ -696,6 +732,7 @@
             this.panel9.Padding = new System.Windows.Forms.Padding(12, 8, 12, 0);
             this.panel9.Size = new System.Drawing.Size(366, 44);
             this.panel9.TabIndex = 15;
+            this.panel9.Paint += new System.Windows.Forms.PaintEventHandler(this.panel9_Paint);
             // 
             // textBox_nic
             // 
@@ -712,6 +749,7 @@
             this.textBox_nic.Size = new System.Drawing.Size(340, 24);
             this.textBox_nic.TabIndex = 0;
             this.textBox_nic.Text = "200314711244";
+            this.textBox_nic.TextChanged += new System.EventHandler(this.textBox_nic_TextChanged);
             // 
             // label11
             // 
@@ -725,6 +763,7 @@
             this.label11.TabIndex = 14;
             this.label11.Text = "NIC";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -738,6 +777,7 @@
             this.label12.TabIndex = 13;
             this.label12.Text = "Email";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // panel10
             // 
@@ -752,6 +792,7 @@
             this.panel10.Padding = new System.Windows.Forms.Padding(12, 8, 12, 0);
             this.panel10.Size = new System.Drawing.Size(366, 44);
             this.panel10.TabIndex = 12;
+            this.panel10.Paint += new System.Windows.Forms.PaintEventHandler(this.panel10_Paint);
             // 
             // textBox_email
             // 
@@ -768,6 +809,7 @@
             this.textBox_email.Size = new System.Drawing.Size(340, 24);
             this.textBox_email.TabIndex = 0;
             this.textBox_email.Text = "dulanjanimesh@gmail.com";
+            this.textBox_email.TextChanged += new System.EventHandler(this.textBox_email_TextChanged);
             // 
             // label13
             // 
@@ -781,6 +823,7 @@
             this.label13.TabIndex = 16;
             this.label13.Text = "Password";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // panel_pw_policy
             // 
@@ -796,6 +839,7 @@
             this.panel_pw_policy.Size = new System.Drawing.Size(364, 162);
             this.panel_pw_policy.TabIndex = 18;
             this.panel_pw_policy.Visible = false;
+            this.panel_pw_policy.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_pw_policy_Paint);
             // 
             // icon_char_rqmt
             // 
@@ -807,6 +851,7 @@
             this.icon_char_rqmt.Size = new System.Drawing.Size(16, 16);
             this.icon_char_rqmt.TabIndex = 5;
             this.icon_char_rqmt.TabStop = false;
+            this.icon_char_rqmt.Click += new System.EventHandler(this.icon_char_rqmt_Click);
             // 
             // icon_length_rqmt
             // 
@@ -818,6 +863,7 @@
             this.icon_length_rqmt.Size = new System.Drawing.Size(16, 16);
             this.icon_length_rqmt.TabIndex = 3;
             this.icon_length_rqmt.TabStop = false;
+            this.icon_length_rqmt.Click += new System.EventHandler(this.icon_length_rqmt_Click);
             // 
             // label_char_rqmt
             // 
@@ -830,6 +876,7 @@
             this.label_char_rqmt.TabIndex = 2;
             this.label_char_rqmt.Text = "Password must have at least one uppercase letter, lowercase letter, and one numbe" +
     "r";
+            this.label_char_rqmt.Click += new System.EventHandler(this.label_char_rqmt_Click);
             // 
             // label_length_rqmt
             // 
@@ -842,6 +889,7 @@
             this.label_length_rqmt.Size = new System.Drawing.Size(204, 23);
             this.label_length_rqmt.TabIndex = 0;
             this.label_length_rqmt.Text = "Contains 16 - 24 characters";
+            this.label_length_rqmt.Click += new System.EventHandler(this.label_length_rqmt_Click);
             // 
             // tableLayoutPanel4
             // 
@@ -859,6 +907,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(364, 100);
             this.tableLayoutPanel4.TabIndex = 17;
+            this.tableLayoutPanel4.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel4_Paint);
             // 
             // button_update_profile
             // 
