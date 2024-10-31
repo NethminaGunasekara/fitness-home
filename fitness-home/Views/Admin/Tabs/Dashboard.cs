@@ -45,7 +45,7 @@ namespace fitness_home.Views.Admin.Tabs
             label_monthly_revenue.Text = TransactionInfo.CalculateMonthlyTransactionTotal();
 
             // Display admin id after formatting it to have a minimum length of 3 digits
-            label_admin_id.Text = AdminData.FormatAdminId(adminData.ID);
+            label_admin_id.Text = FormatAdminId(adminData.ID);
 
             // Display the session start time in the "HH:MM AM/PM" format
             label_session_start.Text = AdminArea.SessionStart.ToString("hh:mm tt");
@@ -91,6 +91,20 @@ namespace fitness_home.Views.Admin.Tabs
                 StatusLabels[i].BackColor = Color.Transparent;
             }
         }
+
+        // Format the admin id by adding a padding of 0s to fill 3 digits
+        public string FormatAdminId(int adminId)
+        {
+            // Convert the numeric admin id to a string
+            string adminIdString = adminId.ToString();
+
+            // Add a padding left of 0s to make three digits
+            string formattedAdminID = adminIdString.PadLeft(3, '0');
+
+            // Display the formatted admin id
+            return $"A{formattedAdminID}";
+        }
+
 
         // Retrieve and display the list of classes for today
         private void DisplayClasses()

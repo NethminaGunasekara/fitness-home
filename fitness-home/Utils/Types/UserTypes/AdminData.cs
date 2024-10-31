@@ -25,12 +25,6 @@ namespace fitness_home.Utils.Types.UserTypes
             RetrieveAdminData();
         }
 
-        // Format the admin id by adding a padding of 0s to fill 3 digits
-        public static string FormatAdminId(int adminId)
-        {
-            return $"A{adminId.ToString().PadLeft(3, '0')}";
-        }
-
         // Helper method to retrieve the admin's name using the admin_id
         public static string GetAdminNameById(int adminId)
         {
@@ -63,6 +57,15 @@ namespace fitness_home.Utils.Types.UserTypes
             }
 
             return adminName;
+        }
+
+        // Method to retrieve the formatted version of the admin id
+        public string FormatAdminId()
+        {
+            // Format the admin id by adding a padding left of 0s to make it 3 digits long
+            int AdminId = Authentication.LoggedUser.ID;
+
+            return $"A{AdminId.ToString().PadLeft(3, '0')}";
         }
 
         // Method to retrieve admin data from the database based on the admin ID

@@ -405,16 +405,16 @@
             this.label3.Location = new System.Drawing.Point(28, 4);
             this.label3.Margin = new System.Windows.Forms.Padding(28, 4, 0, 8);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 29);
+            this.label3.Size = new System.Drawing.Size(111, 29);
             this.label3.TabIndex = 7;
-            this.label3.Text = "Member Type:";
+            this.label3.Text = "User Type:";
             // 
             // label_membership_plan
             // 
             this.label_membership_plan.AutoSize = true;
             this.label_membership_plan.Font = new System.Drawing.Font("Noto Sans", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_membership_plan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(142)))), ((int)(((byte)(142)))));
-            this.label_membership_plan.Location = new System.Drawing.Point(176, 4);
+            this.label_membership_plan.Location = new System.Drawing.Point(139, 4);
             this.label_membership_plan.Margin = new System.Windows.Forms.Padding(0, 4, 0, 8);
             this.label_membership_plan.Name = "label_membership_plan";
             this.label_membership_plan.Size = new System.Drawing.Size(78, 29);

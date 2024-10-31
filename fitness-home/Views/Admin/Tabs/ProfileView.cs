@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Windows.Forms;
 using fitness_home.Services;
+using fitness_home.Utils.Types.UserTypes;
 
 namespace fitness_home.Views.Admin.Tabs
 {
@@ -10,6 +11,20 @@ namespace fitness_home.Views.Admin.Tabs
         public ProfileView()
         {
             InitializeComponent();
+
+            // Retrieve admin information and store them in a variable
+            User adminData = new AdminData(Authentication.LoggedUser.ID); // Use the logged in user's id
+
+            // Initialize the fields displaying admin information
+            textBox_first_name.Text = adminData.FirstName;
+            textBox_last_name.Text = adminData.LastName;
+            textBox_phone.Text = adminData.Phone;
+            textBox_email.Text = adminData.Email;
+            textBox_nic.Text = adminData.NIC;
+            textBox_admin_id.Text = FormatAdminId(adminData.ID);
+
+            // Set the name and id of the administrator
+            label_admin_name.Text = $"{adminData.FirstName} {adminData.LastName}";
         }
 
         // ** Event: When the view profile button is clicked
@@ -36,6 +51,24 @@ namespace fitness_home.Views.Admin.Tabs
 
             // Return the user to the login page
             FormProvider.ShowForm(targetForm: FormProvider.Login ?? (FormProvider.Login = new Login()), currentForm: FormProvider.AdminArea);
+        }
+
+        // Format the admin id by adding a padding of 0s to fill 3 digits
+        public string FormatAdminId(int adminId)
+        {
+            // Convert the numeric admin id to a string
+            string adminIdString = adminId.ToString();
+
+            // Add a padding left of 0s to make three digits
+            string formattedAdminID = adminIdString.PadLeft(3, '0');
+
+            // Display the formatted admin id
+            return $"A{formattedAdminID}";
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
