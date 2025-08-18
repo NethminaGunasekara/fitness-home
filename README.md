@@ -14,7 +14,7 @@
   <img src="https://img.shields.io/github/languages/top/NethminaGunasekara/fitness-home" alt="top language" />
   <img src="https://img.shields.io/github/contributors/NethminaGunasekara/fitness-home" alt="contributors" />
   <img src="https://img.shields.io/github/last-commit/NethminaGunasekara/fitness-home" alt="last update" />
-  <img src="https://img.shields.io/website?url=http%3A//fitnesshome.vercel.app" alt="website status" />
+  <img src="https://img.shields.io/github/v/release/NethminaGunasekara/fitness-home" alt="website status" />
   <img src="https://img.shields.io/github/license/NethminaGunasekara/fitness-home.svg" alt="license" />
 </p>
    
@@ -30,6 +30,7 @@
 <br />
 
 <!-- Table of Contents -->
+
 # :notebook_with_decorative_cover: Table of Contents
 
 - [:notebook_with_decorative_cover: Table of Contents](#notebook_with_decorative_cover-table-of-contents)
@@ -41,24 +42,28 @@
     - [:key: Environment Variables](#key-environment-variables)
       - [Steps to Configure Environment Variables](#steps-to-configure-environment-variables)
   - [:zap: Getting Started](#zap-getting-started)
+    - [:bangbang: Prerequisites](#bangbang-prerequisites)
+    - [:zap: Run Locally](#zap-run-locally)
   - [:grey_question: FAQ](#grey_question-faq)
   - [:handshake: Contact](#handshake-contact)
   - [:gem: Acknowledgments](#gem-acknowledgments)
 
 <!-- About the Project -->
+
 ## :star2: About the Project
 
 The "Fitness Home" gym management system is a solution for simplifying operations within a gym environment designed by a group of students of the 17th Batch of the Diploma in Information Technology program at Esoft Metro Campus Gampaha Branch. The objective of this system is to simplify operations within a gym environment by providing a user friendly interaction for members, trainers, and administrators.
 
 <!-- Screenshots -->
+
 ### :camera: Screenshots
 
 <div align="center"> 
   <img src="assets/images/splash-screen.jpg" alt="screenshot" />
 </div>
 
-
 <!-- TechStack -->
+
 ### :space_invader: Tech Stack
 
 <details>
@@ -79,6 +84,7 @@ The "Fitness Home" gym management system is a solution for simplifying operation
 </details>
 
 <!-- Features -->
+
 ### :dart: Features
 
 - **Automatic Login**: If the user has already logged in earlier, they are directly taken to their dashboard. The application directly takes them into their account as the email and password stored in the `App.config` file from the previous login provide direct access, and they need not authenticate themselves again.
@@ -90,16 +96,17 @@ The "Fitness Home" gym management system is a solution for simplifying operation
 - **Admin Dashboard**: The system offers a dashboard where all the activities around the gym can be tracked, and profile information reviewed for the administrators.
 
 <!-- Color Reference -->
+
 ### :art: Color Reference
 
-| Color             | Hex                                                                |
-| ----------------- | ------------------------------------------------------------------ |
+| Color            | Hex     |
+| ---------------- | ------- |
 | Background Color | #0D0D0D |
-| Accent Color | #A1D200 |
-| Text Color | #FFFFFF |
-
+| Accent Color     | #A1D200 |
+| Text Color       | #FFFFFF |
 
 <!-- Env Variables -->
+
 ### :key: Environment Variables
 
 To run this project, you need to set up the following configuration in the `App.config` file located in the `fitness-home` directory. This configuration includes database connection settings and user credentials.
@@ -125,6 +132,8 @@ To run this project, you need to set up the following configuration in the `App.
        </appSettings>
    </configuration>
 
+   ```
+
 2. **Set `DB_HOST` to your SQL Server instance** (i.e. Server name used when connecting to the SSMS).
 
 3. **Create a new SQL Server user:**
@@ -133,8 +142,8 @@ To run this project, you need to set up the following configuration in the `App.
 - In Object Explorer, expand your server and navigate to `Security > Logins`.
 - Right-click Logins and select New Login.
 - Enter the following credentials:
-    - Login name: `db_user`
-    - Password: `GymApp!23$7`
+  - Login name: `db_user`
+  - Password: `GymApp!23$7`
 - Under Server Roles, assign the user the necessary permissions, such as `db_datareader` and `db_datawriter`, to allow read and write access to the database.
 - Click OK to create the user.
 - Right click on the Server, navigate to `Properties > Security` and ensure SQL Server and Windows Authentication mode is enabled.
@@ -151,17 +160,19 @@ To run this project, you need to have the following tools installed:
    Download and install the .NET SDK (version 6.0 or later) from the official .NET website:  
    [https://dotnet.microsoft.com/download](https://dotnet.microsoft.com/download)
 
-2. **Visual Studio**  
+2. **Visual Studio**
+
    - Install Visual Studio 2022 (or later) with the **.NET desktop development** workload.
    - You can download Visual Studio from:  
      [https://visualstudio.microsoft.com/downloads](https://visualstudio.microsoft.com/downloads)
 
-3. **SQL Server**  
+3. **SQL Server**
+
    - Install Microsoft SQL Server (2019 or later) for database management.
    - You can download the **SQL Server Express edition** from:  
      [https://www.microsoft.com/en-us/sql-server/sql-server-downloads](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 
-4. **SQL Server Management Studio (SSMS)**  
+4. **SQL Server Management Studio (SSMS)**
    - Install SSMS to manage your SQL Server instance and execute the initialization script.
    - Download SSMS from:  
      [https://aka.ms/ssmsfullsetup](https://aka.ms/ssmsfullsetup)
@@ -169,6 +180,7 @@ To run this project, you need to have the following tools installed:
 Once these prerequisites are installed, you can proceed to clone the project and set up the database.
 
 <!-- Run Locally -->
+
 ### :zap: Run Locally
 
 1. Clone the project
@@ -184,7 +196,7 @@ Once these prerequisites are installed, you can proceed to clone the project and
 ```
 
 3. Open the solution in Visual Studio (`fitness-home.sln`)
-<br />
+   <br />
 
 4. Set up sample data, including an admin account, a trainer account, and membership plans:
 
@@ -198,19 +210,22 @@ Once these prerequisites are installed, you can proceed to clone the project and
 - Click Start or press F5 to run the application.
 
 <!-- FAQ -->
+
 ## :grey_question: FAQ
 
 - **Is this project complete?**
 
-  + Although we have completed the member dashboard and member registration, there are still many features to develop within the admin and trainer dashboards of our gym management system. These will be added progressively through our team's collaborative efforts.
+  - Although we have completed the member dashboard and member registration, there are still many features to develop within the admin and trainer dashboards of our gym management system. These will be added progressively through our team's collaborative efforts.
 
 <!-- Contact -->
+
 ## :handshake: Contact
 
-- Shanuka Ravishan - [@.shanu._a.](https://www.instagram.com/.shanu._a.?igsh=MXhseWN2YjgwaDg2YQ==) - shanukaravishan01@gmail.com
+- Shanuka Ravishan - [@.shanu.\_a.](https://www.instagram.com/.shanu._a.?igsh=MXhseWN2YjgwaDg2YQ==) - shanukaravishan01@gmail.com
 - Nethmina Gunasekara - [@nethminagunasekara](https://www.instagram.com/nethminagunasekara/profilecard/?igsh=MXNpZHM3eGNpNnV2MQ==) - nethminagunasekara01@gmail.com
 
 <!-- Acknowledgments -->
+
 ## :gem: Acknowledgments
 
 We are grateful to all the following resources and libraries that contributed in making this project possible:
