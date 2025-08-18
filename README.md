@@ -4,53 +4,32 @@
   <h1>Fitness Home</h1>
   
   <p>
-     A solution for simplifying operations within a gym environment! 
+     A solution for simplifying operations within a gym environment.
   </p>
   
   
 <!-- Badges -->
 <p>
-  <img src="https://img.shields.io/github/created-at/NethminaGunasekara/fitness-home" alt="top language" />
-  <img src="https://img.shields.io/github/languages/top/NethminaGunasekara/fitness-home" alt="top language" />
-  <img src="https://img.shields.io/github/contributors/NethminaGunasekara/fitness-home" alt="contributors" />
-  <img src="https://img.shields.io/github/last-commit/NethminaGunasekara/fitness-home" alt="last update" />
-  <img src="https://img.shields.io/github/v/release/NethminaGunasekara/fitness-home" alt="website status" />
+  <img src="https://img.shields.io/github/created-at/NethminaGunasekara/fitness-home" alt="created at" />
+  <img src="https://img.shields.io/github/last-commit/NethminaGunasekara/fitness-home" alt="last commit" />
+  <img src="https://img.shields.io/github/v/release/NethminaGunasekara/fitness-home" alt="release" />
   <img src="https://img.shields.io/github/license/NethminaGunasekara/fitness-home.svg" alt="license" />
+  <img src="https://img.shields.io/github/contributors/NethminaGunasekara/fitness-home" alt="contributors" />
+  <img src="https://img.shields.io/github/languages/top/NethminaGunasekara/fitness-home" alt="top language" />
 </p>
    
 <h4>
-    <a href="">Project Report</a>
+    <a href="#star2-introduction">Introduction</a>
   <span> · </span>
     <a href="#zap-getting-started">Get Started</a>
   <span> · </span>
-    <a href="https://fitnesshome.vercel.app" target="_blank">Documentation</a>
+    <a href="https://github.com/NethminaGunasekara/FitnessHome/releases" target="_blank">Download</a>
   </h4>
 </div>
 
 <br />
 
-<!-- Table of Contents -->
-
-# :notebook_with_decorative_cover: Table of Contents
-
-- [:notebook_with_decorative_cover: Table of Contents](#notebook_with_decorative_cover-table-of-contents)
-  - [:star2: About the Project](#star2-about-the-project)
-    - [:camera: Screenshots](#camera-screenshots)
-    - [:space_invader: Tech Stack](#space_invader-tech-stack)
-    - [:dart: Features](#dart-features)
-    - [:art: Color Reference](#art-color-reference)
-    - [:key: Environment Variables](#key-environment-variables)
-      - [Steps to Configure Environment Variables](#steps-to-configure-environment-variables)
-  - [:zap: Getting Started](#zap-getting-started)
-    - [:bangbang: Prerequisites](#bangbang-prerequisites)
-    - [:zap: Run Locally](#zap-run-locally)
-  - [:grey_question: FAQ](#grey_question-faq)
-  - [:handshake: Contact](#handshake-contact)
-  - [:gem: Acknowledgments](#gem-acknowledgments)
-
-<!-- About the Project -->
-
-## :star2: About the Project
+## :star2: Introduction
 
 The "Fitness Home" gym management system is a solution for simplifying operations within a gym environment designed by a group of students of the 17th Batch of the Diploma in Information Technology program at Esoft Metro Campus Gampaha Branch. The objective of this system is to simplify operations within a gym environment by providing a user friendly interaction for members, trainers, and administrators.
 
