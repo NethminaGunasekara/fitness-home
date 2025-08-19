@@ -1,14 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.10.35122.118
+VisualStudioVersion = 17.14.36408.4 d17.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessHome", "FitnessHome\FitnessHome.csproj", "{05070001-7CF0-42D6-AF11-36FC7673F2DF}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{46A0C9E0-80C9-439E-84EF-EABE489D1C52}"
-	ProjectSection(SolutionItems) = preProject
-		.editorconfig = .editorconfig
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FitnessHome", "FitnessHome\FitnessHome.csproj", "{046F0287-D49C-4D98-B72E-6B724D0A70DF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{05070001-7CF0-42D6-AF11-36FC7673F2DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{05070001-7CF0-42D6-AF11-36FC7673F2DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{05070001-7CF0-42D6-AF11-36FC7673F2DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{05070001-7CF0-42D6-AF11-36FC7673F2DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{046F0287-D49C-4D98-B72E-6B724D0A70DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{046F0287-D49C-4D98-B72E-6B724D0A70DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{046F0287-D49C-4D98-B72E-6B724D0A70DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{046F0287-D49C-4D98-B72E-6B724D0A70DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {30EC644E-14F6-4FA9-AF1E-A9B2DEBFD4E0}
+		SolutionGuid = {E351D910-A363-43FC-B440-5176756F3626}
 	EndGlobalSection
 EndGlobal

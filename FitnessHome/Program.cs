@@ -1,24 +1,19 @@
-﻿using System;
-using System.Windows.Forms;
 using fitness_home.Views.Onboarding;
 
-
-namespace fitness_home
+namespace FitnessHome
 {
     internal static class Program
     {
-        public static Splash EntryPoint;
-
         /// <summary>
-        /// The main entry point for the application.
+        ///  The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            EntryPoint = new Splash();
-            Application.Run(EntryPoint);
+            // To customize application configuration such as set high DPI settings or default font,
+            // see https://aka.ms/applicationconfiguration.
+            ApplicationConfiguration.Initialize();
+            Application.Run(new Splash());
         }
     }
 }
