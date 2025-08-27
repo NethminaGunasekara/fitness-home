@@ -33,6 +33,20 @@
 
 The "Fitness Home" gym management system is a solution for simplifying operations within a gym environment designed by a group of students of the 17th Batch of the Diploma in Information Technology program at Esoft Metro Campus Gampaha Branch. The objective of this system is to simplify operations within a gym environment by providing a user friendly interaction for members, trainers, and administrators.
 
+1. Allowing the URL ACL (so HttpListener can bind):
+   `netsh http add urlacl url=http://+:5000/ user=Everyone`
+
+To remove it later:
+
+`netsh http delete urlacl url=http://+:5000/`
+
+1. Firewall Rule (to allow inbound traffic on port 5000):
+   `netsh advfirewall firewall add rule name="FitnessHomeHTTP" dir=in action=allow protocol=TCP localport=5000`
+
+To remove it later:
+
+`netsh advfirewall firewall delete rule name="FitnessHomeHTTP"`
+
 <!-- Screenshots -->
 
 ### :camera: Screenshots

@@ -29,92 +29,100 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Welcome));
-            this.tableLayoutPanel_content = new System.Windows.Forms.TableLayoutPanel();
-            this.label_description = new System.Windows.Forms.Label();
-            this.label_title = new System.Windows.Forms.Label();
-            this.btn_get_started = new System.Windows.Forms.Button();
-            this.panel_logo = new System.Windows.Forms.Panel();
-            this.img_logo = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel_content.SuspendLayout();
-            this.panel_logo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.img_logo)).BeginInit();
-            this.SuspendLayout();
+            left_area = new TableLayoutPanel();
+            pictureBox1 = new PictureBox();
+            label_quote = new Label();
+            label_said = new Label();
+            content_layout = new TableLayoutPanel();
+            panel_background = new Panel();
+            tableLayoutPanel_content = new TableLayoutPanel();
+            left_area.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            content_layout.SuspendLayout();
+            panel_background.SuspendLayout();
+            tableLayoutPanel_content.SuspendLayout();
+            SuspendLayout();
+            // 
+            // left_area
+            // 
+            resources.ApplyResources(left_area, "left_area");
+            left_area.Controls.Add(pictureBox1, 1, 2);
+            left_area.Name = "left_area";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = FitnessHome.Properties.Resources.Logo;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.TabStop = false;
+            // 
+            // label_quote
+            // 
+            resources.ApplyResources(label_quote, "label_quote");
+            label_quote.ForeColor = Color.White;
+            label_quote.Name = "label_quote";
+            // 
+            // label_said
+            // 
+            resources.ApplyResources(label_said, "label_said");
+            label_said.BackColor = Color.FromArgb(161, 210, 0);
+            label_said.Name = "label_said";
+            // 
+            // content_layout
+            // 
+            resources.ApplyResources(content_layout, "content_layout");
+            content_layout.Controls.Add(label_quote, 1, 2);
+            content_layout.Controls.Add(label_said, 1, 3);
+            content_layout.Name = "content_layout";
+            // 
+            // panel_background
+            // 
+            panel_background.BackColor = Color.Transparent;
+            panel_background.BackgroundImage = FitnessHome.Properties.Resources.SplashBackground;
+            resources.ApplyResources(panel_background, "panel_background");
+            panel_background.Controls.Add(content_layout);
+            panel_background.Name = "panel_background";
             // 
             // tableLayoutPanel_content
             // 
-            this.tableLayoutPanel_content.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.tableLayoutPanel_content, "tableLayoutPanel_content");
-            this.tableLayoutPanel_content.Controls.Add(this.label_description, 1, 1);
-            this.tableLayoutPanel_content.Controls.Add(this.label_title, 1, 0);
-            this.tableLayoutPanel_content.Controls.Add(this.btn_get_started, 1, 2);
-            this.tableLayoutPanel_content.Controls.Add(this.panel_logo, 0, 0);
-            this.tableLayoutPanel_content.Name = "tableLayoutPanel_content";
-            // 
-            // label_description
-            // 
-            resources.ApplyResources(this.label_description, "label_description");
-            this.label_description.BackColor = System.Drawing.Color.Transparent;
-            this.label_description.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label_description.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.label_description.Name = "label_description";
-            // 
-            // label_title
-            // 
-            resources.ApplyResources(this.label_title, "label_title");
-            this.label_title.BackColor = System.Drawing.Color.Transparent;
-            this.label_title.ForeColor = System.Drawing.Color.White;
-            this.label_title.Name = "label_title";
-            // 
-            // btn_get_started
-            // 
-            resources.ApplyResources(this.btn_get_started, "btn_get_started");
-            this.btn_get_started.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(161)))), ((int)(((byte)(210)))), ((int)(((byte)(0)))));
-            this.btn_get_started.FlatAppearance.BorderSize = 0;
-            this.btn_get_started.Name = "btn_get_started";
-            this.btn_get_started.UseVisualStyleBackColor = false;
-            this.btn_get_started.Click += new System.EventHandler(this.GetStarted);
-            // 
-            // panel_logo
-            // 
-            resources.ApplyResources(this.panel_logo, "panel_logo");
-            this.panel_logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(255)))), ((int)(((byte)(253)))), ((int)(((byte)(253)))));
-            this.panel_logo.Controls.Add(this.img_logo);
-            this.panel_logo.Name = "panel_logo";
-            this.tableLayoutPanel_content.SetRowSpan(this.panel_logo, 3);
-            // 
-            // img_logo
-            // 
-            resources.ApplyResources(this.img_logo, "img_logo");
-            this.img_logo.BackColor = System.Drawing.Color.Transparent;
-            this.img_logo.Name = "img_logo";
-            this.img_logo.TabStop = false;
+            tableLayoutPanel_content.BackColor = Color.Black;
+            resources.ApplyResources(tableLayoutPanel_content, "tableLayoutPanel_content");
+            tableLayoutPanel_content.Controls.Add(panel_background, 1, 0);
+            tableLayoutPanel_content.Controls.Add(left_area, 0, 0);
+            tableLayoutPanel_content.Name = "tableLayoutPanel_content";
             // 
             // Welcome
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Desktop;
-            this.Controls.Add(this.tableLayoutPanel_content);
-            this.DoubleBuffered = true;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Welcome";
-            this.tableLayoutPanel_content.ResumeLayout(false);
-            this.tableLayoutPanel_content.PerformLayout();
-            this.panel_logo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.img_logo)).EndInit();
-            this.ResumeLayout(false);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Desktop;
+            BackgroundImage = FitnessHome.Properties.Resources.Background;
+            Controls.Add(tableLayoutPanel_content);
+            DoubleBuffered = true;
+            FormBorderStyle = FormBorderStyle.None;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "Welcome";
+            Load += Welcome_Load;
+            left_area.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            content_layout.ResumeLayout(false);
+            content_layout.PerformLayout();
+            panel_background.ResumeLayout(false);
+            tableLayoutPanel_content.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.TableLayoutPanel Right;
-        private System.Windows.Forms.Label label_description;
-        private System.Windows.Forms.Button btn_get_started;
-        private System.Windows.Forms.Label label_title;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_content;
-        private System.Windows.Forms.Panel panel_logo;
-        private System.Windows.Forms.PictureBox img_logo;
+        private TableLayoutPanel left_area;
+        private PictureBox pictureBox1;
+        private Label label_quote;
+        private Label label_said;
+        private TableLayoutPanel content_layout;
+        private Panel panel_background;
+        private TableLayoutPanel tableLayoutPanel_content;
     }
 }
 

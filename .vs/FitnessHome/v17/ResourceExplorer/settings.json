@@ -1,0 +1,21 @@
+{
+  "ShowEmptyProjects": false,
+  "SelectedGroups": [
+    "C:\\Users\\Nethmina\\Projects\\fitness-home\\FitnessHome\\FitnessHome\\Views\\Onboarding\\Login.resx",
+    "C:\\Users\\Nethmina\\Projects\\fitness-home\\FitnessHome\\FitnessHome\\Views\\Onboarding\\Splash.resx",
+    "C:\\Users\\Nethmina\\Projects\\fitness-home\\FitnessHome\\FitnessHome\\Properties\\Resources.resx"
+  ],
+  "ExpandedProjects": [],
+  "EnableSpellChecker": true,
+  "ColumnOrder": [
+    "name",
+    "type",
+    "neutral-value",
+    "neutral-comment",
+    "file-path",
+    "file-name"
+  ],
+  "VisibleColumnKeys": [
+    "name"
+  ]
+}
